@@ -18,9 +18,9 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 <!-- badges: end -->
 
 nlist is an R package to create and check numeric list objects. A
-numeric list object is a list of uniquely named numeric (double or
-integer) vectors, matrices and arrays. A numeric lists is the data input
-for analytic engines such as JAGS, STAN and TMB.
+numeric list object is a list of uniquely named numeric atomic objects,
+ie, integer or double vectors, matrices and arrays. A numeric lists is
+the data input for analytic engines such as JAGS, STAN and TMB.
 
 ## Installation
 
