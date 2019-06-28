@@ -6,7 +6,6 @@ aggregate_atomic_numeric <- function(x, FUN, ...) {
 }
 
 aggregate_atomic_numerics <- function(x, FUN, ...) {
-  if(!length(x)) return(x)
   dims <- dims(x[[1]])
   ndims <- length(dims)
   x <- abind(x, along = ndims + 1L)
@@ -43,7 +42,6 @@ aggregate.nlist <- function(x, FUN = mean, ...) {
 aggregate.nlists <- function(x, FUN = mean, ...) {
   check_nlists(x)
   check_function(FUN)
-  if(!length(x)) return(x)
 
   x <- purrr::transpose(x)
   x <- lapply(x, aggregate_atomic_numerics, FUN, ...)

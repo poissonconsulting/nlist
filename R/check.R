@@ -90,7 +90,7 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
 #'
 #' @inheritParams checkr::check_length
 #' @inheritParams check_natomic
-#' @param length A flag indicating whether x and the elements of x etc should have elements 
+#' @param length A flag indicating the nlist elements should have elements 
 #' (versus no elements) or a missing value indicating no requirements.
 #' @param class A flag indicating whether x should inherit from nlists and the elements from nlist
 #' (versus not inherit) or a missing value indicating no requirements.
@@ -107,7 +107,7 @@ check_nlists <- function(x, length = NA, nas = NA, class = TRUE,
     err(x_name, " must not inherit from class nlists")
   
   check_list(x)
-  check_length(x, length = length)
+  check_length(x, length = TRUE)
   x_name <- chk_deparse(x_name)
   
   mapply(.check_nlist, x, p("element ", 1:length(x), " of ", x_name),

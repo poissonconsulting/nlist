@@ -10,7 +10,7 @@ check_nlists(x, length = NA, nas = NA, class = TRUE,
 \arguments{
 \item{x}{The object to check.}
 
-\item{length}{A flag indicating whether x and the elements of x etc should have elements 
+\item{length}{A flag indicating the nlist elements should have elements 
 (versus no elements) or a missing value indicating no requirements.}
 
 \item{nas}{A flag indicating whether x should only have missing values
