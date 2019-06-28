@@ -25,7 +25,8 @@ as.nlists <- function(x, ...) {
 #' @export
 as.nlist.list <- function(x, ...) {
   check_unused(...)
-  check_nlist(x, class = FALSE)
+  x <- numericise(x)
+  check_nlist(x, class = NA)
   class(x) <- "nlist"
   x
 }
@@ -34,7 +35,7 @@ as.nlist.list <- function(x, ...) {
 as.nlist.data.frame <- function(x, ...) {
   check_unused(...)
   x <- as.list(x)
-  as.nlist(x)
+  x <- as.nlist(x)
   x
 }
 
@@ -45,10 +46,10 @@ as.nlist.nlist <- function(x, ...) {
 }
 
 #' @export
-as.nlists.lists <- function(x, ...) {
+as.nlists.list <- function(x, ...) {
   check_unused(...)
-  check_nlists(x)
   x <- lapply(x, as.nlist)
+  check_nlists(x, class = NA)
   class(x) <- "nlists"
   x
 }

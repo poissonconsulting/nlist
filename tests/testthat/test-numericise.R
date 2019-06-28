@@ -9,6 +9,14 @@ test_that("numericise.logical",{
   expect_identical(numericise(TRUE), 1L)
 })
 
+test_that("numericise.integer",{
+  expect_identical(numericise(2L), 2L)
+})
+
+test_that("numericise.double",{
+  expect_identical(numericise(2), 2)
+})
+
 test_that("numericise.factor",{
   expect_identical(numericise(factor(3:2)), c(2L,1L))
 })
@@ -38,6 +46,15 @@ test_that("numericise.list",{
                    list(x = 1L))
   expect_identical(numericise(list(x = TRUE, y = list(z = factor(3)))), 
                    list(x = 1L, y = list(z = 1L)))
+  
+  expect_identical(numericise(list(lgl = c(TRUE, NA),
+                                   int = 1:2, 
+                                   dbl = c(2.5,1.5),
+                                   dte = as.Date(c("2001-01-02", "2001-01-01")),
+                                   fac = factor(c("b", "a")))),
+                   list(lgl = c(1L, NA), int = 1:2, dbl = c(2.5, 1.5), 
+                        dte = 11324:11323, 
+                        fac = 2:1))
 })
 
 test_that("numericise.data.frame",{
@@ -47,4 +64,13 @@ test_that("numericise.data.frame",{
     numericise(data.frame(x = factor(3:2), y = c(FALSE, NA), z = c("1", "2"),
                           stringsAsFactors = FALSE)), 
     data.frame(x = 2:1, y = c(0L, NA), z = c("1", "2"), stringsAsFactors = FALSE))
+  
+  expect_identical(
+     numericise(data.frame(lgl = c(TRUE, NA),
+                    int = 1:2, 
+                    dbl = c(2.5,1.5),
+                    dte = as.Date(c("2001-01-02", "2001-01-01")),
+                    fac = factor(c("b", "a")))),
+     structure(list(lgl = c(1L, NA), int = 1:2, dbl = c(2.5, 1.5), 
+    dte = 11324:11323, fac = 2:1), row.names = c(NA, -2L), class = "data.frame"))
 })

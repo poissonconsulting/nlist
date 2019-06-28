@@ -27,7 +27,7 @@ dims.data.frame <- function(x, ...) {
   return(c(nrow(x), ncol(x)))
 }
 
-#' @describeIn dims Dimensions of a nlist object
+#' @describeIn dims Dimensions of an nlist object
 #' @export
 dims.nlist <- function(x, ...) {
   check_unused(...)
@@ -36,9 +36,9 @@ dims.nlist <- function(x, ...) {
   lapply(x, dims)
 }
 
-#' @describeIn dims Dimensions of a nlist object
+#' @describeIn dims Dimensions of an nlists object
 #' @export
-dims.nlist <- function(x, ...) {
+dims.nlists <- function(x, ...) {
   check_unused(...)
   check_nlists(x)
   if(!length(x)) return(list())

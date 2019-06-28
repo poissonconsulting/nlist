@@ -1,3 +1,4 @@
 #' @import err checkr
-#' @importFrom stats median
+#' @importFrom stats aggregate
+#' @importFrom abind abind
 NULL

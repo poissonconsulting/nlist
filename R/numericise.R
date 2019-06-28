@@ -23,8 +23,17 @@ numericize <- function(x, ...) {
 
 #' @export
 numericise.logical <- function(x, ...) {
-  check_unused(...)
   as.integer(x)
+}
+
+#' @export
+numericise.integer <- function(x, ...) {
+  x
+}
+
+#' @export
+numericise.double <- function(x, ...) {
+  x
 }
 
 #' @export
@@ -34,13 +43,11 @@ numericise.character <- function(x, ...) {
 
 #' @export
 numericise.factor <- function(x, ...) {
-  check_unused(...)
   as.integer(x)
 }
 
 #' @export
 numericise.Date <- function(x, ...) {
-  check_unused(...)
   x <- unclass(x)
   x <- floor(x)
   as.integer(x)
@@ -48,7 +55,6 @@ numericise.Date <- function(x, ...) {
 
 #' @export
 numericise.POSIXct <- function(x, ...) {
-  check_unused(...)
   x <- unclass(x)
   x <- floor(x)
   as.integer(x)
@@ -56,7 +62,6 @@ numericise.POSIXct <- function(x, ...) {
 
 #' @export
 numericise.hms <- function(x, ...) {
-  check_unused(...)
   x <- unclass(x)
   x <- floor(x)
   as.integer(x)
@@ -64,7 +69,6 @@ numericise.hms <- function(x, ...) {
 
 #' @export
 numericise.matrix <- function(x, ...) {
-  check_unused(...)
   if(is.logical(x))
     mode(x) <- "integer"
   x
@@ -72,7 +76,6 @@ numericise.matrix <- function(x, ...) {
 
 #' @export
 numericise.array <- function(x, ...) {
-  check_unused(...)
   if(is.logical(x))
     mode(x) <- "integer"
   x
@@ -80,13 +83,11 @@ numericise.array <- function(x, ...) {
 
 #' @export
 numericise.list <- function(x, ...) {
-  check_unused(...)
   lapply(x, numericise)
 }
 
 #' @export
 numericise.data.frame <- function(x, ...) {
-  check_unused(...)
   x[] <- lapply(x, numericise)
   x
 }

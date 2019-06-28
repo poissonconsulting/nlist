@@ -1,7 +1,8 @@
 check_identical <- function(x, x_name) {
   if(length(x) < 2) return(x)
-  identical <- identical(x, identical, TRUE, y = x[1])
-  if(!all(identical)) err("the ", x_name, " must be identical")
+  identical <- vapply(x, identical, TRUE, y = x[[1]])
+  if(!all(identical)) 
+    err("the ", x_name, " must be identical")
   x
 }
 
@@ -63,6 +64,7 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
   check_list(x)
   check_length(x, length = length)
   check_named(x, unique = TRUE, error = error)
+  x_name <- chk_deparse(x_name)
   
   if(isFALSE(class) && is.nlist(x)) 
     err(x_name, " must inherit from class nlist")
@@ -97,19 +99,23 @@ check_nlists <- function(x, length = NA, nas = NA, class = TRUE,
                          x_name = substitute(x), error = TRUE) {
   check_list(x)
   check_length(x, length = length)
-  
-  if(isFALSE(class) && is.nlist(x)) 
+  x_name <- chk_deparse(x_name)
+
+  if(isFALSE(class) && is.nlists(x)) 
     err(x_name, " must inherit from class nlists")
-  if(isTRUE(class) && !is.nlist(x)) 
+  if(isTRUE(class) && !is.nlists(x)) 
     err(x_name, " must not inherit from class nlists")
   
   if(!length(x)) return(invisible(x))
-  
-  mapply(.check_nlist, x, p("element ", names(x), " of ", x_name),
+
+  mapply(.check_nlist, x, p("element ", 1:length(x), " of ", x_name),
          MoreArgs = list(length = length, nas = nas, class = class))
   
-  check_identical(lapply(names(x)), x_name = p0("names of ", x_name))
-  check_identical(lapply(dims(x)), x_name = p0("dims of ", x_name))
+  if(!length(x)) return(invisible(x))
+  
+  check_identical(lapply(x, names), x_name = p0("names of ", x_name))
+  check_identical(lapply(x, dims), x_name = p0("dims of ", x_name))
+  check_identical(lapply(x, typeof), x_name = p0("type of ", x_name))
 
   invisible(x)
 }

@@ -5,6 +5,7 @@
 \alias{dims.default}
 \alias{dims.data.frame}
 \alias{dims.nlist}
+\alias{dims.nlists}
 \title{Dimensions of an Object}
 \usage{
 dims(x, ...)
@@ -15,7 +16,7 @@ dims(x, ...)
 
 \method{dims}{nlist}(x, ...)
 
-\method{dims}{nlist}(x, ...)
+\method{dims}{nlists}(x, ...)
 }
 \arguments{
 \item{x}{A R object.}
@@ -37,8 +38,8 @@ of a data frame.
 
 \item \code{data.frame}: Dimensions of a nlist object
 
-\item \code{nlist}: Dimensions of a nlist object
+\item \code{nlist}: Dimensions of an nlist object
 
-\item \code{nlist}: Dimensions of a nlist object
+\item \code{nlists}: Dimensions of an nlists object
 }}
 
