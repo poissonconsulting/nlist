@@ -2,24 +2,12 @@
 % Please edit documentation in R/dims.R
 \name{dims}
 \alias{dims}
-\alias{dims.default}
-\alias{dims.data.frame}
-\alias{dims.nlist}
-\alias{dims.nlists}
 \title{Dimensions of an Object}
 \usage{
 dims(x, ...)
-
-\method{dims}{default}(x, ...)
-
-\method{dims}{data.frame}(x, ...)
-
-\method{dims}{nlist}(x, ...)
-
-\method{dims}{nlists}(x, ...)
 }
 \arguments{
-\item{x}{A R object.}
+\item{x}{An R object.}
 
 \item{...}{Unused}
 }
@@ -32,14 +20,3 @@ Unlike base::dim(), dims returns a scalar corresponding to the length of
 a vector and two values corresponding to the number of rows and columns 
 of a data frame.
 }
-\section{Methods (by class)}{
-\itemize{
-\item \code{default}: Dimensions of a default object
-
-\item \code{data.frame}: Dimensions of a nlist object
-
-\item \code{nlist}: Dimensions of an nlist object
-
-\item \code{nlists}: Dimensions of an nlists object
-}}
-

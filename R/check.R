@@ -18,8 +18,8 @@ check_identical <- function(x, x_name) {
 #' @export
 #'
 #' @examples
-#' check_atomic_numeric(1)
-check_atomic_numeric <- function(x, length = NA, nas = NA, 
+#' check_natomic(1)
+check_natomic <- function(x, length = NA, nas = NA, 
                                  x_name = substitute(x), error = TRUE) {
   check_scalar(length, c(TRUE, NA))
   check_scalar(nas, c(TRUE, NA))
@@ -41,15 +41,15 @@ check_atomic_numeric <- function(x, length = NA, nas = NA,
   invisible(x)
 }
 
-.check_atomic_numeric <- function(x, x_name, length, nas)
-  check_atomic_numeric(x, length = length, nas = nas, x_name = x_name)
+.check_natomic <- function(x, x_name, length, nas)
+  check_natomic(x, length = length, nas = nas, x_name = x_name)
 
 #' Check nlist
 #' 
 #' Checks if an object is a numeric list.
 #'
 #' @inheritParams checkr::check_length
-#' @inheritParams check_atomic_numeric
+#' @inheritParams check_natomic
 #' @param length A flag indicating whether x and the elements of x should have elements 
 #' (versus no elements) or a missing value indicating no requirements.
 #' @param class A flag indicating whether x should inherit from nlist
@@ -73,7 +73,7 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
   
   if(!length(x)) return(invisible(x))
   
-  mapply(.check_atomic_numeric, x, p("element ", names(x), " of ", x_name),
+  mapply(.check_natomic, x, p("element ", names(x), " of ", x_name),
          MoreArgs = list(length = length, nas = nas))
   
   invisible(x)
@@ -87,7 +87,7 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
 #' Checks if an object is a numeric list.
 #'
 #' @inheritParams checkr::check_length
-#' @inheritParams check_atomic_numeric
+#' @inheritParams check_natomic
 #' @param length A flag indicating whether x and the elements of x etc should have elements 
 #' (versus no elements) or a missing value indicating no requirements.
 #' @param class A flag indicating whether x should inherit from nlists and the elements from nlist

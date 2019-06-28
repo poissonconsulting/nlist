@@ -17,19 +17,38 @@ coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badg
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
-nlist is an R package to create and manipulate numeric list objects. A
-numeric list object is a list of uniquely named numeric atomic objects,
-ie, integer or double vectors, matrices and arrays. A numeric lists is
-the data input for analytic engines such as JAGS, STAN and TMB.
+nlist is an R package to create and manipulate numeric list (nlist)
+objects. An nlist is an S3 class list of uniquely named numeric atomic
+(natomic) objects. An natomic object is an integer or double vector,
+matrix or array.
+
+Numeric list objects are of interest because they are the raw data
+inputs for analytic engines such as JAGS, STAN and TMB.
 
 ## Demonstration
+
+### `natomic`
+
+An natomic object is an integer or double vector, matrix or array.
+
+``` r
+library(nlist)
+is.natomic(TRUE)
+#> [1] FALSE
+is.natomic(1L)
+#> [1] TRUE
+is.natomic(matrix(1:3))
+#> [1] TRUE
+```
+
+### `nlist`
+
+It is straightforward to create an new nlist object.
 
 ``` r
 library(nlist)
 
-nlist <- nlist(x = 1, y = matrix(1:9, 3))
-
-print(nlist)
+nlist(x = 1, y = matrix(1:9, 3))
 #> $x
 #> [1] 1
 #> 
@@ -41,28 +60,83 @@ print(nlist)
 #> 
 #> attr(,"class")
 #> [1] "nlist"
-dims(nlist)
-#> $x
-#> [1] 1
-#> 
-#> $y
-#> [1] 3 3
-aggregate(nlist)
-#> $x
-#> [1] 1
-#> 
-#> $y
-#> [1] 5
+```
 
-data <- data.frame(lgl = c(TRUE, NA),
-                    int = 1:2, 
-                    dbl = c(2.5,1.5),
-                    dte = as.Date("2001-01-02", "2001-01-01"),
-                    fac = factor("b", "a"))
-numericise(data)
-#>   lgl int dbl dte fac
-#> 1   1   1 2.5  NA  NA
-#> 2  NA   2 1.5  NA  NA
+Or to coerce an existing object to an nlist.
+
+``` r
+as.nlist(data.frame(lgl = c(TRUE, NA),
+                    dte = as.Date(c("2001-01-02", "2001-01-01")),
+                    fac = factor(c("b", "a"))))
+#> $lgl
+#> [1]  1 NA
+#> 
+#> $dte
+#> [1] 11324 11323
+#> 
+#> $fac
+#> [1] 2 1
+#> 
+#> attr(,"class")
+#> [1] "nlist"
+```
+
+### `nlists`
+
+An nlists object is a S3 class list of nlist objects with the same
+names, dimensionalities and typeofs. nlists objects are useful for
+storing individual realizations of a simulated data set.
+
+``` r
+nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)), 
+                 nlist(x = -2, y = matrix(2:10, 3)))
+
+print(nlists)
+#> [[1]]
+#> $x
+#> [1] 1
+#> 
+#> $y
+#>      [,1] [,2] [,3]
+#> [1,]    1    4    7
+#> [2,]    2    5    8
+#> [3,]    3    6    9
+#> 
+#> attr(,"class")
+#> [1] "nlist"
+#> 
+#> [[2]]
+#> $x
+#> [1] -2
+#> 
+#> $y
+#>      [,1] [,2] [,3]
+#> [1,]    2    5    8
+#> [2,]    3    6    9
+#> [3,]    4    7   10
+#> 
+#> attr(,"class")
+#> [1] "nlist"
+#> 
+#> attr(,"class")
+#> [1] "nlists"
+```
+
+Aggregating an nlists object gives an nlist object.
+
+``` r
+aggregate(nlists)
+#> $x
+#> [1] -0.5
+#> 
+#> $y
+#>      [,1] [,2] [,3]
+#> [1,]  1.5  4.5  7.5
+#> [2,]  2.5  5.5  8.5
+#> [3,]  3.5  6.5  9.5
+#> 
+#> attr(,"class")
+#> [1] "nlist"
 ```
 
 ## Installation

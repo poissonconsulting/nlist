@@ -4,17 +4,16 @@
 \alias{ndims}
 \title{Number of Dimensions of an Object}
 \usage{
-ndims(x)
+ndims(x, ...)
 }
 \arguments{
-\item{x}{A R object.}
+\item{x}{An R object.}
 
 \item{...}{Unused}
 }
 \value{
-A vector or list of the dimensions.
+A vector or list of the number of dimensions.
 }
 \description{
-Retrieves the number of dimensions of an object as defined by 
-\code{\link{dims}()}.
+Retrieves the number of dimensions of an object as defined by dims.
 }
