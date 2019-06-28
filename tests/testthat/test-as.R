@@ -6,6 +6,7 @@ test_that("as.nlist.list", {
 })
 
 test_that("as.nlist.nlist", {
+  expect_identical(as.nlist(nlist()), nlist())
   expect_identical(as.nlist(as.nlist(list(x = 1))), as.nlist(list(x = 1)))
 })
 
@@ -19,4 +20,6 @@ test_that("as.nlist.data.frame", {
     dte = 11324:11323, fac = 2:1), class = "nlist"))
 })
 
-
+test_that("as.nlists.nlists", {
+  expect_identical(as.nlists(nlists()), nlists())
+})
