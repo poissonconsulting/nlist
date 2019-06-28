@@ -58,8 +58,7 @@ nlist(x = 1, y = matrix(1:9, 3))
 #> [2,]    2    5    8
 #> [3,]    3    6    9
 #> 
-#> attr(,"class")
-#> [1] "nlist"
+#> an nlist object of length 2
 ```
 
 Or to coerce an existing object to an nlist.
@@ -77,8 +76,7 @@ as.nlist(data.frame(lgl = c(TRUE, NA),
 #> $fac
 #> [1] 2 1
 #> 
-#> attr(,"class")
-#> [1] "nlist"
+#> an nlist object of length 3
 ```
 
 ### `nlists`
@@ -89,23 +87,26 @@ storing individual realizations of a simulated data set.
 
 ``` r
 nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)), 
+                 nlist(x = -2, y = matrix(2:10, 3)),
                  nlist(x = -2, y = matrix(2:10, 3)))
 
 print(nlists)
-#> [[1]]
 #> $x
-#> [1] 1
+#> [1] -1
 #> 
 #> $y
-#>      [,1] [,2] [,3]
-#> [1,]    1    4    7
-#> [2,]    2    5    8
-#> [3,]    3    6    9
+#>          [,1]     [,2]     [,3]
+#> [1,] 1.666667 4.666667 7.666667
+#> [2,] 2.666667 5.666667 8.666667
+#> [3,] 3.666667 6.666667 9.666667
 #> 
-#> attr(,"class")
-#> [1] "nlist"
-#> 
-#> [[2]]
+#> an nlists object of 3 nlist objects of length 2
+```
+
+Aggregating an nlists object gives an nlist object.
+
+``` r
+aggregate(nlists, FUN = median)
 #> $x
 #> [1] -2
 #> 
@@ -115,28 +116,7 @@ print(nlists)
 #> [2,]    3    6    9
 #> [3,]    4    7   10
 #> 
-#> attr(,"class")
-#> [1] "nlist"
-#> 
-#> attr(,"class")
-#> [1] "nlists"
-```
-
-Aggregating an nlists object gives an nlist object.
-
-``` r
-aggregate(nlists)
-#> $x
-#> [1] -0.5
-#> 
-#> $y
-#>      [,1] [,2] [,3]
-#> [1,]  1.5  4.5  7.5
-#> [2,]  2.5  5.5  8.5
-#> [3,]  3.5  6.5  9.5
-#> 
-#> attr(,"class")
-#> [1] "nlist"
+#> an nlist object of length 2
 ```
 
 ## Installation
@@ -154,8 +134,6 @@ To install the latest development version from the Poisson drat
 
 ## Contribution
 
-Please note that the ‘nlist’ project is released with a [Contributor
-Code of Conduct](CODE_OF_CONDUCT.md). Please note that this project is
-released with a [Contributor Code of
-Conduct](https://poissonconsulting.github.io/mcmcr/CONDUCT.html). By
-participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of
+Conduct](https://poissonconsulting.github.io/nlist/CODE_OF_CONDUCT.html).
+By participating in this project you agree to abide by its terms.

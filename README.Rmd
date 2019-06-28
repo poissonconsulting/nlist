@@ -63,6 +63,7 @@ nlists objects are useful for storing individual realizations of a simulated dat
 
 ```{r}
 nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)), 
+                 nlist(x = -2, y = matrix(2:10, 3)),
                  nlist(x = -2, y = matrix(2:10, 3)))
 
 print(nlists)
@@ -70,7 +71,7 @@ print(nlists)
 
 Aggregating an nlists object gives an nlist object.
 ```{r}
-aggregate(nlists)
+aggregate(nlists, FUN = median)
 ```
 
 ## Installation
@@ -89,7 +90,5 @@ install.packages("nlist")
 
 ## Contribution
 
-Please note that the 'nlist' project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-Please note that this project is released with a [Contributor Code of Conduct](https://poissonconsulting.github.io/mcmcr/CONDUCT.html).
+Please note that this project is released with a [Contributor Code of Conduct](https://poissonconsulting.github.io/nlist/CODE_OF_CONDUCT.html).
 By participating in this project you agree to abide by its terms.
