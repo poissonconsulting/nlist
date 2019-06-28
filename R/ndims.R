@@ -16,6 +16,9 @@ ndims.default <- function(x, ...) {
 }
 
 #' @export
+ndims.matrix <- function(x, ...) 2L
+
+#' @export
 ndims.data.frame <- function(x, ...) 2L
 
 #' @export
@@ -28,6 +31,5 @@ ndims.nlist <- function(x, ...) {
 #' @export
 ndims.nlists <- function(x, ...) {
   check_nlists(x)
-  if(!length(x)) return(list())
   ndims(x[[1]])
 }

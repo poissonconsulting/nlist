@@ -32,13 +32,24 @@ test_that("numericise.Date",{
   expect_identical(numericise(x), 10L)
 })
 
-test_that("numericise.matrix",{
-  expect_identical(numericise(matrix(NA)), matrix(NA_integer_))
+test_that("numericise.POSIXct",{
+  expect_identical(numericise(as.POSIXct("1970-01-02", tz = "UTC")), 86400L)
+})
+
+test_that("numericise.hms",{
+  x <- structure(10.9, class = c("hms", "difftime"), units = "secs")
+  expect_identical(numericise(x), 10L)
 })
 
 test_that("numericise.matrix",{
+  expect_identical(numericise(matrix(NA)), matrix(NA_integer_))
   expect_identical(numericise(matrix(NA, c(2,3,4))), 
                    matrix(NA_integer_, c(2,3,4)))
+})
+
+test_that("numericise.array",{
+  expect_identical(numericise(array(1:12, c(1,3,4))), array(1:12, c(1,3,4)))
+  expect_identical(numericise(array(TRUE, c(1,1,1))), array(1L, c(1,1,1)))
 })
 
 test_that("numericise.list",{

@@ -33,6 +33,5 @@ dims.nlist <- function(x, ...) {
 #' @export
 dims.nlists <- function(x, ...) {
   check_nlists(x)
-  if(!length(x)) return(list())
   dims(x[[1]])
 }

@@ -35,13 +35,24 @@ test_that("check_nlist missing values", {
   expect_identical(check_nlist(nlist()), nlist())
   expect_error(check_nlist(nlist(), length = TRUE), 
                "x must have at least 1 element")
-  expect_error(check_nlist(nlist(), class = FALSE, x_name = "t"), 
+})
+
+test_that("check_nlist class", {
+  expect_error(check_nlist(list(x = 1), class = TRUE, x_name = "t"), 
                "t must inherit from class nlist")
+  expect_error(check_nlist(nlist(), class = FALSE, x_name = "t"), 
+               "t must not inherit from class nlist")
 })
 
 test_that("check_nlists", {
   expect_identical(check_nlists(nlists()), nlists())
   expect_identical(check_nlists(nlists(nlist(x = 1), nlist(x = 2)), x_name = "y"), 
                    nlists(nlist(x = 1), nlist(x = 2)))
-  
+})
+
+test_that("check_nlists class", {
+  expect_error(check_nlists(list(list(x = 1)), class = TRUE, x_name = "t"), 
+               "t must inherit from class nlist")
+  expect_error(check_nlists(nlists(), class = FALSE, x_name = "t"), 
+               "t must not inherit from class nlists")
 })
