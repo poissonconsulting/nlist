@@ -26,6 +26,6 @@ test_that("dims.data.frame", {
 })
 
 test_that("dims.nlist", {
-  expect_identical(dims(new_nlist()), list())
+  expect_identical(dims(nlist()), list())
 })
 

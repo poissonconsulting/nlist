@@ -57,7 +57,7 @@ check_atomic_numeric <- function(x, length = NA, nas = NA,
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
 #' @examples 
-#' check_nlist(new_nlist())
+#' check_nlist(nlist())
 check_nlist <- function(x, length = NA, nas = NA, class = TRUE, 
                         x_name = substitute(x), error = TRUE) {
   check_list(x)
@@ -93,8 +93,6 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
 #'
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
-#' @examples 
-#' check_nlist(new_nlist())
 check_nlists <- function(x, length = NA, nas = NA, class = TRUE, 
                          x_name = substitute(x), error = TRUE) {
   check_list(x)

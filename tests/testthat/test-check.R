@@ -32,9 +32,9 @@ test_that("check_atomic_numeric missing values", {
 })
 
 test_that("check_nlist missing values", {
-  expect_identical(check_nlist(new_nlist()), new_nlist())
-  expect_error(check_nlist(new_nlist(), length = TRUE), 
+  expect_identical(check_nlist(nlist()), nlist())
+  expect_error(check_nlist(nlist(), length = TRUE), 
                "x must have at least 1 element")
-  expect_error(check_nlist(new_nlist(), class = FALSE), 
-               "new_nlist must inherit from class nlist")
+  expect_error(check_nlist(nlist(), class = FALSE), 
+               "nlist must inherit from class nlist")
 })

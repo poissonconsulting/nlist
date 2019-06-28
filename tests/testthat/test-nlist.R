@@ -1,6 +1,6 @@
-context("new")
+context("nlist")
 
-test_that("new_nlist",{
-  expect_identical(new_nlist(), 
+test_that("nlist",{
+  expect_identical(nlist(), 
                    structure(list(), .Names = character(0), class = "nlist"))
 })
