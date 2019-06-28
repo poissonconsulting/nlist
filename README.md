@@ -27,20 +27,18 @@ the data input for analytic engines such as JAGS, STAN and TMB.
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/nlist)
 
-    if(!"remotes" %in% installed.packages()[,1]) 
-      install.packages("remotes")
     remotes::install_github("poissonconsulting/nlist")
 
 To install the latest development version from the Poisson drat
 [repository](https://github.com/poissonconsulting/drat)
 
-    if(!"drat" %in% installed.packages()[,1]) 
-      install.packages("drat")
     drat::addRepo("poissonconsulting")
     install.packages("nlist")
 
 ## Contribution
 
 Please note that the ‘nlist’ project is released with a [Contributor
-Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
-you agree to abide by its terms.
+Code of Conduct](CODE_OF_CONDUCT.md). Please note that this project is
+released with a [Contributor Code of
+Conduct](https://poissonconsulting.github.io/mcmcr/CONDUCT.html). By
+participating in this project you agree to abide by its terms.

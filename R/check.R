@@ -1,3 +1,10 @@
+check_identical <- function(x, x_name) {
+  if(length(x) < 2) return(x)
+  identical <- identical(x, identical, TRUE, y = x[1])
+  if(!all(identical)) err("the ", x_name, " must be identical")
+  x
+}
+
 #' Check Atomic Numeric
 #'
 #' @inheritParams checkr::check_length
@@ -33,6 +40,9 @@ check_atomic_numeric <- function(x, length = NA, nas = NA,
   invisible(x)
 }
 
+.check_atomic_numeric <- function(x, x_name, length, nas)
+  check_atomic_numeric(x, length = length, nas = nas, x_name = x_name)
+
 #' Check nlist
 #' 
 #' Checks if an object is a numeric list.
@@ -59,8 +69,49 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
   if(isTRUE(class) && !is.nlist(x)) 
     err(x_name, " must not inherit from class nlist")
   
-  if(length(x))
-    mapply(check_atomic_numeric, x, p("element", names(x), "of", x_name))
+  if(!length(x)) return(invisible(x))
   
+  mapply(.check_atomic_numeric, x, p("element ", names(x), " of ", x_name),
+         MoreArgs = list(length = length, nas = nas))
+  
+  invisible(x)
+}
+
+.check_nlist <- function(x, x_name, length, nas, class)
+  check_nlist(x, length = length, nas = nas, class = class, x_name = x_name)
+
+#' Check nlist
+#' 
+#' Checks if an object is a numeric list.
+#'
+#' @inheritParams checkr::check_length
+#' @inheritParams check_atomic_numeric
+#' @param length A flag indicating whether x and the elements of x etc should have elements 
+#' (versus no elements) or a missing value indicating no requirements.
+#' @param class A flag indicating whether x should inherit from nlists and the elements from nlist
+#' (versus not inherit) or a missing value indicating no requirements.
+#'
+#' @return An invisible copy of x (if it doesn't throw an error).
+#' @export
+#' @examples 
+#' check_nlist(new_nlist())
+check_nlists <- function(x, length = NA, nas = NA, class = TRUE, 
+                         x_name = substitute(x), error = TRUE) {
+  check_list(x)
+  check_length(x, length = length)
+  
+  if(isFALSE(class) && is.nlist(x)) 
+    err(x_name, " must inherit from class nlists")
+  if(isTRUE(class) && !is.nlist(x)) 
+    err(x_name, " must not inherit from class nlists")
+  
+  if(!length(x)) return(invisible(x))
+  
+  mapply(.check_nlist, x, p("element ", names(x), " of ", x_name),
+         MoreArgs = list(length = length, nas = nas, class = class))
+  
+  check_identical(lapply(names(x)), x_name = p0("names of ", x_name))
+  check_identical(lapply(dims(x)), x_name = p0("dims of ", x_name))
+
   invisible(x)
 }
