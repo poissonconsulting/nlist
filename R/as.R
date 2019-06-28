@@ -10,6 +10,18 @@ as.nlist <- function(x, ...) {
   UseMethod("as.nlist")
 }
 
+#' Coerce to nlists
+#'
+#' Coerce an R object to an nlists object.
+#'
+#' @param x An R object.
+#' @param ... Unused
+#' @return An nlist object.
+#' @export
+as.nlists <- function(x, ...) {
+  UseMethod("as.nlists")
+}
+
 #' @export
 as.nlist.list <- function(x, ...) {
   check_unused(...)
@@ -32,3 +44,17 @@ as.nlist.nlist <- function(x, ...) {
   x
 }
 
+#' @export
+as.nlists.lists <- function(x, ...) {
+  check_unused(...)
+  check_nlists(x)
+  x <- lapply(x, as.nlist)
+  class(x) <- "nlists"
+  x
+}
+
+#' @export
+as.nlists.nlists <- function(x, ...) {
+  check_unused(...)
+  x
+}

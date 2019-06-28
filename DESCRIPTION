@@ -11,7 +11,8 @@ License: MIT + file LICENSE
 Depends: R (>= 3.5)
 Imports:
     err,
-    checkr
+    checkr,
+    stats
 Suggests: 
     covr,
     testthat
