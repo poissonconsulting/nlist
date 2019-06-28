@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 # nlist
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.com/lifecycle/#experimental)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build status](https://travis-ci.com/poissonconsulting/nlist.svg?branch=master)](https://travis-ci.com/poissonconsulting/nlist)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/nlist?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/nlist)
 [![Codecov test coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
@@ -89,6 +89,11 @@ install.packages("nlist")
 ```
 
 ## Contribution
+
+Please report any [issues](https://github.com/poissonconsulting/nlist/issues).
+
+[Pull requests](https://github.com/poissonconsulting/nlist/pulls) are always welcome.
+
 
 Please note that this project is released with a [Contributor Code of Conduct](https://poissonconsulting.github.io/nlist/CODE_OF_CONDUCT.html).
 By participating in this project you agree to abide by its terms.

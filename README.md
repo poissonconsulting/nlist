@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.com/lifecycle/#experimental)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
 status](https://travis-ci.com/poissonconsulting/nlist.svg?branch=master)](https://travis-ci.com/poissonconsulting/nlist)
 [![AppVeyor build
@@ -58,7 +58,7 @@ nlist(x = 1, y = matrix(1:9, 3))
 #> [2,]    2    5    8
 #> [3,]    3    6    9
 #> 
-#> an nlist object of length 2
+#> an nlist object with 2 natomic elements
 ```
 
 Or to coerce an existing object to an nlist.
@@ -76,7 +76,7 @@ as.nlist(data.frame(lgl = c(TRUE, NA),
 #> $fac
 #> [1] 2 1
 #> 
-#> an nlist object of length 3
+#> an nlist object with 3 natomic elements
 ```
 
 ### `nlists`
@@ -100,7 +100,7 @@ print(nlists)
 #> [2,] 2.666667 5.666667 8.666667
 #> [3,] 3.666667 6.666667 9.666667
 #> 
-#> an nlists object of 3 nlist objects of length 2
+#> an nlists object of 3 nlist objects each with 2 natomic elements
 ```
 
 Aggregating an nlists object gives an nlist object.
@@ -116,7 +116,7 @@ aggregate(nlists, FUN = median)
 #> [2,]    3    6    9
 #> [3,]    4    7   10
 #> 
-#> an nlist object of length 2
+#> an nlist object with 2 natomic elements
 ```
 
 ## Installation
@@ -133,6 +133,12 @@ To install the latest development version from the Poisson drat
     install.packages("nlist")
 
 ## Contribution
+
+Please report any
+[issues](https://github.com/poissonconsulting/nlist/issues).
+
+[Pull requests](https://github.com/poissonconsulting/nlist/pulls) are
+always welcome.
 
 Please note that this project is released with a [Contributor Code of
 Conduct](https://poissonconsulting.github.io/nlist/CODE_OF_CONDUCT.html).
