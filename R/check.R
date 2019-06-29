@@ -20,7 +20,7 @@ check_identical <- function(x, x_name) {
 #' @examples
 #' check_natomic(1)
 check_natomic <- function(x, length = NA, nas = NA, 
-                          x_name = substitute(x), error = TRUE) {
+                          x_name = substitute(x)) {
   check_scalar(length, c(TRUE, NA))
   check_scalar(nas, c(TRUE, NA))
   
@@ -31,7 +31,7 @@ check_natomic <- function(x, length = NA, nas = NA,
   if(!is.numeric(x)) 
     err(x_name, " must be a numeric (integer or double) object")
   
-  check_length(x, length = length, x_name = x_name, error = error)
+  check_length(x, length = length, x_name = x_name)
   if(!length(x)) return(invisible(x))
   
   if(isFALSE(nas) && any(is.na(x))) 
@@ -60,7 +60,8 @@ check_natomic <- function(x, length = NA, nas = NA,
 #' @examples 
 #' check_nlist(nlist())
 check_nlist <- function(x, length = NA, nas = NA, class = TRUE, 
-                        x_name = substitute(x), error = TRUE) {
+                        x_name = substitute(x)) {
+  x_name <- chk_deparse(x_name)
   check_scalar(class, c(TRUE, NA))
 
   if(isTRUE(class) && !is.nlist(x)) 
@@ -68,10 +69,9 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
   if(isFALSE(class) && is.nlist(x)) 
     err(x_name, " must not inherit from class nlist")
   
-  check_list(x)
-  check_length(x, length = length)
-  check_named(x, unique = TRUE, error = error)
-  x_name <- chk_deparse(x_name)
+  check_list(x, x_name = x_name)
+  check_length(x, length = length, x_name = x_name)
+  check_named(x, unique = TRUE, x_name = x_name)
   
   if(!length(x)) return(invisible(x))
   
@@ -98,7 +98,8 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
 check_nlists <- function(x, length = NA, nas = NA, class = TRUE, 
-                         x_name = substitute(x), error = TRUE) {
+                         x_name = substitute(x)) {
+  x_name <- chk_deparse(x_name)
   check_scalar(class, c(TRUE, NA))
   
   if(isTRUE(class) && !is.nlists(x)) 
@@ -106,9 +107,8 @@ check_nlists <- function(x, length = NA, nas = NA, class = TRUE,
   if(isFALSE(class) && is.nlists(x)) 
     err(x_name, " must not inherit from class nlists")
   
-  check_list(x)
-  check_length(x, length = TRUE)
-  x_name <- chk_deparse(x_name)
+  check_list(x, x_name = x_name)
+  check_length(x, length = TRUE, x_name = x_name)
   
   mapply(.check_nlist, x, p("element ", 1:length(x), " of ", x_name),
          MoreArgs = list(length = length, nas = nas, class = class))

@@ -5,7 +5,7 @@
 \title{Check nlist}
 \usage{
 check_nlists(x, length = NA, nas = NA, class = TRUE,
-  x_name = substitute(x), error = TRUE)
+  x_name = substitute(x))
 }
 \arguments{
 \item{x}{The object to check.}
@@ -20,8 +20,6 @@ check_nlists(x, length = NA, nas = NA, class = TRUE,
 (versus not inherit) or a missing value indicating no requirements.}
 
 \item{x_name}{A string of the name of the object.}
-
-\item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).

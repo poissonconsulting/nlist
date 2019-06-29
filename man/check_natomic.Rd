@@ -4,8 +4,7 @@
 \alias{check_natomic}
 \title{Check Atomic Numeric}
 \usage{
-check_natomic(x, length = NA, nas = NA, x_name = substitute(x),
-  error = TRUE)
+check_natomic(x, length = NA, nas = NA, x_name = substitute(x))
 }
 \arguments{
 \item{x}{The object to check.}
@@ -17,8 +16,6 @@ check_natomic(x, length = NA, nas = NA, x_name = substitute(x),
 (versus no missing values) or a missing value indicating no requirements.}
 
 \item{x_name}{A string of the name of the object.}
-
-\item{error}{A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.}
 }
 \value{
 An invisible copy of x (if it doesn't throw an error).

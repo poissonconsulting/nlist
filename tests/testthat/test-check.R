@@ -33,8 +33,8 @@ test_that("check_natomic missing values", {
 
 test_that("check_nlist missing values", {
   expect_identical(check_nlist(nlist()), nlist())
-  expect_error(check_nlist(nlist(), length = TRUE), 
-               "x must have at least 1 element")
+  expect_error(check_nlist(nlist(), length = TRUE, x_name = "y"), 
+               "y must have at least 1 element")
 })
 
 test_that("check_nlist class", {
