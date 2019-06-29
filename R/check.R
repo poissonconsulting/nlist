@@ -75,7 +75,7 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
   
   if(!length(x)) return(invisible(x))
   
-  mapply(.check_natomic, x, p("element ", names(x), " of ", x_name),
+  mapply(.check_natomic, x, p("element", names(x), "of", x_name),
          MoreArgs = list(length = length, nas = nas))
   
   invisible(x)
@@ -110,12 +110,12 @@ check_nlists <- function(x, length = NA, nas = NA, class = TRUE,
   check_list(x, x_name = x_name)
   check_length(x, length = TRUE, x_name = x_name)
   
-  mapply(.check_nlist, x, p("element ", 1:length(x), " of ", x_name),
+  mapply(.check_nlist, x, p("element", 1:length(x), "of", x_name),
          MoreArgs = list(length = length, nas = nas, class = class))
 
-  check_identical(lapply(x, names), x_name = p0("names of ", x_name))
-  check_identical(lapply(x, dims), x_name = p0("dims of ", x_name))
-  check_identical(lapply(x, typeof), x_name = p0("type of ", x_name))
+  check_identical(lapply(x, names), x_name = p("names of", x_name))
+  check_identical(lapply(x, dims), x_name = p("dims of", x_name))
+  check_identical(lapply(x, typeof), x_name = p("type of", x_name))
   
   invisible(x)
 }
