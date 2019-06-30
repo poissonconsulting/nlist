@@ -14,12 +14,6 @@
 
 #' @export
 `[[<-.nlists` <- function(x, i, ..., value) {
-  check_natomic_vector(value, x_name = "value")
-  NextMethod()
-}
-
-#' @export
-`[[<-.nlists` <- function(x, i, ..., value) {
   check_nlist(value, x_name = "value")
   check_nlists(NextMethod(), x_name = "the nlist elements of x and values")
 }
