@@ -115,7 +115,7 @@ check_nlists <- function(x, length = NA, nas = NA, class = TRUE,
 
   check_identical(lapply(x, names), x_name = p("names of", x_name))
   check_identical(lapply(x, dims), x_name = p("dims of", x_name))
-  check_identical(lapply(x, typeof), x_name = p("type of", x_name))
+  check_identical(lapply(x, typesof), x_name = p("types of", x_name))
   
   invisible(x)
 }
