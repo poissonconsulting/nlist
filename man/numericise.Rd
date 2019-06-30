@@ -16,7 +16,7 @@ numericise(x, ...)
 The modified object.
 }
 \description{
-If possible recursively coerces an non-numeric R object to an integer while
+If possible recursively coerces an non-numeric R object to an integer or double while
 preserving its dimensions.
 }
 \details{

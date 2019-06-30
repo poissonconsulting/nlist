@@ -17,3 +17,6 @@ An nlist object.
 \description{
 Coerce an R object to an nlists object.
 }
+\examples{
+as.nlists(list(nlist(x = c(1,5)), nlist(x = c(2,3)), nlist(x = c(3,2))))
+}

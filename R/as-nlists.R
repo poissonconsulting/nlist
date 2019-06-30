@@ -6,6 +6,8 @@
 #' @param ... Unused
 #' @return An nlist object.
 #' @export
+#' @examples
+#' as.nlists(list(nlist(x = c(1,5)), nlist(x = c(2,3)), nlist(x = c(3,2))))
 as.nlists <- function(x, ...) {
   UseMethod("as.nlists")
 }
@@ -19,6 +21,4 @@ as.nlists.list <- function(x, ...) {
 }
 
 #' @export
-as.nlists.nlists <- function(x, ...) {
-  x
-}
+as.nlists.nlists <- function(x, ...) x

@@ -19,3 +19,6 @@ An nlist
 \description{
 Aggregates an nlists into an nlist
 }
+\examples{
+aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
+}

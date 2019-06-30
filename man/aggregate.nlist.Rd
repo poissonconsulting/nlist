@@ -19,3 +19,6 @@ An named list of numeric scalars
 \description{
 Aggregates an nlist into a named list of numeric scalars.
 }
+\examples{
+aggregate(nlist(x = 1:9))
+}

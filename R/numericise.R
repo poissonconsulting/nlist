@@ -1,6 +1,6 @@
 #' Numericise (or Numericize)
 #'
-#' If possible recursively coerces an non-numeric R object to an integer while
+#' If possible recursively coerces an non-numeric R object to an integer or double while
 #' preserving its dimensions.
 #' 
 #' Date, POSIXct and hms objects are floored first.
@@ -12,39 +12,25 @@
 #' @export
 #' @examples 
 #' numericize(TRUE)
-numericise <- function(x, ...) {
-  UseMethod("numericise")
-}
+numericise <- function(x, ...) UseMethod("numericise")
 
 #' @export
-numericize <- function(x, ...) {
-  UseMethod("numericise")
-}
+numericize <- function(x, ...) UseMethod("numericise")
 
 #' @export
-numericise.logical <- function(x, ...) {
-  as.integer(x)
-}
+numericise.logical <- function(x, ...) as.integer(x)
 
 #' @export
-numericise.integer <- function(x, ...) {
-  x
-}
+numericise.integer <- function(x, ...) x
 
 #' @export
-numericise.double <- function(x, ...) {
-  x
-}
+numericise.double <- function(x, ...) x
 
 #' @export
-numericise.character <- function(x, ...) {
-  x
-}
+numericise.character <- function(x, ...) x
 
 #' @export
-numericise.factor <- function(x, ...) {
-  as.integer(x)
-}
+numericise.factor <- function(x, ...) as.integer(x)
 
 #' @export
 numericise.Date <- function(x, ...) {
@@ -82,9 +68,7 @@ numericise.array <- function(x, ...) {
 }
 
 #' @export
-numericise.list <- function(x, ...) {
-  lapply(x, numericise)
-}
+numericise.list <- function(x, ...) lapply(x, numericise)
 
 #' @export
 numericise.data.frame <- function(x, ...) {

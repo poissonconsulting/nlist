@@ -17,3 +17,6 @@ An nlist object.
 \description{
 Coerce an R object to an nlist object.
 }
+\examples{
+as.nlist(list(x = 1:4))
+}

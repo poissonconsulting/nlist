@@ -1,19 +1,3 @@
-aggregate_atomic_numeric <- function(x, FUN, ...) {
-  x <- FUN(x, ...)
-  if(!identical(length(x), 1L))
-    err("function FUN must return a scalar")
-  x
-}
-
-aggregate_atomic_numerics <- function(x, FUN, ...) {
-  dims <- dims(x[[1]])
-  ndims <- length(dims)
-  x <- abind(x, along = ndims + 1L)
-  x <- apply(x, MARGIN = 1:ndims, FUN = FUN, ...)
-  if(!identical(dims(x), dims)) err("function FUN must return a scalar")
-  x
-}
-
 #' Aggregate nlist
 #' 
 #' Aggregates an nlist into a named list of numeric scalars.
@@ -24,6 +8,8 @@ aggregate_atomic_numerics <- function(x, FUN, ...) {
 #'
 #' @return An named list of numeric scalars
 #' @export
+#' @examples
+#' aggregate(nlist(x = 1:9))
 aggregate.nlist <- function(x, FUN = mean, ...) {
   check_nlist(x)
   check_function(FUN)
@@ -39,6 +25,8 @@ aggregate.nlist <- function(x, FUN = mean, ...) {
 #'
 #' @return An nlist
 #' @export
+#' @examples
+#' aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
 aggregate.nlists <- function(x, FUN = mean, ...) {
   check_nlists(x)
   check_function(FUN)
