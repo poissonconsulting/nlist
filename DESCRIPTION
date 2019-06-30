@@ -11,14 +11,18 @@ Description: Create and manipulate numeric list (nlist) objects.
 License: MIT + file LICENSE
 Depends: R (>= 3.5)
 Imports:
+    stats,
     err,
     checkr,
-    stats,
+    term,
     abind,
     purrr
 Suggests: 
     covr,
     testthat
+Remotes: poissonconsulting/term
+URL: https://github.com/poissonconsulting/nlist
+BugReports: https://github.com/poissonconsulting/nlist/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
