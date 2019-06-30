@@ -13,9 +13,10 @@ print.nlist <- function(x, ...) {
 print.nlists <- function(x, ...) {
   if(length(x[[1]]))
     print(unclass(aggregate(x)))
-  cat(cn(length(x), p("an nlists object of %n nlist object%s", 
-            cn(length(x[[1]]), 
-               "each with %n natomic element%s",
-               none = "with 0 natomic elements"))))
+  str <- cn(length(x), 
+            one = "an nlists object of an nlist object with",
+            some = "an nlists object of %n nlist objects each with")
+  str <- p0(str, cn(length(x[[1]]), " %n natomic element%s"), collapse = "")
+  cat(str)
   invisible(x)
 }
