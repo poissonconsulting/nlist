@@ -14,6 +14,7 @@ as.nlist <- function(x, ...) {
 
 #' @export
 as.nlist.list <- function(x, ...) {
+  if(!length(x)) return(nlist())
   x <- numericise(x)
   check_nlist(x, class = NA)
   class(x) <- "nlist"

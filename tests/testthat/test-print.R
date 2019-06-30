@@ -12,7 +12,11 @@ test_that("print.nlist",{
 })
 
 test_that("print.nlists",{
+  
   expect_identical(capture.output(print(nlists())),
+                   "an nlists object with 0 nlist objects")
+
+  expect_identical(capture.output(print(nlists(nlist()))),
                    "an nlists object of an nlist object with 0 natomic elements")
   
   nlist <- nlist(x = 1, y = matrix(1:4,2))

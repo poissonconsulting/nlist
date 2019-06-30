@@ -108,8 +108,10 @@ check_nlists <- function(x, length = NA, nas = NA, class = TRUE,
     err(x_name, " must not inherit from class nlists")
   
   check_list(x, x_name = x_name)
-  check_length(x, length = TRUE, x_name = x_name)
+  check_length(x, length = NA, x_name = x_name)
   
+  if(!length(x)) return(invisible(x))
+
   mapply(.check_nlist, x, p("element", 1:length(x), "of", x_name),
          MoreArgs = list(length = length, nas = nas, class = class))
 

@@ -17,6 +17,8 @@ as.data.frame.nlist <- function(x, ...) {
 
 #' @export
 as.matrix.nlists <- function(x, ...) {
+  if(!length(x)) 
+    return(matrix(1, dimnames = list("parameter", "1"))[-1,-1,drop = FALSE])
   x <- lapply(x, FUN = as.matrix)
   term <- rownames(x[[1]])
   x <- lapply(x, as.vector)

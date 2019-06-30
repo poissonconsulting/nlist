@@ -28,7 +28,8 @@ test_that("as.data.frame.nlist", {
 
 test_that("as.matrix.nlists", {
   expect_identical(as.matrix(nlists()),
-                   structure(numeric(0), .Dim = 0:1, .Dimnames = list(NULL, "1")))
+                   structure(numeric(0), .Dim = c(0L, 0L), .Dimnames = list(NULL, 
+    NULL)))
   expect_identical(as.matrix(nlists(nlist())),
                    structure(numeric(0), .Dim = 0:1, .Dimnames = list(NULL, "1")))
   expect_identical(as.matrix(nlists(nlist(), nlist())),

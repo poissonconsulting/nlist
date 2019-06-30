@@ -11,6 +11,10 @@ print.nlist <- function(x, ...) {
 
 #' @export
 print.nlists <- function(x, ...) {
+  if(!length(x)) {
+    cat("an nlists object with 0 nlist objects")
+    return(invisible(x))
+  }
   if(length(x[[1]]))
     print(unclass(aggregate(x)))
   str <- cn(length(x), 

@@ -15,6 +15,8 @@ test_that("aggregate.nlist", {
 test_that("aggregate.nlists", {
   expect_identical(aggregate(nlists()), 
                    structure(list(), .Names = character(0), class = "nlist"))
+  expect_identical(aggregate(nlists(nlist())), 
+                   structure(list(), .Names = character(0), class = "nlist"))
   expect_identical(aggregate(nlists(nlist(x = 1), nlist(x = 2))), nlist(x = 1.5))
   expect_identical(aggregate(nlists(nlist(x = matrix(1:9, 3)), 
                                     nlist(x = matrix(2:10, 3)))), 
