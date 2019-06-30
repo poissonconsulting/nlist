@@ -8,5 +8,6 @@ pars.nlist <- function(x, scalar_only = FALSE, terms = FALSE, ...) {
 #' @export
 pars.nlists <- function(x, scalar_only = FALSE, terms = FALSE, ...) {
   check_unused(...)
+  if(!length(x)) return(character(0))
   pars(x[[1]], scalar_only = scalar_only, terms = terms)
 }
