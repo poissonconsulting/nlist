@@ -48,7 +48,8 @@ It is straightforward to create an new nlist object.
 ``` r
 library(nlist)
 
-nlist(x = 1, y = matrix(1:9, 3))
+nlist <- nlist(x = 1, y = matrix(1:9, 3))
+nlist
 #> $x
 #> [1] 1
 #> 
@@ -61,12 +62,30 @@ nlist(x = 1, y = matrix(1:9, 3))
 #> an nlist object with 2 natomic elements
 ```
 
-Or to coerce an existing object to an nlist.
+Or to coerce an an nlist to a data frame.
 
 ``` r
-as.nlist(data.frame(lgl = c(TRUE, NA),
+as.data.frame(nlist)
+#>      term n1
+#> 1       x  1
+#> 2  y[1,1]  1
+#> 3  y[2,1]  1
+#> 4  y[3,1]  1
+#> 5  y[1,2]  1
+#> 6  y[2,2]  1
+#> 7  y[3,2]  1
+#> 8  y[1,3]  1
+#> 9  y[2,3]  1
+#> 10 y[3,3]  1
+```
+
+Or a data frame to an nlist.
+
+``` r
+nlist2 <- as.nlist(data.frame(lgl = c(TRUE, NA),
                     dte = as.Date(c("2001-01-02", "2001-01-01")),
                     fac = factor(c("b", "a"))))
+nlist2
 #> $lgl
 #> [1]  1 NA
 #> 
@@ -77,6 +96,14 @@ as.nlist(data.frame(lgl = c(TRUE, NA),
 #> [1] 2 1
 #> 
 #> an nlist object with 3 natomic elements
+as.data.frame(nlist2)
+#>     term n1
+#> 1 lgl[1]  1
+#> 2 lgl[2]  1
+#> 3 dte[1]  1
+#> 4 dte[2]  1
+#> 5 fac[1]  1
+#> 6 fac[2]  1
 ```
 
 ### `nlists`
@@ -101,6 +128,34 @@ print(nlists)
 #> [3,] 3.666667 6.666667 9.666667
 #> 
 #> an nlists object of 3 nlist objects each with 2 natomic elements
+```
+
+An nlists object can also be coerced to a data frame.
+
+``` r
+as.data.frame(nlists)
+#>    term1  term2  term3  term4  term5  term6  term7  term8  term9 term10 n1
+#> 1      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  1
+#> 2      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  1
+#> 3      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  2
+#> 4      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  3
+#> 5      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  4
+#> 6      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  5
+#> 7      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  6
+#> 8      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  7
+#> 9      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  8
+#> 10     x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  9
+#>    n2 n3
+#> 1  -2 -2
+#> 2   2  2
+#> 3   3  3
+#> 4   4  4
+#> 5   5  5
+#> 6   6  6
+#> 7   7  7
+#> 8   8  8
+#> 9   9  9
+#> 10 10 10
 ```
 
 Aggregating an nlists object gives an nlist object.

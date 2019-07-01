@@ -47,13 +47,21 @@ It is straightforward to create an new nlist object.
 ```{r}
 library(nlist)
 
-nlist(x = 1, y = matrix(1:9, 3))
+nlist <- nlist(x = 1, y = matrix(1:9, 3))
+nlist
 ```
-Or to coerce an existing object to an nlist.
+Or to coerce an an nlist to a data frame.
 ```{r}
-as.nlist(data.frame(lgl = c(TRUE, NA),
+as.data.frame(nlist)
+```
+
+Or a data frame to an nlist.
+```{r}
+nlist2 <- as.nlist(data.frame(lgl = c(TRUE, NA),
                     dte = as.Date(c("2001-01-02", "2001-01-01")),
                     fac = factor(c("b", "a"))))
+nlist2
+as.data.frame(nlist2)
 ```
 
 ### `nlists`
@@ -68,6 +76,12 @@ nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)),
 
 print(nlists)
 ```
+
+An nlists object can also be coerced to a data frame.
+```{r}
+as.data.frame(nlists)
+```
+
 
 Aggregating an nlists object gives an nlist object.
 ```{r}
