@@ -11,6 +11,9 @@ nsims(x, ...)
 
 \item{...}{Unused.}
 }
+\value{
+A count of the number of simulations.
+}
 \description{
 Gets the number of simulations.
 }

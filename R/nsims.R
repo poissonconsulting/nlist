@@ -4,6 +4,7 @@
 #'
 #' @param x The object
 #' @param ... Unused.
+#' @return A count of the number of simulations.
 #' @export
 #' @examples
 #' nsims(nlists(nlist(x = 1), nlist(x = 4)))
