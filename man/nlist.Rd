@@ -17,4 +17,6 @@ Creates a nlist object from one of more uniquely named atomic numeric arguments.
 }
 \examples{
 nlist()
+nlist(x = 1)
+nlist(y = 1:4, zz = matrix(1:9, 3))
 }

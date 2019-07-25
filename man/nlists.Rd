@@ -17,4 +17,7 @@ Creates a nlists object from one of more nlist objects.
 }
 \examples{
 nlists()
+nlists(nlist())
+nlists(nlist(x = 1))
+nlists(nlist(x = 1), nlist(x = -3))
 }

@@ -7,6 +7,8 @@
 #'
 #' @examples
 #' nlist()
+#' nlist(x = 1)
+#' nlist(y = 1:4, zz = matrix(1:9, 3))
 nlist <- function(...) {
   args <- list(...)
   if(length(args)) return(as.nlist(args))

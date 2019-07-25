@@ -7,6 +7,9 @@
 #'
 #' @examples
 #' nlists()
+#' nlists(nlist())
+#' nlists(nlist(x = 1))
+#' nlists(nlist(x = 1), nlist(x = -3))
 nlists <- function(...) {
   args <- list(...)
   if(length(args)) return(as.nlists(args))
