@@ -59,15 +59,25 @@ numericise.hms <- function(x, ...) {
 
 #' @export
 numericise.matrix <- function(x, ...) {
-  if(is.logical(x))
+  if(is.logical(x)) {
     mode(x) <- "integer"
+    return(x)
+  }
+  dims <- dims(x)
+  x <- numericize(as.vector(x))
+  dim(x) <- dims
   x
 }
 
 #' @export
 numericise.array <- function(x, ...) {
-  if(is.logical(x))
+  if(is.logical(x)) {
     mode(x) <- "integer"
+    return(x)
+  }
+  dims <- dims(x)
+  x <- numericize(as.vector(x))
+  dim(x) <- dims
   x
 }
 

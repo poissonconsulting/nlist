@@ -23,12 +23,16 @@ status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/
 <!-- badges: end -->
 
 nlist is an R package to create and manipulate numeric list (nlist)
-objects. An nlist is an S3 class list of uniquely named numeric atomic
-(natomic) objects. An natomic object is an integer or double vector,
-matrix or array.
+objects.
 
-Numeric list objects are of interest because they are the raw data
-inputs for analytic engines such as JAGS, STAN and TMB.
+An nlist is an S3 class list of uniquely named numeric atomic (natomic)
+objects. An natomic object is an integer or double vector, matrix or
+array. nlist objects are the raw data inputs for analytic engines such
+as JAGS, STAN and TMB.
+
+An nlists object is a S3 class list of nlist objects with the same
+names, dimensionalities and typeofs. nlists objects are useful for
+storing individual realizations of a simulated data set.
 
 ## Installation
 
@@ -50,8 +54,6 @@ remotes::install_github("poissonconsulting/nlist")
 ## Demonstration
 
 ### `natomic`
-
-An natomic object is an integer or double vector, matrix or array.
 
 ``` r
 library(nlist)
@@ -131,10 +133,6 @@ as.data.frame(nlist2)
 ```
 
 ### `nlists`
-
-An nlists object is a S3 class list of nlist objects with the same
-names, dimensionalities and typeofs. nlists objects are useful for
-storing individual realizations of a simulated data set.
 
 ``` r
 nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)), 
