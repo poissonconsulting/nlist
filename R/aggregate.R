@@ -10,6 +10,7 @@
 #' @export
 #' @examples
 #' aggregate(nlist(x = 1:9))
+#' aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), FUN = function(x) x[1])
 aggregate.nlist <- function(x, FUN = mean, ...) {
   check_nlist(x)
   check_function(FUN)

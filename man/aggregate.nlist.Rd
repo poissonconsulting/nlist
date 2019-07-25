@@ -21,4 +21,5 @@ Aggregates an nlist into a named list of numeric scalars.
 }
 \examples{
 aggregate(nlist(x = 1:9))
+aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), FUN = function(x) x[1])
 }
