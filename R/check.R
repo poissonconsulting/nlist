@@ -84,9 +84,9 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
 .check_nlist <- function(x, x_name, length, nas, class)
   check_nlist(x, length = length, nas = nas, class = class, x_name = x_name)
 
-#' Check nlist
+#' Check nlists
 #' 
-#' Checks if an object is a numeric list.
+#' Checks if an object is a numeric lists (list of nlist objects).
 #'
 #' @inheritParams checkr::check_length
 #' @inheritParams check_natomic
@@ -97,6 +97,9 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
 #'
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
+#' 
+#' @examples 
+#' check_nlists(nlists(nlist(x = 3)))
 check_nlists <- function(x, length = NA, nas = NA, class = TRUE, 
                          x_name = substitute(x)) {
   x_name <- chk_deparse(x_name)

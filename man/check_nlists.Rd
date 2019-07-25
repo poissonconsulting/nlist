@@ -2,7 +2,7 @@
 % Please edit documentation in R/check.R
 \name{check_nlists}
 \alias{check_nlists}
-\title{Check nlist}
+\title{Check nlists}
 \usage{
 check_nlists(x, length = NA, nas = NA, class = TRUE,
   x_name = substitute(x))
@@ -25,5 +25,8 @@ check_nlists(x, length = NA, nas = NA, class = TRUE,
 An invisible copy of x (if it doesn't throw an error).
 }
 \description{
-Checks if an object is a numeric list.
+Checks if an object is a numeric lists (list of nlist objects).
+}
+\examples{
+check_nlists(nlists(nlist(x = 3)))
 }
