@@ -25,14 +25,19 @@ is.natomic <- function(x) {
 #' @export
 #'
 #' @examples
+#' is.nlist(1)
 #' is.nlist(list(x = 1))
-#' is.nlists(1)
+#' is.nlist(nlist(x = 1))
 is.nlist <- function(x) {
   inherits(x, "nlist")
 }
 
 #' @describeIn is.nlist Is nlists
 #' @export
+#' 
+#' @examples
+#' is.nlists(nlist(x = 1))
+#' is.nlists(nlists(nlist(x = 2), nlist(x = 3.5)))
 is.nlists <- function(x) {
   inherits(x, "nlists")
 }

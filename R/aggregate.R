@@ -31,7 +31,7 @@ aggregate.nlists <- function(x, FUN = mean, ...) {
   check_nlists(x)
   check_function(FUN)
 
-  x <- purrr::transpose(x)
+  x <- transpose(x)
   x <- lapply(x, aggregate_atomic_numerics, FUN, ...)
   as.nlist(x)
 }
