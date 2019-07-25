@@ -91,14 +91,14 @@ as.data.frame(nlist)
 #>      term n1
 #> 1       x  1
 #> 2  y[1,1]  1
-#> 3  y[2,1]  1
-#> 4  y[3,1]  1
-#> 5  y[1,2]  1
-#> 6  y[2,2]  1
-#> 7  y[3,2]  1
-#> 8  y[1,3]  1
-#> 9  y[2,3]  1
-#> 10 y[3,3]  1
+#> 3  y[2,1]  2
+#> 4  y[3,1]  3
+#> 5  y[1,2]  4
+#> 6  y[2,2]  5
+#> 7  y[3,2]  6
+#> 8  y[1,3]  7
+#> 9  y[2,3]  8
+#> 10 y[3,3]  9
 
 data <- data.frame(lgl = c(TRUE, NA),
                     dte = as.Date(c("2001-01-02", "2001-01-01")),
@@ -121,13 +121,13 @@ nlist2
 #> 
 #> an nlist object with 3 natomic elements
 as.data.frame(nlist2)
-#>     term n1
-#> 1 lgl[1]  1
-#> 2 lgl[2]  1
-#> 3 dte[1]  1
-#> 4 dte[2]  1
-#> 5 fac[1]  1
-#> 6 fac[2]  1
+#>     term    n1
+#> 1 lgl[1]     1
+#> 2 lgl[2]    NA
+#> 3 dte[1] 11324
+#> 4 dte[2] 11323
+#> 5 fac[1]     2
+#> 6 fac[2]     1
 ```
 
 ### `nlists`
@@ -197,4 +197,4 @@ always welcome.
 
 Please note that this project is released with a [Contributor Code of
 Conduct](https://github.com/poissonconsulting/nlist/blob/master/CODE_OF_CONDUCT.md).
-By contributing, you agree to abide by its terms.
+By contributing, you agree to abide by its terms
