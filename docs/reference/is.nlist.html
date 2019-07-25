@@ -66,7 +66,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -81,10 +81,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/poissonconsulting/nlist">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -99,7 +107,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Is nlist</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/is.R'><code>R/is.R</code></a></small>
     <div class="hidden name"><code>is.nlist.Rd</code></div>
     </div>
 
@@ -134,7 +142,7 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>is.nlist</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is.nlists</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>is.nlist</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is.nlist</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is.nlist</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>is.nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='fu'>is.nlists</span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>2</span>), <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>3.5</span>)))</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -154,7 +162,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Joe Thorley.</p>
+  <p>Developed by Joe Thorley, Poisson Consulting.</p>
 </div>
 
 <div class="pkgdown">

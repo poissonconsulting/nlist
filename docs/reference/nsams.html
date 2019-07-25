@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Number of Dimensions of an Object — ndims • nlist</title>
+<title>Number of Sample Values — nsams • nlist</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
 
 
-<meta property="og:title" content="Number of Dimensions of an Object — ndims" />
+<meta property="og:title" content="Number of Sample Values — nsams" />
 
-<meta property="og:description" content="Retrieves the number of dimensions of an object as defined by dims." />
+<meta property="og:description" content="Number of Sample Values" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -66,7 +66,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -81,10 +81,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/poissonconsulting/nlist">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -98,37 +106,39 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Number of Dimensions of an Object</h1>
-    
-    <div class="hidden name"><code>ndims.Rd</code></div>
+    <h1>Number of Sample Values</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/nsams.R'><code>R/nsams.R</code></a></small>
+    <div class="hidden name"><code>nsams.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Retrieves the number of dimensions of an object as defined by dims.</p>
+    <p>Number of Sample Values</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ndims</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>nsams</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>An R object.</p></td>
+      <td><p>The R object.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Unused</p></td>
+      <td><p>Unused.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A vector or list of the number of dimensions.</p>
+    <p>A count of the total number of sample values.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>nsams</span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>9</span>)), <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>7</span>))))</div><div class='output co'>#&gt; [1] 4</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -136,7 +146,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
@@ -144,7 +156,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Joe Thorley.</p>
+  <p>Developed by Joe Thorley, Poisson Consulting.</p>
 </div>
 
 <div class="pkgdown">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check nlists — check_nlists • nlist</title>
+<title>Subset nlists — subset.nlists • nlist</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
 
 
-<meta property="og:title" content="Check nlists — check_nlists" />
+<meta property="og:title" content="Subset nlists — subset.nlists" />
 
-<meta property="og:description" content="Checks if an object is a numeric lists (list of nlist objects)." />
+<meta property="og:description" content="Subset nlists" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,55 +106,87 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check nlists</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/check.R'><code>R/check.R</code></a></small>
-    <div class="hidden name"><code>check_nlists.Rd</code></div>
+    <h1>Subset nlists</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/subset.R'><code>R/subset.R</code></a></small>
+    <div class="hidden name"><code>subset.nlists.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Checks if an object is a numeric lists (list of nlist objects).</p>
+    <p>Subset nlists</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_nlists</span>(<span class='no'>x</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>nas</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>x</span>))</pre>
+    <pre class="usage"><span class='co'># S3 method for nlists</span>
+<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>x</span>, <span class='kw'>subset</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>The object to check.</p></td>
+      <td><p>An nlists object to be subsetted.</p></td>
     </tr>
     <tr>
-      <th>length</th>
-      <td><p>A flag indicating the nlist elements should have elements 
-(versus no elements) or a missing value indicating no requirements.</p></td>
+      <th>subset</th>
+      <td><p>An integer vector of the nlist objects to include.</p></td>
     </tr>
     <tr>
-      <th>nas</th>
-      <td><p>A flag indicating whether x should only have missing values
-(versus no missing values) or a missing value indicating no requirements.</p></td>
+      <th>select</th>
+      <td><p>A character vector of the parameters to include in the subsetted object.</p></td>
     </tr>
     <tr>
-      <th>class</th>
-      <td><p>A flag indicating whether x should inherit from nlists and the elements from nlist
-(versus not inherit) or a missing value indicating no requirements.</p></td>
-    </tr>
-    <tr>
-      <th>x_name</th>
-      <td><p>A string of the name of the object.</p></td>
+      <th>...</th>
+      <td><p>Unused.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An invisible copy of x (if it doesn't throw an error).</p>
+    <p>The modified nlists object.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>check_nlists</span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>3</span>)))</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>nlists</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>4</span>),
+                <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>4</span>:<span class='fl'>1</span>),
+                <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>5</span>:<span class='fl'>2</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>nlists</span>)</div><div class='output co'>#&gt; $a
+#&gt; [1] 2
+#&gt; 
+#&gt; $y
+#&gt; [1] 4.333333
+#&gt; 
+#&gt; $x
+#&gt; [1] 3.333333 3.000000 2.666667 2.333333
+#&gt; 
+#&gt; an nlists object of 3 nlist objects each with 3 natomic elements</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>nlists</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='st'>"a"</span>)</div><div class='output co'>#&gt; $a
+#&gt; [1] 2
+#&gt; 
+#&gt; an nlists object of 3 nlist objects each with 1 natomic element</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>nlists</span>, <span class='kw'>select</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"x"</span>, <span class='st'>"a"</span>))</div><div class='output co'>#&gt; $x
+#&gt; [1] 3.333333 3.000000 2.666667 2.333333
+#&gt; 
+#&gt; $a
+#&gt; [1] 2
+#&gt; 
+#&gt; an nlists object of 3 nlist objects each with 2 natomic elements</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>nlists</span>, <span class='kw'>subset</span> <span class='kw'>=</span> <span class='fl'>1L</span>)</div><div class='output co'>#&gt; $a
+#&gt; [1] 1
+#&gt; 
+#&gt; $y
+#&gt; [1] 3
+#&gt; 
+#&gt; $x
+#&gt; [1] 1 2 3 4
+#&gt; 
+#&gt; an nlists object of an nlist object with 3 natomic elements</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>nlists</span>, <span class='kw'>subset</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2L</span>,<span class='fl'>2L</span>))</div><div class='output co'>#&gt; $a
+#&gt; [1] 2
+#&gt; 
+#&gt; $y
+#&gt; [1] 4
+#&gt; 
+#&gt; $x
+#&gt; [1] 4 3 2 1
+#&gt; 
+#&gt; an nlists object of 2 nlist objects each with 3 natomic elements</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

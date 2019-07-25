@@ -66,7 +66,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -81,10 +81,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/poissonconsulting/nlist">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -99,7 +107,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Check Atomic Numeric</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/check.R'><code>R/check.R</code></a></small>
     <div class="hidden name"><code>check_natomic.Rd</code></div>
     </div>
 
@@ -109,8 +117,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_natomic</span>(<span class='no'>x</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>nas</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>x</span>),
-  <span class='kw'>error</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>check_natomic</span>(<span class='no'>x</span>, <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>nas</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -132,10 +139,6 @@
     <tr>
       <th>x_name</th>
       <td><p>A string of the name of the object.</p></td>
-    </tr>
-    <tr>
-      <th>error</th>
-      <td><p>A flag indicating whether to throw an informative error or immediately generate an informative message if the check fails.</p></td>
     </tr>
     </table>
     
@@ -163,7 +166,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Joe Thorley.</p>
+  <p>Developed by Joe Thorley, Poisson Consulting.</p>
 </div>
 
 <div class="pkgdown">

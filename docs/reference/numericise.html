@@ -34,7 +34,7 @@
 
 <meta property="og:title" content="Numericise (or Numericize) — numericise" />
 
-<meta property="og:description" content="If possible recursively coerces an non-numeric R object to an integer while
+<meta property="og:description" content="If possible recursively coerces an non-numeric R object to an integer or double while
 preserving its dimensions." />
 <meta name="twitter:card" content="summary" />
 
@@ -67,7 +67,7 @@ preserving its dimensions." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -82,10 +82,18 @@ preserving its dimensions." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/poissonconsulting/nlist">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -100,13 +108,13 @@ preserving its dimensions." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Numericise (or Numericize)</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/numericise.R'><code>R/numericise.R</code></a></small>
     <div class="hidden name"><code>numericise.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>If possible recursively coerces an non-numeric R object to an integer while
+    <p>If possible recursively coerces an non-numeric R object to an integer or double while
 preserving its dimensions.</p>
     
     </div>
@@ -136,7 +144,7 @@ preserving its dimensions.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>numericize</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 1</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>numericize</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='fu'>numericize</span>(<span class='st'>"1.9"</span>)</div><div class='output co'>#&gt; [1] 1.9</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"beta"</span>, <span class='st'>"alpha"</span>)))</div><div class='output co'>#&gt; [1] 2 1</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"1970-02-03"</span>))</div><div class='output co'>#&gt; [1] 33</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='st'>"1970-02-03"</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>"GMT"</span>))</div><div class='output co'>#&gt; [1] 2851200</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -156,7 +164,7 @@ preserving its dimensions.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Joe Thorley.</p>
+  <p>Developed by Joe Thorley, Poisson Consulting.</p>
 </div>
 
 <div class="pkgdown">
