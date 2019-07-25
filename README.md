@@ -15,6 +15,11 @@ status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/nli
 coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Tinyverse
+status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/package=nlist)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
+![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
 <!-- badges: end -->
 
 nlist is an R package to create and manipulate numeric list (nlist)
@@ -24,6 +29,23 @@ matrix or array.
 
 Numeric list objects are of interest because they are the raw data
 inputs for analytic engines such as JAGS, STAN and TMB.
+
+## Installation
+
+To install the latest release version from
+[CRAN](https://cran.r-project.org)
+
+``` r
+install.packages("nlist")
+```
+
+To install the latest development version from
+[GitHub](https://github.com/poissonconsulting/hmstimer)
+
+``` r
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/nlist")
+```
 
 ## Demonstration
 
@@ -62,7 +84,7 @@ nlist
 #> an nlist object with 2 natomic elements
 ```
 
-Or to coerce an an nlist to a data frame.
+Or to coerce to and from a data frame.
 
 ``` r
 as.data.frame(nlist)
@@ -77,14 +99,16 @@ as.data.frame(nlist)
 #> 8  y[1,3]  1
 #> 9  y[2,3]  1
 #> 10 y[3,3]  1
-```
 
-Or a data frame to an nlist.
-
-``` r
-nlist2 <- as.nlist(data.frame(lgl = c(TRUE, NA),
+data <- data.frame(lgl = c(TRUE, NA),
                     dte = as.Date(c("2001-01-02", "2001-01-01")),
-                    fac = factor(c("b", "a"))))
+                    fac = factor(c("b", "a")))
+
+data
+#>    lgl        dte fac
+#> 1 TRUE 2001-01-02   b
+#> 2   NA 2001-01-01   a
+nlist2 <- as.nlist(data)
 nlist2
 #> $lgl
 #> [1]  1 NA
@@ -134,28 +158,17 @@ An nlists object can also be coerced to a data frame.
 
 ``` r
 as.data.frame(nlists)
-#>    term1  term2  term3  term4  term5  term6  term7  term8  term9 term10 n1
-#> 1      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  1
-#> 2      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  1
-#> 3      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  2
-#> 4      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  3
-#> 5      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  4
-#> 6      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  5
-#> 7      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  6
-#> 8      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  7
-#> 9      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  8
-#> 10     x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]  9
-#>    n2 n3
-#> 1  -2 -2
-#> 2   2  2
-#> 3   3  3
-#> 4   4  4
-#> 5   5  5
-#> 6   6  6
-#> 7   7  7
-#> 8   8  8
-#> 9   9  9
-#> 10 10 10
+#>      term n1 n2 n3
+#> 1       x  1 -2 -2
+#> 2  y[1,1]  1  2  2
+#> 3  y[2,1]  2  3  3
+#> 4  y[3,1]  3  4  4
+#> 5  y[1,2]  4  5  5
+#> 6  y[2,2]  5  6  6
+#> 7  y[3,2]  6  7  7
+#> 8  y[1,3]  7  8  8
+#> 9  y[2,3]  8  9  9
+#> 10 y[3,3]  9 10 10
 ```
 
 Aggregating an nlists object gives an nlist object.
@@ -174,19 +187,6 @@ aggregate(nlists, FUN = median)
 #> an nlist object with 2 natomic elements
 ```
 
-## Installation
-
-To install the latest development version from
-[GitHub](https://github.com/poissonconsulting/nlist)
-
-    remotes::install_github("poissonconsulting/nlist")
-
-To install the latest development version from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-    drat::addRepo("poissonconsulting")
-    install.packages("nlist")
-
 ## Contribution
 
 Please report any
@@ -196,5 +196,5 @@ Please report any
 always welcome.
 
 Please note that this project is released with a [Contributor Code of
-Conduct](https://poissonconsulting.github.io/nlist/CODE_OF_CONDUCT.html).
-By participating in this project you agree to abide by its terms.
+Conduct](https://github.com/poissonconsulting/nlist/blob/master/CODE_OF_CONDUCT.md).
+By contributing, you agree to abide by its terms.
