@@ -24,4 +24,8 @@ Date, POSIXct and hms objects are floored first.
 }
 \examples{
 numericize(TRUE)
+numericize("1.9")
+numericize(factor(c("beta", "alpha")))
+numericize(as.Date("1970-02-03"))
+numericize(as.POSIXct("1970-02-03", tz = "GMT"))
 }

@@ -12,10 +12,17 @@
 #' @export
 #' @examples 
 #' numericize(TRUE)
+#' numericize("1.9")
+#' numericize(factor(c("beta", "alpha")))
+#' numericize(as.Date("1970-02-03"))
+#' numericize(as.POSIXct("1970-02-03", tz = "GMT"))
 numericise <- function(x, ...) UseMethod("numericise")
 
 #' @export
 numericize <- function(x, ...) UseMethod("numericise")
+
+#' @export
+numericise.default <- function(x, ...) as.double(x)
 
 #' @export
 numericise.logical <- function(x, ...) as.integer(x)
@@ -25,9 +32,6 @@ numericise.integer <- function(x, ...) x
 
 #' @export
 numericise.double <- function(x, ...) x
-
-#' @export
-numericise.character <- function(x, ...) x
 
 #' @export
 numericise.factor <- function(x, ...) as.integer(x)

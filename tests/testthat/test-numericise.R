@@ -22,7 +22,7 @@ test_that("numericise.factor",{
 })
 
 test_that("numericise.character",{
-  expect_identical(numericise("1"), "1")
+  expect_identical(numericise("1"), 1)
 })
 
 test_that("numericise.Date",{
@@ -74,7 +74,7 @@ test_that("numericise.data.frame",{
   expect_identical(
     numericise(data.frame(x = factor(3:2), y = c(FALSE, NA), z = c("1", "2"),
                           stringsAsFactors = FALSE)), 
-    data.frame(x = 2:1, y = c(0L, NA), z = c("1", "2"), stringsAsFactors = FALSE))
+    data.frame(x = 2:1, y = c(0L, NA), z = c(1, 2), stringsAsFactors = FALSE))
   
   expect_identical(
      numericise(data.frame(lgl = c(TRUE, NA),
