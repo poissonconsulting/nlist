@@ -5,6 +5,8 @@ test_that("subset.nlist",{
   expect_identical(subset(nlist(x = 1)), nlist(x = 1))
   expect_identical(subset(nlist(x = 1, y = 2), pars  = "x"), nlist(x = 1))
   expect_identical(subset(nlist(x = 1, y = 2), pars  = "y"), nlist(y = 2))
+  expect_identical(subset(nlist(x = 1, y = 2), pars  = c("y", "x")), nlist(y = 2, x = 1))
+  expect_identical(subset(nlist(x = 1, y = 2), pars  = c("x", "y")), nlist(x = 1, y = 2))
   expect_error(subset(nlist(x = 1, y = 2), pars  = "z"), 
   "pars must be NULL OR pars can only include values 'x' or 'y'")
 })
