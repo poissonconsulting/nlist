@@ -4,12 +4,12 @@
 \alias{subset.nlist}
 \title{Subset nlist}
 \usage{
-\method{subset}{nlist}(x, pars = NULL, ...)
+\method{subset}{nlist}(x, select = NULL, ...)
 }
 \arguments{
 \item{x}{An nlist object to be subsetted.}
 
-\item{pars}{A character vector of the parameters to include in the subsetted vector.}
+\item{select}{A character vector of the parameters to include in the subsetted object.}
 
 \item{...}{Unused.}
 }
