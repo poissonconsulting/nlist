@@ -9,10 +9,8 @@
 #' @export
 #' 
 #' @examples
-#' term::pdims(nlist())
 #' term::pdims(nlist(x = 1:3))
 #' term::pdims(nlist(y = 3, zz = matrix(2:5, 2)))
-#' @export
 pdims.nlist <- function(x, ...) {
   check_nlist(x)
   if(!length(x)) return(list())
@@ -30,8 +28,6 @@ pdims.nlist <- function(x, ...) {
 #' @export
 #' 
 #' @examples
-#' term::pdims(nlists())
-#' term::pdims(nlists(nlist()))
 #' term::pdims(nlists(nlist(x = 1:3)))
 #' term::pdims(nlists(nlist(y = 3, zz = matrix(2:5, 2)),
 #'                   nlist(y = 5, zz = matrix(1:4, 2))))

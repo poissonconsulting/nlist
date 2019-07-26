@@ -18,7 +18,6 @@ A named list of the dimensions of each \code{\link{natomic_object}}.
 Gets the dimensions of an nlist object.
 }
 \examples{
-term::pdims(nlist())
 term::pdims(nlist(x = 1:3))
 term::pdims(nlist(y = 3, zz = matrix(2:5, 2)))
 }
