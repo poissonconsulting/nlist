@@ -7,17 +7,17 @@
 \method{aggregate}{nlists}(x, FUN = mean, ...)
 }
 \arguments{
-\item{x}{An R object.}
+\item{x}{An nlist object.}
 
 \item{FUN}{A function that given a numeric vector returns a numeric scalar.}
 
 \item{...}{Additional arguments passed to FUN.}
 }
 \value{
-An nlist
+An nlist object
 }
 \description{
-Aggregates an nlists into an nlist
+Aggregates an \code{\link{nlists_object}} into a \code{\link{nlist_object}}.
 }
 \examples{
 aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))

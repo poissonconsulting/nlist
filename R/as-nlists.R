@@ -1,10 +1,10 @@
 #' Coerce to nlists
 #'
-#' Coerce an R object to an nlists object.
+#' Coerce an R object to an \code{\link{nlists_object}}.
 #'
 #' @param x An R object.
 #' @param ... Unused
-#' @return An nlist object.
+#' @return An nlists object.
 #' @export
 #' @examples
 #' as.nlists(list(nlist(x = c(1,5)), nlist(x = c(2,3)), nlist(x = c(3,2))))
@@ -12,6 +12,7 @@ as.nlists <- function(x, ...) {
   UseMethod("as.nlists")
 }
 
+#' @describeIn as.nlist Coerce list to nlists
 #' @export
 as.nlists.list <- function(x, ...) {
   x <- lapply(x, as.nlist)

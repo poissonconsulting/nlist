@@ -2,9 +2,15 @@
 % Please edit documentation in R/nsims.R
 \name{nsims}
 \alias{nsims}
+\alias{nsims.nlist}
+\alias{nsims.nlists}
 \title{Number of Simulations}
 \usage{
 nsims(x, ...)
+
+\method{nsims}{nlist}(x, ...)
+
+\method{nsims}{nlists}(x, ...)
 }
 \arguments{
 \item{x}{The object}
@@ -17,6 +23,15 @@ A count of the number of simulations.
 \description{
 Gets the number of simulations.
 }
+\section{Methods (by class)}{
+\itemize{
+\item \code{nlist}: Number of simulations of an nlist object
+
+Always 1L.
+
+\item \code{nlists}: Number of simulations of an nlists object
+}}
+
 \examples{
 nsims(nlists(nlist(x = 1), nlist(x = 4)))
 }

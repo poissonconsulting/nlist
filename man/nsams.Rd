@@ -2,9 +2,12 @@
 % Please edit documentation in R/nsams.R
 \name{nsams}
 \alias{nsams}
+\alias{nsams.default}
 \title{Number of Sample Values}
 \usage{
 nsams(x, ...)
+
+\method{nsams}{default}(x, ...)
 }
 \arguments{
 \item{x}{The R object.}
@@ -17,6 +20,13 @@ A count of the total number of sample values.
 \description{
 Number of Sample Values
 }
+\section{Methods (by class)}{
+\itemize{
+\item \code{default}: Number of sample values of default object
+}}
+
 \examples{
+nsams(nlist(x = 2))
+nsams(nlist(x = 1:2))
 nsams(nlists(nlist(x = c(2,9)), nlist(x = c(1,7))))
 }

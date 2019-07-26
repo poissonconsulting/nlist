@@ -2,31 +2,21 @@
 % Please edit documentation in R/is.R
 \name{is.nlist}
 \alias{is.nlist}
-\alias{is.nlists}
 \title{Is nlist}
 \usage{
 is.nlist(x)
-
-is.nlists(x)
 }
 \arguments{
 \item{x}{The object to test.}
 }
 \value{
-A flag indicating whether x inherits from nlist or nlists.
+A flag indicating whether x inherits from nlist.
 }
 \description{
-Test whether x inherits from class \code{nlist} or \code{nlists}.
+Test whether x is an \code{\link{nlist_object}}.
 }
-\section{Functions}{
-\itemize{
-\item \code{is.nlists}: Is nlists
-}}
-
 \examples{
 is.nlist(1)
 is.nlist(list(x = 1))
 is.nlist(nlist(x = 1))
-is.nlists(nlist(x = 1))
-is.nlists(nlists(nlist(x = 2), nlist(x = 3.5)))
 }

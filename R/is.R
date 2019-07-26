@@ -1,7 +1,6 @@
 #' Is natomic
 #' 
-#' Test whether x is a numeric, atomic object.
-#' An natomic object is a vector, matrix or array of typeof integer or double.
+#' Test whether x is a \code{\link{natomic_object}}.
 #' 
 #' @param x The object to test.
 #'
@@ -17,11 +16,11 @@ is.natomic <- function(x) {
 
 #' Is nlist
 #' 
-#' Test whether x inherits from class \code{nlist} or \code{nlists}.
+#' Test whether x is an \code{\link{nlist_object}}.
 #'
 #' @param x The object to test.
 #'
-#' @return A flag indicating whether x inherits from nlist or nlists.
+#' @return A flag indicating whether x inherits from nlist.
 #' @export
 #'
 #' @examples
@@ -32,9 +31,15 @@ is.nlist <- function(x) {
   inherits(x, "nlist")
 }
 
-#' @describeIn is.nlist Is nlists
-#' @export
+#' Is nlists
 #' 
+#' Test whether x is an \code{\link{nlists_object}}.
+#'
+#' @param x The object to test.
+#'
+#' @return A flag indicating whether x inherits from nlists.
+#' @export
+#'
 #' @examples
 #' is.nlists(nlist(x = 1))
 #' is.nlists(nlists(nlist(x = 2), nlist(x = 3.5)))

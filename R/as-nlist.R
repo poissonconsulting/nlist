@@ -1,6 +1,6 @@
 #' Coerce to nlist
 #'
-#' Coerce an R object to an nlist object.
+#' Coerce an R object to an \code{\link{nlist_object}}.
 #'
 #' @param x An R object.
 #' @param ... Unused
@@ -12,6 +12,7 @@ as.nlist <- function(x, ...) {
   UseMethod("as.nlist")
 }
 
+#' @describeIn as.nlist Coerce list to nlist
 #' @export
 as.nlist.list <- function(x, ...) {
   if(!length(x)) return(nlist())
@@ -21,12 +22,9 @@ as.nlist.list <- function(x, ...) {
   x
 }
 
+#' @describeIn as.nlist Coerce data.frame to nlist
 #' @export
-as.nlist.data.frame <- function(x, ...) {
-  x <- as.list(x)
-  x <- as.nlist(x)
-  x
-}
+as.nlist.data.frame <- function(x, ...) as.nlist(as.list(x))
 
 #' @export
 as.nlist.nlist <- function(x, ...) x

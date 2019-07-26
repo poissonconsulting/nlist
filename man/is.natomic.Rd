@@ -13,8 +13,7 @@ is.natomic(x)
 A flag indicating whether x is a natomic object.
 }
 \description{
-Test whether x is a numeric, atomic object.
-An natomic object is a vector, matrix or array of typeof integer or double.
+Test whether x is a \code{\link{natomic_object}}.
 }
 \examples{
 is.natomic(list(x = 1))

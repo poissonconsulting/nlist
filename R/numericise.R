@@ -1,7 +1,8 @@
 #' Numericise (or Numericize)
 #'
-#' If possible recursively coerces an non-numeric R object to an integer or double while
-#' preserving its dimensions.
+#' Attempts to coerce a non-numeric R object to \code{\link{natomic_object}} or 
+#' list of \code{{natomic_object}}. 
+#' If possible the dimensionality is preserved.
 #' 
 #' Date, POSIXct and hms objects are floored first.
 #'
@@ -14,28 +15,37 @@
 #' numericize(TRUE)
 #' numericize("1.9")
 #' numericize(factor(c("beta", "alpha")))
+#' numericize(matrix(c(TRUE, FALSE, NA, TRUE), 2))
 #' numericize(as.Date("1970-02-03"))
 #' numericize(as.POSIXct("1970-02-03", tz = "GMT"))
 numericise <- function(x, ...) UseMethod("numericise")
 
+#' @rdname numericise
+#' @details \code{numericize()} is an alias for numericise.
 #' @export
 numericize <- function(x, ...) UseMethod("numericise")
 
+#' @describeIn numericise Numericise default object
 #' @export
 numericise.default <- function(x, ...) as.double(x)
 
+#' @describeIn numericise Numericise logical vector
 #' @export
 numericise.logical <- function(x, ...) as.integer(x)
 
+#' @describeIn numericise Numericise integer vector
 #' @export
 numericise.integer <- function(x, ...) x
 
+#' @describeIn numericise Numericise double vector
 #' @export
 numericise.double <- function(x, ...) x
 
+#' @describeIn numericise Numericise factor
 #' @export
 numericise.factor <- function(x, ...) as.integer(x)
 
+#' @describeIn numericise Numericise Date
 #' @export
 numericise.Date <- function(x, ...) {
   x <- unclass(x)
@@ -43,6 +53,7 @@ numericise.Date <- function(x, ...) {
   as.integer(x)
 }
 
+#' @describeIn numericise Numericise POSIXct
 #' @export
 numericise.POSIXct <- function(x, ...) {
   x <- unclass(x)
@@ -50,6 +61,7 @@ numericise.POSIXct <- function(x, ...) {
   as.integer(x)
 }
 
+#' @describeIn numericise Numericise hms
 #' @export
 numericise.hms <- function(x, ...) {
   x <- unclass(x)
@@ -57,6 +69,7 @@ numericise.hms <- function(x, ...) {
   as.integer(x)
 }
 
+#' @describeIn numericise Numericise matrix
 #' @export
 numericise.matrix <- function(x, ...) {
   if(is.logical(x)) {
@@ -69,6 +82,7 @@ numericise.matrix <- function(x, ...) {
   x
 }
 
+#' @describeIn numericise Numericise array
 #' @export
 numericise.array <- function(x, ...) {
   if(is.logical(x)) {
@@ -81,9 +95,11 @@ numericise.array <- function(x, ...) {
   x
 }
 
+#' @describeIn numericise Numericise list
 #' @export
 numericise.list <- function(x, ...) lapply(x, numericise)
 
+#' @describeIn numericise Numericise data.frame
 #' @export
 numericise.data.frame <- function(x, ...) {
   x[] <- lapply(x, numericise)

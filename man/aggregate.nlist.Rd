@@ -7,7 +7,7 @@
 \method{aggregate}{nlist}(x, FUN = mean, ...)
 }
 \arguments{
-\item{x}{An R object.}
+\item{x}{An nlist object.}
 
 \item{FUN}{A function that given a numeric vector returns a numeric scalar.}
 
@@ -17,7 +17,7 @@
 An named list of numeric scalars
 }
 \description{
-Aggregates an nlist into a named list of numeric scalars.
+Aggregates an \code{\link{nlist_object}} into a named list of numeric scalars.
 }
 \examples{
 aggregate(nlist(x = 1:9))
