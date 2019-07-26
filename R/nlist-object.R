@@ -7,6 +7,7 @@
 #' such as JAGS, STAN and TMB.
 #' @name nlist-object
 #' @aliases nlist_object
+#' 
 #' @examples 
 #' nlist <- nlist(x = 1, zz = matrix(1:9, 3))
 #' str(nlist)
