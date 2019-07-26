@@ -55,6 +55,8 @@ remotes::install_github("poissonconsulting/nlist")
 
 ### `natomic`
 
+An natomic object is an integer or double vector, matrix or array.
+
 ``` r
 library(nlist)
 is.natomic(TRUE)
@@ -66,6 +68,9 @@ is.natomic(matrix(1:3))
 ```
 
 ### `nlist`
+
+An nlist is an S3 class list of uniquely named numeric atomic (natomic)
+objects.
 
 It is straightforward to create an new nlist object.
 
@@ -133,6 +138,9 @@ as.data.frame(nlist2)
 ```
 
 ### `nlists`
+
+An nlists object is a S3 class list of nlist objects with the same
+names, dimensionalities and typeofs.
 
 ``` r
 nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)), 
