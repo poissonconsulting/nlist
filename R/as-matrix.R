@@ -1,7 +1,7 @@
 #' @export
 as.matrix.nlist <- function(x, ...) {
   if(!length(x)) return(matrix(1, dimnames = list("parameter", "1"))[-1,1,drop = FALSE])
-  rownames <- as.character(term(x))
+  rownames <- as.character(as.term(x))
   x <- lapply(x, as.vector)
   x <- unlist(x)
   matrix(x, ncol = 1, dimnames = list(rownames, "1"))
