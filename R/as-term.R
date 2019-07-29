@@ -1,7 +1,9 @@
 #' @export
 as.term.nlist <- function(x, ...) {
   x <- mapply(as.term, x, names(x), SIMPLIFY = FALSE)
-  as.term(unname(unlist(x)))
+  x <- unname(unlist(x))
+  if(is.null(x)) return(term(0L))
+  as.term(x)
 }
 
 #' @export
