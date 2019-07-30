@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Coerce to nlist — as.nlist • nlist</title>
+<title>nlist Object — nlist-object • nlist</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,10 @@
 
 
 
-<meta property="og:title" content="Coerce to nlist — as.nlist" />
+<meta property="og:title" content="nlist Object — nlist-object" />
 
-<meta property="og:description" content="Coerce an R object to an nlist_object." />
+<meta property="og:description" content="An nlist object is an S3 class list of uniquely named 
+natomic_object elements." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,68 +107,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Coerce to nlist</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/as-nlist.R'><code>R/as-nlist.R</code></a>, <a href='https://github.com/poissonconsulting/nlist/blob/master/R/as-nlists.R'><code>R/as-nlists.R</code></a></small>
-    <div class="hidden name"><code>as.nlist.Rd</code></div>
+    <h1>nlist Object</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/nlist-object.R'><code>R/nlist-object.R</code></a></small>
+    <div class="hidden name"><code>nlist-object.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Coerce an R object to an <code><a href='nlist-object.html'>nlist_object</a></code>.</p>
+    <p>An nlist object is an S3 class list of uniquely named 
+<code><a href='natomic-object.html'>natomic_object</a></code> elements.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>as.nlist</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+        
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-<span class='co'># S3 method for list</span>
-<span class='fu'>as.nlist</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='co'># S3 method for data.frame</span>
-<span class='fu'>as.nlist</span>(<span class='no'>x</span>, <span class='no'>...</span>)
-
-<span class='co'># S3 method for list</span>
-<span class='fu'><a href='as.nlists.html'>as.nlists</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>An R object.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Unused</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>An nlist object.</p>
-    
-    <h2 class="hasAnchor" id="methods-by-class-"><a class="anchor" href="#methods-by-class-"></a>Methods (by class)</h2>
-
-    <ul>
-<li><p><code>list</code>: Coerce list to nlist</p></li>
-<li><p><code>data.frame</code>: Coerce data.frame to nlist</p></li>
-<li><p><code>list</code>: Coerce list to nlists</p></li>
-</ul>
+    <p>nlist objects are the raw data inputs for analytic engines 
+such as JAGS, STAN and TMB.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>as.nlist</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>4</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] 1 2 3 4
+    <pre class="examples"><div class='input'><span class='no'>nlist</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>zz</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>:<span class='fl'>9</span>, <span class='fl'>3</span>))
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>nlist</span>)</div><div class='output co'>#&gt; List of 2
+#&gt;  $ x : num 1
+#&gt;  $ zz: int [1:3, 1:3] 1 2 3 4 5 6 7 8 9
+#&gt;  - attr(*, "class")= chr "nlist"</div><div class='input'><span class='no'>nlist</span></div><div class='output co'>#&gt; $x
+#&gt; [1] 1
 #&gt; 
-#&gt; an nlist object with 1 natomic element</div></pre>
+#&gt; $zz
+#&gt;      [,1] [,2] [,3]
+#&gt; [1,]    1    4    7
+#&gt; [2,]    2    5    8
+#&gt; [3,]    3    6    9
+#&gt; 
+#&gt; an nlist object with 2 natomic elements</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#methods-by-class-">Methods (by class)</a></li>
+      <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

@@ -34,8 +34,9 @@
 
 <meta property="og:title" content="Numericise (or Numericize) — numericise" />
 
-<meta property="og:description" content="If possible recursively coerces an non-numeric R object to an integer or double while
-preserving its dimensions." />
+<meta property="og:description" content="Attempts to coerce a non-numeric R object to natomic_object or 
+list of {natomic_object}. 
+If possible the dimensionality is preserved." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -67,7 +68,7 @@ preserving its dimensions." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9100</span>
       </span>
     </div>
 
@@ -114,12 +115,51 @@ preserving its dimensions." />
 
     <div class="ref-description">
     
-    <p>If possible recursively coerces an non-numeric R object to an integer or double while
-preserving its dimensions.</p>
+    <p>Attempts to coerce a non-numeric R object to <code><a href='natomic-object.html'>natomic_object</a></code> or 
+list of <code>{natomic_object}</code>. 
+If possible the dimensionality is preserved.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='fu'>numericize</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for logical</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for integer</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for double</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for factor</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for Date</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for POSIXct</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for hms</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for matrix</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for array</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for list</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for data.frame</span>
+<span class='fu'>numericise</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -141,10 +181,30 @@ preserving its dimensions.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Date, POSIXct and hms objects are floored first.</p>
+<p><code>numericize()</code> is an alias for numericise.</p>
+    
+    <h2 class="hasAnchor" id="methods-by-class-"><a class="anchor" href="#methods-by-class-"></a>Methods (by class)</h2>
+
+    <ul>
+<li><p><code>default</code>: Numericise default object</p></li>
+<li><p><code>logical</code>: Numericise logical vector</p></li>
+<li><p><code>integer</code>: Numericise integer vector</p></li>
+<li><p><code>double</code>: Numericise double vector</p></li>
+<li><p><code>factor</code>: Numericise factor</p></li>
+<li><p><code>Date</code>: Numericise Date</p></li>
+<li><p><code>POSIXct</code>: Numericise POSIXct</p></li>
+<li><p><code>hms</code>: Numericise hms</p></li>
+<li><p><code>matrix</code>: Numericise matrix</p></li>
+<li><p><code>array</code>: Numericise array</p></li>
+<li><p><code>list</code>: Numericise list</p></li>
+<li><p><code>data.frame</code>: Numericise data.frame</p></li>
+</ul>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>numericize</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='fu'>numericize</span>(<span class='st'>"1.9"</span>)</div><div class='output co'>#&gt; [1] 1.9</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"beta"</span>, <span class='st'>"alpha"</span>)))</div><div class='output co'>#&gt; [1] 2 1</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"1970-02-03"</span>))</div><div class='output co'>#&gt; [1] 33</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='st'>"1970-02-03"</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>"GMT"</span>))</div><div class='output co'>#&gt; [1] 2851200</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>numericize</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='fu'>numericize</span>(<span class='st'>"1.9"</span>)</div><div class='output co'>#&gt; [1] 1.9</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"beta"</span>, <span class='st'>"alpha"</span>)))</div><div class='output co'>#&gt; [1] 2 1</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>, <span class='fl'>NA</span>, <span class='fl'>TRUE</span>), <span class='fl'>2</span>))</div><div class='output co'>#&gt;      [,1] [,2]
+#&gt; [1,]    1   NA
+#&gt; [2,]    0    1</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"1970-02-03"</span>))</div><div class='output co'>#&gt; [1] 33</div><div class='input'><span class='fu'>numericize</span>(<span class='fu'><a href='https://rdrr.io/r/base/as.POSIXlt.html'>as.POSIXct</a></span>(<span class='st'>"1970-02-03"</span>, <span class='kw'>tz</span> <span class='kw'>=</span> <span class='st'>"GMT"</span>))</div><div class='output co'>#&gt; [1] 2851200</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -154,6 +214,8 @@ preserving its dimensions.</p>
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
+
+      <li><a href="#methods-by-class-">Methods (by class)</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
