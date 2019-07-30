@@ -12,6 +12,8 @@ Description: Create and manipulate numeric list (nlist) objects.
   same names, dimensionalities and typeofs.
   Numeric list objects are of interest because they are the raw data inputs 
   for analytic engines such as JAGS, STAN and TMB.
+  Numeric lists objects, which are useful for storing multiple realizations of
+  of simulated datas sets, can be converted to and from coda::mcmc objects.
 License: MIT + file LICENSE
 Depends: R (>= 3.5)
 Imports:
@@ -19,6 +21,7 @@ Imports:
     err,
     checkr,
     term,
+    coda,
     abind,
     purrr
 Suggests: 

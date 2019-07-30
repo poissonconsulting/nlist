@@ -16,8 +16,7 @@ aggregate_atomic_numerics <- function(x, FUN, ...) {
 
 typesof <- function(x) vapply(x, typeof, "")
 
-tibble <- function(...) {
-  data <- data.frame(..., stringsAsFactors = FALSE)
-  class(data) <- c("tbl_df", "tbl", "data.frame")
-  data
+set_class <- function(x, class) {
+  class(x) <- class
+  x
 }

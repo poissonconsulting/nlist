@@ -32,7 +32,8 @@ as JAGS, STAN and TMB.
 
 An nlists object is a S3 class list of nlist objects with the same
 names, dimensionalities and typeofs. nlists objects are useful for
-storing individual realizations of a simulated data set.
+storing multiple realizations of simulated datas sets. They can be
+converted to and from `coda::mcmc` objects.
 
 ## Installation
 
@@ -91,22 +92,9 @@ nlist
 #> an nlist object with 2 natomic elements
 ```
 
-Or to coerce to and from a data frame.
+Or to coerce from a data frame.
 
 ``` r
-as.data.frame(nlist)
-#>      term n1
-#> 1       x  1
-#> 2  y[1,1]  1
-#> 3  y[2,1]  2
-#> 4  y[3,1]  3
-#> 5  y[1,2]  4
-#> 6  y[2,2]  5
-#> 7  y[3,2]  6
-#> 8  y[1,3]  7
-#> 9  y[2,3]  8
-#> 10 y[3,3]  9
-
 data <- data.frame(lgl = c(TRUE, NA),
                     dte = as.Date(c("2001-01-02", "2001-01-01")),
                     fac = factor(c("b", "a")))
@@ -115,8 +103,7 @@ data
 #>    lgl        dte fac
 #> 1 TRUE 2001-01-02   b
 #> 2   NA 2001-01-01   a
-nlist2 <- as.nlist(data)
-nlist2
+as.nlist(data)
 #> $lgl
 #> [1]  1 NA
 #> 
@@ -127,14 +114,6 @@ nlist2
 #> [1] 2 1
 #> 
 #> an nlist object with 3 natomic elements
-as.data.frame(nlist2)
-#>     term    n1
-#> 1 lgl[1]     1
-#> 2 lgl[2]    NA
-#> 3 dte[1] 11324
-#> 4 dte[2] 11323
-#> 5 fac[1]     2
-#> 6 fac[2]     1
 ```
 
 ### `nlists`
@@ -160,23 +139,6 @@ print(nlists)
 #> an nlists object of 3 nlist objects each with 2 natomic elements
 ```
 
-An nlists object can also be coerced to a data frame.
-
-``` r
-as.data.frame(nlists)
-#>      term n1 n2 n3
-#> 1       x  1 -2 -2
-#> 2  y[1,1]  1  2  2
-#> 3  y[2,1]  2  3  3
-#> 4  y[3,1]  3  4  4
-#> 5  y[1,2]  4  5  5
-#> 6  y[2,2]  5  6  6
-#> 7  y[3,2]  6  7  7
-#> 8  y[1,3]  7  8  8
-#> 9  y[2,3]  8  9  9
-#> 10 y[3,3]  9 10 10
-```
-
 Aggregating an nlists object gives an nlist object.
 
 ``` r
@@ -191,6 +153,16 @@ aggregate(nlists, FUN = median)
 #> [3,]    4    7   10
 #> 
 #> an nlist object with 2 natomic elements
+```
+
+An nlists object can be coerced to an coda::mcmc object.
+
+``` r
+coda::as.mcmc(nlists)
+#>       x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
+#> [1,]  1      1      2      3      4      5      6      7      8      9
+#> [2,] -2      2      3      4      5      6      7      8      9     10
+#> [3,] -2      2      3      4      5      6      7      8      9     10
 ```
 
 ## Contribution

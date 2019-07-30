@@ -32,7 +32,8 @@ An natomic object is an integer or double vector, matrix or array.
 nlist objects are the raw data inputs for analytic engines such as JAGS, STAN and TMB.
 
 An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs.
-nlists objects are useful for storing individual realizations of a simulated data set.
+nlists objects are useful for storing multiple realizations of simulated datas sets.
+They can be converted to and from `coda::mcmc` objects.
 
 ## Installation
 
@@ -71,18 +72,14 @@ library(nlist)
 nlist <- nlist(x = 1, y = matrix(1:9, 3))
 nlist
 ```
-Or to coerce to and from a data frame.
+Or to coerce from a data frame.
 ```{r}
-as.data.frame(nlist)
-
 data <- data.frame(lgl = c(TRUE, NA),
                     dte = as.Date(c("2001-01-02", "2001-01-01")),
                     fac = factor(c("b", "a")))
 
 data
-nlist2 <- as.nlist(data)
-nlist2
-as.data.frame(nlist2)
+as.nlist(data)
 ```
 
 ### `nlists`
@@ -97,14 +94,14 @@ nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)),
 print(nlists)
 ```
 
-An nlists object can also be coerced to a data frame.
-```{r}
-as.data.frame(nlists)
-```
-
 Aggregating an nlists object gives an nlist object.
 ```{r}
 aggregate(nlists, FUN = median)
+```
+
+An nlists object can be coerced to an coda::mcmc object.
+```{r}
+coda::as.mcmc(nlists)
 ```
 
 ## Contribution
