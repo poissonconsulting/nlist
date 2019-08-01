@@ -20,7 +20,7 @@ Imports:
     stats,
     err,
     checkr,
-    term (>= 0.0.0.9101),
+    term (>= 0.0.0.9102),
     coda,
     abind,
     purrr
