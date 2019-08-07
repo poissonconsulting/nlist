@@ -28,7 +28,8 @@ Suggests:
     covr,
     testthat
 Remotes: 
-    poissonconsulting/term
+    poissonconsulting/term,
+    poissonconsulting/checkr
 URL: https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
 Encoding: UTF-8
