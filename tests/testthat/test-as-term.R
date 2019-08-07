@@ -26,4 +26,3 @@ test_that("as.term.nlists", {
                    structure(c("x", "y[1,1]", "y[1,2]", "y[1,3]"), class = c("term", 
 "character")))
 })
-
