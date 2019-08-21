@@ -23,6 +23,3 @@ An invisible copy of x (if it doesn't throw an error).
 \description{
 Check Atomic Numeric
 }
-\examples{
-check_natomic(1)
-}

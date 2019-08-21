@@ -18,7 +18,7 @@ License: MIT + file LICENSE
 Depends: R (>= 3.5)
 Imports:
     stats,
-    chk,
+    chk (>= 0.0.1.9001),
     checkr,
     term (>= 0.0.1),
     coda,

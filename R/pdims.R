@@ -12,7 +12,6 @@
 #' term::pdims(nlist(x = 1:3))
 #' term::pdims(nlist(y = 3, zz = matrix(2:5, 2)))
 pdims.nlist <- function(x, ...) {
-  check_nlist(x)
   if(!length(x)) return(list())
   lapply(x, dims)
 }
@@ -34,7 +33,6 @@ pdims.nlist <- function(x, ...) {
 #' @export
 #' @export
 pdims.nlists <- function(x, ...) {
-  check_nlists(x)
   if(!length(x)) return(list())
   pdims(x[[1]])
 }

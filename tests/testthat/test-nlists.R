@@ -17,5 +17,5 @@ test_that("nlists", {
                                     x = 2), class = "nlist")), class = "nlists"))
   
   expect_error(nlists(nlist(x = 1), nlist(y = 2)),
-               "the names of x must be identical")
+               "^nlist elements of `x` must have matching names[.]$")
 })

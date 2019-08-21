@@ -16,11 +16,9 @@ check_identical <- function(x, x_name) {
 #'
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
-#'
-#' @examples
-#' check_natomic(1)
 check_natomic <- function(x, length = NA, nas = NA, 
                           x_name = substitute(x)) {
+  .Deprecated("chk_natomic")
   check_scalar(length, c(TRUE, NA))
   check_scalar(nas, c(TRUE, NA))
   
@@ -57,10 +55,9 @@ check_natomic <- function(x, length = NA, nas = NA,
 #'
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
-#' @examples 
-#' check_nlist(nlist())
 check_nlist <- function(x, length = NA, nas = NA, class = TRUE, 
                         x_name = substitute(x)) {
+  .Deprecated("chk_nlist")
   x_name <- chk_deparse(x_name)
   check_scalar(class, c(TRUE, NA))
 
@@ -97,11 +94,9 @@ check_nlist <- function(x, length = NA, nas = NA, class = TRUE,
 #'
 #' @return An invisible copy of x (if it doesn't throw an error).
 #' @export
-#' 
-#' @examples 
-#' check_nlists(nlists(nlist(x = 3)))
 check_nlists <- function(x, length = NA, nas = NA, class = TRUE, 
                          x_name = substitute(x)) {
+  .Deprecated("chk_nlists")
   x_name <- chk_deparse(x_name)
   check_scalar(class, c(TRUE, NA))
   

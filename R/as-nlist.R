@@ -15,9 +15,11 @@ as.nlist <- function(x, ...) {
 #' @describeIn as.nlist Coerce list to nlist
 #' @export
 as.nlist.list <- function(x, ...) {
+  chk_unused(...)
+  
   if(!length(x)) return(nlist())
   x <- numericise(x)
-  check_nlist(x, class = NA)
+  if(is_chk_on()) chk_nlist(x)
   class(x) <- "nlist"
   x
 }

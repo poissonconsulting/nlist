@@ -14,7 +14,9 @@
 subset.nlist <- function(x, select = NULL, ...) {
   if(is.null(select)) return(x)
   
-  check_vector(select, pars(x), unique = TRUE, only = TRUE)
+  chk_is(select, "character")
+  chk_unique(select)
+  chk_in(select, pars(x))
   chk_unused(...)
   
   x[select]
@@ -38,13 +40,8 @@ subset.nlist <- function(x, select = NULL, ...) {
 #' subset(nlists, subset = 1L)
 #' subset(nlists, subset = c(2L,2L))
 subset.nlists <- function(x, subset = NULL, select = NULL, ...) {
-  if(!is.null(subset)) {
-    check_vector(subset, 1L)
-    x <- x[subset]
-  }
+  if(!is.null(subset)) x <- x[subset]
   if(is.null(select) || !length(x)) return(x)
-  
-  check_vector(select, pars(x), unique = TRUE, only = TRUE)
   chk_unused(...)
   
   x <- lapply(x, subset, select = select)

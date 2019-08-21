@@ -8,7 +8,7 @@ test_that("subset.nlist",{
   expect_identical(subset(nlist(x = 1, y = 2), select =c("y", "x")), nlist(y = 2, x = 1))
   expect_identical(subset(nlist(x = 1, y = 2), select =c("x", "y")), nlist(x = 1, y = 2))
   expect_error(subset(nlist(x = 1, y = 2), select ="z"), 
-               "select can only include values 'x' or 'y'")
+               "^`select` must match 'x' or 'y', not 'z'[.]$")
 })
 
 test_that("subset.nlists",{
@@ -33,5 +33,5 @@ test_that("subset.nlists",{
   expect_identical(subset(nlists(nlist(x = 1, y = 2), nlist(x = 3, y = 2)), integer(0), "x"), 
                    subset(nlists()))
   expect_error(subset(nlist(x = 1, y = 2), select ="z"), 
-               "select can only include values 'x' or 'y'")
+               "`select` must match 'x' or 'y', not 'z'.")
 })

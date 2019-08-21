@@ -27,6 +27,3 @@ An invisible copy of x (if it doesn't throw an error).
 \description{
 Checks if an object is a numeric lists (list of nlist objects).
 }
-\examples{
-check_nlists(nlists(nlist(x = 3)))
-}
