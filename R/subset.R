@@ -15,7 +15,7 @@ subset.nlist <- function(x, select = NULL, ...) {
   if(is.null(select)) return(x)
   
   check_vector(select, pars(x), unique = TRUE, only = TRUE)
-  check_unused(...)
+  chk_unused(...)
   
   x[select]
 }
@@ -45,7 +45,7 @@ subset.nlists <- function(x, subset = NULL, select = NULL, ...) {
   if(is.null(select) || !length(x)) return(x)
   
   check_vector(select, pars(x), unique = TRUE, only = TRUE)
-  check_unused(...)
+  chk_unused(...)
   
   x <- lapply(x, subset, select = select)
   class(x) <- "nlists"
