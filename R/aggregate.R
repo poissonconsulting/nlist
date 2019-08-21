@@ -14,7 +14,7 @@
 #' aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), FUN = function(x) x[1])
 aggregate.nlist <- function(x, FUN = mean, ...) {
   check_nlist(x)
-  check_function(FUN)
+  chk_function(FUN)
 
   lapply(x, aggregate_atomic_numeric, FUN, ...)
 }
@@ -31,7 +31,7 @@ aggregate.nlist <- function(x, FUN = mean, ...) {
 #' aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
 aggregate.nlists <- function(x, FUN = mean, ...) {
   check_nlists(x)
-  check_function(FUN)
+  chk_function(FUN)
 
   x <- transpose(x)
   x <- lapply(x, aggregate_atomic_numerics, FUN, ...)

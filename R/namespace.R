@@ -1,5 +1,4 @@
-#' @import err checkr term
-#' @importFrom chk chk_flag chk_lgl chk_unused
+#' @import chk checkr term
 #' @importFrom stats aggregate
 #' @importFrom abind abind
 #' @importFrom purrr transpose
