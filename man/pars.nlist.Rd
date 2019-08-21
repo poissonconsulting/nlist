@@ -4,13 +4,14 @@
 \alias{pars.nlist}
 \title{Parameter Names}
 \usage{
-\method{pars}{nlist}(x, scalar_only = FALSE, terms = FALSE, ...)
+\method{pars}{nlist}(x, scalar = NA, terms = FALSE, ...)
 }
 \arguments{
 \item{x}{An nlist object.}
 
-\item{scalar_only}{A flag specifying whether to only get the names of
-parameters with one term.}
+\item{scalar}{A logical scalar specifying whether to get the names of
+all parameters (NA), only scalars (TRUE) or all parameters 
+except scalars (FALSE).}
 
 \item{terms}{A flag specifying whether to return the parameter name
 for each term.}

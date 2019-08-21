@@ -18,9 +18,10 @@ License: MIT + file LICENSE
 Depends: R (>= 3.5)
 Imports:
     stats,
+    chk,
     err,
     checkr,
-    term (>= 0.0.0.9104),
+    term (>= 0.0.1),
     coda,
     abind,
     purrr
@@ -28,6 +29,7 @@ Suggests:
     covr,
     testthat
 Remotes: 
+    poissonconsulting/chk,
     poissonconsulting/term,
     poissonconsulting/checkr
 URL: https://github.com/poissonconsulting/nlist
