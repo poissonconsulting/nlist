@@ -159,6 +159,10 @@ An nlists object can be coerced to an coda::mcmc object.
 
 ``` r
 coda::as.mcmc(nlists)
+#> Markov Chain Monte Carlo (MCMC) output:
+#> Start = 1 
+#> End = 3 
+#> Thinning interval = 1 
 #>       x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
 #> [1,]  1      1      2      3      4      5      6      7      8      9
 #> [2,] -2      2      3      4      5      6      7      8      9     10
@@ -175,4 +179,4 @@ always welcome.
 
 Please note that this project is released with a [Contributor Code of
 Conduct](https://github.com/poissonconsulting/nlist/blob/master/CODE_OF_CONDUCT.md).
-By contributing, you agree to abide by its terms
+By contributing, you agree to abide by its terms.
