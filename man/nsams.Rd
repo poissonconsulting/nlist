@@ -3,7 +3,7 @@
 \name{nsams}
 \alias{nsams}
 \alias{nsams.default}
-\title{Number of Sample Values}
+\title{Number of MCMC Samples}
 \usage{
 nsams(x, ...)
 
@@ -18,7 +18,7 @@ nsams(x, ...)
 A count of the total number of sample values.
 }
 \description{
-Number of Sample Values
+Gets the number of MCMC samples (simulations * terms)
 }
 \section{Methods (by class)}{
 \itemize{
@@ -29,4 +29,7 @@ Number of Sample Values
 nsams(nlist(x = 2))
 nsams(nlist(x = 1:2))
 nsams(nlists(nlist(x = c(2,9)), nlist(x = c(1,7))))
+}
+\seealso{
+\code{\link{nsims}()} and \code{\link{nterms}()}
 }

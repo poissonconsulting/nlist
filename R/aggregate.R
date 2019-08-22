@@ -3,31 +3,46 @@
 #' Aggregates an \code{\link{nlist_object}} into a named list of numeric scalars.
 #'
 #' @param x An nlist object.
-#' @param FUN A function that given a numeric vector returns a numeric scalar.
-#' @param ... Additional arguments passed to FUN.
+#' @param fun A function that given a numeric vector returns a numeric scalar.
+#' @param ... Additional arguments passed to fun.
 #'
 #' @return An named list of numeric scalars
 #' @export
 #' 
 #' @examples
 #' aggregate(nlist(x = 1:9))
-#' aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), FUN = function(x) x[1])
-aggregate.nlist <- function(x, FUN = mean, ...) {
-  lapply(x, aggregate_atomic_numeric, FUN, ...)
+#' aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), fun = function(x) x[1])
+aggregate.nlist <- function(x, fun = mean, ...) {
+  lapply(x, aggregate_atomic_numeric, fun, ...)
 }
 
 #' Aggregate nlists
 #' 
-#' Aggregates an \code{\link{nlists_object}} into a \code{\link{nlist_object}}.
+#' Aggregates an \code{\link{nlists_object}} into a \code{\link{nlist_object}}
+#' or by_chain = TRUE an \code{\link{nlists_object}}
+#' with \code{nchains} \code{\link{nlist_object}}s.
 #'
 #' @inheritParams aggregate.nlist
-#' @return An nlist object
+#' @param fun A function that given a numeric vector returns a numeric scalar.
+#' @param by_chain A flag specifying whether to aggregate by chains.
+#' @return An nlist object if \code{by_chain = FALSE} otherwise an nlists object.
 #' @export
 #' 
 #' @examples
 #' aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
-aggregate.nlists <- function(x, FUN = mean, ...) {
-  x <- transpose(x)
-  x <- lapply(x, aggregate_atomic_numerics, FUN, ...)
-  as.nlist(x)
+aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {
+  chk_function(fun)
+  chk_flag(by_chain)
+  if(!by_chain) {
+    x <- transpose(x)
+    x <- lapply(x, aggregate_atomic_numerics, fun, ...)
+    return(as.nlist(x))
+  }
+  nchains <- nchains(x)
+  x <- split(x, ceiling(seq_along(x)/niters(x)))
+  x <- lapply(x, FUN = aggregate, fun = fun, ..., by_chain = FALSE)
+  names(x) <- NULL
+  class(x) <- "nlists"
+  if(nchains > 1L) attr(x, "nchains") <- nchains
+  x
 }

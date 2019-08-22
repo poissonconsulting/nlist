@@ -14,7 +14,7 @@ print.nlist <- function(x, ...) {
 
 #' @export
 print.nlists <- function(x, ...) {
-  n <- length(x)
+  n <- niters(x)
   if(!n) {
     cat("an nlists object with 0 nlist objects\n")
     return(invisible(x))
@@ -22,7 +22,9 @@ print.nlists <- function(x, ...) {
   nn <- length(x[[1]])
   if(nn) print(unclass(aggregate(x)))
   
-  str <- "an nlists object of" 
+  str <- "an nlists object" 
+  nchains <- nchains(x)
+  str <- p(str, if(nchains > 1) p("with", nchains, "chains of") else "of")
   str <- p(str, if(n == 1) "an nlist object with" else p(n, "nlist objects each with"))
   str <- p(str, if(nn == 1) "1 natomic element" else p(nn, "natomic elements"))
   cat(str)

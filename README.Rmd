@@ -33,7 +33,7 @@ nlist objects are the raw data inputs for analytic engines such as JAGS, STAN an
 
 An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs.
 nlists objects are useful for storing multiple realizations of simulated datas sets.
-They can be converted to and from `coda::mcmc` objects.
+They can be converted to `coda::mcmc` and  `coda::mcmc.list` objects.
 
 ## Installation
 
@@ -84,12 +84,14 @@ as.nlist(data)
 
 ### `nlists`
 
-An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs.
+An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs. 
+The nchains attribute is used to keep track of the number of chains.
 
 ```{r}
 nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)), 
                  nlist(x = -2, y = matrix(2:10, 3)),
-                 nlist(x = -2, y = matrix(2:10, 3)))
+                 nlist(x = 10, y = matrix(22:30, 3)),
+                 nlist(x = -100, y = matrix(-2:-10, 3)))
 
 print(nlists)
 ```
@@ -99,9 +101,14 @@ Aggregating an nlists object gives an nlist object.
 aggregate(nlists, FUN = median)
 ```
 
-An nlists object can be coerced to an coda::mcmc object.
+An nlists object can have its chains split or collapsed.
 ```{r}
-coda::as.mcmc(nlists)
+nlists <- split_chains(nlists)
+```
+
+And can be converted to an mcmc.list object
+```{r}
+coda::as.mcmc.list(nlists)
 ```
 
 ## Contribution

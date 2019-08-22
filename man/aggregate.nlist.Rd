@@ -4,14 +4,14 @@
 \alias{aggregate.nlist}
 \title{Aggregate nlist}
 \usage{
-\method{aggregate}{nlist}(x, FUN = mean, ...)
+\method{aggregate}{nlist}(x, fun = mean, ...)
 }
 \arguments{
 \item{x}{An nlist object.}
 
-\item{FUN}{A function that given a numeric vector returns a numeric scalar.}
+\item{fun}{A function that given a numeric vector returns a numeric scalar.}
 
-\item{...}{Additional arguments passed to FUN.}
+\item{...}{Additional arguments passed to fun.}
 }
 \value{
 An named list of numeric scalars
@@ -21,5 +21,5 @@ Aggregates an \code{\link{nlist_object}} into a named list of numeric scalars.
 }
 \examples{
 aggregate(nlist(x = 1:9))
-aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), FUN = function(x) x[1])
+aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), fun = function(x) x[1])
 }

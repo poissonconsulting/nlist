@@ -21,5 +21,13 @@ as.nlists.list <- function(x, ...) {
   x
 }
 
+#' @describeIn as.nlist Coerce nlist to nlists
+#' @export
+as.nlists.nlist <- function(x, ...) {
+  x <- list(x)
+  class(x) <- "nlists"
+  x
+}
+
 #' @export
 as.nlists.nlists <- function(x, ...) x

@@ -33,7 +33,7 @@ as JAGS, STAN and TMB.
 An nlists object is a S3 class list of nlist objects with the same
 names, dimensionalities and typeofs. nlists objects are useful for
 storing multiple realizations of simulated datas sets. They can be
-converted to and from `coda::mcmc` objects.
+converted to `coda::mcmc` and `coda::mcmc.list` objects.
 
 ## Installation
 
@@ -119,24 +119,26 @@ as.nlist(data)
 ### `nlists`
 
 An nlists object is a S3 class list of nlist objects with the same
-names, dimensionalities and typeofs.
+names, dimensionalities and typeofs. The nchains attribute is used to
+keep track of the number of chains.
 
 ``` r
 nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)), 
                  nlist(x = -2, y = matrix(2:10, 3)),
-                 nlist(x = -2, y = matrix(2:10, 3)))
+                 nlist(x = 10, y = matrix(22:30, 3)),
+                 nlist(x = -100, y = matrix(-2:-10, 3)))
 
 print(nlists)
 #> $x
-#> [1] -1
+#> [1] -22.75
 #> 
 #> $y
-#>          [,1]     [,2]     [,3]
-#> [1,] 1.666667 4.666667 7.666667
-#> [2,] 2.666667 5.666667 8.666667
-#> [3,] 3.666667 6.666667 9.666667
+#>      [,1] [,2] [,3]
+#> [1,] 5.75 7.25 8.75
+#> [2,] 6.25 7.75 9.25
+#> [3,] 6.75 8.25 9.75
 #> 
-#> an nlists object of 3 nlist objects each with 2 natomic elements
+#> an nlists object of 4 nlist objects each with 2 natomic elements
 ```
 
 Aggregating an nlists object gives an nlist object.
@@ -144,29 +146,47 @@ Aggregating an nlists object gives an nlist object.
 ``` r
 aggregate(nlists, FUN = median)
 #> $x
-#> [1] -2
+#> [1] -0.5
 #> 
 #> $y
 #>      [,1] [,2] [,3]
-#> [1,]    2    5    8
-#> [2,]    3    6    9
-#> [3,]    4    7   10
+#> [1,]  1.5  4.5  7.5
+#> [2,]  2.5  5.5  8.5
+#> [3,]  3.5  6.5  9.5
 #> 
 #> an nlist object with 2 natomic elements
 ```
 
-An nlists object can be coerced to an coda::mcmc object.
+An nlists object can have its chains split or collapsed.
 
 ``` r
-coda::as.mcmc(nlists)
+nlists <- split_chains(nlists)
+```
+
+And can be converted to an mcmc.list object
+
+``` r
+coda::as.mcmc.list(nlists)
+#> $`1`
 #> Markov Chain Monte Carlo (MCMC) output:
 #> Start = 1 
-#> End = 3 
+#> End = 2 
 #> Thinning interval = 1 
 #>       x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
 #> [1,]  1      1      2      3      4      5      6      7      8      9
 #> [2,] -2      2      3      4      5      6      7      8      9     10
-#> [3,] -2      2      3      4      5      6      7      8      9     10
+#> 
+#> $`2`
+#> Markov Chain Monte Carlo (MCMC) output:
+#> Start = 1 
+#> End = 2 
+#> Thinning interval = 1 
+#>         x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
+#> [1,]   10     22     23     24     25     26     27     28     29     30
+#> [2,] -100     -2     -3     -4     -5     -6     -7     -8     -9    -10
+#> 
+#> attr(,"class")
+#> [1] "mcmc.list"
 ```
 
 ## Contribution

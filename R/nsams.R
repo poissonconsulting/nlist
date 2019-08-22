@@ -1,9 +1,11 @@
-#' Number of Sample Values
+#' Number of MCMC Samples
 #'
+#' Gets the number of MCMC samples (simulations * terms)
 #' @param x The R object.
 #' @param ... Unused.
 #' @return A count of the total number of sample values.
 #' @export
+#' @seealso \code{\link{nsims}()} and \code{\link{nterms}()}
 #' @examples
 #' nsams(nlist(x = 2))
 #' nsams(nlist(x = 1:2))

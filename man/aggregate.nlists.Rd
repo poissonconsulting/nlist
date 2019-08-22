@@ -4,20 +4,24 @@
 \alias{aggregate.nlists}
 \title{Aggregate nlists}
 \usage{
-\method{aggregate}{nlists}(x, FUN = mean, ...)
+\method{aggregate}{nlists}(x, fun = mean, ..., by_chain = FALSE)
 }
 \arguments{
 \item{x}{An nlist object.}
 
-\item{FUN}{A function that given a numeric vector returns a numeric scalar.}
+\item{fun}{A function that given a numeric vector returns a numeric scalar.}
 
-\item{...}{Additional arguments passed to FUN.}
+\item{...}{Additional arguments passed to fun.}
+
+\item{by_chain}{A flag specifying whether to aggregate by chains.}
 }
 \value{
-An nlist object
+An nlist object if \code{by_chain = FALSE} otherwise an nlists object.
 }
 \description{
-Aggregates an \code{\link{nlists_object}} into a \code{\link{nlist_object}}.
+Aggregates an \code{\link{nlists_object}} into a \code{\link{nlist_object}}
+or by_chain = TRUE an \code{\link{nlists_object}}
+with \code{nchains} \code{\link{nlist_object}}s.
 }
 \examples{
 aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))

@@ -4,7 +4,7 @@
 \alias{nsims}
 \alias{nsims.nlist}
 \alias{nsims.nlists}
-\title{Number of Simulations}
+\title{Number of MCMC Simulations}
 \usage{
 nsims(x, ...)
 
@@ -21,7 +21,7 @@ nsims(x, ...)
 A count of the number of simulations.
 }
 \description{
-Gets the number of simulations.
+Gets the number of MCMC simulations (iterations * chains)
 }
 \section{Methods (by class)}{
 \itemize{
@@ -33,5 +33,10 @@ Always 1L.
 }}
 
 \examples{
-nsims(nlists(nlist(x = 1), nlist(x = 4)))
+nsims(nlist(x = 1:2))
+nsims(nlists(nlist(x = c(2,9)), nlist(x = c(1,7))))
+nsims(split_chains(nlists(nlist(x = c(2,9)), nlist(x = c(1,7)))))
+}
+\seealso{
+\code{\link{niters}()} and \code{\link{nchains}()}
 }

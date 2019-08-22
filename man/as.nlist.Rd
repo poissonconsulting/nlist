@@ -5,6 +5,7 @@
 \alias{as.nlist.list}
 \alias{as.nlist.data.frame}
 \alias{as.nlists.list}
+\alias{as.nlists.nlist}
 \title{Coerce to nlist}
 \usage{
 as.nlist(x, ...)
@@ -14,6 +15,8 @@ as.nlist(x, ...)
 \method{as.nlist}{data.frame}(x, ...)
 
 \method{as.nlists}{list}(x, ...)
+
+\method{as.nlists}{nlist}(x, ...)
 }
 \arguments{
 \item{x}{An R object.}
@@ -33,6 +36,8 @@ Coerce an R object to an \code{\link{nlist_object}}.
 \item \code{data.frame}: Coerce data.frame to nlist
 
 \item \code{list}: Coerce list to nlists
+
+\item \code{nlist}: Coerce nlist to nlists
 }}
 
 \examples{
