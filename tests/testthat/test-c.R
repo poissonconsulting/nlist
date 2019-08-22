@@ -22,5 +22,5 @@ test_that("c.nlists", {
                structure(list(), class = "nlists"))
   expect_error(c(nlists(nlist(x = 1)),
                      nlists(nlist(y = 1))), 
-               "^nlist elements of `[.][.][.]` must have matching names[.]$")
+               "^nlist elements of [.][.][.] must have matching names[.]$")
 })
