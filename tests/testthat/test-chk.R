@@ -18,7 +18,7 @@ test_that("chk_nlist", {
                "^`NULL` must be a list[.]$")
   expect_false(chk_nlist(list(), err = FALSE))
   expect_false(chk_nlist(list(x = 1, x = 2), err = FALSE))
-  expect_error(chk_nlist(list(x = 1, x = 2)), "^`names[(]list[(]x = 1, x = 2[)][)]` must be unique[.]$")
+  expect_error(chk_nlist(list(x = 1, x = 2)), "^names[(]`list[(]x = 1, x = 2[)]`[)] must be unique[.]$")
   expect_true(chk_nlist(list(x = 1, y = 2)))
   expect_true(chk_nlist(list(x = 1)[-1]))
   expect_true(chk_nlist(nlist()))

@@ -6,7 +6,7 @@ test_that("[.nlist", {
   expect_identical(nlist(x = 1, y = 2)["x"], nlist(x = 1))
   expect_identical(nlist(x = 1, y = 2)[2], nlist(y = 2))
   expect_identical(nlist(x = 1, y = 2)["y"], nlist(y = 2))
-  expect_error(nlist(x = 1, y = 2)[c(1,1)], "^`names[(]x[)]` must be unique[.]$")
+  expect_error(nlist(x = 1, y = 2)[c(1,1)], "^names[(]`x`[)] must be unique[.]$")
   expect_error(nlist(x = 1)[1,], "incorrect number of dimensions")
 })
 

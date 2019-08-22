@@ -44,7 +44,7 @@ chk_nlist <- function(x, err = TRUE, x_name = NULL) {
   if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
   chk_list(x, x_name = x_name)
   chk_named(x, x_name = x_name)
-  chk_unique(names(x), x_name = p0("`names(", gsub("`", "", x_name), ")`"))
+  chk_unique(names(x), x_name = p0("names(", x_name, ")"))
   chk_all(x, chk_natomic, x_name = x_name)
 }
 
