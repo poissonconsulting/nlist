@@ -17,11 +17,11 @@ Description: Create and manipulate numeric list (nlist) objects.
   coda::mcmc and coda::mcmc.list objects.
 License: MIT + file LICENSE
 Depends: 
-    R (>= 3.5),
-    term (>= 0.0.1)
+    R (>= 3.5)
 Imports:
     stats,
     chk (>= 0.0.1.9001),
+    term (>= 0.0.1),
     checkr,
     coda,
     abind,
