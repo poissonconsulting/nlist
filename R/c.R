@@ -1,7 +1,7 @@
 #' @export
 c.nlist <- function(...) {
   x <- list(...)
-  lapply(x, chk_nlist, x_name  = "All objects in ...")
+  chk_all(x, chk_nlist, x_name  = "...")
   x <- lapply(x, unclass)
   x <- do.call("c", x)
   if(!length(x)) return(nlist())
@@ -14,7 +14,7 @@ c.nlist <- function(...) {
 #' @export
 c.nlists <- function(...) {
   x <- list(...)
-  lapply(x, chk_nlists, x_name  = "All objects in ...")
+  chk_all(x, chk_nlists, x_name  = "...")
   x <- lapply(x, unclass)
   x <- do.call("c", x)
   class(x) <- "nlists"
