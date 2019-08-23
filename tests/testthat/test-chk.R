@@ -15,7 +15,7 @@ test_that("chk_natomic", {
 
 test_that("chk_nlist", {
   expect_error(chk_nlist(NULL), 
-               "^`NULL` must be a list[.]$")
+               "^`NULL` must inherit from class 'nlist'[.]$")
   expect_false(chk_nlist(list(), err = FALSE))
   expect_false(chk_nlist(list(x = 1, x = 2), err = FALSE))
   expect_error(chk_nlist(list(x = 1, x = 2)), "^`list[(]x = 1, x = 2[)]` must inherit from class 'nlist'[.]$")

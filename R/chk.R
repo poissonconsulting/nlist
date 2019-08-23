@@ -39,7 +39,6 @@ chk_natomic <- function(x, err = TRUE, x_name = NULL) {
 chk_nlist <- function(x, err = TRUE, x_name = NULL) {
   if(!is_chk_on()) return(TRUE)
   if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
-  if(!chk_list(x, err = err, x_name = x_name)) return(FALSE)
   if(!chk_is(x, "nlist", err = err, x_name = x_name)) return(FALSE)
   if(!chk_named(x, err = err, x_name = x_name)) return(FALSE)
   if(!chk_unique(names(x), err = err, x_name = p0("names(", x_name, ")")))
@@ -62,7 +61,6 @@ chk_nlist <- function(x, err = TRUE, x_name = NULL) {
 chk_nlists <- function(x, err = TRUE, x_name = NULL) {
   if(!is_chk_on()) return(TRUE)
   if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
-  if(!chk_list(x, err = err, x_name = x_name)) return(FALSE)
   if(!chk_is(x, "nlists", err = err, x_name = x_name)) return(FALSE)
   if(!chk_all(x, chk_nlist, err = err, x_name = x_name)) return(FALSE)
   if(!chk_all_identical(lapply(x, names), err = FALSE)) {
