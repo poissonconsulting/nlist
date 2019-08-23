@@ -63,24 +63,16 @@ chk_nlists <- function(x, err = TRUE, x_name = NULL) {
   if(!chk_list(x, err = err, x_name = x_name)) return(FALSE)
   if(!chk_is(x, "nlists", err = err, x_name = x_name)) return(FALSE)
   if(!chk_all(x, chk_nlist, err = err, x_name = x_name)) return(FALSE)
-  
-  
-  names <- lapply(x, names)
-  if(!all(vapply(names, identical, TRUE, y = names[[1]]))) {
-    if(!err) return(FALSE)
-    if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
+  if(!chk_all_identical(lapply(x, names), err = FALSE)) {
+    if(err == FALSE) return(FALSE)
     err("nlist elements of ", x_name, " must have matching names.")
   }
-  dims <- lapply(x, lapply, dims)
-  if(!all(vapply(dims, identical, TRUE, y = dims[[1]]))) {
-    if(!err) return(FALSE)
-    if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
+  if(!chk_all_identical(lapply(x, lapply, dims), err = FALSE)) {
+    if(err == FALSE) return(FALSE)
     err("nlist elements of ", x_name, " must have matching dimensions.")
   }
-  typesof <- lapply(x, typesof)
-  if(!all(vapply(typesof, identical, TRUE, y = typesof[[1]]))) {
-    if(!err) return(FALSE)
-    if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
+  if(!chk_all_identical(lapply(x, lapply, typesof), err = FALSE)) {
+    if(err == FALSE) return(FALSE)
     err("nlist elements of ", x_name, " must have matching types.")
   }
   TRUE
