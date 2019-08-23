@@ -16,12 +16,13 @@ Description: Create and manipulate numeric list (nlist) objects.
   of simulated datas sets, can be converted to 
   coda::mcmc and coda::mcmc.list objects.
 License: MIT + file LICENSE
-Depends: R (>= 3.5)
+Depends: 
+    R (>= 3.5),
+    term (>= 0.0.1)
 Imports:
     stats,
     chk (>= 0.0.1.9001),
     checkr,
-    term (>= 0.0.1),
     coda,
     abind,
     purrr
