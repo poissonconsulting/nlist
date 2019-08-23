@@ -25,7 +25,7 @@ as.mcmc.list.nlist <- function(x, ...) coda::as.mcmc.list(coda::as.mcmc(x))
 #'                      nlist(x = matrix(3:8, 2))))
 as.mcmc.list.nlists <- function(x, ...) {
   if(nchains(x) == 1L) return(coda::as.mcmc.list(coda::as.mcmc(x)))
-  x <- split(x, ceiling(seq_along(x)/niters(x)))
+  x <- split_by_chains(x)
   x <- lapply(x, FUN = coda::as.mcmc)
   coda::as.mcmc.list(x)
 }

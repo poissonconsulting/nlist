@@ -10,14 +10,28 @@ c.nlist <- function(...) {
     err("nlist objects must have distinctly named natomic elements in order to be concatenated.")
   x
 }
-
-#' @export
-c.nlists <- function(...) {
-  x <- list(...)
+  
+.c_nlists <- function(x) {
   chk_all(x, chk_nlists, x_name  = "...")
+  if(!chk_all_identical(lapply(x, nchains), err = FALSE))
+    err("All elements of ... must have the same number of chains.")
+  nchains <- nchains(x[[1]])
+  if(nchains > 1L) {
+    x <- lapply(x, split_by_chains)
+    x <- transpose(x)
+    x <- lapply(x, .c_nlists)
+    names(x) <- NULL
+  }
   x <- lapply(x, unclass)
   x <- do.call("c", x)
   class(x) <- "nlists"
   chk_nlists(x, x_name = "...")
-  x
+  if(nchains > 1) attr(x, "nchains") <- nchains
+  return(x)
+}
+
+#' @export
+c.nlists <- function(...) {
+  x <- list(...)
+  .c_nlists(x)
 }

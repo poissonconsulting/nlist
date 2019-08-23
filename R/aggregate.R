@@ -39,7 +39,7 @@ aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {
     return(as.nlist(x))
   }
   nchains <- nchains(x)
-  x <- split(x, ceiling(seq_along(x)/niters(x)))
+  x <- split_by_chains(x)
   x <- lapply(x, FUN = aggregate, fun = fun, ..., by_chain = FALSE)
   names(x) <- NULL
   class(x) <- "nlists"
