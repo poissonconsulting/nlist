@@ -27,7 +27,7 @@ c.nlist <- function(...) {
   x <- do.call("c", x)
   class(x) <- "nlists"
   chk_nlists(x, x_name = "...")
-  if(nchains > 1) attr(x, "nchains") <- nchains
+  if(nchains > 1L) attr(x, "nchains") <- nchains
   return(x)
 }
 

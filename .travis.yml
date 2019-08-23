@@ -4,7 +4,6 @@ cache: packages
 r:
   - oldrel
   - release
-  - devel
 
 r_packages:
   - covr
