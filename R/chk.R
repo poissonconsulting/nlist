@@ -37,6 +37,7 @@ chk_natomic <- function(x, err = TRUE, x_name = NULL) {
 #' @examples
 #' chk_nlist(nlist(x = 1))
 chk_nlist <- function(x, err = TRUE, x_name = NULL) {
+  if(!is_chk_on()) return(TRUE)
   if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
   if(!chk_list(x, err = err, x_name = x_name)) return(FALSE)
   if(!chk_is(x, "nlist", err = err, x_name = x_name)) return(FALSE)
@@ -59,6 +60,7 @@ chk_nlist <- function(x, err = TRUE, x_name = NULL) {
 #' @examples
 #' chk_nlists(nlists(nlist(x = 1)))
 chk_nlists <- function(x, err = TRUE, x_name = NULL) {
+  if(!is_chk_on()) return(TRUE)
   if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
   if(!chk_list(x, err = err, x_name = x_name)) return(FALSE)
   if(!chk_is(x, "nlists", err = err, x_name = x_name)) return(FALSE)

@@ -14,9 +14,9 @@
 
 #' @export
 `[[<-.nlists` <- function(x, i, ..., value) {
-  if(is_chk_on()) chk_nlist(value, x_name = "value")
+  chk_nlist(value, x_name = "value")
   class(value) <- "nlist"
   x <- NextMethod()
-  if(is_chk_on()) chk_nlists(x, x_name = "`x` and `values`")
+  chk_nlists(x, x_name = "`x` and `values`")
   x
 }
