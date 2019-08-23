@@ -2,32 +2,39 @@
 % Please edit documentation in R/subset.R
 \name{subset.nlists}
 \alias{subset.nlists}
-\title{Subset nlists}
+\title{Subset nlists Object}
 \usage{
-\method{subset}{nlists}(x, subset = NULL, select = NULL, ...)
+\method{subset}{nlists}(x, chains = NULL, iters = NULL, pars = NULL,
+  ...)
 }
 \arguments{
-\item{x}{An nlists object to be subsetted.}
+\item{x}{An nlists object.}
 
-\item{subset}{An integer vector of the nlist objects to include.}
+\item{chains}{An integer vector of chains.}
 
-\item{select}{A character vector of the parameters to include in the subsetted object.}
+\item{iters}{An integer vector of iterations.}
+
+\item{pars}{A character vector of parameter names.}
 
 \item{...}{Unused.}
 }
 \value{
-The modified nlists object.
+An nlists object.
 }
 \description{
-Subset nlists
+Subsets an nlists object by its parameters, chains and iterations.
+}
+\details{
+It can also be used to reorder the parameters as well as duplicate
+chains and iterations.
 }
 \examples{
 nlists <- nlists(nlist(a = 1, y = 3, x = 1:4),
                 nlist(a = 2, y = 4, x = 4:1),
                 nlist(a = 3, y = 6, x = 5:2))
 subset(nlists)
-subset(nlists, select = "a")
-subset(nlists, select = c("x", "a"))
-subset(nlists, subset = 1L)
-subset(nlists, subset = c(2L,2L))
+subset(nlists, pars = "a")
+subset(nlists, pars = c("x", "a"))
+subset(nlists, iters = 1L)
+subset(nlists, iters = c(2L,2L))
 }

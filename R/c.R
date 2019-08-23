@@ -15,6 +15,7 @@ c.nlist <- function(...) {
   chk_all(x, chk_nlists, x_name  = "...")
   if(!chk_all_identical(lapply(x, nchains), err = FALSE))
     err("All elements of ... must have the same number of chains.")
+  if(!length(x)) return(nlists())
   nchains <- nchains(x[[1]])
   if(nchains > 1L) {
     x <- lapply(x, split_by_chains)

@@ -2,22 +2,25 @@
 % Please edit documentation in R/subset.R
 \name{subset.nlist}
 \alias{subset.nlist}
-\title{Subset nlist}
+\title{Subset nlist Object}
 \usage{
-\method{subset}{nlist}(x, select = NULL, ...)
+\method{subset}{nlist}(x, pars = NULL, ...)
 }
 \arguments{
-\item{x}{An nlist object to be subsetted.}
+\item{x}{An nlist object.}
 
-\item{select}{A character vector of the parameters to include in the subsetted object.}
+\item{pars}{A character vector of parameter names.}
 
 \item{...}{Unused.}
 }
 \value{
-The modified nlist object.
+An nlist object.
 }
 \description{
-Subset nlist
+Subsets an nlist object by its parameters.
+}
+\details{
+It can also be used to reorder the parameters.
 }
 \examples{
 nlist <- nlist(a = 1, y = 3, x = 1:4)

@@ -1,9 +1,13 @@
-#' Subset nlist
+#' Subset nlist Object
 #' 
-#' @param x An nlist object to be subsetted.
-#' @param select A character vector of the parameters to include in the subsetted object.
+#' Subsets an nlist object by its parameters.
+#'
+#' It can also be used to reorder the parameters. 
+#' 
+#' @param x An nlist object.
+#' @param pars A character vector of parameter names.
 #' @param ... Unused.
-#' @return The modified nlist object.
+#' @return An nlist object.
 #' @export
 #' 
 #' @examples 
@@ -11,23 +15,26 @@
 #' subset(nlist)
 #' subset(nlist, "a")
 #' subset(nlist, c("x", "a"))
-subset.nlist <- function(x, select = NULL, ...) {
-  if(is.null(select)) return(x)
-  
-  chk_is(select, "character")
-  chk_unique(select)
-  chk_in(select, pars(x))
+subset.nlist <- function(x, pars = NULL, ...) {
+  if(is.null(pars)) return(x)
+  chk_in(pars, pars(x))
   chk_unused(...)
   
-  x[select]
+  x[unique(pars)]
 }
 
-#' Subset nlists
+#' Subset nlists Object
 #' 
-#' @param x An nlists object to be subsetted.
+#' Subsets an nlists object by its parameters, chains and iterations.
+#'
+#' It can also be used to reorder the parameters as well as duplicate
+#' chains and iterations. 
+#' 
+#' @param x An nlists object.
 #' @inheritParams subset.nlist
-#' @param subset An integer vector of the nlist objects to include.
-#' @return The modified nlists object.
+#' @param chains An integer vector of chains.
+#' @param iters An integer vector of iterations.
+#' @return An nlists object.
 #' @export
 #' 
 #' @examples 
@@ -35,16 +42,24 @@ subset.nlist <- function(x, select = NULL, ...) {
 #'                 nlist(a = 2, y = 4, x = 4:1),
 #'                 nlist(a = 3, y = 6, x = 5:2))
 #' subset(nlists)
-#' subset(nlists, select = "a")
-#' subset(nlists, select = c("x", "a"))
-#' subset(nlists, subset = 1L)
-#' subset(nlists, subset = c(2L,2L))
-subset.nlists <- function(x, subset = NULL, select = NULL, ...) {
-  if(!is.null(subset)) x <- x[subset]
-  if(is.null(select) || !length(x)) return(x)
+#' subset(nlists, pars = "a")
+#' subset(nlists, pars = c("x", "a"))
+#' subset(nlists, iters = 1L)
+#' subset(nlists, iters = c(2L,2L))
+subset.nlists <- function(x, chains = NULL, iters = NULL, pars = NULL, ...) {
+  if(!is.null(chains)) chk_in(chains, 1:nchains(x))
+  if(!is.null(iters)) chk_in(chains, 1:niters(x))
+  if(!is.null(pars)) chk_in(pars, pars(x))
   chk_unused(...)
   
-  x <- lapply(x, subset, select = select)
-  class(x) <- "nlists"
+  if(!is.null(pars)) x <- lapply_nlists(x, subset, pars = pars)
+  x <- split_by_chains(x)
+  if(!is.null(chains)) x <- x[chains]
+  nchains <- length(x)
+  if(!is.null(iters)) x <- lapply(x, function(x, iter) x[iter], iter = iters)
+  x <- .c_nlists(x)
+  if(nchains > 1L) attr(x, "nchains") <- nchains
+  names(x) <- NULL
   x
 }
+

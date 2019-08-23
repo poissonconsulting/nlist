@@ -13,7 +13,5 @@ nlists objects are useful for storing individual realizations
 of a simulated data set.
 }
 \examples{
-nlists <- nlists(nlist(x = 1, zz = matrix(1:9, 3)), nlist(x = 3.5, zz = matrix(2:10, 3)))
-nlists
-subset(nlists, 2L, "zz")
+nlists(nlist(x = 1, zz = matrix(1:9, 3)), nlist(x = 3.5, zz = matrix(2:10, 3)))
 }
