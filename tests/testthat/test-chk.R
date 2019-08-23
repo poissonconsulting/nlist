@@ -29,10 +29,16 @@ test_that("chk_nlist", {
 })
 
 test_that("chk_nlists", {
-  expect_true(chk_nlists(list()))
+  expect_error(chk_nlists(list()), "^`list[(][)]` must inherit from class 'nlists'[.]$")
   expect_true(chk_nlists(nlists()))
-  expect_true(chk_nlists(list(nlist(x = 1))))
+  expect_error(chk_nlists(list(nlist(x = 1))), "^`[^`]+` must inherit from class 'nlists'[.]$")
   expect_true(chk_nlists(nlists(nlist())))
   expect_true(chk_nlists(nlists(nlist(x = 1), nlist(x = 2))))
   expect_true(chk_nlists(nlists(nlist(x = 1), nlist(x = 2))))
+  expect_error(chk_nlists(nlists(nlist(x = 1), nlist(y = 2))), 
+               "^nlist elements of `x` must have matching names[.]")
+  expect_error(chk_nlists(nlists(nlist(x = 1), nlist(x = 1L))), 
+               "^nlist elements of `x` must have matching types[.]")
+  expect_error(chk_nlists(nlists(nlist(x = 1L), nlist(x = 1:2))), 
+               "^nlist elements of `x` must have matching dimensions[.]")
 })

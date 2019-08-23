@@ -37,16 +37,13 @@ chk_natomic <- function(x, err = TRUE, x_name = NULL) {
 #' @examples
 #' chk_nlist(nlist(x = 1))
 chk_nlist <- function(x, err = TRUE, x_name = NULL) {
-  if(is.list(x) && inherits(x, "nlist") && !is.null(names(x)) && 
-     !anyDuplicated(names(x)) && chk_all(x, chk_natomic, err = FALSE))
-    return(TRUE)
-  if(!err) return(FALSE)
   if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
-  chk_list(x, x_name = x_name)
-  chk_is(x, "nlist", x_name = x_name)
-  chk_named(x, x_name = x_name)
-  chk_unique(names(x), x_name = p0("names(", x_name, ")"))
-  chk_all(x, chk_natomic, x_name = x_name)
+  if(!chk_list(x, err = err, x_name = x_name)) return(FALSE)
+  if(!chk_is(x, "nlist", err = err, x_name = x_name)) return(FALSE)
+  if(!chk_named(x, err = err, x_name = x_name)) return(FALSE)
+  if(!chk_unique(names(x), err = err, x_name = p0("names(", x_name, ")")))
+    return(FALSE)
+  chk_all(x, chk_natomic, err = err, x_name = x_name)
 }
 
 #' Check nlists
@@ -62,12 +59,12 @@ chk_nlist <- function(x, err = TRUE, x_name = NULL) {
 #' @examples
 #' chk_nlists(nlists(nlist(x = 1)))
 chk_nlists <- function(x, err = TRUE, x_name = NULL) {
-  if(is.list(x) && !length(x)) return(TRUE)
-  if(!all(vapply(x, chk_nlist, TRUE, err = FALSE))) {
-    if(!err) return(FALSE)
-    if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
-    err(x_name, " must be a list of nlist objects.")    
-  }
+  if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
+  if(!chk_list(x, err = err, x_name = x_name)) return(FALSE)
+  if(!chk_is(x, "nlists", err = err, x_name = x_name)) return(FALSE)
+  if(!chk_all(x, chk_nlist, err = err, x_name = x_name)) return(FALSE)
+  
+  
   names <- lapply(x, names)
   if(!all(vapply(names, identical, TRUE, y = names[[1]]))) {
     if(!err) return(FALSE)

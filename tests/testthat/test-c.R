@@ -18,8 +18,8 @@ test_that("c.nlists", {
   expect_identical(c(nlists(nlist(x = 1)),
                      nlists(nlist(x = 1))), 
                    nlists(nlist(x = 1), nlist(x = 1)))
-  expect_identical(c(nlists(), list()), 
-               structure(list(), class = "nlists"))
+  expect_error(c(nlists(), list()), 
+               "^All objects in ... must inherit from class 'nlists'[.]")
   expect_error(c(nlists(nlist(x = 1)),
                      nlists(nlist(y = 1))), 
                "^nlist elements of [.][.][.] must have matching names[.]$")
