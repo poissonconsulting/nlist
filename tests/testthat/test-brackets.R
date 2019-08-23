@@ -37,8 +37,6 @@ test_that("[[<-.nlists", {
   expect_identical(nlists, nlists(nlist(x = 1), nlist(x = 3)))
   nlists[[1]] <- nlist(x = 3)
   expect_identical(nlists, nlists(nlist(x = 3), nlist(x = 3)))
-  nlists[[1]] <- list(x = 2)
-  expect_identical(nlists, nlists(nlist(x = 2), nlist(x = 3)))
   expect_error(nlists[[1]] <- nlist(y = 3),
                "^nlist elements of `x` and `values` must have matching names[.]$")
   expect_error(nlists[[1]] <- nlist(x = c(3,3)),

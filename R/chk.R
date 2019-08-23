@@ -37,12 +37,13 @@ chk_natomic <- function(x, err = TRUE, x_name = NULL) {
 #' @examples
 #' chk_nlist(nlist(x = 1))
 chk_nlist <- function(x, err = TRUE, x_name = NULL) {
-  if(is.list(x) && !is.null(names(x)) && !anyDuplicated(names(x)) && 
-     chk_all(x, chk_natomic, err = FALSE))
+  if(is.list(x) && inherits(x, "nlist") && !is.null(names(x)) && 
+     !anyDuplicated(names(x)) && chk_all(x, chk_natomic, err = FALSE))
     return(TRUE)
   if(!err) return(FALSE)
   if(is.null(x_name)) x_name <- p0("`", deparse(substitute(x)), "`")
   chk_list(x, x_name = x_name)
+  chk_is(x, "nlist", x_name = x_name)
   chk_named(x, x_name = x_name)
   chk_unique(names(x), x_name = p0("names(", x_name, ")"))
   chk_all(x, chk_natomic, x_name = x_name)

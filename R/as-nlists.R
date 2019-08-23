@@ -16,8 +16,8 @@ as.nlists <- function(x, ...) {
 #' @export
 as.nlists.list <- function(x, ...) {
   x <- lapply(x, as.nlist)
-  if(is_chk_on()) chk_nlists(x)
   class(x) <- "nlists"
+  if(is_chk_on()) chk_nlists(x)
   x
 }
 

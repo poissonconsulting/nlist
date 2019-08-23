@@ -19,8 +19,8 @@ as.nlist.list <- function(x, ...) {
   
   if(!length(x)) return(nlist())
   x <- numericise(x)
-  if(is_chk_on()) chk_nlist(x)
   class(x) <- "nlist"
+  if(is_chk_on()) chk_nlist(x)
   x
 }
 
