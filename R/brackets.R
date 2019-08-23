@@ -5,18 +5,12 @@
 
 #' @export
 `[.nlists`  <- function(x, i, j, ...) {
-  if(nargs() < 3L) return(as.nlists(NextMethod()))
-  x <- unclass(x)
-  if(!missing(i)) x <- x[i]
-  if(!missing(j)) x <- lapply(x, `[`, j)
+  if(nargs() < 3L) {
+    x <- NextMethod()
+    x <- as.nlists(x)
+    return(x)
+  }
+  if(!missing(i)) x <- subset(x, chains = i)
+  if(!missing(j)) x <- subset(x, iters = j)
   as.nlists(x)
-}
-
-#' @export
-`[[<-.nlists` <- function(x, i, ..., value) {
-  chk_nlist(value, x_name = "value")
-  class(value) <- "nlist"
-  x <- NextMethod()
-  chk_nlists(x, x_name = "`x` and `values`")
-  x
 }
