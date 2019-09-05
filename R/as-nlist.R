@@ -20,7 +20,7 @@ as.nlist.list <- function(x, ...) {
   if(!length(x)) return(nlist())
   x <- numericise(x)
   class(x) <- "nlist"
-  chk_nlist(x)
+  if(is_chk_on()) chk_nlist(x)
   x
 }
 

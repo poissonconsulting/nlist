@@ -47,11 +47,12 @@ subset.nlist <- function(x, pars = NULL, ...) {
 #' subset(nlists, iters = 1L)
 #' subset(nlists, iters = c(2L,2L))
 subset.nlists <- function(x, chains = NULL, iters = NULL, pars = NULL, ...) {
-  if(!is.null(chains)) chk_in(chains, 1:nchains(x))
-  if(!is.null(iters)) chk_in(chains, 1:niters(x))
-  if(!is.null(pars)) chk_in(pars, pars(x))
-  chk_unused(...)
-  
+  if(is_chk_on()) {
+    if(!is.null(chains)) chk_in(chains, 1:nchains(x))
+    if(!is.null(iters)) chk_in(chains, 1:niters(x))
+    if(!is.null(pars)) chk_in(pars, pars(x))
+    chk_unused(...)
+  }
   if(!is.null(pars)) x <- lapply_nlists(x, subset, pars = pars)
   x <- split_by_chains(x)
   if(!is.null(chains)) x <- x[chains]

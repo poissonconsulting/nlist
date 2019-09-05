@@ -18,6 +18,7 @@ pars.nlist <- function(x, scalar = NA, terms = FALSE, ...) {
   chk_lgl(scalar)
   chk_flag(terms)
   chk_unused(...)
+  
   if(is.na(scalar) && !terms) return(names(x)) # this prevents infinite recursion
   pars(as.term(x), scalar = scalar, terms = terms)
 }
