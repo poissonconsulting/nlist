@@ -22,7 +22,6 @@ Imports:
     stats,
     chk (>= 0.0.1.9001),
     term (>= 0.0.1),
-    checkr,
     coda,
     abind,
     purrr
@@ -31,8 +30,7 @@ Suggests:
     testthat
 Remotes: 
     poissonconsulting/chk,
-    poissonconsulting/term,
-    poissonconsulting/checkr
+    poissonconsulting/term
 URL: https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
 Encoding: UTF-8
