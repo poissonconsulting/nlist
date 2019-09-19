@@ -25,7 +25,7 @@ NULL
 #' try(chk_natomic(TRUE))
 chk_natomic <- function(x, x_name = NULL) {
   if(vld_natomic(x)) return(invisible())
-  if(is.null(x_name))  x_name <- deparse_backtick(substitute(x))
+  if(is.null(x_name))  x_name <- deparse_backtick_chk(substitute(x))
   abort_chk(x_name, " must be a numeric (integer or double)",
       " atomic (vector, matrix or array) object.")
 }
@@ -46,10 +46,11 @@ chk_natomic <- function(x, x_name = NULL) {
 #' try(chk_nlist(list(x = 1)))
 chk_nlist <- function(x, x_name = NULL) {
   if(vld_nlist(x)) return(invisible())
-  if(is.null(x_name))  x_name <- deparse_backtick(substitute(x))
-  chk_is(x, "nlist", x_name = x_name)
+  if(is.null(x_name))  x_name <- deparse_backtick_chk(substitute(x))
+  chk_s3_class(x, "nlist", x_name = x_name)
   chk_named(x, x_name = x_name)
-  chk_unique(names(x), x_name = p0("names(", x_name, ")"))
+  if(!vld_unique(names(x)))
+    abort_chk("names(", x_name, ") must be unique.", tidy = FALSE)
   chk_all(x, chk_natomic, x_name = x_name)
 }
 
@@ -67,12 +68,12 @@ chk_nlist <- function(x, x_name = NULL) {
 #' chk_nlists(nlists(nlist(x = 1)))
 chk_nlists <- function(x, x_name = NULL) {
   if(vld_nlists(x)) return(invisible())
-  if(is.null(x_name))  x_name <- deparse_backtick(substitute(x))
-  chk_is(x, "nlists", x_name = x_name)
+  if(is.null(x_name))  x_name <- deparse_backtick_chk(substitute(x))
+  chk_s3_class(x, "nlists", x_name = x_name)
   chk_all(x, chk_nlist, x_name = x_name)
   if(!vld_all_identical(lapply(x, names)))
-    abort_chk("nlist elements of ", x_name, " must have matching names.")
+    abort_chk("nlist elements of ", x_name, " must have matching names.", tidy = FALSE)
   if(!vld_all_identical(lapply(x, lapply, dims))) 
-    abort_chk("nlist elements of ", x_name, " must have matching dimensions.")
-  abort_chk("nlist elements of ", x_name, " must have matching types.")
+    abort_chk("nlist elements of ", x_name, " must have matching dimensions.", tidy = FALSE)
+  abort_chk("nlist elements of ", x_name, " must have matching types.", tidy = FALSE)
 }

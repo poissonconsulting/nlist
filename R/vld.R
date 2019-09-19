@@ -27,7 +27,7 @@ vld_natomic <- function(x) is.numeric(x) && is.atomic(x)
 #' vld_nlist(nlist(x = 1))
 #' try(vld_nlist(list(x = 1)))
 vld_nlist <- function(x) {
-  vld_is(x, "nlist") && vld_named(x) && vld_unique(names(x)) &&
+  vld_s3_class(x, "nlist") && vld_named(x) && vld_unique(names(x)) &&
     vld_all(x, vld_natomic)
 }
 
@@ -41,7 +41,7 @@ vld_nlist <- function(x) {
 #' vld_nlists(nlists(nlist(x = 1)))
 #' vld_nlists(1)
 vld_nlists <- function(x) {
-  vld_is(x, "nlists") && vld_all(x, vld_nlist) && 
+  vld_s3_class(x, "nlists") && vld_all(x, vld_nlist) && 
     vld_all_identical(lapply(x, names)) &&  
     vld_all_identical(lapply(x, lapply, dims)) && 
     vld_all_identical(lapply(x, lapply, typesof))

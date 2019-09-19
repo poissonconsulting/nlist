@@ -1,6 +1,6 @@
 Package: nlist
 Title: Lists of Numeric Atomic Objects
-Version: 0.0.0.9109
+Version: 0.0.0.9110
 Authors@R: c(
     person("Joe", "Thorley", , "joe@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("Poisson Consulting", role = c("cph", "fnd"))
@@ -20,7 +20,7 @@ Depends:
     R (>= 3.5)
 Imports:
     stats,
-    chk (>= 0.0.1.9016),
+    chk (>= 0.0.1.9025),
     term (>= 0.0.1),
     coda,
     abind,

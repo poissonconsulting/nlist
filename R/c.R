@@ -8,7 +8,7 @@ c.nlist <- function(...) {
   if(!length(x)) return(nlist())
   class(x) <- "nlist"
   if(anyDuplicated(names(x)))
-    err("nlist objects must have distinctly named natomic elements in order to be concatenated.")
+    err("nlist objects must have distinctly named natomic elements in order to be concatenated.", tidy = FALSE)
   x
 }
 

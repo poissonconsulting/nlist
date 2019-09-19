@@ -8,7 +8,8 @@ test_that("subset.nlist",{
   expect_identical(subset(nlist(x = 1, y = 2), pars =c("y", "x")), nlist(y = 2, x = 1))
   expect_identical(subset(nlist(x = 1, y = 2), pars =c("x", "y")), nlist(x = 1, y = 2))
   expect_error(subset(nlist(x = 1, y = 2), pars ="z"), 
-               "^`pars` must match 'x' or 'y', not 'z'[.]$")
+               "^`pars` must match 'x' or 'y', not 'z'[.]$",
+               class = "chk_error")
 })
 
 test_that("subset.nlists pars and iters",{
@@ -33,7 +34,8 @@ test_that("subset.nlists pars and iters",{
   expect_identical(subset(nlists(nlist(x = 1, y = 2), nlist(x = 3, y = 2)), iters = integer(0), pars = "x"), 
                    subset(nlists()))
   expect_error(subset(nlists(nlist(x = 1, y = 2)), pars ="z"), 
-               "^`pars` must match 'x' or 'y', not 'z'[.]$")
+               "^`pars` must match 'x' or 'y', not 'z'[.]$",
+               class = "chk_error")
 })
 
 
