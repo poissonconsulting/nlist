@@ -22,12 +22,12 @@ chk_nlists(x, x_name = NULL)
   if the condition is not met.
 }
 \description{
-\code{chk_natomic} 
+\code{chk_natomic}
 checks if numeric object using
 
 \code{is.numeric(x) && is.atomic(x)}.
 
-\code{chk_natomic} 
+\code{chk_natomic}
 checks if an \code{\link{nlist-object}} while ignoring the class.
 
 \code{chk_nlists}

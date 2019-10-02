@@ -34,5 +34,5 @@ Always 1.
 
 \examples{
 niters(nlist(x = 1:2))
-niters(nlists(nlist(x = c(2,9)), nlist(x = c(1,7))))
+niters(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
 }

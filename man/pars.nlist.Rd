@@ -10,7 +10,7 @@
 \item{x}{An nlist object.}
 
 \item{scalar}{A logical scalar specifying whether to get the names of
-all parameters (NA), only scalars (TRUE) or all parameters 
+all parameters (NA), only scalars (TRUE) or all parameters
 except scalars (FALSE).}
 
 \item{terms}{A flag specifying whether to return the parameter name

@@ -1,7 +1,7 @@
 #' Create nlists Object
-#' 
+#'
 #' Creates an \code{\link{nlists_object}} from one of more \code{\link{nlist_object}}s.
-#' 
+#'
 #' @param ... nlist objects.
 #' @return An nlists object.
 #' @export
@@ -14,6 +14,6 @@
 nlists <- function(...) {
   args <- list(...)
   if(length(args)) return(as.nlists(args))
-  
+
   structure(list(), class = "nlists")
 }

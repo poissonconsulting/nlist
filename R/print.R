@@ -18,11 +18,11 @@ print.nlists <- function(x, ...) {
   if(!n) {
     cat("an nlists object with 0 nlist objects\n")
     return(invisible(x))
-  } 
+  }
   nn <- length(x[[1]])
   if(nn) print(unclass(aggregate(x)))
-  
-  str <- "an nlists object" 
+
+  str <- "an nlists object"
   nchains <- nchains(x)
   str <- p(str, if(nchains > 1) p("with", nchains, "chains of") else "of")
   str <- p(str, if(n == 1) "an nlist object with" else p(n, "nlist objects each with"))

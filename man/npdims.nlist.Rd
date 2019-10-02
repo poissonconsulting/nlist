@@ -15,7 +15,7 @@
 A named list of the number of dimensions of each numeric atomic object.
 }
 \description{
-Gets the number of dimensions of each \code{\link{natomic_object}} in an 
+Gets the number of dimensions of each \code{\link{natomic_object}} in an
 \code{\link{nlist_object}}.
 }
 \examples{

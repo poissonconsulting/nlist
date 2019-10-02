@@ -10,7 +10,7 @@ collapse_chains <- function(x, ...) {
 }
 
 #' @describeIn collapse_chains Collapse chains for an nlist object
-#' 
+#'
 #' As nlist objects can only have 1 chain the object is unchanged.
 #' @export
 collapse_chains.nlist <- function(x, ...) {

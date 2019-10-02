@@ -16,7 +16,7 @@ aggregate_atomic_numerics <- function(x, fun, ...) {
 
 typesof <- function(x) vapply(x, typeof, "")
 
-split_by_chains <- function(x) split(x, ceiling(seq_along(x)/niters(x)))
+split_by_chains <- function(x) split(x, ceiling(seq_along(x) / niters(x)))
 
 lapply_nlists <- function(x, FUN, ...) {
   nchains <- nchains(x)

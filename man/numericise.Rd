@@ -54,8 +54,8 @@ numericize(x, ...)
 The modified object.
 }
 \description{
-Attempts to coerce a non-numeric R object to \code{\link{natomic_object}} or 
-list of \code{{natomic_object}}. 
+Attempts to coerce a non-numeric R object to \code{\link{natomic_object}} or
+list of \code{{natomic_object}}.
 If possible the dimensionality is preserved.
 }
 \details{

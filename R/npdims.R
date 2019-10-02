@@ -1,6 +1,6 @@
 #' Number of Parameter Dimensions
 #'
-#' Gets the number of dimensions of each \code{\link{natomic_object}} in an 
+#' Gets the number of dimensions of each \code{\link{natomic_object}} in an
 #' \code{\link{nlist_object}}.
 #'
 #' @param x The nlist object
@@ -8,7 +8,7 @@
 #' @return A named list of the number of dimensions of each numeric atomic object.
 #' @seealso \code{\link{pdims}()}
 #' @export
-#' 
+#'
 #' @examples
 #' term::npdims(nlist(x = 1:3))
 #' term::npdims(nlist(y = 3, zz = matrix(2:5, 2)))
@@ -19,7 +19,7 @@ npdims.nlist <- function(x, ...) {
 
 #' Number of Parameter Dimensions
 #'
-#' Gets the number of dimensions of each \code{\link{natomic_object}} in an 
+#' Gets the number of dimensions of each \code{\link{natomic_object}} in an
 #' \code{\link{nlists_object}}.
 #'
 #' @param x The nlists object
@@ -27,11 +27,11 @@ npdims.nlist <- function(x, ...) {
 #' @return A named list of the number of dimensions of each numeric atomic object.
 #' @seealso \code{\link{pdims}()}
 #' @export
-#' 
+#'
 #' @examples
 #' term::npdims(nlists(nlist(x = 1:3)))
 #' term::npdims(nlists(nlist(y = 3, zz = matrix(2:5, 2)),
-#'                   nlist(y = 5, zz = matrix(1:4, 2))))
+#'   nlist(y = 5, zz = matrix(1:4, 2))))
 npdims.nlists <- function(x, ...) {
   if(!length(x)) return(integer(0))
   npdims(x[[1]])

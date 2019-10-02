@@ -1,5 +1,5 @@
 #' Aggregate nlist
-#' 
+#'
 #' Aggregates an \code{\link{nlist_object}} into a named list of numeric scalars.
 #'
 #' @param x An nlist object.
@@ -8,7 +8,7 @@
 #'
 #' @return An named list of numeric scalars
 #' @export
-#' 
+#'
 #' @examples
 #' aggregate(nlist(x = 1:9))
 #' aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), fun = function(x) x[1])
@@ -17,7 +17,7 @@ aggregate.nlist <- function(x, fun = mean, ...) {
 }
 
 #' Aggregate nlists
-#' 
+#'
 #' Aggregates an \code{\link{nlists_object}} into a \code{\link{nlist_object}}
 #' or by_chain = TRUE an \code{\link{nlists_object}}
 #' with \code{nchains} \code{\link{nlist_object}}s.
@@ -27,7 +27,7 @@ aggregate.nlist <- function(x, fun = mean, ...) {
 #' @param by_chain A flag specifying whether to aggregate by chains.
 #' @return An nlist object if \code{by_chain = FALSE} otherwise an nlists object.
 #' @export
-#' 
+#'
 #' @examples
 #' aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
 aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {

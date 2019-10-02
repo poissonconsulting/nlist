@@ -5,11 +5,11 @@
 \alias{nlist_object}
 \title{nlist Object}
 \description{
-An nlist object is an S3 class list of uniquely named 
+An nlist object is an S3 class list of uniquely named
 \code{\link{natomic_object}} elements.
 }
 \details{
-nlist objects are the raw data inputs for analytic engines 
+nlist objects are the raw data inputs for analytic engines
 such as JAGS, STAN and TMB.
 }
 \examples{

@@ -5,11 +5,11 @@
 \alias{nlists_object}
 \title{nlists Object}
 \description{
-An nlists object is a S3 class list of \code{\link{nlist_object}} elements 
+An nlists object is a S3 class list of \code{\link{nlist_object}} elements
 with the same names, dimensionalities and typeofs.
 }
 \details{
-nlists objects are useful for storing individual realizations 
+nlists objects are useful for storing individual realizations
 of a simulated data set.
 }
 \examples{

@@ -20,5 +20,5 @@ Gets the number of terms of an \code{\link{nlists_object}}.
 \examples{
 term::nterms(nlists(nlist(x = 1:3)))
 term::nterms(nlists(nlist(y = 3, zz = matrix(2:5, 2)),
-                  nlist(y = 5, zz = matrix(1:4, 2))))
+  nlist(y = 5, zz = matrix(1:4, 2))))
 }

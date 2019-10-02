@@ -16,7 +16,7 @@ as.nlist <- function(x, ...) {
 #' @export
 as.nlist.list <- function(x, ...) {
   chk_unused(...)
-  
+
   if(!length(x)) return(nlist())
   x <- numericise(x)
   class(x) <- "nlist"

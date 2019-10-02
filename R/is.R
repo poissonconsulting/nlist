@@ -1,7 +1,7 @@
 #' Is natomic
-#' 
+#'
 #' Test whether x is a \code{\link{natomic_object}}.
-#' 
+#'
 #' @param x The object to test.
 #'
 #' @return A flag indicating whether x is a natomic object.
@@ -15,7 +15,7 @@ is.natomic <- function(x) {
 }
 
 #' Is nlist
-#' 
+#'
 #' Test whether x is an \code{\link{nlist_object}}.
 #'
 #' @param x The object to test.
@@ -32,7 +32,7 @@ is.nlist <- function(x) {
 }
 
 #' Is nlists
-#' 
+#'
 #' Test whether x is an \code{\link{nlists_object}}.
 #'
 #' @param x The object to test.

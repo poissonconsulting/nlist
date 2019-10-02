@@ -1,9 +1,9 @@
 #' Numericise (or Numericize)
 #'
-#' Attempts to coerce a non-numeric R object to \code{\link{natomic_object}} or 
-#' list of \code{{natomic_object}}. 
+#' Attempts to coerce a non-numeric R object to \code{\link{natomic_object}} or
+#' list of \code{{natomic_object}}.
 #' If possible the dimensionality is preserved.
-#' 
+#'
 #' Date, POSIXct and hms objects are floored first.
 #'
 #' @param x An R object.
@@ -11,7 +11,7 @@
 #' @return The modified object.
 #' @aliases numericize
 #' @export
-#' @examples 
+#' @examples
 #' numericize(TRUE)
 #' numericize("1.9")
 #' numericize(factor(c("beta", "alpha")))

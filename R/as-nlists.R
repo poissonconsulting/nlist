@@ -7,7 +7,7 @@
 #' @return An nlists object.
 #' @export
 #' @examples
-#' as.nlists(list(nlist(x = c(1,5)), nlist(x = c(2,3)), nlist(x = c(3,2))))
+#' as.nlists(list(nlist(x = c(1, 5)), nlist(x = c(2, 3)), nlist(x = c(3, 2))))
 as.nlists <- function(x, ...) {
   UseMethod("as.nlists")
 }
