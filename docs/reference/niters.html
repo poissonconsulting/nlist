@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create nlists Object — nlists • nlist</title>
+<title>Number of MCMC Iterations — niters • nlist</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Create nlists Object — nlists" />
-<meta property="og:description" content="Creates an nlists_object from one of more nlist_objects." />
+<meta property="og:title" content="Number of MCMC Iterations — niters" />
+<meta property="og:description" content="Gets the number of MCMC iterations (in a chain)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -108,44 +108,57 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create nlists Object</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/nlists.R'><code>R/nlists.R</code></a></small>
-    <div class="hidden name"><code>nlists.Rd</code></div>
+    <h1>Number of MCMC Iterations</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/niters.R'><code>R/niters.R</code></a></small>
+    <div class="hidden name"><code>niters.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates an <code><a href='nlists-object.html'>nlists_object</a></code> from one of more <code><a href='nlist-object.html'>nlist_object</a></code>s.</p>
+    <p>Gets the number of MCMC iterations (in a chain).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>nlists</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>niters</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for nlist</span>
+<span class='fu'>niters</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for nlists</span>
+<span class='fu'>niters</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>x</th>
+      <td><p>The object</p></td>
+    </tr>
+    <tr>
       <th>...</th>
-      <td><p>nlist objects.</p></td>
+      <td><p>Unused.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An nlists object.</p>
+    <p>A count indicating the number of MCMC iterations.</p>
+    <h2 class="hasAnchor" id="methods-by-class-"><a class="anchor" href="#methods-by-class-"></a>Methods (by class)</h2>
+
+    
+<ul>
+<li><p><code>nlist</code>: Number of MCMC iterations for an nlist object</p>
+<p>Always 1.</p></li>
+<li><p><code>nlists</code>: Number of MCMC iterations for an nlists object</p></li>
+</ul>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>nlists</span>()</div><div class='output co'>#&gt; an nlists object with 0 nlist objects</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>())</div><div class='output co'>#&gt; an nlists object of an nlist object with 0 natomic elements</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] 1
-#&gt; 
-#&gt; an nlists object of an nlist object with 1 natomic element</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> -<span class='fl'>3</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] -1
-#&gt; 
-#&gt; an nlists object of 2 nlist objects each with 1 natomic element</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>niters</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>))</div><div class='output co'>#&gt; [1] 1</div><div class='input'><span class='fu'>niters</span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>, <span class='fl'>9</span>)), <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>7</span>))))</div><div class='output co'>#&gt; [1] 2</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#methods-by-class-">Methods (by class)</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

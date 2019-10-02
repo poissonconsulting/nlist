@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create nlists Object — nlists • nlist</title>
+<title>As mcmc Object — as.mcmc.list.nlists • nlist</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Create nlists Object — nlists" />
-<meta property="og:description" content="Creates an nlists_object from one of more nlist_objects." />
+<meta property="og:title" content="As mcmc Object — as.mcmc.list.nlists" />
+<meta property="og:description" content="Coerces an nlists object to a coda::mcmc object." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -108,44 +108,57 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create nlists Object</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/nlists.R'><code>R/nlists.R</code></a></small>
-    <div class="hidden name"><code>nlists.Rd</code></div>
+    <h1>As mcmc Object</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/as-mcmc-list.R'><code>R/as-mcmc-list.R</code></a></small>
+    <div class="hidden name"><code>as.mcmc.list.nlists.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates an <code><a href='nlists-object.html'>nlists_object</a></code> from one of more <code><a href='nlist-object.html'>nlist_object</a></code>s.</p>
+    <p>Coerces an nlists object to a <code><a href='https://rdrr.io/pkg/coda/man/mcmc.html'>coda::mcmc</a></code> object.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>nlists</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>as.mcmc.list.nlists</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>x</th>
+      <td><p>A nlists object.</p></td>
+    </tr>
+    <tr>
       <th>...</th>
-      <td><p>nlist objects.</p></td>
+      <td><p>Unused.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An nlists object.</p>
+    <p>An mcmc object.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='nlists-object.html'>nlists-object</a></code> and <code><a href='https://rdrr.io/pkg/coda/man/mcmc.html'>mcmc</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>nlists</span>()</div><div class='output co'>#&gt; an nlists object with 0 nlist objects</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>())</div><div class='output co'>#&gt; an nlists object of an nlist object with 0 natomic elements</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] 1
+    <pre class="examples"><div class='input'><span class='kw pkg'>coda</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/coda/man/mcmc.list.html'>as.mcmc.list</a></span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>:<span class='fl'>6</span>, <span class='fl'>2</span>)),
+  <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>3</span>:<span class='fl'>8</span>, <span class='fl'>2</span>))))</div><div class='output co'>#&gt; [[1]]
+#&gt; Markov Chain Monte Carlo (MCMC) output:
+#&gt; Start = 1 
+#&gt; End = 2 
+#&gt; Thinning interval = 1 
+#&gt;      x[1,1] x[2,1] x[1,2] x[2,2] x[1,3] x[2,3]
+#&gt; [1,]      1      2      3      4      5      6
+#&gt; [2,]      3      4      5      6      7      8
 #&gt; 
-#&gt; an nlists object of an nlist object with 1 natomic element</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> -<span class='fl'>3</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] -1
-#&gt; 
-#&gt; an nlists object of 2 nlist objects each with 1 natomic element</div></pre>
+#&gt; attr(,"class")
+#&gt; [1] "mcmc.list"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 

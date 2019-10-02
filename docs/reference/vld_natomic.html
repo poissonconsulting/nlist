@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create nlists Object — nlists • nlist</title>
+<title>Validate Numeric Atomic, nlist Object or nlists Object — vld_natomic • nlist</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Create nlists Object — nlists" />
-<meta property="og:description" content="Creates an nlists_object from one of more nlist_objects." />
+<meta property="og:title" content="Validate Numeric Atomic, nlist Object or nlists Object — vld_natomic" />
+<meta property="og:description" content="Validate Numeric Atomic, nlist Object or nlists Object" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -108,44 +108,60 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create nlists Object</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/nlists.R'><code>R/nlists.R</code></a></small>
-    <div class="hidden name"><code>nlists.Rd</code></div>
+    <h1>Validate Numeric Atomic, nlist Object or nlists Object</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/vld.R'><code>R/vld.R</code></a></small>
+    <div class="hidden name"><code>vld_natomic.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates an <code><a href='nlists-object.html'>nlists_object</a></code> from one of more <code><a href='nlist-object.html'>nlist_object</a></code>s.</p>
+    <p>Validate Numeric Atomic, nlist Object or nlists Object</p>
     </div>
 
-    <pre class="usage"><span class='fu'>nlists</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>vld_natomic</span>(<span class='no'>x</span>)
+
+<span class='fu'>vld_nlist</span>(<span class='no'>x</span>)
+
+<span class='fu'>vld_nlists</span>(<span class='no'>x</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>nlist objects.</p></td>
+      <th>x</th>
+      <td><p>The object to check.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An nlists object.</p>
+    <p>A flag indicating whether the object was validated.</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>vld_natomic</code>: Validate Numeric Atomic</p></li>
+<li><p><code>vld_nlist</code>: Validate nlist Object</p></li>
+<li><p><code>vld_nlists</code>: Validate nlists Object</p></li>
+</ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='chk_natomic.html'>chk_natomic</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>nlists</span>()</div><div class='output co'>#&gt; an nlists object with 0 nlist objects</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>())</div><div class='output co'>#&gt; an nlists object of an nlist object with 0 natomic elements</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] 1
-#&gt; 
-#&gt; an nlists object of an nlist object with 1 natomic element</div><div class='input'><span class='fu'>nlists</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>), <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> -<span class='fl'>3</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] -1
-#&gt; 
-#&gt; an nlists object of 2 nlist objects each with 1 natomic element</div></pre>
+    <pre class="examples"><div class='input'><span class='co'>#' vld_natomic</span>
+<span class='fu'>vld_natomic</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_natomic</span>(<span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1L</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>vld_natomic</span>(<span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
+<span class='co'># vld_nlist</span>
+<span class='fu'>vld_nlist</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>vld_nlist</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
+<span class='co'># vld_nlists</span>
+<span class='fu'>vld_nlists</span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_nlists</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#functions">Functions</a></li>
+      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
