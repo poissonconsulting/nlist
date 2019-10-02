@@ -15,11 +15,9 @@ status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/nli
 coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Tinyverse
-status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/package=nlist)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
-![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
+<!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/package=nlist) -->
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist) -->
+<!-- ![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist) -->
 <!-- badges: end -->
 
 nlist is an R package to create and manipulate numeric list (nlist)
@@ -37,19 +35,21 @@ converted to `coda::mcmc` and `coda::mcmc.list` objects.
 
 ## Installation
 
-To install the latest release version from
-[CRAN](https://cran.r-project.org)
-
-``` r
-install.packages("nlist")
-```
-
-To install the latest development version from
-[GitHub](https://github.com/poissonconsulting/hmstimer)
+To install the developmental version from
+[GitHub](https://github.com/poissonconsulting/nlist)
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("poissonconsulting/nlist")
+```
+
+To install the latest developmental release from the Poisson drat
+[repository](https://github.com/poissonconsulting/drat)
+
+``` r
+# install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("nlist")
 ```
 
 ## Demonstration
@@ -144,7 +144,7 @@ print(nlists)
 Aggregating an nlists object gives an nlist object.
 
 ``` r
-aggregate(nlists, FUN = median)
+aggregate(nlists, fun = median)
 #> $x
 #> [1] -0.5
 #> 
