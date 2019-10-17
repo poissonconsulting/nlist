@@ -28,9 +28,7 @@ Imports:
 Suggests: 
     covr,
     testthat
-Remotes: 
-    poissonconsulting/chk,
-    poissonconsulting/term
+Additional_Repositories: https://github.com/poissonconsulting/drat
 URL: https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
 Encoding: UTF-8
