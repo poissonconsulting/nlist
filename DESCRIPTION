@@ -1,6 +1,6 @@
 Package: nlist
 Title: Lists of Numeric Atomic Objects
-Version: 0.0.0.9111
+Version: 0.0.0.9112
 Authors@R: c(
     person("Joe", "Thorley", , "joe@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
     person("Poisson Consulting", role = c("cph", "fnd"))
@@ -28,7 +28,9 @@ Imports:
 Suggests: 
     covr,
     testthat
-Additional_Repositories: https://github.com/poissonconsulting/drat
+Remotes: 
+    poissonconsulting/chk,
+    poissonconsulting/term
 URL: https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
 Encoding: UTF-8
