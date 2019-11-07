@@ -19,7 +19,7 @@ chk_nlists(x, x_name = NULL)
 }
 \value{
 \code{NULL}, invisibly. Called for the side effect of throwing an error
-  if the condition is not met.
+if the condition is not met.
 }
 \description{
 \code{chk_natomic}
@@ -28,10 +28,10 @@ checks if numeric object using
 \code{is.numeric(x) && is.atomic(x)}.
 
 \code{chk_natomic}
-checks if an \code{\link{nlist-object}} while ignoring the class.
+checks if an \code{\link[=nlist-object]{nlist-object()}} while ignoring the class.
 
 \code{chk_nlists}
-checks if an \code{\link{nlists-object}} while ignoring the class.
+checks if an \code{\link[=nlists-object]{nlists-object()}} while ignoring the class.
 }
 \section{Functions}{
 \itemize{
@@ -57,5 +57,5 @@ try(chk_nlist(list(x = 1)))
 chk_nlists(nlists(nlist(x = 1)))
 }
 \seealso{
-\code{\link{vld_natomic}}
+\code{\link[=vld_natomic]{vld_natomic()}}
 }

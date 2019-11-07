@@ -1,6 +1,6 @@
 #' Numericise (or Numericize)
 #'
-#' Attempts to coerce a non-numeric R object to \code{\link{natomic_object}} or
+#' Attempts to coerce a non-numeric R object to [natomic_object()] or
 #' list of \code{{natomic_object}}.
 #' If possible the dimensionality is preserved.
 #'
@@ -21,7 +21,7 @@
 numericise <- function(x, ...) UseMethod("numericise")
 
 #' @rdname numericise
-#' @details \code{numericize()} is an alias for numericise.
+#' @details `numericize()` is an alias for numericise.
 #' @export
 numericize <- function(x, ...) UseMethod("numericise")
 

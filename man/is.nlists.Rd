@@ -13,7 +13,7 @@ is.nlists(x)
 A flag indicating whether x inherits from nlists.
 }
 \description{
-Test whether x is an \code{\link{nlists_object}}.
+Test whether x is an \code{\link[=nlists_object]{nlists_object()}}.
 }
 \examples{
 is.nlists(nlist(x = 1))

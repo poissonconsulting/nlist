@@ -2,7 +2,7 @@
 #'
 #' @inheritParams chk::chk_true
 #' @return A flag indicating whether the object was validated.
-#' @seealso \code{\link{chk_natomic}}
+#' @seealso [chk_natomic()]
 #' @name vld_natomic
 NULL
 

@@ -15,8 +15,8 @@
 A named list of the number of dimensions of each numeric atomic object.
 }
 \description{
-Gets the number of dimensions of each \code{\link{natomic_object}} in an
-\code{\link{nlists_object}}.
+Gets the number of dimensions of each \code{\link[=natomic_object]{natomic_object()}} in an
+\code{\link[=nlists_object]{nlists_object()}}.
 }
 \examples{
 term::npdims(nlists(nlist(x = 1:3)))
@@ -24,5 +24,5 @@ term::npdims(nlists(nlist(y = 3, zz = matrix(2:5, 2)),
   nlist(y = 5, zz = matrix(1:4, 2))))
 }
 \seealso{
-\code{\link{pdims}()}
+\code{\link[=pdims]{pdims()}}
 }

@@ -1,6 +1,6 @@
 #' Coerce to nlists
 #'
-#' Coerce an R object to an \code{\link{nlists_object}}.
+#' Coerce an R object to an [nlists_object()].
 #'
 #' @param x An R object.
 #' @param ... Unused

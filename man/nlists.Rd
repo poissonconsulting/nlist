@@ -13,7 +13,7 @@ nlists(...)
 An nlists object.
 }
 \description{
-Creates an \code{\link{nlists_object}} from one of more \code{\link{nlist_object}}s.
+Creates an \code{\link[=nlists_object]{nlists_object()}} from one of more \code{\link[=nlist_object]{nlist_object()}}s.
 }
 \examples{
 nlists()

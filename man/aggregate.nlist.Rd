@@ -17,7 +17,7 @@
 An named list of numeric scalars
 }
 \description{
-Aggregates an \code{\link{nlist_object}} into a named list of numeric scalars.
+Aggregates an \code{\link[=nlist_object]{nlist_object()}} into a named list of numeric scalars.
 }
 \examples{
 aggregate(nlist(x = 1:9))

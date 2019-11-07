@@ -1,6 +1,6 @@
 #' Number of Terms
 #'
-#' Gets the number of terms of an \code{\link{nlist_object}}.
+#' Gets the number of terms of an [nlist_object()].
 #'
 #' @param x The object.
 #' @param ... Unused.
@@ -17,7 +17,7 @@ nterms.nlist <- function(x, ...) {
 
 #' Number of Terms
 #'
-#' Gets the number of terms of an \code{\link{nlists_object}}.
+#' Gets the number of terms of an [nlists_object()].
 #'
 #' @param x The object.
 #' @param ... Unused.

@@ -1,12 +1,12 @@
 #' Number of Parameter Dimensions
 #'
-#' Gets the number of dimensions of each \code{\link{natomic_object}} in an
-#' \code{\link{nlist_object}}.
+#' Gets the number of dimensions of each [natomic_object()] in an
+#' [nlist_object()].
 #'
 #' @param x The nlist object
 #' @param ... Unused.
 #' @return A named list of the number of dimensions of each numeric atomic object.
-#' @seealso \code{\link{pdims}()}
+#' @seealso [pdims()]
 #' @export
 #'
 #' @examples
@@ -19,13 +19,13 @@ npdims.nlist <- function(x, ...) {
 
 #' Number of Parameter Dimensions
 #'
-#' Gets the number of dimensions of each \code{\link{natomic_object}} in an
-#' \code{\link{nlists_object}}.
+#' Gets the number of dimensions of each [natomic_object()] in an
+#' [nlists_object()].
 #'
 #' @param x The nlists object
 #' @param ... Unused.
 #' @return A named list of the number of dimensions of each numeric atomic object.
-#' @seealso \code{\link{pdims}()}
+#' @seealso [pdims()]
 #' @export
 #'
 #' @examples

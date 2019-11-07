@@ -45,5 +45,5 @@ vld_nlists(nlists(nlist(x = 1)))
 vld_nlists(1)
 }
 \seealso{
-\code{\link{chk_natomic}}
+\code{\link[=chk_natomic]{chk_natomic()}}
 }

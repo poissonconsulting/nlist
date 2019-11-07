@@ -1,10 +1,10 @@
 #' As mcmc.list Object
 #'
-#' Coerces an nlist object to a \code{coda::mcmc.list} object.
+#' Coerces an nlist object to a `coda::mcmc.list` object.
 #' @param x A nlist object.
 #' @param ... Unused.
 #' @return An mcmc.list object.
-#' @seealso \code{\link{nlist-object}} and \code{\link[coda]{mcmc}}
+#' @seealso [nlist-object()] and [coda::mcmc()]
 #' @export
 #'
 #' @examples
@@ -13,11 +13,11 @@ as.mcmc.list.nlist <- function(x, ...) coda::as.mcmc.list(coda::as.mcmc(x))
 
 #' As mcmc Object
 #'
-#' Coerces an nlists object to a \code{coda::mcmc} object.
+#' Coerces an nlists object to a `coda::mcmc` object.
 #' @param x A nlists object.
 #' @param ... Unused.
 #' @return An mcmc object.
-#' @seealso \code{\link{nlists-object}} and \code{\link[coda]{mcmc}}
+#' @seealso [nlists-object()] and [coda::mcmc()]
 #' @export
 #'
 #' @examples

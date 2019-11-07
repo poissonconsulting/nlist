@@ -1,9 +1,9 @@
 #' Check Numeric Atomic, nlist Object or nlists Object
 #'
 #' @inheritParams chk::chk_true
-#' @return \code{NULL}, invisibly. Called for the side effect of throwing an error
+#' @return `NULL`, invisibly. Called for the side effect of throwing an error
 #'   if the condition is not met.
-#' @seealso \code{\link{vld_natomic}}
+#' @seealso [vld_natomic()]
 #' @name chk_natomic
 NULL
 
@@ -11,10 +11,10 @@ NULL
 #'
 #' @description
 #'
-#' \code{chk_natomic}
+#' `chk_natomic`
 #' checks if numeric object using
 #'
-#' \code{is.numeric(x) && is.atomic(x)}.
+#' `is.numeric(x) && is.atomic(x)`.
 #' @export
 #'
 #' @examples
@@ -34,8 +34,8 @@ chk_natomic <- function(x, x_name = NULL) {
 #'
 #' @description
 #'
-#' \code{chk_natomic}
-#' checks if an \code{\link{nlist-object}} while ignoring the class.
+#' `chk_natomic`
+#' checks if an [nlist-object()] while ignoring the class.
 #'
 #' @export
 #'
@@ -57,8 +57,8 @@ chk_nlist <- function(x, x_name = NULL) {
 #' @describeIn chk_natomic Check nlists Object
 #'
 #' @description
-#' \code{chk_nlists}
-#' checks if an \code{\link{nlists-object}} while ignoring the class.
+#' `chk_nlists`
+#' checks if an [nlists-object()] while ignoring the class.
 #'
 #' @export
 #'

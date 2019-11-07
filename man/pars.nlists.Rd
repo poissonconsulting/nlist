@@ -22,7 +22,7 @@ for each term.}
 A character vector of the parameter names.
 }
 \description{
-Gets the parameter names for an \code{\link{nlists_object}}.
+Gets the parameter names for an \code{\link[=nlists_object]{nlists_object()}}.
 }
 \examples{
 term::pars(nlists(nlist(zz = 1, y = 3:6), nlist(zz = 4, y = 13:16)))

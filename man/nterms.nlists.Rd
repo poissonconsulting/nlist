@@ -15,7 +15,7 @@
 A count of the number of terms.
 }
 \description{
-Gets the number of terms of an \code{\link{nlists_object}}.
+Gets the number of terms of an \code{\link[=nlists_object]{nlists_object()}}.
 }
 \examples{
 term::nterms(nlists(nlist(x = 1:3)))

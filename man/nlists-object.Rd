@@ -5,7 +5,7 @@
 \alias{nlists_object}
 \title{nlists Object}
 \description{
-An nlists object is a S3 class list of \code{\link{nlist_object}} elements
+An nlists object is a S3 class list of \code{\link[=nlist_object]{nlist_object()}} elements
 with the same names, dimensionalities and typeofs.
 }
 \details{

@@ -1,6 +1,6 @@
 #' nlists Object
 #'
-#' An nlists object is a S3 class list of \code{\link{nlist_object}} elements
+#' An nlists object is a S3 class list of [nlist_object()] elements
 #' with the same names, dimensionalities and typeofs.
 #'
 #' nlists objects are useful for storing individual realizations

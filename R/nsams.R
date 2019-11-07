@@ -5,7 +5,7 @@
 #' @param ... Unused.
 #' @return A count of the total number of sample values.
 #' @export
-#' @seealso \code{\link{nsims}()} and \code{\link{nterms}()}
+#' @seealso [nsims()] and [nterms()]
 #' @examples
 #' nsams(nlist(x = 2))
 #' nsams(nlist(x = 1:2))

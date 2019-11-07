@@ -21,5 +21,5 @@ Coerces an nlist object to a \code{coda::mcmc} object.
 coda::as.mcmc(nlist(x = matrix(1:6, 2)))
 }
 \seealso{
-\code{\link{nlist-object}} and \code{\link[coda]{mcmc}}
+\code{\link[=nlist-object]{nlist-object()}} and \code{\link[coda:mcmc]{coda::mcmc()}}
 }

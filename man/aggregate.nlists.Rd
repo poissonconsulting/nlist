@@ -19,9 +19,9 @@
 An nlist object if \code{by_chain = FALSE} otherwise an nlists object.
 }
 \description{
-Aggregates an \code{\link{nlists_object}} into a \code{\link{nlist_object}}
-or by_chain = TRUE an \code{\link{nlists_object}}
-with \code{nchains} \code{\link{nlist_object}}s.
+Aggregates an \code{\link[=nlists_object]{nlists_object()}} into a \code{\link[=nlist_object]{nlist_object()}}
+or by_chain = TRUE an \code{\link[=nlists_object]{nlists_object()}}
+with \code{nchains} \code{\link[=nlist_object]{nlist_object()}}s.
 }
 \examples{
 aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))

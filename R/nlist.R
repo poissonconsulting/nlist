@@ -1,6 +1,6 @@
 #' Create nlist Object
 #'
-#' Creates a \code{\link{nlist_object}} from one of more uniquely named \code{\link{natomic_object}} arguments.
+#' Creates a [nlist_object()] from one of more uniquely named [natomic_object()] arguments.
 #' @param ... Uniquely named atomic numeric objects.
 #' @return An nlist object.
 #' @export

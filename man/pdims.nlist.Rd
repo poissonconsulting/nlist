@@ -12,7 +12,7 @@
 \item{...}{Unused}
 }
 \value{
-A named list of the dimensions of each \code{\link{natomic_object}}.
+A named list of the dimensions of each \code{\link[=natomic_object]{natomic_object()}}.
 }
 \description{
 Gets the dimensions of an nlist object.
@@ -22,5 +22,5 @@ term::pdims(nlist(x = 1:3))
 term::pdims(nlist(y = 3, zz = matrix(2:5, 2)))
 }
 \seealso{
-\code{\link[term]{pdims}()}
+\code{\link[term:pdims]{term::pdims()}}
 }

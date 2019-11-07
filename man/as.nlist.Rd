@@ -27,7 +27,7 @@ as.nlist(x, ...)
 An nlist object.
 }
 \description{
-Coerce an R object to an \code{\link{nlist_object}}.
+Coerce an R object to an \code{\link[=nlist_object]{nlist_object()}}.
 }
 \section{Methods (by class)}{
 \itemize{

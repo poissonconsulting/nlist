@@ -1,6 +1,6 @@
 #' Create nlists Object
 #'
-#' Creates an \code{\link{nlists_object}} from one of more \code{\link{nlist_object}}s.
+#' Creates an [nlists_object()] from one of more [nlist_object()]s.
 #'
 #' @param ... nlist objects.
 #' @return An nlists object.

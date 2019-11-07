@@ -15,7 +15,7 @@ as.nlists(x, ...)
 An nlists object.
 }
 \description{
-Coerce an R object to an \code{\link{nlists_object}}.
+Coerce an R object to an \code{\link[=nlists_object]{nlists_object()}}.
 }
 \examples{
 as.nlists(list(nlist(x = c(1, 5)), nlist(x = c(2, 3)), nlist(x = c(3, 2))))

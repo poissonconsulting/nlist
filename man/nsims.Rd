@@ -38,5 +38,5 @@ nsims(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
 nsims(split_chains(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7)))))
 }
 \seealso{
-\code{\link{niters}()} and \code{\link{nchains}()}
+\code{\link[=niters]{niters()}} and \code{\link[=nchains]{nchains()}}
 }

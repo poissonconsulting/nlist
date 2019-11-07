@@ -4,8 +4,8 @@
 #'
 #' @param x An nlist object.
 #' @param ... Unused
-#' @return A named list of the dimensions of each \code{\link{natomic_object}}.
-#' @seealso \code{\link[term]{pdims}()}
+#' @return A named list of the dimensions of each [natomic_object()].
+#' @seealso [term::pdims()]
 #' @export
 #'
 #' @examples
@@ -22,8 +22,8 @@ pdims.nlist <- function(x, ...) {
 #'
 #' @param x An nlists object.
 #' @param ... Unused
-#' @return A named list of the dimensions of each \code{\link{natomic_object}}.
-#' @seealso \code{\link[term]{pdims}()}
+#' @return A named list of the dimensions of each [natomic_object()].
+#' @seealso [term::pdims()]
 #' @export
 #'
 #' @examples

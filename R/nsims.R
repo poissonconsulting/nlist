@@ -5,7 +5,7 @@
 #' @param x The object
 #' @param ... Unused.
 #' @return A count of the number of simulations.
-#' @seealso \code{\link{niters}()} and \code{\link{nchains}()}
+#' @seealso [niters()] and [nchains()]
 #' @export
 #' @examples
 #' nsims(nlist(x = 1:2))

@@ -13,7 +13,7 @@ is.natomic(x)
 A flag indicating whether x is a natomic object.
 }
 \description{
-Test whether x is a \code{\link{natomic_object}}.
+Test whether x is a \code{\link[=natomic_object]{natomic_object()}}.
 }
 \examples{
 is.natomic(list(x = 1))

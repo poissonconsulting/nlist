@@ -1,6 +1,6 @@
 #' Parameter Names
 #'
-#' Gets the parameter names for an \code{\link{nlist_object}}.
+#' Gets the parameter names for an [nlist_object()].
 #'
 #' @param x An nlist object.
 #' @param scalar A logical scalar specifying whether to get the names of
@@ -25,7 +25,7 @@ pars.nlist <- function(x, scalar = NA, terms = FALSE, ...) {
 
 #' Parameter Names
 #'
-#' Gets the parameter names for an \code{\link{nlists_object}}.
+#' Gets the parameter names for an [nlists_object()].
 #'
 #' @param x An nlists object.
 #' @inheritParams pars.nlist
