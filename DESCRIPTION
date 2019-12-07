@@ -17,10 +17,10 @@ Description: Create and manipulate numeric list (nlist) objects.
   coda::mcmc and coda::mcmc.list objects.
 License: MIT + file LICENSE
 Depends: 
-    R (>= 3.5)
+    R (>= 3.3)
 Imports:
     stats,
-    chk (>= 0.0.1.9025),
+    chk,
     term (>= 0.0.1),
     coda,
     abind,
@@ -29,7 +29,6 @@ Suggests:
     covr,
     testthat
 Remotes: 
-    poissonconsulting/chk,
     poissonconsulting/term
 URL: https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
