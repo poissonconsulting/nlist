@@ -4,8 +4,7 @@
 \alias{subset.nlists}
 \title{Subset nlists Object}
 \usage{
-\method{subset}{nlists}(x, chains = NULL, iters = NULL, pars = NULL,
-  ...)
+\method{subset}{nlists}(x, chains = NULL, iters = NULL, pars = NULL, ...)
 }
 \arguments{
 \item{x}{An nlists object.}
