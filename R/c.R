@@ -1,8 +1,8 @@
 #' @export
 c.nlist <- function(...) {
   x <- list(...)
-  if(is_chk_on())
-    chk_all(x, chk_nlist, x_name  = "...")
+  chk_all(x, chk_nlist, x_name  = "...")
+  
   x <- lapply(x, unclass)
   x <- do.call("c", x)
   if(!length(x)) return(nlist())
@@ -13,11 +13,10 @@ c.nlist <- function(...) {
 }
 
 .c_nlists <- function(x) {
-  if(is_chk_on()) {
-    chk_all(x, chk_nlists, x_name  = "...")
-    if(!vld_all_identical(lapply(x, nchains)))
-      err("All elements of ... must have the same number of chains.")
-  }
+  chk_all(x, chk_nlists, x_name  = "...")
+  if(!vld_all_identical(lapply(x, nchains)))
+    err("All elements of ... must have the same number of chains.")
+  
   if(!length(x)) return(nlists())
   nchains <- nchains(x[[1]])
   if(nchains > 1L) {
@@ -29,7 +28,7 @@ c.nlist <- function(...) {
   x <- lapply(x, unclass)
   x <- do.call("c", x)
   class(x) <- "nlists"
-  if(is_chk_on()) chk_nlists(x, x_name = "...")
+  chk_nlists(x, x_name = "...")
   if(nchains > 1L) attr(x, "nchains") <- nchains
   return(x)
 }
