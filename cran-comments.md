@@ -1,10 +1,10 @@
 ## Test environments
 
-release 3.6.1
+release 3.6.2
 
 * OS X (local) - release
 
-* Ubuntu (travis) - oldrelease, release and devel
+* Ubuntu (travis) - oldrelease and release
 * Ubuntu (rhub) - release
 
 * Fedora (rhub) - devel
