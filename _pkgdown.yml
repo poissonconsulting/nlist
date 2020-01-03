@@ -20,12 +20,16 @@ reference:
   contents:
   - '`nchains`'
   - '`niters`'
-  - '`npdims`'
+  - '`npdims.nlist`'
+  - '`npdims.nlists`'
   - '`nsams`'
   - '`nsims`'
-  - '`nterms`'
-  - '`pars`'
-  - '`pdims`'
+  - '`nterms.nlist`'
+  - '`nterms.nlists`'
+  - '`pars.nlist`'
+  - '`pars.nlists`'
+  - '`pdims.nlist`'
+  - '`pdims.nlists`'
 - title: Manipulate
   desc: Manipulate objects
   contents:
