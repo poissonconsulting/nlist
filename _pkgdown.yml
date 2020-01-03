@@ -9,10 +9,13 @@ reference:
 - title: Coerce
   desc: Coerce objects
   contents:
-  - '`as.mcmc.list`'
-  - '`as.mcmc`'
+  - '`as.mcmc.list.nlist`'
+  - '`as.mcmc.list.nlists`'
+  - '`as.mcmc.nlist`'
+  - '`as.mcmc.nlists`'
   - '`as.nlist`'
-  - '`as.nlists`'
+  - '`as.nlists.list`'
+  - '`as.nlists.nlist`'
   - '`numericize`'
   - '`numericise`'
 - title: Query
