@@ -29,10 +29,13 @@ reference:
 - title: Manipulate
   desc: Manipulate objects
   contents:
-  - '`aggregate`'
-  - '`collapse_chains`'
-  - '`split_chains`'
-  - '`subset`'
+  - '`aggregate.nlist`'
+  - '`aggregate.nlists`'
+  - '`collapse_chains.nlist`'
+  - '`collapse_chains.nlists`'
+  - '`split_chains.nlists`'
+  - '`subset.nlist`'
+  - '`subset.nlists`'
 - title: Identify
   desc: Identify objects
   contents:
