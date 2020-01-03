@@ -3,9 +3,9 @@ destination: docs
 reference:
 - title: Create
   desc: Create objects
+  contents:
   - '`nlist`'
   - '`nlists`'  
-  contents:
 - title: Coerce
   desc: Coerce objects
   contents:
