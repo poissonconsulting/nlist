@@ -1,1 +1,53 @@
 destination: docs
+
+reference:
+- title: Create
+  desc: Create objects
+  - '`nlist`'
+  - '`nlists`'  
+  contents:
+- title: Coerce
+  desc: Coerce objects
+  contents:
+  - '`as.mcmc.list`'
+  - '`as.mcmc`'
+  - '`as.nlist`'
+  - '`as.nlists`'
+  - '`numericize`'
+  - '`numericise`'
+- title: Query
+  desc: Query object's dimensions/parameters
+  contents:
+  - '`nchains`'
+  - '`niters`'
+  - '`npdims`'
+  - '`nsams`'
+  - '`nsims`'
+  - '`nterms`'
+  - '`pars`'
+  - '`pdims`'
+- title: Manipulate
+  desc: Manipulate objects
+  contents:
+  - '`aggregate`'
+  - '`collapse_chains`'
+  - '`split_chains`'
+  - '`subset`'
+- title: Identify
+  desc: Identify objects
+  contents:
+  - '`is.natomic`'
+  - '`is.nlist`'
+  - '`is.nlists`'
+- title: Check
+  desc: Check objects
+  contents:
+  - '`chk_natomic`'
+  - '`chk_nlist`'
+  - '`chk_nlists`'
+- title: Validate
+  desc: Validate objects
+  contents:
+  - '`vld_natomic`'
+  - '`vld_nlist`'
+  - '`vld_nlists`'
