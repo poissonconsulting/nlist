@@ -14,8 +14,7 @@ reference:
   - '`as.mcmc.nlist`'
   - '`as.mcmc.nlists`'
   - '`as.nlist`'
-  - '`as.nlists.list`'
-  - '`as.nlists.nlist`'
+  - '`as.nlists`'
   - '`numericize`'
   - '`numericise`'
 - title: Query

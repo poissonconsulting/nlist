@@ -12,7 +12,7 @@ as.nlists <- function(x, ...) {
   UseMethod("as.nlists")
 }
 
-#' @describeIn as.nlist Coerce list to nlists
+#' @describeIn as.nlists Coerce list to nlists
 #' @export
 as.nlists.list <- function(x, ...) {
   x <- lapply(x, as.nlist)
@@ -21,7 +21,7 @@ as.nlists.list <- function(x, ...) {
   x
 }
 
-#' @describeIn as.nlist Coerce nlist to nlists
+#' @describeIn as.nlists Coerce nlist to nlists
 #' @export
 as.nlists.nlist <- function(x, ...) {
   x <- list(x)

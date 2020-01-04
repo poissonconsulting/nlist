@@ -2,9 +2,15 @@
 % Please edit documentation in R/as-nlists.R
 \name{as.nlists}
 \alias{as.nlists}
+\alias{as.nlists.list}
+\alias{as.nlists.nlist}
 \title{Coerce to nlists}
 \usage{
 as.nlists(x, ...)
+
+\method{as.nlists}{list}(x, ...)
+
+\method{as.nlists}{nlist}(x, ...)
 }
 \arguments{
 \item{x}{An R object.}
@@ -17,6 +23,13 @@ An nlists object.
 \description{
 Coerce an R object to an \code{\link[=nlists_object]{nlists_object()}}.
 }
+\section{Methods (by class)}{
+\itemize{
+\item \code{list}: Coerce list to nlists
+
+\item \code{nlist}: Coerce nlist to nlists
+}}
+
 \examples{
 as.nlists(list(nlist(x = c(1, 5)), nlist(x = c(2, 3)), nlist(x = c(3, 2))))
 }
