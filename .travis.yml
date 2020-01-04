@@ -41,6 +41,7 @@ env:
 
 jobs:
   include:
+  - r: devel
   - r: release
     env:
     - RUN_CODECOV=true
