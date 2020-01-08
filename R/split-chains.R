@@ -10,7 +10,7 @@ split_chains <- function(x, ...) {
   UseMethod("split_chains")
 }
 
-#' @describeIn split_chains Split chains for an mcmcarray object
+#' @describeIn split_chains Split chains for an [nlists_object()].
 #' @export
 split_chains.nlists <- function(x, ...) {
   nchains <- nchains(x)

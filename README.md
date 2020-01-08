@@ -30,7 +30,7 @@ as JAGS, STAN and TMB.
 
 An nlists object is a S3 class list of nlist objects with the same
 names, dimensionalities and typeofs. nlists objects are useful for
-storing multiple realizations of simulated datas sets. They can be
+storing multiple realizations of simulated data sets. They can be
 converted to `coda::mcmc` and `coda::mcmc.list` objects.
 
 ## Installation

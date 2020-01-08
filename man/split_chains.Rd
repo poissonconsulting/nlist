@@ -20,6 +20,6 @@ the number of iterations.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{nlists}: Split chains for an mcmcarray object
+\item \code{nlists}: Split chains for an \code{\link[=nlists_object]{nlists_object()}}.
 }}
 
