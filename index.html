@@ -134,47 +134,51 @@
 <a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; an nlist object with 2 natomic elements</span></a></code></pre></div>
 <p>Or to coerce from a data frame.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">data &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="dt">lgl =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="ot">TRUE</span>, <span class="ot">NA</span>),</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="dt">dte =</span> <span class="kw"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"2001-01-02"</span>, <span class="st">"2001-01-01"</span>)),</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="dt">fac =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"b"</span>, <span class="st">"a"</span>)))</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">data</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;    lgl        dte fac</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 1 TRUE 2001-01-02   b</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; 2   NA 2001-01-01   a</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw"><a href="reference/as.nlist.html">as.nlist</a></span>(data)</a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; $lgl</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; [1]  1 NA</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; $dte</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; [1] 11324 11323</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; $fac</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; [1] 2 1</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; an nlist object with 3 natomic elements</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">data &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="dt">lgl =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="ot">TRUE</span>, <span class="ot">NA</span>),</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="dt">dte =</span> <span class="kw"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"2001-01-02"</span>, <span class="st">"2001-01-01"</span>)),</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="dt">fac =</span> <span class="kw"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"b"</span>, <span class="st">"a"</span>))</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">data</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt;    lgl        dte fac</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; 1 TRUE 2001-01-02   b</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; 2   NA 2001-01-01   a</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="kw"><a href="reference/as.nlist.html">as.nlist</a></span>(data)</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; $lgl</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; [1]  1 NA</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt; $dte</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">#&gt; [1] 11324 11323</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">#&gt; $fac</span></a>
+<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">#&gt; [1] 2 1</span></a>
+<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">#&gt; an nlist object with 3 natomic elements</span></a></code></pre></div>
 </div>
 <div id="nlists" class="section level3">
 <h3 class="hasAnchor">
 <a href="#nlists" class="anchor"></a><code>nlists</code>
 </h3>
 <p>An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs. The nchains attribute is used to keep track of the number of chains.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">nlists &lt;-<span class="st"> </span><span class="kw"><a href="reference/nlists.html">nlists</a></span>(<span class="kw"><a href="reference/nlist.html">nlist</a></span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dv">3</span>)),</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="kw"><a href="reference/nlist.html">nlist</a></span>(<span class="dt">x =</span> <span class="dv">-2</span>, <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="dv">2</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">3</span>)),</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="kw"><a href="reference/nlist.html">nlist</a></span>(<span class="dt">x =</span> <span class="dv">10</span>, <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="dv">22</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">3</span>)),</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="kw"><a href="reference/nlist.html">nlist</a></span>(<span class="dt">x =</span> <span class="dv">-100</span>, <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="op">-</span><span class="dv">2</span><span class="op">:-</span><span class="dv">10</span>, <span class="dv">3</span>)))</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(nlists)</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt; $x</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt; [1] -22.75</span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt; $y</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt;      [,1] [,2] [,3]</span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt; [1,] 5.75 7.25 8.75</span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt; [2,] 6.25 7.75 9.25</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt; [3,] 6.75 8.25 9.75</span></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt; an nlists object of 4 nlist objects each with 2 natomic elements</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">nlists &lt;-<span class="st"> </span><span class="kw"><a href="reference/nlists.html">nlists</a></span>(</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="kw"><a href="reference/nlist.html">nlist</a></span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dv">3</span>)),</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="kw"><a href="reference/nlist.html">nlist</a></span>(<span class="dt">x =</span> <span class="dv">-2</span>, <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="dv">2</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">3</span>)),</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="kw"><a href="reference/nlist.html">nlist</a></span>(<span class="dt">x =</span> <span class="dv">10</span>, <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="dv">22</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">3</span>)),</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">  <span class="kw"><a href="reference/nlist.html">nlist</a></span>(<span class="dt">x =</span> <span class="dv">-100</span>, <span class="dt">y =</span> <span class="kw"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="op">-</span><span class="dv">2</span><span class="op">:-</span><span class="dv">10</span>, <span class="dv">3</span>))</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(nlists)</a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt; $x</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt; [1] -22.75</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt; $y</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt;      [,1] [,2] [,3]</span></a>
+<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt; [1,] 5.75 7.25 8.75</span></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt; [2,] 6.25 7.75 9.25</span></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt; [3,] 6.75 8.25 9.75</span></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb6-18" data-line-number="18"><span class="co">#&gt; an nlists object of 4 nlist objects each with 2 natomic elements</span></a></code></pre></div>
 <p>Aggregating an nlists object gives an nlist object.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/stats/aggregate.html">aggregate</a></span>(nlists, <span class="dt">fun =</span> median)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; $x</span></a>

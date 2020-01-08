@@ -154,9 +154,11 @@
 chains and iterations.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>nlists</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>4</span>),
+    <pre class="examples"><div class='input'><span class='no'>nlists</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nlists.html'>nlists</a></span>(
+  <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>4</span>),
   <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>4</span>:<span class='fl'>1</span>),
-  <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>5</span>:<span class='fl'>2</span>))
+  <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>5</span>:<span class='fl'>2</span>)
+)
 <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>nlists</span>)</div><div class='output co'>#&gt; $a
 #&gt; [1] 2
 #&gt; 
