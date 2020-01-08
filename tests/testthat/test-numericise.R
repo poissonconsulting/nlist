@@ -107,3 +107,11 @@ test_that("numericise.data.frame", {
     ), row.names = c(NA, -2L), class = "data.frame")
   )
 })
+
+test_that("numericise.nlist", {
+  expect_identical(numericise(nlist(x = 1)), nlist(x = 1))
+})
+
+test_that("numericise.nlists", {
+  expect_identical(numericise(nlists(nlist(x = 1))), nlists(nlist(x = 1)))
+})

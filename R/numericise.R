@@ -105,3 +105,9 @@ numericise.data.frame <- function(x, ...) {
   x[] <- lapply(x, numericise)
   x
 }
+
+#' @export
+numericise.nlist <- function(x, ...) x
+
+#' @export
+numericise.nlists <- function(x, ...) x
