@@ -33,7 +33,7 @@ aggregate.nlist <- function(x, fun = mean, ...) {
 aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {
   chk_function(fun)
   chk_flag(by_chain)
-  if(!by_chain) {
+  if (!by_chain) {
     x <- transpose(x)
     x <- lapply(x, aggregate_atomic_numerics, fun, ...)
     return(as.nlist(x))
@@ -43,6 +43,6 @@ aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {
   x <- lapply(x, FUN = aggregate, fun = fun, ..., by_chain = FALSE)
   names(x) <- NULL
   class(x) <- "nlists"
-  if(nchains > 1L) attr(x, "nchains") <- nchains
+  if (nchains > 1L) attr(x, "nchains") <- nchains
   x
 }

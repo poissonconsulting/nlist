@@ -95,9 +95,11 @@ nlist
 Or to coerce from a data frame.
 
 ``` r
-data <- data.frame(lgl = c(TRUE, NA),
+data <- data.frame(
+  lgl = c(TRUE, NA),
   dte = as.Date(c("2001-01-02", "2001-01-01")),
-  fac = factor(c("b", "a")))
+  fac = factor(c("b", "a"))
+)
 
 data
 #>    lgl        dte fac
@@ -123,10 +125,12 @@ names, dimensionalities and typeofs. The nchains attribute is used to
 keep track of the number of chains.
 
 ``` r
-nlists <- nlists(nlist(x = 1, y = matrix(1:9, 3)),
+nlists <- nlists(
+  nlist(x = 1, y = matrix(1:9, 3)),
   nlist(x = -2, y = matrix(2:10, 3)),
   nlist(x = 10, y = matrix(22:30, 3)),
-  nlist(x = -100, y = matrix(-2:-10, 3)))
+  nlist(x = -100, y = matrix(-2:-10, 3))
+)
 
 print(nlists)
 #> $x

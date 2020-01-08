@@ -14,9 +14,15 @@ test_that("split_chains nlists error", {
 })
 
 test_that("split_chains nlists extra iters", {
-  nlists <- nlists(nlist(x = matrix(1:6, 2)), nlist(x = matrix(3:8, 2)),
-    nlist(x = matrix(2:7, 2)))
-  expect_identical(split_chains(nlists),
-    structure(list(structure(list(x = structure(1:6, .Dim = 2:3)), class = "nlist"),
-      structure(list(x = structure(3:8, .Dim = 2:3)), class = "nlist")), class = "nlists", nchains = 2L))
+  nlists <- nlists(
+    nlist(x = matrix(1:6, 2)), nlist(x = matrix(3:8, 2)),
+    nlist(x = matrix(2:7, 2))
+  )
+  expect_identical(
+    split_chains(nlists),
+    structure(list(
+      structure(list(x = structure(1:6, .Dim = 2:3)), class = "nlist"),
+      structure(list(x = structure(3:8, .Dim = 2:3)), class = "nlist")
+    ), class = "nlists", nchains = 2L)
+  )
 })

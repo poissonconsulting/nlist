@@ -13,7 +13,9 @@
 #' nlists(nlist(x = 1), nlist(x = -3))
 nlists <- function(...) {
   args <- list(...)
-  if(length(args)) return(as.nlists(args))
+  if (length(args)) {
+    return(as.nlists(args))
+  }
 
   structure(list(), class = "nlists")
 }

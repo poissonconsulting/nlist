@@ -1,7 +1,8 @@
 aggregate_atomic_numeric <- function(x, FUN, ...) {
   x <- FUN(x, ...)
-  if(!identical(length(x), 1L))
+  if (!identical(length(x), 1L)) {
     err("`fun` must return a scalar.")
+  }
   x
 }
 
@@ -10,7 +11,7 @@ aggregate_atomic_numerics <- function(x, fun, ...) {
   ndims <- length(dims)
   x <- abind(x, along = ndims + 1L)
   x <- apply(x, MARGIN = 1:ndims, FUN = fun, ...)
-  if(!identical(dims(x), dims)) err("`fun` must return a scalar.")
+  if (!identical(dims(x), dims)) err("`fun` must return a scalar.")
   x
 }
 
@@ -22,6 +23,6 @@ lapply_nlists <- function(x, FUN, ...) {
   nchains <- nchains(x)
   x <- lapply(x, FUN = FUN, ...)
   class(x) <- "nlists"
-  if(nchains > 1L) attr(x, "nchains") <- nchains
+  if (nchains > 1L) attr(x, "nchains") <- nchains
   x
 }

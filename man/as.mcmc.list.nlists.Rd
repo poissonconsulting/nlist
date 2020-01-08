@@ -18,8 +18,10 @@ An mcmc object.
 Coerces an nlists object to a \code{coda::mcmc} object.
 }
 \examples{
-coda::as.mcmc.list(nlists(nlist(x = matrix(1:6, 2)),
-  nlist(x = matrix(3:8, 2))))
+coda::as.mcmc.list(nlists(
+  nlist(x = matrix(1:6, 2)),
+  nlist(x = matrix(3:8, 2))
+))
 }
 \seealso{
 \code{\link[=nlists-object]{nlists-object()}} and \code{\link[coda:mcmc]{coda::mcmc()}}

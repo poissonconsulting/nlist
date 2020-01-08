@@ -28,9 +28,11 @@ It can also be used to reorder the parameters as well as duplicate
 chains and iterations.
 }
 \examples{
-nlists <- nlists(nlist(a = 1, y = 3, x = 1:4),
+nlists <- nlists(
+  nlist(a = 1, y = 3, x = 1:4),
   nlist(a = 2, y = 4, x = 4:1),
-  nlist(a = 3, y = 6, x = 5:2))
+  nlist(a = 3, y = 6, x = 5:2)
+)
 subset(nlists)
 subset(nlists, pars = "a")
 subset(nlists, pars = c("x", "a"))

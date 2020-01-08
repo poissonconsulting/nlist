@@ -16,6 +16,8 @@ test_that("nterms.nlists", {
   expect_identical(nterms(nlists(nlist(x = 2:3))), 2L)
   expect_identical(nterms(nlists(nlist(x = 2:3, y = 1))), 3L)
   expect_identical(nterms(nlists(nlist(x = 2:3, y = matrix(1:9)))), 11L)
-  expect_identical(nterms(nlists(nlist(x = 2:3, y = matrix(1:9)),
-    nlist(x = 2:3, y = matrix(1:9)))), 11L)
+  expect_identical(nterms(nlists(
+    nlist(x = 2:3, y = matrix(1:9)),
+    nlist(x = 2:3, y = matrix(1:9))
+  )), 11L)
 })

@@ -43,8 +43,10 @@ test_that("numericise.hms", {
 
 test_that("numericise.matrix", {
   expect_identical(numericise(matrix(NA)), matrix(NA_integer_))
-  expect_identical(numericise(matrix(NA, c(2, 3, 4))),
-    matrix(NA_integer_, c(2, 3, 4)))
+  expect_identical(
+    numericise(matrix(NA, c(2, 3, 4))),
+    matrix(NA_integer_, c(2, 3, 4))
+  )
 })
 
 test_that("numericise.array", {
@@ -53,35 +55,55 @@ test_that("numericise.array", {
 })
 
 test_that("numericise.list", {
-  expect_identical(numericise(list(x = TRUE)),
-    list(x = 1L))
-  expect_identical(numericise(list(x = TRUE, y = list(z = factor(3)))),
-    list(x = 1L, y = list(z = 1L)))
-
-  expect_identical(numericise(list(lgl = c(TRUE, NA),
-    int = 1:2,
-    dbl = c(2.5, 1.5),
-    dte = as.Date(c("2001-01-02", "2001-01-01")),
-    fac = factor(c("b", "a")))),
-  list(lgl = c(1L, NA), int = 1:2, dbl = c(2.5, 1.5),
-    dte = 11324:11323,
-    fac = 2:1))
-})
-
-test_that("numericise.data.frame", {
-  expect_identical(numericise(data.frame(x = TRUE)),
-    data.frame(x = 1L))
   expect_identical(
-    numericise(data.frame(x = factor(3:2), y = c(FALSE, NA), z = c("1", "2"),
-      stringsAsFactors = FALSE)),
-    data.frame(x = 2:1, y = c(0L, NA), z = c(1, 2), stringsAsFactors = FALSE))
+    numericise(list(x = TRUE)),
+    list(x = 1L)
+  )
+  expect_identical(
+    numericise(list(x = TRUE, y = list(z = factor(3)))),
+    list(x = 1L, y = list(z = 1L))
+  )
 
   expect_identical(
-    numericise(data.frame(lgl = c(TRUE, NA),
+    numericise(list(
+      lgl = c(TRUE, NA),
       int = 1:2,
       dbl = c(2.5, 1.5),
       dte = as.Date(c("2001-01-02", "2001-01-01")),
-      fac = factor(c("b", "a")))),
-    structure(list(lgl = c(1L, NA), int = 1:2, dbl = c(2.5, 1.5),
-      dte = 11324:11323, fac = 2:1), row.names = c(NA, -2L), class = "data.frame"))
+      fac = factor(c("b", "a"))
+    )),
+    list(
+      lgl = c(1L, NA), int = 1:2, dbl = c(2.5, 1.5),
+      dte = 11324:11323,
+      fac = 2:1
+    )
+  )
+})
+
+test_that("numericise.data.frame", {
+  expect_identical(
+    numericise(data.frame(x = TRUE)),
+    data.frame(x = 1L)
+  )
+  expect_identical(
+    numericise(data.frame(
+      x = factor(3:2), y = c(FALSE, NA), z = c("1", "2"),
+      stringsAsFactors = FALSE
+    )),
+    data.frame(x = 2:1, y = c(0L, NA), z = c(1, 2), stringsAsFactors = FALSE)
+  )
+
+  expect_identical(
+    numericise(data.frame(
+      lgl = c(TRUE, NA),
+      int = 1:2,
+      dbl = c(2.5, 1.5),
+      dte = as.Date(c("2001-01-02", "2001-01-01")),
+      fac = factor(c("b", "a"))
+    )),
+    structure(list(
+      lgl = c(1L, NA), int = 1:2, dbl = c(2.5, 1.5),
+      dte = 11324:11323, fac = 2:1
+    ), row.names = c(NA, -2L), class = "data.frame")
+  )
 })

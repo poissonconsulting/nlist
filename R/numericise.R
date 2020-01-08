@@ -72,7 +72,7 @@ numericise.hms <- function(x, ...) {
 #' @describeIn numericise Numericise matrix
 #' @export
 numericise.matrix <- function(x, ...) {
-  if(is.logical(x)) {
+  if (is.logical(x)) {
     mode(x) <- "integer"
     return(x)
   }
@@ -85,7 +85,7 @@ numericise.matrix <- function(x, ...) {
 #' @describeIn numericise Numericise array
 #' @export
 numericise.array <- function(x, ...) {
-  if(is.logical(x)) {
+  if (is.logical(x)) {
     mode(x) <- "integer"
     return(x)
   }

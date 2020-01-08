@@ -26,9 +26,13 @@ nterms.nlist <- function(x, ...) {
 #'
 #' @examples
 #' term::nterms(nlists(nlist(x = 1:3)))
-#' term::nterms(nlists(nlist(y = 3, zz = matrix(2:5, 2)),
-#'   nlist(y = 5, zz = matrix(1:4, 2))))
+#' term::nterms(nlists(
+#'   nlist(y = 3, zz = matrix(2:5, 2)),
+#'   nlist(y = 5, zz = matrix(1:4, 2))
+#' ))
 nterms.nlists <- function(x, ...) {
-  if(!length(x)) return(0L)
+  if (!length(x)) {
+    return(0L)
+  }
   nterms(x[[1]])
 }

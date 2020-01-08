@@ -1,13 +1,13 @@
 #' @export
 print.nlist <- function(x, ...) {
   n <- length(x)
-  if(!n) {
+  if (!n) {
     cat("an nlist object with 0 natomic elements\n")
     return(invisible(x))
   }
   print(unclass(x))
   str <- "an nlist object with"
-  str <- p(str, if(n == 1) "1 natomic element\n" else p(n, "natomic elements"))
+  str <- p(str, if (n == 1) "1 natomic element\n" else p(n, "natomic elements"))
   cat(str)
   invisible(x)
 }
@@ -15,18 +15,18 @@ print.nlist <- function(x, ...) {
 #' @export
 print.nlists <- function(x, ...) {
   n <- niters(x)
-  if(!n) {
+  if (!n) {
     cat("an nlists object with 0 nlist objects\n")
     return(invisible(x))
   }
   nn <- length(x[[1]])
-  if(nn) print(unclass(aggregate(x)))
+  if (nn) print(unclass(aggregate(x)))
 
   str <- "an nlists object"
   nchains <- nchains(x)
-  str <- p(str, if(nchains > 1) p("with", nchains, "chains of") else "of")
-  str <- p(str, if(n == 1) "an nlist object with" else p(n, "nlist objects each with"))
-  str <- p(str, if(nn == 1) "1 natomic element" else p(nn, "natomic elements"))
+  str <- p(str, if (nchains > 1) p("with", nchains, "chains of") else "of")
+  str <- p(str, if (n == 1) "an nlist object with" else p(n, "nlist objects each with"))
+  str <- p(str, if (nn == 1) "1 natomic element" else p(nn, "natomic elements"))
   cat(str)
   invisible(x)
 }

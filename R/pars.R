@@ -19,7 +19,9 @@ pars.nlist <- function(x, scalar = NA, terms = FALSE, ...) {
   chk_flag(terms)
   chk_unused(...)
 
-  if(is.na(scalar) && !terms) return(names(x)) # this prevents infinite recursion
+  if (is.na(scalar) && !terms) {
+    return(names(x))
+  } # this prevents infinite recursion
   pars(as.term(x), scalar = scalar, terms = terms)
 }
 
@@ -36,6 +38,8 @@ pars.nlist <- function(x, scalar = NA, terms = FALSE, ...) {
 #' term::pars(nlists(nlist(zz = 1, y = 3:6), nlist(zz = 4, y = 13:16)))
 pars.nlists <- function(x, scalar = NA, terms = FALSE, ...) {
   chk_unused(...)
-  if(!length(x)) return(character(0))
+  if (!length(x)) {
+    return(character(0))
+  }
   pars(x[[1]], scalar = scalar, terms = terms)
 }

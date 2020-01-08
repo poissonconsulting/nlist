@@ -25,6 +25,8 @@ nchains.nlist <- function(x, ...) 1L
 #' @export
 nchains.nlists <- function(x, ...) {
   nchains <- attr(x, "nchains")
-  if(is.null(nchains)) return(1L)
+  if (is.null(nchains)) {
+    return(1L)
+  }
   nchains
 }
