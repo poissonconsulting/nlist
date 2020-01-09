@@ -14,6 +14,7 @@ test_that("as.nlist.numeric", {
 
 test_that("as.nlist.numeric incomplete", {
   expect_identical(as.nlist(c(`a[3]` = 1, `a[1]` = 2)), structure(list(a = c(2, NA, 1)), class = "nlist"))
+  expect_identical(as.nlist(c(`a[3]` = 1L, `a[1]` = 2L)), structure(list(a = c(2L, NA, 1L)), class = "nlist"))
 })
 
 test_that("as.nlist.list", {
