@@ -17,7 +17,7 @@ as.nlist <- function(x, ...) {
 #' @export
 as.nlist.numeric <- function(x, ...) {
   chk_named(x)
-  chk_term(as.term(names(x)), validate = "complete", x_name = "`names(x)`")
+  chk_term(as.term(names(x)), validate = "consistent", x_name = "`names(x)`")
   chk_not_any_na(names(x))
   chk_unique(names(x))
   chk_unused(...)
@@ -25,7 +25,15 @@ as.nlist.numeric <- function(x, ...) {
   if(!length(x)) {
     return(nlist())
   }
-  x <- split(x, pars(as.term(names(x)), terms = TRUE))
+  terms <- as.term(names(x))
+  if(is.incomplete_terms(terms)) {
+    terms <- complete_terms(terms)
+    y <- rep(NA_integer_, length(terms))
+    names(y) <- terms
+    y[names(x)] <- x
+    x <- y
+  }
+  x <- split(x, pars(terms, terms = TRUE))
   x <- lapply(x, function(x) x[order(as.term(names(x)))])
   x <- lapply(x, function(x) set_dim(x, pdims(as.term(names(x)))[[1]]))
   as.nlist(x)
