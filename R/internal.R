@@ -26,3 +26,9 @@ lapply_nlists <- function(x, FUN, ...) {
   if (nchains > 1L) attr(x, "nchains") <- nchains
   x
 }
+
+set_dim <- function(x, value) {
+  dim(x) <- value
+  if(length(value) == 1L) dim(x) <- NULL
+  x
+}

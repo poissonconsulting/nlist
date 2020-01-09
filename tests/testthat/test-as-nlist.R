@@ -1,5 +1,15 @@
 context("as")
 
+test_that("as.nlist.numeric", {
+  expect_is(as.nlist(c(x = 1)), "nlist")
+  expect_error(as.nlist(1), "^`x` must be named[.]$", class = "chk_error")
+  expect_error(as.nlist(c(x = 1, x = 2)), "^`names[(]x[)]` must be unique[.]$", class = "chk_error")
+  expect_identical(as.nlist(c(`a[2]` = 1, `a[1]` = 2)), structure(list(a = c(2, 1)), class = "nlist"))
+  expect_identical(as.nlist(c(`a[2]` = 3L, `a[1]` = 2L)), structure(list(a = c(2L, 3L)), class = "nlist"))
+  y <- nlist(g = matrix(1:4, ncol = 2), z = 1:3)
+  expect_identical(as.nlist(unlist(y)), y)
+})
+
 test_that("as.nlist.list", {
   expect_is(as.nlist(list(x = 1)), "nlist")
   expect_error(as.nlist(list(1)), "^`x` must be named[.]$", class = "chk_error")

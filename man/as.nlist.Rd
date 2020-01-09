@@ -2,11 +2,14 @@
 % Please edit documentation in R/as-nlist.R
 \name{as.nlist}
 \alias{as.nlist}
+\alias{as.nlist.numeric}
 \alias{as.nlist.list}
 \alias{as.nlist.data.frame}
 \title{Coerce to nlist}
 \usage{
 as.nlist(x, ...)
+
+\method{as.nlist}{numeric}(x, ...)
 
 \method{as.nlist}{list}(x, ...)
 
@@ -25,6 +28,8 @@ Coerce an R object to an \code{\link[=nlist_object]{nlist_object()}}.
 }
 \section{Methods (by class)}{
 \itemize{
+\item \code{numeric}: Coerce named numeric vector to nlist
+
 \item \code{list}: Coerce list to nlist
 
 \item \code{data.frame}: Coerce data.frame to nlist
@@ -32,4 +37,5 @@ Coerce an R object to an \code{\link[=nlist_object]{nlist_object()}}.
 
 \examples{
 as.nlist(list(x = 1:4))
+as.nlist(c(`a[2]` = 3, `a[1]` = 2))
 }
