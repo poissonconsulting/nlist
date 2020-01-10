@@ -6,6 +6,7 @@
 \alias{fill_na.integer}
 \alias{fill_na.numeric}
 \alias{fill_na.character}
+\alias{fill_na.nlist}
 \title{Fill Missing Values}
 \usage{
 fill_na(x, ...)
@@ -17,6 +18,8 @@ fill_na(x, ...)
 \method{fill_na}{numeric}(x, value = 0, ...)
 
 \method{fill_na}{character}(x, value = "0", ...)
+
+\method{fill_na}{nlist}(x, value = 0L, ...)
 }
 \arguments{
 \item{x}{The object.}
@@ -33,17 +36,17 @@ Fills missing values.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{logical}: Fill missing values of logical vector
+\item \code{logical}: Fill missing values of logical object
 
-\item \code{integer}: Fill missing values of integer vector
+\item \code{integer}: Fill missing values of integer object
 
-\item \code{numeric}: Fill missing values of default object
+\item \code{numeric}: Fill missing values of numeric object
 
-\item \code{character}: Fill missing values of default object
+\item \code{character}: Fill missing values of character object
+
+\item \code{nlist}: Fill missing values of nlist object
 }}
 
 \examples{
-nsams(nlist(x = 2))
-nsams(nlist(x = 1:2))
-nsams(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
+fill_na(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)))
 }

@@ -8,12 +8,10 @@
 #' @return The object with missing values filled.
 #' @export
 #' @examples
-#' nsams(nlist(x = 2))
-#' nsams(nlist(x = 1:2))
-#' nsams(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
+#' fill_na(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow =)))
 fill_na <- function(x, ...) UseMethod("fill_na")
 
-#' @describeIn fill_na Fill missing values of logical vector
+#' @describeIn fill_na Fill missing values of logical object
 #' @export
 fill_na.logical <- function(x, value = FALSE, ...) {
   chk_scalar(value)
@@ -23,7 +21,7 @@ fill_na.logical <- function(x, value = FALSE, ...) {
   x
 }
 
-#' @describeIn fill_na Fill missing values of integer vector
+#' @describeIn fill_na Fill missing values of integer object
 #' @export
 fill_na.integer <- function(x, value = 0L, ...) {
   chk_scalar(value)
@@ -33,7 +31,7 @@ fill_na.integer <- function(x, value = 0L, ...) {
   x
 }
 
-#' @describeIn fill_na Fill missing values of default object
+#' @describeIn fill_na Fill missing values of numeric object
 #' @export
 fill_na.numeric <- function(x, value = 0, ...) {
   chk_scalar(value)
@@ -43,7 +41,7 @@ fill_na.numeric <- function(x, value = 0, ...) {
   x
 }
 
-#' @describeIn fill_na Fill missing values of default object
+#' @describeIn fill_na Fill missing values of character object
 #' @export
 fill_na.character <- function(x, value = "0", ...) {
   chk_scalar(value)
@@ -53,3 +51,12 @@ fill_na.character <- function(x, value = "0", ...) {
   x
 }
 
+#' @describeIn fill_na Fill missing values of nlist object
+#' @export
+fill_na.nlist <- function(x, value = 0L, ...) {
+  chk_scalar(value)
+  chk_unused(...)
+  x <- lapply(x, fill_na, value = value)
+  class(x) <- "nlist"
+  x
+}

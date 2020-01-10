@@ -13,3 +13,11 @@ test_that("fill_na atomic objects", {
                            value = "TRUE"), 
                    matrix(c(TRUE, TRUE, FALSE, TRUE), nrow = 2))
 })
+
+test_that("fill_na atomic objects", {
+  expect_identical(fill_na(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2))),
+                   nlist(x = c(2, 0), y = matrix(c(1:3, 0L), nrow = 2)))
+  expect_identical(fill_na(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)),
+                           value = 5),
+                   nlist(x = c(2, 5), y = matrix(c(1:3, 5L), nrow = 2)))
+})
