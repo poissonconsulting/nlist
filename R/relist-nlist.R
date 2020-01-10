@@ -22,6 +22,7 @@ relist_nlist <- function(flesh, skeleton) {
   integer <- vapply(skeleton, is.integer, TRUE)
   integer <- names(integer[integer])
   skeleton <- unlist(skeleton)
+  names(skeleton) <- sub("([^]])$", "\\1[1]", names(skeleton))
   
   not_in_skeleton <- names(flesh)[!names(flesh) %in% names(skeleton)]
   if(length(not_in_skeleton)) {
