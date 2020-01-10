@@ -16,6 +16,7 @@ An atomic numeric vector of the values in x.
 }
 \description{
 Relists an nlist object that has been unlisted to a named numeric vector.
+Ensures absent terms are included and preserves integer class.
 }
 \examples{
 relist_nlist(c(`a[2]` = 5), nlist(a = 1:3))

@@ -1,6 +1,7 @@
 #' Relists an unlist nlist Object
 #' 
 #' Relists an nlist object that has been unlisted to a named numeric vector.
+#' Ensures absent terms are included and preserves integer class.
 #' 
 #' @param flesh An atomic vector
 #' @param skeleton An nlist object.
@@ -19,6 +20,7 @@ relist_nlist <- function(flesh, skeleton) {
   names(flesh) <- sub("([^]])$", "\\1[1]", names(flesh))
 
   integer <- vapply(skeleton, is.integer, TRUE)
+  integer <- names(integer[integer])
   skeleton <- unlist(skeleton)
   
   not_in_skeleton <- names(flesh)[!names(flesh) %in% names(skeleton)]
@@ -28,5 +30,8 @@ relist_nlist <- function(flesh, skeleton) {
   }
   is.na(skeleton[!names(skeleton) %in% names(flesh)]) <- TRUE
   skeleton[names(flesh)] <- unname(flesh)
-  as.nlist(skeleton)
+  skeleton <- as.nlist(skeleton)
+  skeleton[names(skeleton) %in% integer] <- 
+    lapply(skeleton[names(skeleton) %in% integer], as.integer)
+  skeleton
 }
