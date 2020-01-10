@@ -2,18 +2,21 @@
 % Please edit documentation in R/fill-na.R
 \name{fill_na}
 \alias{fill_na}
-\alias{fill_na.default}
 \alias{fill_na.logical}
 \alias{fill_na.integer}
+\alias{fill_na.numeric}
+\alias{fill_na.character}
 \title{Fill Missing Values}
 \usage{
 fill_na(x, ...)
 
-\method{fill_na}{default}(x, value = 0, ...)
-
 \method{fill_na}{logical}(x, value = FALSE, ...)
 
 \method{fill_na}{integer}(x, value = 0L, ...)
+
+\method{fill_na}{numeric}(x, value = 0, ...)
+
+\method{fill_na}{character}(x, value = "0", ...)
 }
 \arguments{
 \item{x}{The object.}
@@ -30,11 +33,13 @@ Fills missing values.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{default}: Fill missing values of default object
-
 \item \code{logical}: Fill missing values of logical vector
 
 \item \code{integer}: Fill missing values of integer vector
+
+\item \code{numeric}: Fill missing values of default object
+
+\item \code{character}: Fill missing values of default object
 }}
 
 \examples{
