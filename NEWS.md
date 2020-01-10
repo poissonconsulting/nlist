@@ -1,3 +1,4 @@
+- Added `fill_na()` for atomic objects.
 - Added `as.nlist.numeric()` to convert flattened nlist objects back into original objects.
 - Added `unlist.nlist()` to flatten nlist objects into term named numeric vectors.
 
