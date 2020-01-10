@@ -10,6 +10,7 @@
 #' @examples 
 #' unlist_nlist(nlist(y = 2, x = matrix(4:7, ncol = 2)))
 unlist_nlist <- function(x) {
+  chk_s3_class(x, "nlist")
   y <- unlist(unclass(x))
   if(is.null(y)) y <- numeric(0)
   names(y) <- as.term(x)

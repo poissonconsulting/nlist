@@ -13,6 +13,7 @@
 relist_nlist <- function(flesh, skeleton) {
   chk_named(flesh)
   chk_not_any_na(names(flesh))
+  chk_s3_class(skeleton, "nlist")
 
   if(!length(flesh) && !length(skeleton)) return(nlist())
   
