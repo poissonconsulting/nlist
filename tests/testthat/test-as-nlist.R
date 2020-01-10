@@ -8,7 +8,7 @@ test_that("as.nlist.numeric", {
   expect_identical(as.nlist(c(`a[2]` = 1, `a[1]` = 2)), structure(list(a = c(2, 1)), class = "nlist"))
   expect_identical(as.nlist(c(`a[2]` = 3L, `a[1]` = 2L)), structure(list(a = c(2L, 3L)), class = "nlist"))
   y <- nlist(g = matrix(1:4, ncol = 2), z = 1:3)
-  expect_identical(as.nlist(unlist(y)), y)
+  expect_identical(as.nlist(unlist_nlist(y)), y)
 })
 
 
