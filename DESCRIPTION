@@ -21,7 +21,7 @@ Depends:
 Imports:
     stats,
     chk,
-    term,
+    term (>= 0.1.0),
     coda,
     abind,
     purrr
