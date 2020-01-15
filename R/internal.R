@@ -29,6 +29,6 @@ lapply_nlists <- function(x, FUN, ...) {
 
 set_dim <- function(x, value) {
   dim(x) <- value
-  if(length(value) == 1L) dim(x) <- NULL
+  if (length(value) == 1L) dim(x) <- NULL
   x
 }

@@ -21,12 +21,12 @@ as.nlist.numeric <- function(x, ...) {
   chk_not_any_na(names(x))
   chk_unique(names(x))
   chk_unused(...)
-  
-  if(!length(x)) {
+
+  if (!length(x)) {
     return(nlist())
   }
   terms <- as.term(names(x))
-  if(is.incomplete_terms(terms)) {
+  if (is.incomplete_terms(terms)) {
     terms <- complete_terms(terms)
     y <- rep(NA_integer_, length(terms))
     names(y) <- terms

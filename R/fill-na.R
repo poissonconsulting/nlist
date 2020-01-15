@@ -1,7 +1,7 @@
 #' Fill Missing Values
 #'
 #' Fills missing values.
-#' 
+#'
 #' @param x The object.
 #' @param value A scalar of the value to replace missing values with.
 #' @param ... Unused.
