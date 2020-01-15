@@ -39,9 +39,14 @@ reference:
   - '`aggregate.nlists`'
   - '`collapse_chains.nlist`'
   - '`collapse_chains.nlists`'
+  - '`fill_na.nlist`'
+  - '`fill_na.nlists`'
+  - '`relist_nlist`'
   - '`split_chains.nlists`'
   - '`subset.nlist`'
   - '`subset.nlists`'
+  - '`unlist_nlist`'
+  - '`unlist.nlist`'
 - title: Identify
   desc: Identify objects
   contents:
