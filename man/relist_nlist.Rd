@@ -22,5 +22,5 @@ Ensures absent terms are included and preserves integer class.
 relist_nlist(c(`a[2]` = 5), nlist(a = 1:3))
 }
 \seealso{
-\code{\link{as.nlist.numeric}} and \code{\link{unlist_nlist}}
+\code{\link[=as.nlist.numeric]{as.nlist.numeric()}} and \code{\link[=unlist_nlist]{unlist_nlist()}}
 }

@@ -23,5 +23,5 @@ Flatten nlist Object
 unlist(nlist(y = 2, x = matrix(4:7, ncol = 2)))
 }
 \seealso{
-\code{\link{unlist_nlist}}
+\code{\link[=unlist_nlist]{unlist_nlist()}}
 }

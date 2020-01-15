@@ -5,7 +5,7 @@
 #'
 #' @param x An nlist object.
 #' @return An named atomic numeric vector of the values in x.
-#' @seealso \code{\link{as.nlist.numeric}} and \code{\link{relist_nlist}}
+#' @seealso [as.nlist.numeric()] and [relist_nlist()]
 #' @export
 #' @examples
 #' unlist_nlist(nlist(y = 2, x = matrix(4:7, ncol = 2)))
@@ -23,7 +23,7 @@ unlist_nlist <- function(x) {
 #' @param recursive Ignored.
 #' @param use.names A flag specifying whether to preserve names.
 #' @return An named atomic numeric vector of the values in x.
-#' @seealso \code{\link{unlist_nlist}}
+#' @seealso [unlist_nlist()]
 #' @method unlist nlist
 #' @export
 #' @examples

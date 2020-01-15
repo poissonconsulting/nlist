@@ -6,7 +6,7 @@
 #' @param flesh An atomic vector
 #' @param skeleton An nlist object.
 #' @return An atomic numeric vector of the values in x.
-#' @seealso \code{\link{as.nlist.numeric}} and \code{\link{unlist_nlist}}
+#' @seealso [as.nlist.numeric()] and [unlist_nlist()]
 #' @export
 #' @examples
 #' relist_nlist(c(`a[2]` = 5), nlist(a = 1:3))
