@@ -38,8 +38,8 @@ chk_natomic <- function(x, x_name = NULL) {
 #'
 #' @description
 #'
-#' `chk_natomic`
-#' checks if an [nlist-object()] while ignoring the class.
+#' `chk_nlist`
+#' checks if an [nlist-object()].
 #'
 #' @export
 #'
@@ -65,7 +65,7 @@ chk_nlist <- function(x, x_name = NULL) {
 #'
 #' @description
 #' `chk_nlists`
-#' checks if an [nlists-object()] while ignoring the class.
+#' checks if an [nlists-object()].
 #'
 #' @export
 #'

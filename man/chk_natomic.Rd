@@ -27,11 +27,11 @@ checks if numeric object using
 
 \code{is.numeric(x) && is.atomic(x)}.
 
-\code{chk_natomic}
-checks if an \code{\link[=nlist-object]{nlist-object()}} while ignoring the class.
+\code{chk_nlist}
+checks if an \code{\link[=nlist-object]{nlist-object()}}.
 
 \code{chk_nlists}
-checks if an \code{\link[=nlists-object]{nlists-object()}} while ignoring the class.
+checks if an \code{\link[=nlists-object]{nlists-object()}}.
 }
 \section{Functions}{
 \itemize{
