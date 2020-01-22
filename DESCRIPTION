@@ -24,7 +24,9 @@ Imports:
     term (>= 0.1.0),
     coda,
     abind,
-    purrr
+    purrr,
+    universals,
+    extras
 Suggests: 
     covr,
     testthat
