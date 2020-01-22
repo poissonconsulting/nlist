@@ -1,25 +1,30 @@
-#' Number of MCMC Iterations
-#'
-#' Gets the number of MCMC iterations (in a chain).
-#'
-#' @param x The object
-#' @param ... Unused.
-#' @return A count indicating the number of MCMC iterations.
+#' @importFrom universals niters
 #' @export
+universals::niters
+
+#' Number of MCMC Iterations of an nlist Object
+#'
+#' Gets the number of iterations of an nlist Object.
+#' 
+#' Always 1.
+#' @inherit universals::niters
+#' @export
+#' 
 #' @examples
 #' niters(nlist(x = 1:2))
-#' niters(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
-niters <- function(x, ...) {
-  UseMethod("niters")
+niters.nlist <- function(x, ...) {
+  1L
 }
 
-#' @describeIn niters Number of MCMC iterations for an nlist object
+#' Number of MCMC Iterations of an nlists Object
 #'
-#' Always 1.
+#' Gets the number of iterations of an nlists Object.
+#' 
+#' @inherit universals::niters
 #' @export
-niters.nlist <- function(x, ...) 1L
-
-#' @describeIn niters Number of MCMC iterations for an nlists object
-#'
-#' @export
-niters.nlists <- function(x, ...) as.integer(nsims(x) / nchains(x))
+#' 
+#' @examples
+#' niters(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
+niters.nlists <- function(x, ...) { 
+  as.integer(nsims(x) / nchains(x))
+}
