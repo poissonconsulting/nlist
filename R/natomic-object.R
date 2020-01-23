@@ -9,7 +9,7 @@
 #' mat <- matrix(c("1", "2", "3", "4"), 2L)
 #' mat
 #' is.natomic(mat)
-#' mat <- numericize(mat)
+#' mat <- extras::numericize(mat)
 #' mat
 #' is.natomic(mat)
 NULL
