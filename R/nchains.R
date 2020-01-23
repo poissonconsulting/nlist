@@ -1,4 +1,3 @@
-#' @importFrom universals nchains
 #' @export
 universals::nchains
 

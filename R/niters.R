@@ -1,4 +1,3 @@
-#' @importFrom universals niters
 #' @export
 universals::niters
 

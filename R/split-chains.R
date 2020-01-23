@@ -1,4 +1,3 @@
-#' @importFrom universals split_chains
 #' @export
 universals::split_chains
 

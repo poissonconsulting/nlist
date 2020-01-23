@@ -1,4 +1,3 @@
-#' @importFrom coda as.mcmc
 #' @export
 coda::as.mcmc
 

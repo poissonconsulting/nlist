@@ -1,4 +1,3 @@
-#' @importFrom universals collapse_chains
 #' @export
 universals::collapse_chains
 

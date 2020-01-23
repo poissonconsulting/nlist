@@ -1,4 +1,3 @@
-#' @importFrom universals nsims
 #' @export
 universals::nsims
 
