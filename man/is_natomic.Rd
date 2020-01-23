@@ -16,7 +16,7 @@ is_nlists(x)
 \item{x}{The object to test.}
 }
 \value{
-A flag indicating whether x is a natomic object (is atomic and numeric) or inherits from nlist or nlists.
+A flag indicating whether x is a natomic object (is atomic and numeric) or inherits from S3 class nlist or nlists.
 }
 \description{
 Test whether x is a \code{\link[=natomic_object]{natomic_object()}},

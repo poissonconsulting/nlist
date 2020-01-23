@@ -5,7 +5,7 @@
 #'
 #' @param x The object to test.
 #'
-#' @return A flag indicating whether x is a natomic object (is atomic and numeric) or inherits from nlist or nlists.
+#' @return A flag indicating whether x is a natomic object (is atomic and numeric) or inherits from S3 class nlist or nlists.
 #' @name is_natomic
 NULL
 
@@ -31,7 +31,7 @@ is_natomic <- function(x) {
 #' is_nlist(list(x = 1))
 #' is_nlist(nlist(x = 1))
 is_nlist <- function(x) {
-  inherits(x, "nlist")
+  vld_s3_class(x, "nlist")
 }
 
 #' @describeIn is_natomic Is nlists
@@ -44,5 +44,5 @@ is_nlist <- function(x) {
 #' is_nlists(nlist(x = 1))
 #' is_nlists(nlists(nlist(x = 2), nlist(x = 3.5)))
 is_nlists <- function(x) {
-  inherits(x, "nlists")
+  vld_s3_class(x, "nlists")
 }
