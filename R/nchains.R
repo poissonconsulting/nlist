@@ -2,11 +2,7 @@
 #' @export
 universals::nchains
 
-#' Number of MCMC Chains of a nlist Object
-#'
-#' Gets the number of chains of an nlist object.
-#' 
-#' Always 1L.
+#' @details Always 1L.
 #'
 #' @inherit universals::nterms
 #' @export
@@ -15,10 +11,6 @@ universals::nchains
 #' nchains(nlist(x = 1:2))
 nchains.nlist <- function(x, ...) 1L
 
-#' Number of MCMC Chains of a nlists Object
-#'
-#' Gets the number of chains of an nlists object.
-#'
 #' @inherit universals::nterms
 #' @export
 #' 

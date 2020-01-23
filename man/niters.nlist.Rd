@@ -25,11 +25,9 @@ niters(nlist(x = 1:2))
 }
 \seealso{
 Other {MCMC dimensions}: 
-\code{\link[universals]{collapse_chains}()},
 \code{\link[universals]{nchains}()},
 \code{\link[universals]{npars}()},
 \code{\link[universals]{nsams}()},
 \code{\link[universals]{nsims}()},
-\code{\link[universals]{nterms}()},
-\code{\link[universals]{split_chains}()}
+\code{\link[universals]{nterms}()}
 }

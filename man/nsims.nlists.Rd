@@ -24,11 +24,9 @@ nsims(split_chains(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7)))))
 }
 \seealso{
 Other {MCMC dimensions}: 
-\code{\link[universals]{collapse_chains}()},
 \code{\link[universals]{nchains}()},
 \code{\link[universals]{niters}()},
 \code{\link[universals]{npars}()},
 \code{\link[universals]{nsams}()},
-\code{\link[universals]{nterms}()},
-\code{\link[universals]{split_chains}()}
+\code{\link[universals]{nterms}()}
 }
