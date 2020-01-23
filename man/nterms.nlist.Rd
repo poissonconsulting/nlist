@@ -2,23 +2,36 @@
 % Please edit documentation in R/nterms.R
 \name{nterms.nlist}
 \alias{nterms.nlist}
-\title{Number of Terms}
+\title{Number of MCMC Terms}
 \usage{
 \method{nterms}{nlist}(x, ...)
 }
 \arguments{
-\item{x}{The object.}
+\item{x}{An object.}
 
-\item{...}{Unused.}
+\item{...}{Other arguments passed to methods.}
 }
 \value{
 A count of the number of terms.
 }
 \description{
-Gets the number of terms of an \code{\link[=nlist_object]{nlist_object()}}.
+Gets the number of terms
+of a Monte Carlo Markov Chain (MCMC) object.
 }
 \examples{
-term::nterms(nlist(x = 2))
-term::nterms(nlist(x = NA_real_))
-term::nterms(nlist(x = 3, zz = matrix(2:5, 2)))
+nterms(nlist(x = 2))
+nterms(nlist(x = NA_real_))
+nterms(nlist(x = 3, zz = matrix(2:5, 2)))
+}
+\seealso{
+Other {MCMC dimensions}: 
+\code{\link[universals]{nchains}()},
+\code{\link[universals]{niters}()},
+\code{\link[universals]{npars}()},
+\code{\link[universals]{nsams}()},
+\code{\link[universals]{nsims}()}
+
+Other {terms}: 
+\code{\link[universals]{complete_terms}()},
+\code{\link[universals]{pars_terms}()}
 }

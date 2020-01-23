@@ -2,8 +2,8 @@
 #' @export
 universals::nsims
 
-#' @details Always 1L.
 #' @inherit universals::nsims
+#' @details Always 1L.
 #' @export
 #'
 #' @examples
