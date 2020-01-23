@@ -2,6 +2,8 @@
 % Please edit documentation in R/nlist.R
 \name{nlist}
 \alias{nlist}
+\alias{nlist-object}
+\alias{nlist_object}
 \title{Create nlist Object}
 \usage{
 nlist(...)
@@ -14,6 +16,13 @@ An nlist object.
 }
 \description{
 Creates a \code{\link[=nlist_object]{nlist_object()}} from one of more uniquely named \code{\link[=natomic_object]{natomic_object()}} arguments.
+}
+\details{
+An nlist object is an S3 class list of uniquely named
+\code{\link[=natomic_object]{natomic_object()}} elements.
+
+nlist objects are the raw data inputs for analytic engines
+such as JAGS, STAN and TMB.
 }
 \examples{
 nlist()
