@@ -2,8 +2,6 @@
 #' @export
 universals::nsims
 
-#' Number of MCMC Simulations
-#' 
 #' @details Always 1L.
 #' @inherit universals::nsims
 #' @export
@@ -14,8 +12,6 @@ nsims.nlist <- function(x, ...) {
   1L
 }
 
-#' Number of MCMC Simulations
-#' 
 #' @inherit universals::nsims
 #' @export
 #'
