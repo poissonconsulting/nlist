@@ -12,10 +12,10 @@ coda::as.mcmc
 #' @export
 #'
 #' @examples
-#' coda::as.mcmc(nlist(x = matrix(1:6, 2)))
+#' as.mcmc(nlist(x = matrix(1:6, 2)))
 as.mcmc.nlist <- function(x, ...) {
   if (!length(x)) {
-    return(coda::as.mcmc(numeric(0)))
+    return(as.mcmc(numeric(0)))
   }
   term <- as.character(as.term(x))
   x <- lapply(x, as.vector)
@@ -36,13 +36,13 @@ as.mcmc.nlist <- function(x, ...) {
 #' @export
 #'
 #' @examples
-#' coda::as.mcmc(nlists(
+#' as.mcmc(nlists(
 #'   nlist(x = matrix(1:6, 2)),
 #'   nlist(x = matrix(3:8, 2))
 #' ))
 as.mcmc.nlists <- function(x, ...) {
   if (!length(x)) {
-    return(coda::as.mcmc(numeric(0)))
+    return(as.mcmc(numeric(0)))
   }
   x <- lapply(x, FUN = coda::as.mcmc)
   x <- do.call("rbind", x)

@@ -18,7 +18,7 @@ An mcmc object.
 Coerces an nlists object to a \code{coda::mcmc} object.
 }
 \examples{
-coda::as.mcmc(nlists(
+as.mcmc(nlists(
   nlist(x = matrix(1:6, 2)),
   nlist(x = matrix(3:8, 2))
 ))
