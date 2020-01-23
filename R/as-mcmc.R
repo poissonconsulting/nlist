@@ -1,3 +1,7 @@
+#' @importFrom coda as.mcmc
+#' @export
+coda::as.mcmc
+
 #' As mcmc Object
 #'
 #' Coerces an nlist object to a `coda::mcmc` object.

@@ -4,7 +4,7 @@
 \alias{as.mcmc.nlist}
 \title{As mcmc Object}
 \usage{
-as.mcmc.nlist(x, ...)
+\method{as.mcmc}{nlist}(x, ...)
 }
 \arguments{
 \item{x}{A nlist object.}
