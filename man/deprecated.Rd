@@ -3,9 +3,15 @@
 \name{deprecated}
 \alias{deprecated}
 \alias{is.natomic}
+\alias{is.nlist}
+\alias{is.nlists}
 \title{Deprecated Functions}
 \usage{
 is.natomic(x)
+
+is.nlist(x)
+
+is.nlists(x)
 }
 \arguments{
 \item{x}{An object.}
@@ -20,6 +26,18 @@ Deprecated Functions
 \lifecycle{soft-deprecated}
 
 Replace by \code{\link[=is_natomic]{is_natomic()}}
+
+\item \code{is.nlist}: Is nlist
+
+\lifecycle{soft-deprecated}
+
+Replace by \code{\link[=is_nlist]{is_nlist()}}
+
+\item \code{is.nlists}: Is nlists
+
+\lifecycle{soft-deprecated}
+
+Replace by \code{\link[=is_nlists]{is_nlists()}}
 }}
 
 \keyword{internal}

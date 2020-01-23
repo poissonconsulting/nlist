@@ -26,11 +26,11 @@ is_natomic <- function(x) {
 #'
 #' @examples
 #'
-#' # is.nlist
-#' is.nlist(1)
-#' is.nlist(list(x = 1))
-#' is.nlist(nlist(x = 1))
-is.nlist <- function(x) {
+#' # is_nlist
+#' is_nlist(1)
+#' is_nlist(list(x = 1))
+#' is_nlist(nlist(x = 1))
+is_nlist <- function(x) {
   inherits(x, "nlist")
 }
 
@@ -40,9 +40,9 @@ is.nlist <- function(x) {
 #'
 #' @examples
 #'
-#' # is.nlists
-#' is.nlists(nlist(x = 1))
-#' is.nlists(nlists(nlist(x = 2), nlist(x = 3.5)))
-is.nlists <- function(x) {
+#' # is_nlists
+#' is_nlists(nlist(x = 1))
+#' is_nlists(nlists(nlist(x = 2), nlist(x = 3.5)))
+is_nlists <- function(x) {
   inherits(x, "nlists")
 }

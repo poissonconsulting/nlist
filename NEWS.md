@@ -1,4 +1,6 @@
-- Deprecated `is.natomic()` for `is_natomic()`.
+- Soft deprecated `is.nlists()` for `is_nlists()`.
+- Soft deprecated `is.nlist()` for `is_nlist()`.
+- Soft deprecated `is.natomic()` for `is_natomic()`.
 
 # nlist 0.1.0
 
