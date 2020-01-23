@@ -26,7 +26,7 @@ as.nlist.numeric <- function(x, ...) {
     return(nlist())
   }
   terms <- as.term(names(x))
-  if (is.incomplete_terms(terms)) {
+  if (is_incomplete_terms(terms)) {
     terms <- complete_terms(terms)
     y <- rep(NA_integer_, length(terms))
     names(y) <- terms
