@@ -1,16 +1,8 @@
-#' Split Chains
-#'
-#' Splits each chain in half to double the number chains and halve
-#' the number of iterations.
-#'
-#' @param x An MCMC object.
-#' @param ... Unused.
+#' @importFrom universals split_chains
 #' @export
-split_chains <- function(x, ...) {
-  UseMethod("split_chains")
-}
+universals::split_chains
 
-#' @describeIn split_chains Split chains for an [nlists_object()].
+#' @inherit universals::split_chains
 #' @export
 split_chains.nlists <- function(x, ...) {
   nchains <- nchains(x)
