@@ -2,6 +2,8 @@
 % Please edit documentation in R/nlists.R
 \name{nlists}
 \alias{nlists}
+\alias{nlists-object}
+\alias{nlists_object}
 \title{Create nlists Object}
 \usage{
 nlists(...)
@@ -14,6 +16,13 @@ An nlists object.
 }
 \description{
 Creates an \code{\link[=nlists_object]{nlists_object()}} from one of more \code{\link[=nlist_object]{nlist_object()}}s.
+}
+\details{
+An nlists object is a S3 class list of \code{\link[=nlist_object]{nlist_object()}} elements
+with the same names, dimensionalities and typeofs.
+
+nlists objects are useful for storing individual realizations
+of a simulated data set.
 }
 \examples{
 nlists()
