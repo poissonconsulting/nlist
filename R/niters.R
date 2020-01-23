@@ -2,12 +2,8 @@
 #' @export
 universals::niters
 
-#' Number of MCMC Iterations of an nlist Object
-#'
-#' Gets the number of iterations of an nlist Object.
-#' 
-#' Always 1.
 #' @inherit universals::niters
+#' @details Always 1.
 #' @export
 #' 
 #' @examples
@@ -16,10 +12,6 @@ niters.nlist <- function(x, ...) {
   1L
 }
 
-#' Number of MCMC Iterations of an nlists Object
-#'
-#' Gets the number of iterations of an nlists Object.
-#' 
 #' @inherit universals::niters
 #' @export
 #' 

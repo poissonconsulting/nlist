@@ -2,7 +2,7 @@
 % Please edit documentation in R/niters.R
 \name{niters.nlists}
 \alias{niters.nlists}
-\title{Number of MCMC Iterations of an nlists Object}
+\title{Number of MCMC Iterations}
 \usage{
 \method{niters}{nlists}(x, ...)
 }
@@ -15,7 +15,8 @@
 An integer scalar of the number of MCMC iterations.
 }
 \description{
-Gets the number of iterations of an nlists Object.
+Gets the number of iterations (in a chain)
+of a Monte Carlo Markov Chain (MCMC) object.
 }
 \examples{
 niters(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
