@@ -1,20 +1,10 @@
 .onLoad <- function(...) {
-  register_s3_method("coda", "as.mcmc", "nlist")
-  register_s3_method("coda", "as.mcmc", "nlists")
   register_s3_method("coda", "as.mcmc.list", "nlist")
   register_s3_method("coda", "as.mcmc.list", "nlists")
   register_s3_method("stats", "aggregate", "nlist")
   register_s3_method("stats", "aggregate", "nlists")
   register_s3_method("term", "as.term", "nlist")
   register_s3_method("term", "as.term", "nlists")
-  register_s3_method("term", "npdims", "nlist")
-  register_s3_method("term", "npdims", "nlists")
-  register_s3_method("term", "nterms", "nlist")
-  register_s3_method("term", "nterms", "nlists")
-  register_s3_method("term", "pars", "nlist")
-  register_s3_method("term", "pars", "nlists")
-  register_s3_method("term", "pdims", "nlist")
-  register_s3_method("term", "pdims", "nlists")
   invisible()
 }
 
