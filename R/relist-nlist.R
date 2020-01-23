@@ -3,8 +3,7 @@
 #' Relists an nlist object that has been unlisted to a named numeric vector.
 #' Ensures absent terms are included and preserves integer class.
 #'
-#' @param flesh An atomic vector
-#' @param skeleton An nlist object.
+#' @inheritParams params
 #' @return An atomic numeric vector of the values in x.
 #' @seealso [as.nlist.numeric()] and [unlist_nlist()]
 #' @export

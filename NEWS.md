@@ -1,3 +1,5 @@
+- Deprecated `is.natomic()` for `is_natomic()`.
+
 # nlist 0.1.0
 
 - Added `fill_na()` for natomic, nlist and nlists objects.

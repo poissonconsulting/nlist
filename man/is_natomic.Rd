@@ -2,12 +2,11 @@
 % Please edit documentation in R/is.R
 \name{is_natomic}
 \alias{is_natomic}
-\alias{is.natomic}
 \alias{is.nlist}
 \alias{is.nlists}
 \title{Is natomic, nlist or nlists}
 \usage{
-is.natomic(x)
+is_natomic(x)
 
 is.nlist(x)
 
@@ -25,7 +24,7 @@ Test whether x is a \code{\link[=natomic_object]{natomic_object()}},
 }
 \section{Functions}{
 \itemize{
-\item \code{is.natomic}: Is natomic
+\item \code{is_natomic}: Is natomic
 
 \item \code{is.nlist}: Is nlist
 
@@ -33,9 +32,9 @@ Test whether x is a \code{\link[=natomic_object]{natomic_object()}},
 }}
 
 \examples{
-# is.natomic
-is.natomic(list(x = 1))
-is.natomic(1)
+# is_natomic
+is_natomic(list(x = 1))
+is_natomic(1)
 
 # is.nlist
 is.nlist(1)

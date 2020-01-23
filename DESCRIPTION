@@ -1,21 +1,26 @@
 Package: nlist
 Title: Lists of Numeric Atomic Objects
 Version: 0.1.0
-Authors@R: c(
-    person("Joe", "Thorley", , "joe@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")),
-    person("Poisson Consulting", role = c("cph", "fnd"))
-    )
+Authors@R: 
+    c(person(given = "Joe",
+             family = "Thorley",
+             role = c("aut", "cre"),
+             email = "joe@poissonconsulting.ca",
+             comment = c(ORCID = "0000-0002-7683-4592")),
+      person(given = "Poisson Consulting",
+             role = c("cph", "fnd")))
 Description: Create and manipulate numeric list (nlist) objects.
-  An nlist is an S3 list of uniquely named numeric atomic (natomic) objects.
-  An natomic object is an integer or double vector, matrix or array.
-  An nlists object is a S3 class list of nlist objects with the 
-  same names, dimensionalities and typeofs.
-  Numeric list objects are of interest because they are the raw data inputs 
-  for analytic engines such as 'JAGS', 'STAN' and 'TMB'.
-  Numeric lists objects, which are useful for storing multiple realizations of
-  of simulated data sets, can be converted to 
-  coda::mcmc and coda::mcmc.list objects.
+    An nlist is an S3 list of uniquely named numeric atomic (natomic)
+    objects.  An natomic object is an integer or double vector, matrix or
+    array.  An nlists object is a S3 class list of nlist objects with the
+    same names, dimensionalities and typeofs.  Numeric list objects are of
+    interest because they are the raw data inputs for analytic engines
+    such as 'JAGS', 'STAN' and 'TMB'.  Numeric lists objects, which are
+    useful for storing multiple realizations of of simulated data sets,
+    can be converted to coda::mcmc and coda::mcmc.list objects.
 License: MIT + file LICENSE
+URL: https://github.com/poissonconsulting/nlist
+BugReports: https://github.com/poissonconsulting/nlist/issues
 Depends: 
     R (>= 3.3)
 Imports:
@@ -26,18 +31,20 @@ Imports:
     abind,
     purrr,
     universals,
-    extras
+    extras,
+    lifecycle
 Suggests: 
     covr,
-    testthat
+    testthat,
+    rlang
+RdMacros: 
+    lifecycle
 Remotes:
     poissonconsulting/universals,
     poissonconsulting/extras,
     poissonconsulting/term
-URL: https://github.com/poissonconsulting/nlist
-BugReports: https://github.com/poissonconsulting/nlist/issues
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.0.2
 Language: en-US
+LazyData: true
 Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2

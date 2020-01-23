@@ -1,8 +1,8 @@
 context("is")
 
-test_that("is.natomic", {
-  expect_false(is.natomic(TRUE))
-  expect_true(is.natomic(1))
+test_that("is_natomic", {
+  expect_false(is_natomic(TRUE))
+  expect_true(is_natomic(1))
 })
 
 test_that("is.nlist", {

@@ -13,10 +13,10 @@ NULL
 #' @export
 #'
 #' @examples
-#' # is.natomic
-#' is.natomic(list(x = 1))
-#' is.natomic(1)
-is.natomic <- function(x) {
+#' # is_natomic
+#' is_natomic(list(x = 1))
+#' is_natomic(1)
+is_natomic <- function(x) {
   is.atomic(x) && is.numeric(x)
 }
 
