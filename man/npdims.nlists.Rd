@@ -15,7 +15,7 @@
 A named integer vector of the number of dimensions of each parameter.
 }
 \description{
-Gets the numbers of the parameter dimensions of an object.
+Gets the number of the dimensions of each parameter of an object.
 }
 \examples{
 npdims(nlists(nlist(x = 1:3)))
@@ -28,6 +28,5 @@ npdims(nlists(
 Other {dimensions}: 
 \code{\link[universals]{dims}()},
 \code{\link[universals]{ndims}()},
-\code{\link[universals]{pdims}()},
-\code{\link[universals]{tindex}()}
+\code{\link[universals]{pdims}()}
 }

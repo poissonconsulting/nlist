@@ -2,7 +2,7 @@
 % Please edit documentation in R/nsims.R
 \name{nsims.nlists}
 \alias{nsims.nlists}
-\title{Number of MCMC Simulations}
+\title{Number of Simulations}
 \usage{
 \method{nsims}{nlists}(x, ...)
 }
@@ -12,11 +12,11 @@
 \item{...}{Other arguments passed to methods.}
 }
 \value{
-An integer scalar of the number of MCMC simulations.
+An integer scalar of the number of simulations.
 }
 \description{
 Gets the number of simulations (iterations * chains)
-of a Monte Carlo Markov Chain (MCMC) object.
+of an MCMC object.
 }
 \examples{
 nsims(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))

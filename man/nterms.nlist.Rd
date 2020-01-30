@@ -2,7 +2,7 @@
 % Please edit documentation in R/nterms.R
 \name{nterms.nlist}
 \alias{nterms.nlist}
-\title{Number of MCMC Terms}
+\title{Number of Terms}
 \usage{
 \method{nterms}{nlist}(x, ...)
 }
@@ -12,11 +12,11 @@
 \item{...}{Other arguments passed to methods.}
 }
 \value{
-A count of the number of terms.
+A integer scalar of the number of terms.
 }
 \description{
 Gets the number of terms
-of a Monte Carlo Markov Chain (MCMC) object.
+of an MCMC object.
 }
 \examples{
 nterms(nlist(x = 2))
@@ -30,8 +30,4 @@ Other {MCMC dimensions}:
 \code{\link[universals]{npars}()},
 \code{\link[universals]{nsams}()},
 \code{\link[universals]{nsims}()}
-
-Other {terms}: 
-\code{\link[universals]{complete_terms}()},
-\code{\link[universals]{pars_terms}()}
 }

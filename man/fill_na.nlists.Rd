@@ -14,17 +14,18 @@
 \item{...}{Other arguments passed to methods.}
 }
 \value{
-The object with missing values filled.
+The modified object.
 }
 \description{
-Fills missing values.
+Fills an object's missing values.
 }
 \examples{
 fill_na(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)))
 }
 \seealso{
 Other {MCMC manipulations}: 
+\code{\link[universals]{bind_chains}()},
 \code{\link[universals]{collapse_chains}()},
-\code{\link[universals]{complete_terms}()},
+\code{\link[universals]{fill_all}()},
 \code{\link[universals]{split_chains}()}
 }

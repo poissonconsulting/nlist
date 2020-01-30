@@ -2,7 +2,7 @@
 % Please edit documentation in R/nchains.R
 \name{nchains.nlists}
 \alias{nchains.nlists}
-\title{Number of MCMC Terms}
+\title{Number of Terms}
 \usage{
 \method{nchains}{nlists}(x, ...)
 }
@@ -12,11 +12,11 @@
 \item{...}{Other arguments passed to methods.}
 }
 \value{
-A count of the number of terms.
+A integer scalar of the number of terms.
 }
 \description{
 Gets the number of terms
-of a Monte Carlo Markov Chain (MCMC) object.
+of an MCMC object.
 }
 \examples{
 nchains(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
@@ -29,8 +29,4 @@ Other {MCMC dimensions}:
 \code{\link[universals]{npars}()},
 \code{\link[universals]{nsams}()},
 \code{\link[universals]{nsims}()}
-
-Other {terms}: 
-\code{\link[universals]{complete_terms}()},
-\code{\link[universals]{pars_terms}()}
 }
