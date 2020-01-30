@@ -3,8 +3,6 @@
   register_s3_method("coda", "as.mcmc.list", "nlists")
   register_s3_method("stats", "aggregate", "nlist")
   register_s3_method("stats", "aggregate", "nlists")
-  register_s3_method("term", "as.term", "nlist")
-  register_s3_method("term", "as.term", "nlists")
   invisible()
 }
 
