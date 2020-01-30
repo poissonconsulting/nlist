@@ -6,6 +6,10 @@
 \arguments{
 \item{x}{An object.}
 
+\item{nthin}{A positive integer of the thinning rate.}
+
+\item{...}{Unused.}
+
 \item{flesh}{An atomic vector}
 
 \item{skeleton}{An nlist object.}
