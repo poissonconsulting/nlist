@@ -28,6 +28,8 @@ for each term element.}
 \item{pars}{A character vector of parameter names.}
 
 \item{fun}{A function that given a numeric vector returns a numeric scalar.}
+
+\item{nas}{A flag specifying whether to also fill missing values.}
 }
 \description{
 Parameter Descriptions

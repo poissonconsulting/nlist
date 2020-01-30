@@ -1,3 +1,4 @@
+- Added `fill_all()`.
 - Added `thin()`.
 - Soft deprecated `pars(terms =)` for `pars_terms(as.term())`.
 - Soft deprecated `is.nlists()` for `is_nlists()`.
