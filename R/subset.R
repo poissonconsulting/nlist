@@ -5,8 +5,7 @@
 #' It can also be used to reorder the parameters.
 #'
 #' @param x An nlist object.
-#' @param pars A character vector of parameter names.
-#' @param ... Unused.
+#' @inheritParams params
 #' @return An nlist object.
 #' @export
 #'
@@ -33,9 +32,7 @@ subset.nlist <- function(x, pars = NULL, ...) {
 #' chains and iterations.
 #'
 #' @param x An nlists object.
-#' @inheritParams subset.nlist
-#' @param chains An integer vector of chains.
-#' @param iters An integer vector of iterations.
+#' @inheritParams params
 #' @return An nlists object.
 #' @export
 #'

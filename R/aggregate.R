@@ -3,8 +3,8 @@
 #' Aggregates an [nlist_object()] into a named list of numeric scalars.
 #'
 #' @param x An nlist object.
-#' @param fun A function that given a numeric vector returns a numeric scalar.
 #' @param ... Additional arguments passed to fun.
+#' @inheritParams params
 #'
 #' @return An named list of numeric scalars
 #' @export
@@ -23,7 +23,6 @@ aggregate.nlist <- function(x, fun = mean, ...) {
 #' with `nchains` [nlist_object()]s.
 #'
 #' @inheritParams aggregate.nlist
-#' @param fun A function that given a numeric vector returns a numeric scalar.
 #' @param by_chain A flag specifying whether to aggregate by chains.
 #' @return An nlist object if `by_chain = FALSE` otherwise an nlists object.
 #' @export

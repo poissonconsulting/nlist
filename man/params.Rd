@@ -20,6 +20,14 @@ except scalars (FALSE).}
 
 \item{terms}{A flag specifying whether to return the parameter name
 for each term element.}
+
+\item{chains}{An integer vector of chains.}
+
+\item{iters}{An integer vector of iterations.}
+
+\item{pars}{A character vector of parameter names.}
+
+\item{fun}{A function that given a numeric vector returns a numeric scalar.}
 }
 \description{
 Parameter Descriptions

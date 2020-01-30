@@ -10,6 +10,9 @@
 #' except scalars (FALSE).
 #' @param terms A flag specifying whether to return the parameter name
 #' for each term element.
-#'
+#' @param chains An integer vector of chains.
+#' @param iters An integer vector of iterations.
+#' @param pars A character vector of parameter names.
+#' @param fun A function that given a numeric vector returns a numeric scalar.
 #' @name params
 NULL
