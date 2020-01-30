@@ -2,28 +2,31 @@
 % Please edit documentation in R/pdims.R
 \name{pdims.nlists}
 \alias{pdims.nlists}
-\title{Dimensions of an nlists Object}
+\title{Parameter Dimensions}
 \usage{
 \method{pdims}{nlists}(x, ...)
 }
 \arguments{
-\item{x}{An nlists object.}
+\item{x}{An object.}
 
-\item{...}{Unused}
+\item{...}{Other arguments passed to methods.}
 }
 \value{
-A named list of the dimensions of each \code{\link[=natomic_object]{natomic_object()}}.
+A named list of integer vectors of the dimensions of each parameter.
 }
 \description{
-Gets the dimensions of an nlists object.
+Gets the dimensions of each parameter of an object.
 }
 \examples{
-term::pdims(nlists(nlist(x = 1:3)))
-term::pdims(nlists(
+pdims(nlists(nlist(x = 1:3)))
+pdims(nlists(
   nlist(y = 3, zz = matrix(2:5, 2)),
   nlist(y = 5, zz = matrix(1:4, 2))
 ))
 }
 \seealso{
-\code{\link[term:pdims]{term::pdims()}}
+Other {dimensions}: 
+\code{\link[universals]{dims}()},
+\code{\link[universals]{ndims}()},
+\code{\link[universals]{npdims}()}
 }
