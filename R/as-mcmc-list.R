@@ -1,8 +1,7 @@
 #' As mcmc.list Object
 #'
 #' Coerces an nlist object to a `coda::mcmc.list` object.
-#' @param x A nlist object.
-#' @param ... Unused.
+#' @inheritParams params
 #' @return An mcmc.list object.
 #' @seealso [nlist-object()] and [coda::mcmc()]
 #' @export
@@ -14,8 +13,7 @@ as.mcmc.list.nlist <- function(x, ...) coda::as.mcmc.list(as.mcmc(x))
 #' As mcmc Object
 #'
 #' Coerces an nlists object to a `coda::mcmc` object.
-#' @param x A nlists object.
-#' @param ... Unused.
+#' @inheritParams params
 #' @return An mcmc object.
 #' @seealso [nlists-object()] and [coda::mcmc()]
 #' @export

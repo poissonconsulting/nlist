@@ -13,9 +13,9 @@ as.nlists(x, ...)
 \method{as.nlists}{nlist}(x, ...)
 }
 \arguments{
-\item{x}{An R object.}
+\item{x}{An object.}
 
-\item{...}{Unused}
+\item{...}{Unused.}
 }
 \value{
 An nlists object.

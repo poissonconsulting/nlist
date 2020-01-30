@@ -7,7 +7,7 @@
 \method{as.mcmc}{list.nlist}(x, ...)
 }
 \arguments{
-\item{x}{A nlist object.}
+\item{x}{An object.}
 
 \item{...}{Unused.}
 }

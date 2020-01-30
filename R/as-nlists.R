@@ -2,8 +2,7 @@
 #'
 #' Coerce an R object to an [nlists_object()].
 #'
-#' @param x An R object.
-#' @param ... Unused
+#' @inheritParams params
 #' @return An nlists object.
 #' @export
 #' @examples

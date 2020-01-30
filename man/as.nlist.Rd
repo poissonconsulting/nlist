@@ -16,9 +16,9 @@ as.nlist(x, ...)
 \method{as.nlist}{data.frame}(x, ...)
 }
 \arguments{
-\item{x}{An R object.}
+\item{x}{An object.}
 
-\item{...}{Unused}
+\item{...}{Unused.}
 }
 \value{
 An nlist object.

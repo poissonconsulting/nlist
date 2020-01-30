@@ -13,7 +13,7 @@ is_nlist(x)
 is_nlists(x)
 }
 \arguments{
-\item{x}{The object to test.}
+\item{x}{An object.}
 }
 \value{
 A flag indicating whether x is a natomic object (is atomic and numeric) or inherits from S3 class nlist or nlists.

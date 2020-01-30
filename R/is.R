@@ -3,8 +3,7 @@
 #' Test whether x is a [natomic_object()],
 #' [nlist_object()] or [nlists_object()].
 #'
-#' @param x The object to test.
-#'
+#' @inheritParams params
 #' @return A flag indicating whether x is a natomic object (is atomic and numeric) or inherits from S3 class nlist or nlists.
 #' @name is_natomic
 NULL
