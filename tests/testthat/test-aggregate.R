@@ -10,7 +10,8 @@ test_that("aggregate.nlist", {
 
   expect_error(
     aggregate(nlist(x = 1:2), fun = identity),
-    "^`fun` must return a scalar[.]$"
+    "^`fun` must return a scalar[.]$",
+    class = "chk_error"
   )
 })
 
@@ -42,7 +43,8 @@ test_that("aggregate.nlists", {
       nlist(x = matrix(1:9, 3)),
       nlist(x = matrix(2:10, 3))
     ), fun = identity),
-    "^`fun` must return a scalar[.]$"
+    "^`fun` must return a scalar[.]$",
+    class = "chk_error"
   )
 })
 

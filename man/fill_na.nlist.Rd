@@ -27,6 +27,7 @@ fill_na(nlists(nlist(x = c(2, NA)), nlist(x = c(NA_real_, NA))))
 Other {MCMC manipulations}: 
 \code{\link[universals]{bind_chains}()},
 \code{\link[universals]{collapse_chains}()},
+\code{\link[universals]{estimates}()},
 \code{\link[universals]{fill_all}()},
 \code{\link[universals]{split_chains}()}
 }
