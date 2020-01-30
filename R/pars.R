@@ -1,45 +1,44 @@
-#' Parameter Names
-#'
-#' Gets the parameter names for an [nlist_object()].
-#'
-#' @param x An nlist object.
-#' @param scalar A logical scalar specifying whether to get the names of
-#' all parameters (NA), only scalars (TRUE) or all parameters
-#' except scalars (FALSE).
-#' @param terms A flag specifying whether to return the parameter name
-#' for each term.
-#' @param ... Unused.
-#' @return A character vector of the parameter names.
+#' @export
+universals::pars
+
+#' @inherit universals::pars
+#' @inheritParams params
 #' @export
 #'
 #' @examples
-#' term::pars(nlist(zz = 1, y = 3:6))
+#' pars(nlist(zz = 1, y = 3:6))
 pars.nlist <- function(x, scalar = NA, terms = FALSE, ...) {
   chk_lgl(scalar)
   chk_flag(terms)
   chk_unused(...)
+  
+  if(!missing(terms)) {
+    deprecate_soft("0.1.0.9001", "pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as.term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars")
+  }
 
   if (is.na(scalar) && !terms) {
     return(names(x))
-  } # this prevents infinite recursion
-  pars(as.term(x), scalar = scalar, terms = terms)
+  }
+  if(terms) return(pars_terms(as.term(x), scalar = scalar))
+  pars(as.term(x), scalar = scalar)
 }
 
-#' Parameter Names
-#'
-#' Gets the parameter names for an [nlists_object()].
-#'
-#' @param x An nlists object.
-#' @inheritParams pars.nlist
-#' @return A character vector of the parameter names.
+#' @inherit universals::pars
+#' @inheritParams params
 #' @export
 #'
 #' @examples
-#' term::pars(nlists(nlist(zz = 1, y = 3:6), nlist(zz = 4, y = 13:16)))
+#' pars(nlists(nlist(zz = 1, y = 3:6), nlist(zz = 4, y = 13:16)))
 pars.nlists <- function(x, scalar = NA, terms = FALSE, ...) {
   chk_unused(...)
+  if(!missing(terms)) {
+    deprecate_soft("0.1.0.9001", "pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as.term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars")
+  }
   if (!length(x)) {
     return(character(0))
   }
-  pars(x[[1]], scalar = scalar, terms = terms)
+  if(terms) {
+    return(pars(as.term(x[[1]]), scalar = scalar))
+  }
+  pars(x[[1]], scalar = scalar)
 }

@@ -2,28 +2,33 @@
 % Please edit documentation in R/pars.R
 \name{pars.nlists}
 \alias{pars.nlists}
-\title{Parameter Names}
+\title{Parameters}
 \usage{
 \method{pars}{nlists}(x, scalar = NA, terms = FALSE, ...)
 }
 \arguments{
-\item{x}{An nlists object.}
+\item{x}{An object.}
 
-\item{scalar}{A logical scalar specifying whether to get the names of
+\item{scalar}{A logical scalar specifying whether to include
 all parameters (NA), only scalars (TRUE) or all parameters
 except scalars (FALSE).}
 
 \item{terms}{A flag specifying whether to return the parameter name
-for each term.}
+for each term element.}
 
-\item{...}{Unused.}
+\item{...}{Other arguments passed to methods.}
 }
 \value{
 A character vector of the parameter names.
 }
 \description{
-Gets the parameter names for an \code{\link[=nlists_object]{nlists_object()}}.
+Gets the parameter names.
 }
 \examples{
-term::pars(nlists(nlist(zz = 1, y = 3:6), nlist(zz = 4, y = 13:16)))
+pars(nlists(nlist(zz = 1, y = 3:6), nlist(zz = 4, y = 13:16)))
+}
+\seealso{
+Other {parameters}: 
+\code{\link[universals]{npars}()},
+\code{\link[universals]{set_pars}()}
 }

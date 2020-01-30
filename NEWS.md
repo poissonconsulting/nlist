@@ -1,3 +1,5 @@
+- Added `thin()`.
+- Soft deprecated `pars(terms =)` for `pars_terms(as.term())`.
 - Soft deprecated `is.nlists()` for `is_nlists()`.
 - Soft deprecated `is.nlist()` for `is_nlist()`.
 - Soft deprecated `is.natomic()` for `is_natomic()`.

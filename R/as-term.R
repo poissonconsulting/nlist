@@ -1,4 +1,7 @@
 #' @export
+term::as.term
+
+#' @export
 as.term.nlist <- function(x, ...) {
   x <- mapply(as.term, x, names(x), SIMPLIFY = FALSE)
   x <- unname(unlist(x))

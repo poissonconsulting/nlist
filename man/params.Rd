@@ -13,6 +13,13 @@
 \item{flesh}{An atomic vector}
 
 \item{skeleton}{An nlist object.}
+
+\item{scalar}{A logical scalar specifying whether to include
+all parameters (NA), only scalars (TRUE) or all parameters
+except scalars (FALSE).}
+
+\item{terms}{A flag specifying whether to return the parameter name
+for each term element.}
 }
 \description{
 Parameter Descriptions

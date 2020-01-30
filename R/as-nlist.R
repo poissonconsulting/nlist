@@ -33,7 +33,7 @@ as.nlist.numeric <- function(x, ...) {
     y[names(x)] <- x
     x <- y
   }
-  x <- split(x, pars(terms, terms = TRUE))
+  x <- split(x, pars_terms(terms))
   x <- lapply(x, function(x) x[order(as.term(names(x)))])
   x <- lapply(x, function(x) set_dim(x, pdims(as.term(names(x)))[[1]]))
   as.nlist(x)
