@@ -20,7 +20,7 @@ print.nlists <- function(x, ...) {
     return(invisible(x))
   }
   nn <- length(x[[1]])
-  if (nn) print(unclass(aggregate(x)))
+  if (nn) print(unclass(estimates(x)))
 
   str <- "an nlists object"
   nchains <- nchains(x)
