@@ -1,3 +1,4 @@
+- Added `set_pars()`.
 - Added `fill_all()`.
 - Added `thin()`.
 - Soft deprecated `pars(terms =)` for `pars_terms(as.term())`.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/as-mcmc.R, R/as-term.R, R/collapse-chains.R,
 %   R/estimates.R, R/export.R, R/fill-all.R, R/fill-na.R, R/nchains.R,
 %   R/niters.R, R/npdims.R, R/nsims.R, R/nterms.R, R/pars.R, R/pdims.R,
-%   R/split-chains.R, R/thin.R
+%   R/set-pars.R, R/split-chains.R, R/thin.R
 \docType{import}
 \name{reexports}
 \alias{reexports}
@@ -20,6 +20,7 @@
 \alias{nterms}
 \alias{pars}
 \alias{pdims}
+\alias{set_pars}
 \alias{split_chains}
 \alias{thin}
 \title{Objects exported from other packages}
@@ -35,6 +36,6 @@ below to see their documentation.
 
   \item{term}{\code{\link[term]{as.term}}}
 
-  \item{universals}{\code{\link[universals]{collapse_chains}}, \code{\link[universals]{estimates}}, \code{\link[universals]{fill_all}}, \code{\link[universals]{fill_na}}, \code{\link[universals]{nchains}}, \code{\link[universals]{niters}}, \code{\link[universals]{npdims}}, \code{\link[universals]{nsims}}, \code{\link[universals]{nterms}}, \code{\link[universals]{pars}}, \code{\link[universals]{pdims}}, \code{\link[universals]{split_chains}}}
+  \item{universals}{\code{\link[universals]{collapse_chains}}, \code{\link[universals]{estimates}}, \code{\link[universals]{fill_all}}, \code{\link[universals]{fill_na}}, \code{\link[universals]{nchains}}, \code{\link[universals]{niters}}, \code{\link[universals]{npdims}}, \code{\link[universals]{nsims}}, \code{\link[universals]{nterms}}, \code{\link[universals]{pars}}, \code{\link[universals]{pdims}}, \code{\link[universals]{set_pars}}, \code{\link[universals]{split_chains}}}
 }}
 
