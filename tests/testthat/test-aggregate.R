@@ -1,6 +1,7 @@
 context("aggregate")
 
 test_that("aggregate.nlist", {
+  rlang::with_options(lifecycle_verbosity = "quiet", {
   expect_identical(aggregate(nlist()), structure(list(), .Names = character(0)))
   expect_identical(aggregate(nlist(x = 1)), list(x = 1))
   expect_identical(aggregate(nlist(x = 1:2)), list(x = 1.5))
@@ -13,9 +14,11 @@ test_that("aggregate.nlist", {
     "^`fun` must return a scalar[.]$",
     class = "chk_error"
   )
+  })
 })
 
 test_that("aggregate.nlists", {
+  rlang::with_options(lifecycle_verbosity = "quiet", {
   expect_identical(
     aggregate(nlists()),
     structure(list(), .Names = character(0), class = "nlist")
@@ -35,9 +38,11 @@ test_that("aggregate.nlists", {
       7.5, 8.5, 9.5
     ), .Dim = c(3L, 3L))), class = "nlist")
   )
+  })
 })
 
 test_that("aggregate.nlists", {
+  rlang::with_options(lifecycle_verbosity = "quiet", {
   expect_error(
     aggregate(nlists(
       nlist(x = matrix(1:9, 3)),
@@ -46,9 +51,11 @@ test_that("aggregate.nlists", {
     "^`fun` must return a scalar[.]$",
     class = "chk_error"
   )
+  })
 })
 
 test_that("aggregate.nlists by_chain = TRUE", {
+  rlang::with_options(lifecycle_verbosity = "quiet", {
   expect_identical(
     aggregate(nlists(), by_chain = TRUE),
     structure(list(), class = "nlists")
@@ -74,4 +81,5 @@ test_that("aggregate.nlists by_chain = TRUE", {
   nlists <- nlists(nlist(x = matrix(1:9, 3)), nlist(x = matrix(2:10, 3)))
   attr(nlists, "nchains") <- 2L
   expect_equal(aggregate(nlists, by_chain = TRUE), nlists)
+  })
 })
