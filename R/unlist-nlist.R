@@ -13,6 +13,7 @@ unlist_nlist <- function(x) {
   chk_s3_class(x, "nlist")
   y <- unlist(unclass(x))
   if (is.null(y)) y <- numeric(0)
+  y <- as.numeric(y)
   names(y) <- as.term(x)
   y
 }

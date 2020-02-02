@@ -7,7 +7,7 @@ test_that("unlist_nlist", {
   )
   expect_identical(
     unlist_nlist(nlist(z = NA)),
-    c(z = NA_integer_)
+    c(z = NA_real_)
   )
   expect_identical(
     unlist_nlist(nlist(y = 2, x = matrix(4:7, ncol = 2))),
