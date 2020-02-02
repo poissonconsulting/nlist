@@ -10,9 +10,8 @@ tidy.nlist <- function(x, ...) {
   chk_unused(...)
   if(!length(x)) return(tibble::tibble(term = term(0)))
   x <- unlist(x)
-  x <- as.matrix(x)
-  term <- as.term(rownames(x))
-  x <- tibble::tibble(term = term, value1 = x[,1])
+  term <- as.term(names(x))
+  x <- tibble::tibble(term = term, value1 = x)
   x
 }
 
