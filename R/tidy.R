@@ -12,9 +12,25 @@ tidy.nlist <- function(x, ...) {
   x <- unlist(x)
   x <- as.matrix(x)
   term <- as.term(rownames(x))
-  colnames(x) <- p0("value", 1:ncol(x))
-  x <- as.data.frame(x)
-  x <- as.list(x)
+  x <- tibble::tibble(term = term, value1 = x[,1])
+  x
+}
+
+#' @inherit generics::tidy
+#'
+#' @export
+#' @examples 
+#' tidy(nlists(nlist(x = 1, y = 4:6)),
+#'  nlist(x = 3, y = 7:9))
+tidy.nlists <- function(x, ...) {
+  chk_unused(...)
+  if(!length(x)) return(tibble::tibble(term = term(0)))
+  if(!length(x[[1]])) return(tibble::tibble(term = term(0)))
+  
+  x <- lapply(x, tidy)
+  term <- x[[1]]$term
+  x <- lapply(x, x[[2]])
+  names(x) <- p0("value", 1:length(x))
   term <- list(term = term)
   x <- c(term, x)
   x <- tibble::as_tibble(x)
