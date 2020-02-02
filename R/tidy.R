@@ -28,7 +28,7 @@ tidy.nlists <- function(x, ...) {
   
   x <- lapply(x, tidy)
   term <- x[[1]]$term
-  x <- lapply(x, x[[2]])
+  x <- lapply(x, function(x) x[[2]])
   names(x) <- p0("value", 1:length(x))
   term <- list(term = term)
   x <- c(term, x)
