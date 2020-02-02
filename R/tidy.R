@@ -23,15 +23,25 @@ tidy.nlist <- function(x, ...) {
 #'  nlist(x = 3, y = 7:9)))
 tidy.nlists <- function(x, ...) {
   chk_unused(...)
-  if(!length(x)) return(tibble::tibble(term = term(0)))
-  if(!length(x[[1]])) return(tibble::tibble(term = term(0)))
+  if(!length(x) || !length(x[[1]])) 
+    return(tibble::tibble(term = term(0),
+                          estimate = numeric(0),
+                          sd = numeric(0),
+                          zscore = numeric(0),
+                          lower = numeric(0),
+                          upper = numeric(0),
+                          svalue = numeric(0)))
   
-  x <- lapply(x, tidy)
-  term <- x[[1]]$term
-  x <- lapply(x, function(x) x[[2]])
-  names(x) <- p0("value", 1:length(x))
-  term <- list(term = term)
-  x <- c(term, x)
-  x <- tibble::as_tibble(x)
-  x
+  estimate <- tidy(estimates(x, median))
+  term <- estimate[[1]]
+  estimate <- estimate[[2]]
+  sd <- tidy(estimates(x, sd))[[2]]
+  zscore <- tidy(estimates(x, zscore))[[2]]
+  lower <- tidy(estimates(x, lower))[[2]]
+  upper <- tidy(estimates(x, upper))[[2]]
+  svalue <- tidy(estimates(x, svalue))[[2]]
+  
+  tibble::tibble(term = term, estimate = estimate, 
+                 sd = sd, zscore = zscore, lower = lower,
+                 upper = upper, svalue = svalue)
 }
