@@ -14,7 +14,8 @@
 #' aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), fun = function(x) x[1])
 aggregate.nlist <- function(x, fun = mean, ...) {
   deprecate_soft("0.1.0.9001",
-    what = "aggregate.nlist()"
+    what = "nlist::aggregate.nlist()",
+    with = "nlist::estimates.nlist()"
   )  
   lapply(x, aggregate_atomic_numeric, fun, ...)
 }
@@ -34,8 +35,8 @@ aggregate.nlist <- function(x, fun = mean, ...) {
 #' aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
 aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {
   deprecate_soft("0.1.0.9001",
-    what = "aggregate.nlists()",
-    with = "estimates.nlists()"
+    what = "nlist::aggregate.nlists()",
+    with = "nlist::estimates.nlists()"
   )  
   chk_function(fun)
   chk_flag(by_chain)
