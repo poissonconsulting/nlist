@@ -15,9 +15,11 @@ status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/nli
 coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-<!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/package=nlist) -->
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist) -->
-<!-- ![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist) -->
+[![Tinyverse
+status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/package=nlist)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
+![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
 <!-- badges: end -->
 
 nlist is an R package to create and manipulate numeric list (nlist)
@@ -60,11 +62,11 @@ An natomic object is an integer or double vector, matrix or array.
 
 ``` r
 library(nlist)
-is.natomic(TRUE)
+is_natomic(TRUE)
 #> [1] FALSE
-is.natomic(1L)
+is_natomic(1L)
 #> [1] TRUE
-is.natomic(matrix(1:3))
+is_natomic(matrix(1:3))
 #> [1] TRUE
 ```
 
@@ -134,13 +136,13 @@ nlists <- nlists(
 
 print(nlists)
 #> $x
-#> [1] -22.75
+#> [1] -0.5
 #> 
 #> $y
 #>      [,1] [,2] [,3]
-#> [1,] 5.75 7.25 8.75
-#> [2,] 6.25 7.75 9.25
-#> [3,] 6.75 8.25 9.75
+#> [1,]  1.5  4.5  7.5
+#> [2,]  2.5  5.5  8.5
+#> [3,]  3.5  6.5  9.5
 #> 
 #> an nlists object of 4 nlist objects each with 2 natomic elements
 ```
@@ -149,6 +151,10 @@ Aggregating an nlists object gives an nlist object.
 
 ``` r
 aggregate(nlists, fun = median)
+#> Warning: `aggregate.nlists()` is deprecated as of lifecycle 0.1.0.9001.
+#> Please use `estimates.nlists()` instead.
+#> This warning is displayed once per session.
+#> Call `lifecycle::last_warnings()` to see where this warning was generated.
 #> $x
 #> [1] -0.5
 #> 
