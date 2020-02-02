@@ -19,8 +19,8 @@ tidy.nlist <- function(x, ...) {
 #'
 #' @export
 #' @examples 
-#' tidy(nlists(nlist(x = 1, y = 4:6)),
-#'  nlist(x = 3, y = 7:9))
+#' tidy(nlists(nlist(x = 1, y = 4:6),
+#'  nlist(x = 3, y = 7:9)))
 tidy.nlists <- function(x, ...) {
   chk_unused(...)
   if(!length(x)) return(tibble::tibble(term = term(0)))
