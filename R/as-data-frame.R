@@ -10,9 +10,11 @@
 #' as.data.frame(nlist(x = 1, y = 4:6))
 as.data.frame.nlist <- function(x, ...) {
   chk_unused(...)
-  if(!length(x)) return(tibble::tibble(term = term(0)))
+  if(!length(x)) 
+    return(as.data.frame(tibble::tibble(term = term(0), value = numeric(0))))
   x <- unlist(x)
   term <- as.term(names(x))
-  x <- tibble::tibble(term = term, value1 = x)
+  x <- unname(x)
+  x <- as.data.frame(tibble::tibble(term = term, value = x))
   x
 }
