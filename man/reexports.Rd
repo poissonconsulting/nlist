@@ -11,6 +11,9 @@
 \alias{collapse_chains}
 \alias{estimates}
 \alias{median}
+\alias{zscore}
+\alias{lower}
+\alias{upper}
 \alias{pvalue}
 \alias{svalue}
 \alias{npars_scalar}
@@ -37,7 +40,7 @@ below to see their documentation.
 \describe{
   \item{coda}{\code{\link[coda]{as.mcmc}}, \code{\link[coda]{thin}}}
 
-  \item{extras}{\code{\link[extras]{pvalue}}, \code{\link[extras]{svalue}}}
+  \item{extras}{\code{\link[extras]{lower}}, \code{\link[extras]{pvalue}}, \code{\link[extras]{svalue}}, \code{\link[extras]{upper}}, \code{\link[extras]{zscore}}}
 
   \item{generics}{\code{\link[generics]{tidy}}}
 
