@@ -13,11 +13,11 @@ pars.nlist <- function(x, scalar = NA, terms = FALSE, ...) {
   chk_unused(...)
   
   if(!missing(terms)) {
-    deprecate_soft("0.1.0.9001", "pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as.term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_soft("0.1.0.9001", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as.term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
   }
   
   if(!missing(scalar)) {
-    deprecate_soft("0.1.0.9001", "pars(scalar =)", details = "If `terms = TRUE` use `pars_scalar()'.", id = "pars_scalar")
+    deprecate_soft("0.1.0.9001", "nlist::pars(scalar =)", details = "If `terms = TRUE` use `pars_scalar()'.", id = "pars_scalar")
   }
 
   if (is.na(scalar) && !terms) {
@@ -41,10 +41,10 @@ pars.nlist <- function(x, scalar = NA, terms = FALSE, ...) {
 pars.nlists <- function(x, scalar = NA, terms = FALSE, ...) {
   chk_unused(...)
   if(!missing(terms)) {
-    deprecate_soft("0.1.0.9001", "pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as.term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_soft("0.1.0.9001", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as.term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
   }
   if(!missing(scalar)) {
-    deprecate_soft("0.1.0.9001", "pars(scalar =)", details = "If `terms = TRUE` use `pars_scalar()'.", id = "pars_scalar")
+    deprecate_soft("0.1.0.9001", "nlist::pars(scalar =)", details = "If `terms = TRUE` use `pars_scalar()'.", id = "pars_scalar")
   }
   if (!length(x)) {
     return(character(0))
