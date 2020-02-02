@@ -26,6 +26,8 @@ Imports:
     coda,
     abind,
     purrr,
+    generics,
+    tibble,
     universals,
     extras,
     lifecycle

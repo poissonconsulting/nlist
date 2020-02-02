@@ -2,7 +2,7 @@
 % Please edit documentation in R/as-mcmc.R, R/as-term.R, R/collapse-chains.R,
 %   R/estimates.R, R/export.R, R/fill-all.R, R/fill-na.R, R/nchains.R,
 %   R/niters.R, R/npdims.R, R/nsims.R, R/nterms.R, R/pars-scalar.R, R/pars.R,
-%   R/pdims.R, R/set-pars.R, R/split-chains.R, R/thin.R
+%   R/pdims.R, R/set-pars.R, R/split-chains.R, R/thin.R, R/tidy.R
 \docType{import}
 \name{reexports}
 \alias{reexports}
@@ -27,6 +27,7 @@
 \alias{set_pars}
 \alias{split_chains}
 \alias{thin}
+\alias{tidy}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -37,6 +38,8 @@ below to see their documentation.
   \item{coda}{\code{\link[coda]{as.mcmc}}, \code{\link[coda]{thin}}}
 
   \item{extras}{\code{\link[extras]{pvalue}}, \code{\link[extras]{svalue}}}
+
+  \item{generics}{\code{\link[generics]{tidy}}}
 
   \item{stats}{\code{\link[stats]{median}}}
 
