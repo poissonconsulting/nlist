@@ -37,6 +37,12 @@ converted to `coda::mcmc` and `coda::mcmc.list` objects.
 
 ## Installation
 
+To install the latest release from [CRAN](https://cran.r-project.org)
+
+``` r
+install.packages("nlist")
+```
+
 To install the developmental version from
 [GitHub](https://github.com/poissonconsulting/nlist)
 
