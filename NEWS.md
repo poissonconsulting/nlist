@@ -1,3 +1,5 @@
+- Added `as.data.frame.nlist()` and `as.data.frame.nlists()`
+- Added `tidy.nlists()`
 - Added `set_pars()`.
 - Added `fill_all()`.
 - Added `thin()`.
