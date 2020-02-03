@@ -18,14 +18,13 @@ tidy.nlists <- function(x, ...) {
                           upper = numeric(0),
                           svalue = numeric(0)))
   
-  estimate <- as.data.frame(estimates(x, median))
-  term <- estimate[[1]]
-  estimate <- estimate[[2]]
-  sd <- as.data.frame(estimates(x, sd))[[2]]
-  zscore <- as.data.frame(estimates(x, zscore))[[2]]
-  lower <- as.data.frame(estimates(x, lower))[[2]]
-  upper <- as.data.frame(estimates(x, upper))[[2]]
-  svalue <- as.data.frame(estimates(x, svalue))[[2]]
+  estimate <- unlist(estimates(x, median))
+  term <- as.term(names(estimate))
+  sd <- unlist(estimates(x, sd))
+  zscore <- unlist(estimates(x, zscore))
+  lower <- unlist(estimates(x, lower))
+  upper <- unlist(estimates(x, upper))
+  svalue <- unlist(estimates(x, svalue))
   
   tibble::tibble(term = term, estimate = estimate, 
                  sd = sd, zscore = zscore, lower = lower,

@@ -1,4 +1,4 @@
-- Added `as.data.frame.nlist()` and `as.data.frame.nlists()`
+- Added `as_data_term.nlist()` and `as_data_term.nlists()`
 - Added `tidy.nlists()`
 - Added `set_pars()`.
 - Added `fill_all()`.
