@@ -79,21 +79,11 @@ library(nlist)
 nlist <- nlist(x = 1, y = matrix(1:9, 3))
 nlist
 ```
-Or to coerce from a data frame.
-```{r}
-data <- data.frame(
-  lgl = c(TRUE, NA),
-  dte = as.Date(c("2001-01-02", "2001-01-01")),
-  fac = factor(c("b", "a"))
-)
-
-data
-as.nlist(data)
-```
 
 ### `nlists`
 
-An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs. 
+An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs.
+
 The nchains attribute is used to keep track of the number of chains.
 
 ```{r}
@@ -107,19 +97,50 @@ nlists <- nlists(
 print(nlists)
 ```
 
-Aggregating an nlists object gives an nlist object.
+### Coercion
+
+#### nlist
+
+A data.frame can be coerced to an nlist object
 ```{r}
-aggregate(nlists, fun = median)
+data <- data.frame(
+  lgl = c(TRUE, NA),
+  dte = as.Date(c("2001-01-02", "2001-01-01")),
+  fac = factor(c("b", "a"))
+)
+
+as_nlist(data)
+```
+
+And an `nlist` objects can be converted to an `mcmc` or `term_frame` objects (and converted back again)
+```{r}
+as.mcmc(nlist)
+as_term_frame(nlist)
+```
+
+#### nlists
+
+The `estimates()` function can be used to aggregate an `nlists` object to an `nlist` object.
+```{r}
+estimates(nlists, fun = mean)
+```
+
+while the `tidy()` function treats the values as if they are MCMC samples
+and summarises the terms as a tidy tibble.
+```{r}
+tidy(nlists)
+```
+
+
+An nlists object can be converted to an mcmc.list object and a term_frame.
+```{r}
+coda::as.mcmc.list(nlists)
+as_term_frame(nlists)
 ```
 
 An nlists object can have its chains split or collapsed.
 ```{r}
 nlists <- split_chains(nlists)
-```
-
-And can be converted to an mcmc.list object
-```{r}
-coda::as.mcmc.list(nlists)
 ```
 
 ## Contribution

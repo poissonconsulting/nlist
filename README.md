@@ -100,37 +100,12 @@ nlist
 #> an nlist object with 2 natomic elements
 ```
 
-Or to coerce from a data frame.
-
-``` r
-data <- data.frame(
-  lgl = c(TRUE, NA),
-  dte = as.Date(c("2001-01-02", "2001-01-01")),
-  fac = factor(c("b", "a"))
-)
-
-data
-#>    lgl        dte fac
-#> 1 TRUE 2001-01-02   b
-#> 2   NA 2001-01-01   a
-as.nlist(data)
-#> $lgl
-#> [1]  1 NA
-#> 
-#> $dte
-#> [1] 11324 11323
-#> 
-#> $fac
-#> [1] 2 1
-#> 
-#> an nlist object with 3 natomic elements
-```
-
 ### `nlists`
 
 An nlists object is a S3 class list of nlist objects with the same
-names, dimensionalities and typeofs. The nchains attribute is used to
-keep track of the number of chains.
+names, dimensionalities and typeofs.
+
+The nchains attribute is used to keep track of the number of chains.
 
 ``` r
 nlists <- nlists(
@@ -153,56 +128,162 @@ print(nlists)
 #> an nlists object of 4 nlist objects each with 2 natomic elements
 ```
 
-Aggregating an nlists object gives an nlist object.
+### Coercion
+
+#### nlist
+
+A data.frame can be coerced to an nlist object
 
 ``` r
-aggregate(nlists, fun = median)
-#> Warning: `aggregate.nlists()` is deprecated as of lifecycle 0.1.0.9001.
-#> Please use `estimates.nlists()` instead.
-#> This warning is displayed once per session.
-#> Call `lifecycle::last_warnings()` to see where this warning was generated.
+data <- data.frame(
+  lgl = c(TRUE, NA),
+  dte = as.Date(c("2001-01-02", "2001-01-01")),
+  fac = factor(c("b", "a"))
+)
+
+as_nlist(data)
+#> $lgl
+#> [1]  1 NA
+#> 
+#> $dte
+#> [1] 11324 11323
+#> 
+#> $fac
+#> [1] 2 1
+#> 
+#> an nlist object with 3 natomic elements
+```
+
+And an `nlist` objects can be converted to an `mcmc` or `term_frame`
+objects (and converted back again)
+
+``` r
+as.mcmc(nlist)
+#> Markov Chain Monte Carlo (MCMC) output:
+#> Start = 1 
+#> End = 1 
+#> Thinning interval = 1 
+#>      x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
+#> [1,] 1      1      2      3      4      5      6      7      8      9
+as_term_frame(nlist)
+#>      term value
+#> 1       x     1
+#> 2  y[1,1]     1
+#> 3  y[2,1]     2
+#> 4  y[3,1]     3
+#> 5  y[1,2]     4
+#> 6  y[2,2]     5
+#> 7  y[3,2]     6
+#> 8  y[1,3]     7
+#> 9  y[2,3]     8
+#> 10 y[3,3]     9
+```
+
+#### nlists
+
+The `estimates()` function can be used to aggregate an `nlists` object
+to an `nlist` object.
+
+``` r
+estimates(nlists, fun = mean)
 #> $x
-#> [1] -0.5
+#> [1] -22.75
 #> 
 #> $y
 #>      [,1] [,2] [,3]
-#> [1,]  1.5  4.5  7.5
-#> [2,]  2.5  5.5  8.5
-#> [3,]  3.5  6.5  9.5
+#> [1,] 5.75 7.25 8.75
+#> [2,] 6.25 7.75 9.25
+#> [3,] 6.75 8.25 9.75
 #> 
 #> an nlist object with 2 natomic elements
+```
+
+while the `tidy()` function treats the values as if they are MCMC
+samples and summarises the terms as a tidy tibble.
+
+``` r
+tidy(nlists)
+#> # A tibble: 10 x 7
+#>    term   estimate    sd zscore  lower upper svalue
+#>    <term>    <dbl> <dbl>  <dbl>  <dbl> <dbl>  <dbl>
+#>  1 x          -0.5  51.8 -0.440 -92.6   9.32  0    
+#>  2 y[1,1]      1.5  11.0  0.524  -1.77 20.5   0.737
+#>  3 y[2,1]      2.5  11.5  0.545  -2.62 21.5   0.737
+#>  4 y[3,1]      3.5  12.0  0.561  -3.47 22.5   0.737
+#>  5 y[1,2]      4.5  12.7  0.573  -4.32 23.5   0.737
+#>  6 y[2,2]      5.5  13.3  0.582  -5.17 24.5   0.737
+#>  7 y[3,2]      6.5  14.0  0.588  -6.02 25.5   0.737
+#>  8 y[1,3]      7.5  14.8  0.592  -6.87 26.5   0.737
+#>  9 y[2,3]      8.5  15.5  0.595  -7.72 27.5   0.737
+#> 10 y[3,3]      9.5  16.3  0.597  -8.57 28.5   0.737
+```
+
+An nlists object can be converted to an mcmc.list object and a
+term\_frame.
+
+``` r
+coda::as.mcmc.list(nlists)
+#> [[1]]
+#> Markov Chain Monte Carlo (MCMC) output:
+#> Start = 1 
+#> End = 4 
+#> Thinning interval = 1 
+#>         x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
+#> [1,]    1      1      2      3      4      5      6      7      8      9
+#> [2,]   -2      2      3      4      5      6      7      8      9     10
+#> [3,]   10     22     23     24     25     26     27     28     29     30
+#> [4,] -100     -2     -3     -4     -5     -6     -7     -8     -9    -10
+#> 
+#> attr(,"class")
+#> [1] "mcmc.list"
+as_term_frame(nlists)
+#>      term sample value
+#> 1       x      1     1
+#> 2  y[1,1]      1     1
+#> 3  y[2,1]      1     2
+#> 4  y[3,1]      1     3
+#> 5  y[1,2]      1     4
+#> 6  y[2,2]      1     5
+#> 7  y[3,2]      1     6
+#> 8  y[1,3]      1     7
+#> 9  y[2,3]      1     8
+#> 10 y[3,3]      1     9
+#> 11      x      2    -2
+#> 12 y[1,1]      2     2
+#> 13 y[2,1]      2     3
+#> 14 y[3,1]      2     4
+#> 15 y[1,2]      2     5
+#> 16 y[2,2]      2     6
+#> 17 y[3,2]      2     7
+#> 18 y[1,3]      2     8
+#> 19 y[2,3]      2     9
+#> 20 y[3,3]      2    10
+#> 21      x      3    10
+#> 22 y[1,1]      3    22
+#> 23 y[2,1]      3    23
+#> 24 y[3,1]      3    24
+#> 25 y[1,2]      3    25
+#> 26 y[2,2]      3    26
+#> 27 y[3,2]      3    27
+#> 28 y[1,3]      3    28
+#> 29 y[2,3]      3    29
+#> 30 y[3,3]      3    30
+#> 31      x      4  -100
+#> 32 y[1,1]      4    -2
+#> 33 y[2,1]      4    -3
+#> 34 y[3,1]      4    -4
+#> 35 y[1,2]      4    -5
+#> 36 y[2,2]      4    -6
+#> 37 y[3,2]      4    -7
+#> 38 y[1,3]      4    -8
+#> 39 y[2,3]      4    -9
+#> 40 y[3,3]      4   -10
 ```
 
 An nlists object can have its chains split or collapsed.
 
 ``` r
 nlists <- split_chains(nlists)
-```
-
-And can be converted to an mcmc.list object
-
-``` r
-coda::as.mcmc.list(nlists)
-#> $`1`
-#> Markov Chain Monte Carlo (MCMC) output:
-#> Start = 1 
-#> End = 2 
-#> Thinning interval = 1 
-#>       x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
-#> [1,]  1      1      2      3      4      5      6      7      8      9
-#> [2,] -2      2      3      4      5      6      7      8      9     10
-#> 
-#> $`2`
-#> Markov Chain Monte Carlo (MCMC) output:
-#> Start = 1 
-#> End = 2 
-#> Thinning interval = 1 
-#>         x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
-#> [1,]   10     22     23     24     25     26     27     28     29     30
-#> [2,] -100     -2     -3     -4     -5     -6     -7     -8     -9    -10
-#> 
-#> attr(,"class")
-#> [1] "mcmc.list"
 ```
 
 ## Contribution
