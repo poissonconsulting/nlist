@@ -12,3 +12,9 @@ test_that("unlist_nlist", {
     c(y = 2, `x[1,1]` = 4, `x[2,1]` = 5, `x[1,2]` = 6, `x[2,2]` = 7)
   )
 })
+
+test_that("unlist.nlists not defined", {
+  expect_error(unlist(nlists()),
+               "^`unlist[(][)]` is not defined for nlists objects[.]$")
+})
+

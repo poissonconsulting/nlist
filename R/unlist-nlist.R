@@ -35,3 +35,9 @@ unlist.nlist <- function(x, recursive = TRUE, use.names = TRUE) {
   if (!use.names) x <- unname(x)
   x
 }
+
+#' @method unlist nlists
+#' @export
+unlist.nlists <- function(x, recursive = TRUE, use.names = TRUE) {
+  stop("`unlist()` is not defined for nlists objects.")
+}
