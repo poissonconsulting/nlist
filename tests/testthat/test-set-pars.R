@@ -1,5 +1,3 @@
-context("set-pars")
-
 test_that("nlist", {
   expect_identical(set_pars(nlist(x = 1), "y"),
                    structure(list(y = 1), class = "nlist"))

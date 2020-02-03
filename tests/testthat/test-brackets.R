@@ -1,5 +1,3 @@
-context("brackets")
-
 test_that("[.nlist", {
   expect_identical(nlist(x = 1)[1], nlist(x = 1))
   expect_identical(nlist(x = 1, y = 2)[1], nlist(x = 1))

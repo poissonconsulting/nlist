@@ -1,5 +1,3 @@
-context("print")
-
 test_that("print.nlist", {
   skip_on_covr()
   expect_identical(

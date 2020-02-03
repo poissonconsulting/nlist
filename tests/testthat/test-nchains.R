@@ -1,5 +1,3 @@
-context("nchains")
-
 test_that("nchains nlist", {
   expect_identical(nchains(nlist()), 1L)
   expect_identical(nchains(nlist(x = 1)), 1L)

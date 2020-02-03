@@ -1,5 +1,3 @@
-context("split-chains")
-
 test_that("split_chains nlists", {
   nlists <- nlists(nlist(x = matrix(1:6, 2)), nlist(x = matrix(3:8, 2)))
   nlists2 <- nlists

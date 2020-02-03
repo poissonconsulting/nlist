@@ -1,5 +1,3 @@
-context("chk")
-
 test_that("chk_natomic", {
   expect_error(chk_natomic(list()),
     "^`list[(][)]` must be a numeric [(]integer or double[)] atomic [(]vector, matrix or array[)] object[.]",

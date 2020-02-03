@@ -1,5 +1,3 @@
-context("pars")
-
 test_that("pars.nlist", {
   expect_identical(pars(nlist()), character(0))
   expect_identical(pars(nlist(x = 1)), "x")

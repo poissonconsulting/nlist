@@ -1,5 +1,3 @@
-context("estimates")
-
 test_that("estimates.nlist", {
   expect_identical(estimates(nlist()), structure(list(), .Names = character(0), class = "nlist"))
   expect_identical(estimates(nlist(x = 1)), nlist(x = 1))

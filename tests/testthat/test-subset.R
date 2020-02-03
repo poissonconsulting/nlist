@@ -1,5 +1,3 @@
-context("subset")
-
 test_that("subset.nlist", {
   expect_identical(subset(nlist()), nlist())
   expect_identical(subset(nlist(x = 1)), nlist(x = 1))

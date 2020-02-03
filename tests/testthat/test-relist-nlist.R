@@ -1,5 +1,3 @@
-context("relist")
-
 test_that("relist_nlist", {
   expect_identical(relist_nlist(
     structure(numeric(0), .Names = character(0)),

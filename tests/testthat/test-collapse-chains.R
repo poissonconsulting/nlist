@@ -1,5 +1,3 @@
-context("collapse-chains")
-
 test_that("collapse_chains nlist", {
   nlist <- nlist(x = matrix(1:6, 2))
   expect_identical(collapse_chains(nlist), nlist)

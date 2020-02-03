@@ -1,5 +1,3 @@
-context("nsims")
-
 test_that("", {
   expect_identical(nsims(nlist()), 1L)
   expect_identical(nsims(nlist(x = 1)), 1L)

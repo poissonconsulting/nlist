@@ -1,5 +1,3 @@
-context("nterms")
-
 test_that("nterms.nlist", {
   expect_identical(nterms(nlist()), 0L)
   expect_identical(nterms(nlist(x = 1)), 1L)

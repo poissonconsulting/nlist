@@ -1,5 +1,3 @@
-context("as-mcmc-list")
-
 test_that("as.mcmc.list.nlist", {
   expect_identical(
     coda::as.mcmc.list(nlist()),

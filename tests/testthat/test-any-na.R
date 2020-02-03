@@ -1,5 +1,3 @@
-context("any-na")
-
 test_that("anyNA.nlist", {
   expect_false(anyNA(nlist()))
   expect_false(anyNA(nlist(x = 1)))

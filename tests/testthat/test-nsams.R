@@ -1,5 +1,3 @@
-context("nsams")
-
 test_that("nsams.nlist", {
   expect_identical(nsams(nlist()), 0L)
   expect_identical(nsams(nlist(x = 1)), 1L)

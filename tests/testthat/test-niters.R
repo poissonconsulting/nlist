@@ -1,5 +1,3 @@
-context("niters")
-
 test_that("niters nlist", {
   expect_identical(niters(nlist()), 1L)
   expect_identical(niters(nlist(x = 1)), 1L)

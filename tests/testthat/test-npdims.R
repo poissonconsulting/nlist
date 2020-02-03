@@ -1,5 +1,3 @@
-context("npdims")
-
 test_that("npdims.nlist", {
   expect_identical(npdims(nlist()), integer(0))
   expect_identical(

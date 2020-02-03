@@ -1,5 +1,3 @@
-context("fill-all")
-
 test_that("", {
 expect_identical(fill_all(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2))),
                  structure(list(x = c(0, 0), y = structure(c(0L, 0L, 0L, 0L), .Dim = c(2L, 

@@ -1,5 +1,3 @@
-context("aggregate")
-
 test_that("aggregate.nlist", {
   rlang::with_options(lifecycle_verbosity = "quiet", {
   expect_identical(aggregate(nlist()), structure(list(), .Names = character(0)))

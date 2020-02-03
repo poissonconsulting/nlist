@@ -1,5 +1,3 @@
-context("as-mcmc")
-
 test_that("as.mcmc.nlist", {
   expect_identical(
     as.mcmc(nlist()),

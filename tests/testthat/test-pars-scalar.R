@@ -1,5 +1,3 @@
-context("pars_scalar")
-
 test_that("pars_scalar.nlist", {
   expect_identical(pars_scalar(nlist()), character(0))
   expect_identical(pars_scalar(nlist(x = 1, a = 1:10)),"x")

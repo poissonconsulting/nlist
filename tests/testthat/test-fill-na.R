@@ -1,5 +1,3 @@
-context("fill-na")
-
 test_that("fill_na.nlists", {
   expect_identical(
     fill_na(nlists()),

@@ -1,5 +1,3 @@
-context("c")
-
 test_that("c.nlist", {
   expect_identical(c(nlist()), nlist())
   expect_identical(c(nlist(x = 1)), nlist(x = 1))

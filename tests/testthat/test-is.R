@@ -1,5 +1,3 @@
-context("is")
-
 test_that("is_natomic", {
   expect_false(is_natomic(TRUE))
   expect_true(is_natomic(1))

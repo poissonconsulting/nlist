@@ -1,5 +1,3 @@
-context("base")
-
 test_that("base R atomic", {
   expect_true(is.atomic(1))
   expect_true(is.atomic(matrix(1)))

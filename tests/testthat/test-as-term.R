@@ -1,5 +1,3 @@
-context("as-term")
-
 test_that("as.term.nlist", {
   expect_identical(
     as.term(nlist()),

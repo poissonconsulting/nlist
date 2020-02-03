@@ -1,5 +1,3 @@
-context("as")
-
 test_that("as.nlist.numeric", {
   expect_is(as.nlist(c(x = 1)), "nlist")
   expect_error(as.nlist(1), "^`x` must be named[.]$", class = "chk_error")

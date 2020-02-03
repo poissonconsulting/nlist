@@ -1,5 +1,3 @@
-context("unlist-nlist")
-
 test_that("unlist_nlist", {
   expect_identical(
     unlist_nlist(nlist()),
