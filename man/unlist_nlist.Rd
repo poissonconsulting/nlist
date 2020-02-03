@@ -20,5 +20,5 @@ where the names are the terms.
 unlist_nlist(nlist(y = 2, x = matrix(4:7, ncol = 2)))
 }
 \seealso{
-\code{\link[=as.nlist.numeric]{as.nlist.numeric()}} and \code{\link[=relist_nlist]{relist_nlist()}}
+\code{\link[=as_nlist.numeric]{as_nlist.numeric()}} and \code{\link[=relist_nlist]{relist_nlist()}}
 }

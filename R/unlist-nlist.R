@@ -5,7 +5,7 @@
 #'
 #' @param x An nlist object.
 #' @return An named atomic numeric vector of the values in x.
-#' @seealso [as.nlist.numeric()] and [relist_nlist()]
+#' @seealso [as_nlist.numeric()] and [relist_nlist()]
 #' @export
 #' @examples
 #' unlist_nlist(nlist(y = 2, x = matrix(4:7, ncol = 2)))

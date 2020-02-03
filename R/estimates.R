@@ -25,5 +25,5 @@ estimates.nlists <- function(x, fun = median, ...) {
   chk_function(fun)
   x <- transpose(x)
   x <- lapply(x, aggregate_atomic_numerics, fun, ...)
-  as.nlist(x)
+  as_nlist(x)
 }

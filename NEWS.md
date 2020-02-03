@@ -1,3 +1,4 @@
+- Soft deprecated `as.nlist()` for `as_nlist()`.
 - Added `as_data_term.nlist()` and `as_data_term.nlists()`
 - Added `tidy.nlists()`
 - Added `set_pars()`.

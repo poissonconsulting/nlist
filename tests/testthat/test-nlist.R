@@ -5,10 +5,10 @@ test_that("nlist", {
   )
   expect_identical(
     nlist(x = 1),
-    as.nlist(list(x = 1))
+    as_nlist(list(x = 1))
   )
   expect_identical(
     nlist(x = 1, y = 2),
-    as.nlist(list(x = 1, y = 2))
+    as_nlist(list(x = 1, y = 2))
   )
 })

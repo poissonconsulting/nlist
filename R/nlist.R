@@ -19,7 +19,7 @@
 nlist <- function(...) {
   args <- list(...)
   if (length(args)) {
-    return(as.nlist(args))
+    return(as_nlist(args))
   }
   structure(list(), .Names = character(0), class = "nlist")
 }

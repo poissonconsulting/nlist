@@ -5,7 +5,7 @@
 #'
 #' @inheritParams params
 #' @return An atomic numeric vector of the values in x.
-#' @seealso [as.nlist.numeric()] and [unlist_nlist()]
+#' @seealso [as_nlist.numeric()] and [unlist_nlist()]
 #' @export
 #' @examples
 #' relist_nlist(c(`a[2]` = 5), nlist(a = 1:3))
@@ -35,7 +35,7 @@ relist_nlist <- function(flesh, skeleton) {
   }
   is.na(skeleton[!names(skeleton) %in% names(flesh)]) <- TRUE
   skeleton[names(flesh)] <- unname(flesh)
-  skeleton <- as.nlist(skeleton)
+  skeleton <- as_nlist(skeleton)
   skeleton[names(skeleton) %in% integer] <-
     lapply(skeleton[names(skeleton) %in% integer], as.integer)
   skeleton

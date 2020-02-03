@@ -43,7 +43,7 @@ aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {
   if (!by_chain) {
     x <- transpose(x)
     x <- lapply(x, aggregate_atomic_numerics, fun, ...)
-    return(as.nlist(x))
+    return(as_nlist(x))
   }
   nchains <- nchains(x)
   x <- split_by_chains(x)
