@@ -10,7 +10,7 @@ generics::tidy
 tidy.nlists <- function(x, ...) {
   chk_unused(...)
   if(!length(x) || !length(x[[1]])) 
-    return(tibble::tibble(term = term(0),
+    return(tibble::tibble(term = term(x = 0),
                           estimate = numeric(0),
                           sd = numeric(0),
                           zscore = numeric(0),
