@@ -1,6 +1,6 @@
 test_that("tidy.nlists", {
-  expect_identical(tidy(nlists()), structure(list(term = structure(character(0), class = c("term", 
-"character")), estimate = numeric(0), sd = numeric(0), zscore = numeric(0), 
+  expect_identical(tidy(nlists()), structure(list(term = new_term(character(0)), 
+estimate = numeric(0), sd = numeric(0), zscore = numeric(0), 
     lower = numeric(0), upper = numeric(0), svalue = numeric(0)), row.names = integer(0), class = c("tbl_df", 
 "tbl", "data.frame")))
   expect_identical(tidy(nlists(nlist())), structure(list(term = structure(character(0), class = c("term", 
