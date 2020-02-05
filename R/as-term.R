@@ -19,5 +19,7 @@ as.term.nlist <- function(x, ...) {
 #' @examples 
 #' as.term(nlists(nlist(x = matrix(1:4, ncol = 2))))
 as.term.nlists <- function(x, ...) {
+  chk_unused(...)
+  if(!length(x)) return(term(x = 0))
   as.term(x[[1]])
 }

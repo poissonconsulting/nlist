@@ -23,6 +23,10 @@ test_that("as.term.nlist", {
 
 test_that("as.term.nlists", {
   expect_identical(
+    as.term(nlists()),
+    term(x = 0)
+  )
+  expect_identical(
     as.term(nlists(nlist())),
     term(x = 0)
   )
