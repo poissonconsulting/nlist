@@ -72,10 +72,10 @@ as_term_frame.nlists <- function(x, ...) {
                                         value = numeric(0))))
   x <- mapply(as_term_frame_nlist_impl, x, sample = 1:length(x),
               SIMPLIFY = FALSE)
+  x <- do.call("rbind", x)
   # FIXME horrible hack to deal with 
   # https://github.com/poissonconsulting/term/issues/40
-  x <- lapply(x, function(x) {x$term <- as.character(x$term); x})
-  x <- do.call("rbind", x)
-  x$term <- new_term(x$term)
+  is.factor <- vapply(x, is.factor, TRUE)
+  x[is.factor] <- lapply(x[is.factor], function(x) new_term(as.character(x)))
   x
 }
