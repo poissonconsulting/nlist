@@ -31,12 +31,12 @@ as_term_frame_nlist_impl <- function(x, sample = NULL) {
   if(!length(x)) {
     if(!is.null(sample)) {
       return(as.data.frame(tibble::tibble(
-        term = term(0), 
+        term = term(x = 0), 
         sample = integer(0),
         value = numeric(0))))
     }
     return(as.data.frame(tibble::tibble(
-      term = term(0), 
+      term = term(x = 0), 
       value = numeric(0))))
   }
   x <- unlist(x)
@@ -67,12 +67,14 @@ as_term_frame_nlist_impl <- function(x, sample = NULL) {
 as_term_frame.nlists <- function(x, ...) {
   chk_unused(...)
   if(!length(x) || !length(x[[1]])) 
-    return(as.data.frame(tibble::tibble(term = term(0), 
+    return(as.data.frame(tibble::tibble(term = term(x = 0), 
                                         sample = integer(0),
                                         value = numeric(0))))
   x <- mapply(as_term_frame_nlist_impl, x, sample = 1:length(x),
               SIMPLIFY = FALSE)
   x <- do.call("rbind", x)
+  # FIXME hack to deal with 
+  # https://github.com/poissonconsulting/term/issues/40
   x$term <- term::new_term(as.character(x$term))
   x
 }

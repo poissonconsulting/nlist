@@ -7,3 +7,11 @@
 \description{
 An natomic object is an integer or double vector, matrix or array.
 }
+\examples{
+mat <- matrix(c(TRUE, FALSE, NA, TRUE), 2L)
+mat
+is_natomic(mat)
+mat <- extras::numericize(mat)
+mat
+is_natomic(mat)
+}
