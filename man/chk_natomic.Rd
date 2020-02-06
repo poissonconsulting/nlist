@@ -6,8 +6,6 @@
 \alias{chk_nlists}
 \title{Check Numeric Atomic, nlist Object or nlists Object}
 \usage{
-chk_natomic(x, x_name = NULL)
-
 chk_nlist(x, x_name = NULL)
 
 chk_nlists(x, x_name = NULL)
@@ -22,11 +20,6 @@ chk_nlists(x, x_name = NULL)
 if the condition is not met.
 }
 \description{
-\code{chk_natomic}
-checks if numeric object using
-
-\code{is.numeric(x) && is.atomic(x)}.
-
 \code{chk_nlist}
 checks if an \code{\link[=nlist-object]{nlist-object()}}.
 
@@ -35,19 +28,12 @@ checks if an \code{\link[=nlists-object]{nlists-object()}}.
 }
 \section{Functions}{
 \itemize{
-\item \code{chk_natomic}: Check Numeric Atomic
-
 \item \code{chk_nlist}: Check nlist Object
 
 \item \code{chk_nlists}: Check nlists Object
 }}
 
 \examples{
-
-# chk_natomic
-chk_natomic(1)
-chk_natomic(matrix(1L))
-try(chk_natomic(TRUE))
 
 # chk_nlist
 chk_nlist(nlist(x = 1))

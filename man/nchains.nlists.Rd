@@ -26,6 +26,7 @@ nchains(split_chains(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7)))))
 Other {MCMC dimensions}: 
 \code{\link[universals]{nchains}()},
 \code{\link[universals]{niters}()},
+\code{\link[universals]{npars_scalar}()},
 \code{\link[universals]{npars}()},
 \code{\link[universals]{nsams}()},
 \code{\link[universals]{nsims}()}

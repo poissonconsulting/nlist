@@ -36,7 +36,7 @@ test_that("as_nlist.data.frame", {
     )),
     structure(list(
       lgl = c(1L, NA), int = 1:2, dbl = c(2.5, 1.5),
-      dte = 11324:11323, fac = 2:1
+      dte = c(11324, 11323), fac = 2:1
     ), class = "nlist")
   )
 })

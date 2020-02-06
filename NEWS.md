@@ -1,3 +1,4 @@
+- Moved chk_natomic and vld_atomic to extras.
 - Soft deprecated `as.nlist()` and `as.nlists()` for `as_nlist()` and `as.nlists()`.
 - Added `as_data_term.nlist()` and `as_data_term.nlists()`
 - Added `tidy.nlists()`

@@ -4,10 +4,8 @@
 \alias{vld_natomic}
 \alias{vld_nlist}
 \alias{vld_nlists}
-\title{Validate Numeric Atomic, nlist Object or nlists Object}
+\title{Validate nlist Object or nlists Object}
 \usage{
-vld_natomic(x)
-
 vld_nlist(x)
 
 vld_nlists(x)
@@ -19,22 +17,16 @@ vld_nlists(x)
 A flag indicating whether the object was validated.
 }
 \description{
-Validate Numeric Atomic, nlist Object or nlists Object
+Validate nlist Object or nlists Object
 }
 \section{Functions}{
 \itemize{
-\item \code{vld_natomic}: Validate Numeric Atomic
-
 \item \code{vld_nlist}: Validate nlist Object
 
 \item \code{vld_nlists}: Validate nlists Object
 }}
 
 \examples{
-#' vld_natomic
-vld_natomic(1)
-vld_natomic(matrix(1L))
-try(vld_natomic(TRUE))
 
 # vld_nlist
 vld_nlist(nlist(x = 1))

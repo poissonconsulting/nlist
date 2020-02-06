@@ -73,5 +73,6 @@ as_term_frame.nlists <- function(x, ...) {
   x <- mapply(as_term_frame_nlist_impl, x, sample = 1:length(x),
               SIMPLIFY = FALSE)
   x <- do.call("rbind", x)
+  x$term <- term::new_term(as.character(x$term))
   x
 }

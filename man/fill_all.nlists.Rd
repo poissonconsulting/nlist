@@ -19,7 +19,7 @@
 The modified object.
 }
 \description{
-Fills all (missing and non-missing) of an object's values while preserving its dimensions.
+Fills all of an object's (missing and non-missing) values while preserving the object's dimensionality and class.
 }
 \examples{
 fill_all(nlists(nlist(x = c(2, NA)), nlist(x = c(NA_real_, NA))))

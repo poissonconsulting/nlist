@@ -2,37 +2,25 @@
 % Please edit documentation in R/pars-scalar.R
 \name{pars_scalar.nlists}
 \alias{pars_scalar.nlists}
-\title{Scalar Parameters}
+\title{Objects exported from other packages}
 \usage{
 \method{pars_scalar}{nlists}(x, ...)
 }
 \arguments{
-\item{x}{The object.}
+\item{x}{An object.}
 
 \item{...}{Unused.}
 }
-\value{
-A character vector of the parameter names.
-}
 \description{
-Gets the name of each scalar parameter.
-}
-\details{
-Useful for subsetting MCMC objects.
-}
-\section{Methods (by class)}{
+These objects are imported from other packages. Follow the links
+below to see their documentation.
 
-\itemize{
-\item \code{term}: Scalar Parameter Names for term vector
-}
-}
+\describe{
+  \item{universals}{\code{\link[universals]{dims}}, \code{\link[universals]{npars}}, \code{\link[universals]{npars_scalar}}, \code{\link[universals]{npdims}}, \code{\link[universals]{nterms}}, \code{\link[universals]{pars}}, \code{\link[universals]{pars_scalar}}, \code{\link[universals]{pdims}}, \code{\link[universals]{set_pars}}}
 
+  \item{vctrs}{\code{\link[vctrs]{vec_cast}}}
+}
+}
 \examples{
 pars_scalar(nlists(nlist(zz = 1, y = 3:6), nlist(zz = 4, y = 13:16)))
-}
-\seealso{
-Other {parameters}: 
-\code{\link[term]{npars_scalar}()},
-\code{\link[term]{pars.term}()},
-\code{\link[term]{pars_terms}()}
 }

@@ -17,8 +17,6 @@ Coerces an R object to a \code{\link[term:term-vector]{term-vector()}}.
 \section{Methods (by class)}{
 
 \itemize{
-\item \code{term}: Coerce term vector to character vector
-
 \item \code{character}: Coerce character vector to term vector
 
 \item \code{numeric}: Coerce default object to term vector

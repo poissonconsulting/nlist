@@ -2,7 +2,7 @@
 % Please edit documentation in R/pars.R
 \name{pars.nlist}
 \alias{pars.nlist}
-\title{Parameters}
+\title{Parameter Names}
 \usage{
 \method{pars}{nlist}(x, scalar = NA, terms = FALSE, ...)
 }
@@ -29,6 +29,8 @@ pars(nlist(zz = 1, y = 3:6))
 }
 \seealso{
 Other {parameters}: 
+\code{\link[universals]{npars_scalar}()},
 \code{\link[universals]{npars}()},
+\code{\link[universals]{pars_scalar}()},
 \code{\link[universals]{set_pars}()}
 }

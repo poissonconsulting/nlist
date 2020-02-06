@@ -7,33 +7,6 @@
 #' @name chk_natomic
 NULL
 
-#' @describeIn chk_natomic Check Numeric Atomic
-#'
-#' @description
-#'
-#' `chk_natomic`
-#' checks if numeric object using
-#'
-#' `is.numeric(x) && is.atomic(x)`.
-#' @export
-#'
-#' @examples
-#'
-#' # chk_natomic
-#' chk_natomic(1)
-#' chk_natomic(matrix(1L))
-#' try(chk_natomic(TRUE))
-chk_natomic <- function(x, x_name = NULL) {
-  if (vld_natomic(x)) {
-    return(invisible())
-  }
-  if (is.null(x_name)) x_name <- deparse_backtick_chk(substitute(x))
-  abort_chk(
-    x_name, " must be a numeric (integer or double)",
-    " atomic (vector, matrix or array) object."
-  )
-}
-
 #' @describeIn chk_natomic Check nlist Object
 #'
 #' @description

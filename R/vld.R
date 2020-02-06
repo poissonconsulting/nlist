@@ -1,21 +1,10 @@
-#' Validate Numeric Atomic, nlist Object or nlists Object
+#' Validate nlist Object or nlists Object
 #'
 #' @inheritParams chk::chk_true
 #' @return A flag indicating whether the object was validated.
 #' @seealso [chk_natomic()]
 #' @name vld_natomic
 NULL
-
-#' @describeIn vld_natomic Validate Numeric Atomic
-#'
-#' @export
-#'
-#' @examples
-#' #' vld_natomic
-#' vld_natomic(1)
-#' vld_natomic(matrix(1L))
-#' try(vld_natomic(TRUE))
-vld_natomic <- function(x) is.numeric(x) && is.atomic(x)
 
 #' @describeIn vld_natomic Validate nlist Object
 #'

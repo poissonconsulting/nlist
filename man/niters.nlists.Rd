@@ -24,6 +24,7 @@ niters(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
 \seealso{
 Other {MCMC dimensions}: 
 \code{\link[universals]{nchains}()},
+\code{\link[universals]{npars_scalar}()},
 \code{\link[universals]{npars}()},
 \code{\link[universals]{nsams}()},
 \code{\link[universals]{nsims}()},

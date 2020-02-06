@@ -6,7 +6,7 @@
 #' @aliases natomic_object
 #'
 #' @examples
-#' mat <- matrix(c("1", "2", "3", "4"), 2L)
+#' mat <- matrix(c("TRUE, FALSE, NA, TRUE), 2L)
 #' mat
 #' is_natomic(mat)
 #' mat <- extras::numericize(mat)

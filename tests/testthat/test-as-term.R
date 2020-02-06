@@ -1,25 +1,25 @@
 test_that("as.term.nlist", {
   expect_identical(
     as.term(nlist()),
-    structure(character(0), class = c("term", "character"))
+    structure(character(0), class = c("term", "vctrs_vctr"))
   )
   expect_identical(
     as.term(nlist(x = 1)),
-    structure("x", class = c("term", "character"))
+    structure("x", class = c("term", "vctrs_vctr"))
   )
   expect_identical(
     as.term(nlist(x = 1:2)),
-    structure(c("x[1]", "x[2]"), class = c("term", "character"))
+    structure(c("x[1]", "x[2]"), class = c("term", "vctrs_vctr"))
   )
   expect_identical(
     as.term(nlist(x = 1, y = 2:3)),
-    structure(c("x", "y[1]", "y[2]"), class = c("term", "character"))
+    structure(c("x", "y[1]", "y[2]"), class = c("term", "vctrs_vctr"))
   )
   expect_identical(
     as.term(nlist(x = 1, y = matrix(1:3, c(1, 3)))),
     structure(c("x", "y[1,1]", "y[1,2]", "y[1,3]"), class = c(
       "term",
-      "character"
+      "vctrs_vctr"
     ))
   )
 })
@@ -27,15 +27,15 @@ test_that("as.term.nlist", {
 test_that("as.term.nlists", {
   expect_identical(
     as.term(nlists(nlist())),
-    structure(character(0), class = c("term", "character"))
+    structure(character(0), class = c("term", "vctrs_vctr"))
   )
   expect_identical(
     as.term(nlists(nlist(x = 1))),
-    structure("x", class = c("term", "character"))
+    structure("x", class = c("term", "vctrs_vctr"))
   )
   expect_identical(
     as.term(nlists(nlist(x = 1:2))),
-    structure(c("x[1]", "x[2]"), class = c("term", "character"))
+    structure(c("x[1]", "x[2]"), class = c("term", "vctrs_vctr"))
   )
   expect_identical(
     as.term(nlists(
@@ -44,7 +44,7 @@ test_that("as.term.nlists", {
     )),
     structure(c("x", "y[1,1]", "y[1,2]", "y[1,3]"), class = c(
       "term",
-      "character"
+      "vctrs_vctr"
     ))
   )
 })
