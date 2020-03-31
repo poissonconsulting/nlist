@@ -15,7 +15,7 @@
 \item{skeleton}{An nlist object.}
 
 \item{scalar}{A logical scalar specifying whether to include
-all parameters (NA), only scalars (TRUE) or all parameters
+all parameters (NULL), only scalars (TRUE) or all parameters
 except scalars (FALSE).}
 
 \item{terms}{A flag specifying whether to return the parameter name
