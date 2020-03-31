@@ -19,11 +19,15 @@ Splits each of an MCMC object's chains in half
 to double the number chains
 and halve the number of iterations.
 }
+\examples{
+split_chains.foobar <- function(x, ...) {
+  NotYetImplemented()
+  # replace with code to split_chains for an object of class 'foobar'
+}
+}
 \seealso{
-Other {MCMC manipulations}: 
+Other MCMC manipulations: 
 \code{\link[universals]{bind_chains}()},
 \code{\link[universals]{collapse_chains}()},
-\code{\link[universals]{estimates}()},
-\code{\link[universals]{fill_all}()},
-\code{\link[universals]{fill_na}()}
+\code{\link[universals]{estimates}()}
 }

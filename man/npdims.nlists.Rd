@@ -25,7 +25,7 @@ npdims(nlists(
 ))
 }
 \seealso{
-Other {dimensions}: 
+Other dimensions: 
 \code{\link[universals]{dims}()},
 \code{\link[universals]{ndims}()},
 \code{\link[universals]{pdims}()}

@@ -1,7 +1,7 @@
 #' @export
-universals::fill_all
+extras::fill_all
 
-#' @inherit universals::fill_all
+#' @inherit extras::fill_all
 #' @inheritParams params
 #' @export
 #' @examples
@@ -16,7 +16,7 @@ fill_all.nlist <- function(x, value = 0L, nas = TRUE, ...) {
   x
 }
 
-#' @inherit universals::fill_all
+#' @inherit extras::fill_all
 #' @inheritParams params
 #' @export
 #' @examples

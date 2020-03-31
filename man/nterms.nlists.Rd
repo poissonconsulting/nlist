@@ -26,10 +26,9 @@ nterms(nlists(
 ))
 }
 \seealso{
-Other {MCMC dimensions}: 
+Other MCMC dimensions: 
 \code{\link[universals]{nchains}()},
 \code{\link[universals]{niters}()},
-\code{\link[universals]{npars_scalar}()},
 \code{\link[universals]{npars}()},
 \code{\link[universals]{nsams}()},
 \code{\link[universals]{nsims}()}

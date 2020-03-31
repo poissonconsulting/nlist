@@ -15,6 +15,3 @@ extras::pvalue
 
 #' @export
 extras::svalue
-
-#' @export
-term::npars_scalar

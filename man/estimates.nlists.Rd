@@ -14,7 +14,7 @@
 \item{...}{Additional arguments passed to fun.}
 }
 \value{
-An \code{\link[nlist:nlist]{nlist::nlist()}} object.
+An list of uniquely named numeric atomic objects.
 }
 \description{
 Calculates the estimates for an MCMC object.
@@ -23,10 +23,8 @@ Calculates the estimates for an MCMC object.
 estimates(nlists(nlist(x = 1:3), nlist(x = 2:4)), fun = mean)
 }
 \seealso{
-Other {MCMC manipulations}: 
+Other MCMC manipulations: 
 \code{\link[universals]{bind_chains}()},
 \code{\link[universals]{collapse_chains}()},
-\code{\link[universals]{fill_all}()},
-\code{\link[universals]{fill_na}()},
 \code{\link[universals]{split_chains}()}
 }

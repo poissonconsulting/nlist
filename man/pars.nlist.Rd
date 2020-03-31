@@ -4,7 +4,7 @@
 \alias{pars.nlist}
 \title{Parameter Names}
 \usage{
-\method{pars}{nlist}(x, scalar = NA, terms = FALSE, ...)
+\method{pars}{nlist}(x, scalar = NULL, terms = FALSE, ...)
 }
 \arguments{
 \item{x}{An object.}
@@ -19,7 +19,7 @@ for each term element.}
 \item{...}{Other arguments passed to methods.}
 }
 \value{
-A character vector of the parameter names.
+A character vector of the names of the parameters.
 }
 \description{
 Gets the parameter names.
@@ -28,9 +28,7 @@ Gets the parameter names.
 pars(nlist(zz = 1, y = 3:6))
 }
 \seealso{
-Other {parameters}: 
-\code{\link[universals]{npars_scalar}()},
+Other parameters: 
 \code{\link[universals]{npars}()},
-\code{\link[universals]{pars_scalar}()},
 \code{\link[universals]{set_pars}()}
 }

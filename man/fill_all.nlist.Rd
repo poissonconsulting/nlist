@@ -25,11 +25,3 @@ Fills all of an object's (missing and non-missing) values while preserving the o
 fill_all(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)))
 fill_all(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)), nas = FALSE)
 }
-\seealso{
-Other {MCMC manipulations}: 
-\code{\link[universals]{bind_chains}()},
-\code{\link[universals]{collapse_chains}()},
-\code{\link[universals]{estimates}()},
-\code{\link[universals]{fill_na}()},
-\code{\link[universals]{split_chains}()}
-}

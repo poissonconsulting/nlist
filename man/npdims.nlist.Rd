@@ -22,7 +22,7 @@ npdims(nlist(x = 1:3))
 npdims(nlist(y = 3, zz = matrix(2:5, 2)))
 }
 \seealso{
-Other {dimensions}: 
+Other dimensions: 
 \code{\link[universals]{dims}()},
 \code{\link[universals]{ndims}()},
 \code{\link[universals]{pdims}()}

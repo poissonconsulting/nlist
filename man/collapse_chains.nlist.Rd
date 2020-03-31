@@ -24,10 +24,8 @@ As nlist objects can only have 1 chain the object is unchanged.
 collapse_chains(nlist(x = 2))
 }
 \seealso{
-Other {MCMC manipulations}: 
+Other MCMC manipulations: 
 \code{\link[universals]{bind_chains}()},
 \code{\link[universals]{estimates}()},
-\code{\link[universals]{fill_all}()},
-\code{\link[universals]{fill_na}()},
 \code{\link[universals]{split_chains}()}
 }
