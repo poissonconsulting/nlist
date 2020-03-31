@@ -1,3 +1,17 @@
+# nlist 0.1.0.9004
+
+- Replaced pars_scalar() and npars_scalar() with pars(scalar = TRUE) and npars(scalar = TRUE).
+- Moved chk_natomic and vld_atomic to extras.
+- Soft deprecated `as.nlist()` for `as_nlist()` (#9)
+- Added `fill_all()`.
+- Soft deprecated `pars(terms =)` for `pars_terms(as.term())`.
+- Soft deprecated `is.nlists()` for `is_nlists()`.
+- Soft deprecated `is.nlist()` for `is_nlist()`.
+- Deprecated `is.natomic()` for `is_natomic()`.
+- Added `unlist_nlist()` (also `unlist.nlist()`) and `relist_nlist()` to flatten and pop nlist objects.
+- Added `fill_na()` for atomic objects.
+
+
 - Moved chk_natomic and vld_atomic to extras.
 - Soft deprecated `as.nlist()` and `as.nlists()` for `as_nlist()` and `as.nlists()`.
 - Added `as_data_term.nlist()` and `as_data_term.nlists()`
