@@ -25,6 +25,8 @@ Turn an object into a tidy tibble
 }
 
 \examples{
-tidy(nlists(nlist(x = 1, y = 4:6),
- nlist(x = 3, y = 7:9)))
+tidy(nlists(
+  nlist(x = 1, y = 4:6),
+  nlist(x = 3, y = 7:9)
+))
 }

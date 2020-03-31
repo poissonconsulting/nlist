@@ -1,7 +1,7 @@
 #' Create nlists Object
 #'
 #' Creates an [nlists_object()] from one of more [nlist_object()]s.
-#' 
+#'
 #' An nlists object is a S3 class list of [nlist_object()] elements
 #' with the same names, dimensionalities and typeofs.
 #'

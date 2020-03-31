@@ -29,8 +29,8 @@ set_pars.nlist <- function(x, value, ...) {
 #' @export
 set_pars.nlists <- function(x, value, ...) {
   chk_unused(...)
-  
-  if(!length(x) && length(value)) {
+
+  if (!length(x) && length(value)) {
     abort_chk("`value` must be length 0, not %n.", n = length(value))
   }
   x <- lapply(x, set_pars, value = value)

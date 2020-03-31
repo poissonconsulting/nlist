@@ -12,8 +12,8 @@ nchains.nlist <- function(x, ...) 1L
 
 #' @inherit universals::nterms
 #' @export
-#' 
-#' @examples 
+#'
+#' @examples
 #' nchains(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
 #' nchains(split_chains(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7)))))
 nchains.nlists <- function(x, ...) {

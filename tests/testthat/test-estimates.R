@@ -4,8 +4,10 @@ test_that("estimates.nlist", {
   expect_identical(estimates(nlist(x = 1:2)), nlist(x = 1:2))
   expect_identical(estimates(nlist(z = 1:2), fun = median), nlist(z = 1:2))
   expect_identical(estimates(nlist(z = 1:2), fun = function(x) 1L), nlist(z = c(1L, 1L)))
-  expect_identical(estimates(nlist(z = 1:2), fun = function(x, value) {value}, value = 2.5), nlist(z = c(2.5, 2.5)))
-  
+  expect_identical(estimates(nlist(z = 1:2), fun = function(x, value) {
+    value
+  }, value = 2.5), nlist(z = c(2.5, 2.5)))
+
   expect_error(
     estimates(nlist(x = 1:2), fun = function(x) 1:2),
     "^`fun` must return a scalar[.]$",
@@ -34,8 +36,8 @@ test_that("estimates.nlists", {
     ), .Dim = c(3L, 3L))), class = "nlist")
   )
   expect_identical(estimates(nlists(nlist(x = 1), nlist(x = 2)), fun = function(x) x[1]), nlist(x = 1))
-  
-    expect_identical(estimates(nlists(nlist(x = 1), nlist(x = 2)), fun = function(x, value) value, value = 3), nlist(x = 3))
+
+  expect_identical(estimates(nlists(nlist(x = 1), nlist(x = 2)), fun = function(x, value) value, value = 3), nlist(x = 3))
 
   expect_error(
     estimates(nlists(

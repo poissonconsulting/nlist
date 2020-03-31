@@ -4,7 +4,7 @@ universals::niters
 #' @inherit universals::niters
 #' @details Always 1.
 #' @export
-#' 
+#'
 #' @examples
 #' niters(nlist(x = 1:2))
 niters.nlist <- function(x, ...) {
@@ -13,9 +13,9 @@ niters.nlist <- function(x, ...) {
 
 #' @inherit universals::niters
 #' @export
-#' 
+#'
 #' @examples
 #' niters(nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7))))
-niters.nlists <- function(x, ...) { 
+niters.nlists <- function(x, ...) {
   as.integer(nsims(x) / nchains(x))
 }

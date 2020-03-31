@@ -15,7 +15,7 @@ is.natomic <- function(x) {
   deprecate_soft("0.1.1",
     what = "nlist::is.natomic()",
     with = "nlist::is_natomic()"
-  )  
+  )
   is_natomic(x)
 }
 
@@ -29,7 +29,7 @@ is.nlist <- function(x) {
   deprecate_soft("0.1.1",
     what = "nlist::is.nlist()",
     with = "nlist::is_nlist()"
-  )  
+  )
   is_nlist(x)
 }
 
@@ -43,6 +43,6 @@ is.nlists <- function(x) {
   deprecate_soft("0.1.1",
     what = "nlist::is.nlists()",
     with = "nlist::is_nlists()"
-  )  
+  )
   is_nlists(x)
 }

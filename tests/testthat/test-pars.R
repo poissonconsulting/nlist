@@ -2,12 +2,13 @@ test_that("pars.nlist", {
   expect_identical(pars(nlist()), character(0))
   expect_identical(pars(nlist(x = 1)), "x")
   expect_identical(pars(nlist(x = 1, a = 1:10)), c("x", "a"))
-  
+
   expect_identical(pars(nlist(x = 1, a = 1:10), scalar = TRUE), "x")
-  expect_identical(pars(nlist(x = 1, a = 1:10), scalar = TRUE), "x")    
+  expect_identical(pars(nlist(x = 1, a = 1:10), scalar = TRUE), "x")
   rlang::with_options(lifecycle_verbosity = "error", {
     expect_error(pars(nlist(x = 1, a = 1:10), terms = TRUE),
-                 class = "defunctError")
+      class = "defunctError"
+    )
   })
   rlang::with_options(lifecycle_verbosity = "quiet", {
     expect_identical(
@@ -31,8 +32,8 @@ test_that("pars.nlists", {
 
 test_that("pars.nlist scalar", {
   expect_identical(pars(nlist(), scalar = TRUE), character(0))
-  expect_identical(pars(nlist(x = 1, a = 1:10), scalar = TRUE),"x")
-  expect_identical(pars(nlist(x = 1, a = 1:10), scalar = FALSE),"a")
+  expect_identical(pars(nlist(x = 1, a = 1:10), scalar = TRUE), "x")
+  expect_identical(pars(nlist(x = 1, a = 1:10), scalar = FALSE), "a")
   expect_identical(pars(nlist(a = 1:10), scalar = TRUE), character(0))
 })
 
@@ -40,7 +41,7 @@ test_that("pars.nlists scalar", {
   expect_identical(pars(nlists(), scalar = TRUE), character(0))
   expect_identical(pars(nlists(nlist()), scalar = TRUE), character(0))
   expect_identical(pars(nlists(nlist(), nlist()), scalar = TRUE), character(0))
-  expect_identical(pars(nlists(nlist(x = 1, a = 1:10)), scalar = TRUE),"x")
+  expect_identical(pars(nlists(nlist(x = 1, a = 1:10)), scalar = TRUE), "x")
   expect_identical(pars(nlists(nlist(a = 1:10)), scalar = TRUE), character(0))
-  expect_identical(pars(nlists(nlist(x = 1, a = 1:10), nlist(x = 2, a = 1:10)), scalar = TRUE),"x")
+  expect_identical(pars(nlists(nlist(x = 1, a = 1:10), nlist(x = 2, a = 1:10)), scalar = TRUE), "x")
 })

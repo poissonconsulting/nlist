@@ -9,8 +9,12 @@ universals::estimates
 #' estimates(nlist(x = 1:9))
 #' estimates(nlist(y = 3:5, zz = matrix(1:9, 3)))
 estimates.nlist <- function(x, fun = median, ...) {
-  if(missing(fun)) return(x)
-  if(!length(x)) return(x)
+  if (missing(fun)) {
+    return(x)
+  }
+  if (!length(x)) {
+    return(x)
+  }
   x <- nlists(x)
   estimates(x, fun = fun, ...)
 }

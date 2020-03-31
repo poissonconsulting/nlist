@@ -14,9 +14,10 @@ as_nlists <- function(x, ...) {
 #' @rdname as_nlist
 #' @export
 as.nlists <- function(x, ...) {
-  deprecate_soft("0.1.1", 
-                 what = "nlist::as.nlists()", 
-                 with = "nlist::as_nlists()")
+  deprecate_soft("0.1.1",
+    what = "nlist::as.nlists()",
+    with = "nlist::as_nlists()"
+  )
   UseMethod("as_nlists")
 }
 

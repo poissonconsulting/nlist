@@ -2,7 +2,7 @@
 universals::collapse_chains
 
 #' @inherit universals::collapse_chains
-#' @details 
+#' @details
 #' As nlist objects can only have 1 chain the object is unchanged.
 #' @export
 #'

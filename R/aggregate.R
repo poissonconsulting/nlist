@@ -16,7 +16,7 @@ aggregate.nlist <- function(x, fun = mean, ...) {
   deprecate_soft("0.1.1",
     what = "nlist::aggregate.nlist()",
     with = "nlist::estimates.nlist()"
-  )  
+  )
   lapply(x, aggregate_atomic_numeric, fun, ...)
 }
 
@@ -37,7 +37,7 @@ aggregate.nlists <- function(x, fun = mean, ..., by_chain = FALSE) {
   deprecate_soft("0.1.1",
     what = "nlist::aggregate.nlists()",
     with = "nlist::estimates.nlists()"
-  )  
+  )
   chk_function(fun)
   chk_flag(by_chain)
   if (!by_chain) {

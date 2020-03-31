@@ -18,6 +18,8 @@ A data.frame.
 Coerces an nlists object to a data.frame with a term, sample and value column.
 }
 \examples{
-as_term_frame(nlists(nlist(x = 1, y = 4:6), 
-  nlist(x = 3, y = 1:3)))
+as_term_frame(nlists(
+  nlist(x = 1, y = 4:6),
+  nlist(x = 3, y = 1:3)
+))
 }

@@ -3,7 +3,7 @@ universals::npdims
 
 #' @inherit universals::npdims
 #' @export
-#' 
+#'
 #' @examples
 #' npdims(nlist(x = 1:3))
 #' npdims(nlist(y = 3, zz = matrix(2:5, 2)))
@@ -16,7 +16,7 @@ npdims.nlist <- function(x, ...) {
 
 #' @inherit universals::npdims
 #' @export
-#' 
+#'
 #' @examples
 #' npdims(nlists(nlist(x = 1:3)))
 #' npdims(nlists(

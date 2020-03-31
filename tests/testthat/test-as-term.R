@@ -32,7 +32,8 @@ test_that("as.term.nlists", {
   )
   expect_identical(
     as.term(nlists(nlist(x = 1))),
-    term("x"))
+    term("x")
+  )
   expect_identical(
     as.term(nlists(nlist(x = 1:2))),
     term(x = 2)
@@ -42,6 +43,6 @@ test_that("as.term.nlists", {
       nlist(x = 1, y = matrix(1:3, c(1, 3))),
       nlist(x = 1, y = matrix(1:3, c(1, 3)))
     )),
-    term("x", y = c(1,3))
+    term("x", y = c(1, 3))
   )
 })

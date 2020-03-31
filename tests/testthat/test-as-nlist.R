@@ -43,12 +43,14 @@ test_that("as_nlist.data.frame", {
 
 test_that("as.nlist deprecated", {
   rlang::with_options(lifecycle_verbosity = "error", {
-  expect_error(as.nlist(data.frame(x = 1)),
-               class = "defunctError")
+    expect_error(as.nlist(data.frame(x = 1)),
+      class = "defunctError"
+    )
   })
   rlang::with_options(lifecycle_verbosity = "quiet", {
-  expect_identical(as.nlist(data.frame(x = 1)),
-                   as_nlist(data.frame(x = 1)))
+    expect_identical(
+      as.nlist(data.frame(x = 1)),
+      as_nlist(data.frame(x = 1))
+    )
   })
 })
-

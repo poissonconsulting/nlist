@@ -14,7 +14,8 @@ test_that("unlist_nlist", {
 })
 
 test_that("unlist.nlists not defined", {
-  expect_error(unlist(nlists()),
-               "^`unlist[(][)]` is not defined for nlists objects[.]$")
+  expect_error(
+    unlist(nlists()),
+    "^`unlist[(][)]` is not defined for nlists objects[.]$"
+  )
 })
-

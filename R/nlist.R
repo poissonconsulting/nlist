@@ -1,7 +1,7 @@
 #' Create nlist Object
 #'
 #' Creates a [nlist_object()] from one of more uniquely named [natomic_object()] arguments.
-#' 
+#'
 #' An nlist object is an S3 class list of uniquely named
 #' [natomic_object()] elements.
 #'
