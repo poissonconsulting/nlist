@@ -25,11 +25,12 @@ tidy.nlists <- function(x, ...) {
 
   estimate <- unlist(estimates(x, median))
   term <- as.term(names(estimate))
-  sd <- unlist(estimates(x, sd))
-  zscore <- unlist(estimates(x, zscore))
-  lower <- unlist(estimates(x, lower))
-  upper <- unlist(estimates(x, upper))
-  svalue <- unlist(estimates(x, svalue))
+  estimate <- unname(estimate)
+  sd <- unname(unlist(estimates(x, sd)))
+  zscore <- unname(unlist(estimates(x, zscore)))
+  lower <- unname(unlist(estimates(x, lower)))
+  upper <- unname(unlist(estimates(x, upper)))
+  svalue <- unname(unlist(estimates(x, svalue)))
 
   tibble::tibble(
     term = term, estimate = estimate,
