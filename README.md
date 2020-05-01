@@ -7,10 +7,8 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis build
-status](https://travis-ci.com/poissonconsulting/nlist.svg?branch=master)](https://travis-ci.com/poissonconsulting/nlist)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/nlist?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/nlist)
+[![R build
+status](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
 [![License:
@@ -20,6 +18,7 @@ status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/p
 [![CRAN
 status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
 ![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
+
 <!-- badges: end -->
 
 nlist is an R package to create and manipulate numeric list (nlist)
