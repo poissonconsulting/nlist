@@ -15,7 +15,6 @@ output: github_document
 [![Tinyverse status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/package=nlist)
 [![CRAN status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
 ![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
-
 <!-- badges: end -->
 
 nlist is an R package to create and manipulate numeric list (nlist) objects.
@@ -166,16 +165,11 @@ coda::as.mcmc.list(nlists)
 #> Start = 1 
 #> End = 4 
 #> Thinning interval = 1 
-#>         x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3]
-#> [1,]    1      1      2      3      4      5      6      7      8
-#> [2,]   -2      2      3      4      5      6      7      8      9
-#> [3,]   10     22     23     24     25     26     27     28     29
-#> [4,] -100     -2     -3     -4     -5     -6     -7     -8     -9
-#>      y[3,3]
-#> [1,]      9
-#> [2,]     10
-#> [3,]     30
-#> [4,]    -10
+#>         x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]
+#> [1,]    1      1      2      3      4      5      6      7      8      9
+#> [2,]   -2      2      3      4      5      6      7      8      9     10
+#> [3,]   10     22     23     24     25     26     27     28     29     30
+#> [4,] -100     -2     -3     -4     -5     -6     -7     -8     -9    -10
 #> 
 #> attr(,"class")
 #> [1] "mcmc.list"

@@ -22,7 +22,6 @@ knitr::opts_chunk$set(
 [![Tinyverse status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/package=nlist)
 [![CRAN status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
 ![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
-
 <!-- badges: end -->
 
 nlist is an R package to create and manipulate numeric list (nlist) objects.
