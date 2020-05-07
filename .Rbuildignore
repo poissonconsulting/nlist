@@ -16,3 +16,4 @@
 ^\.httr-oauth$
 ^tic\.R$
 ^\.github$
+^\.gitignore$
