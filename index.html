@@ -89,7 +89,6 @@
 <a href="#nlist" class="anchor"></a>nlist</h1></div>
 <!-- badges: start -->
 
-<!-- badges: end -->
 <p>nlist is an R package to create and manipulate numeric list (nlist) objects.</p>
 <p>An nlist is an S3 class list of uniquely named numeric atomic (natomic) objects. An natomic object is an integer or double vector, matrix or array. nlist objects are the raw data inputs for analytic engines such as JAGS, STAN and TMB.</p>
 <p>An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs. nlists objects are useful for storing multiple realizations of simulated data sets. They can be converted to <code><a href="https://rdrr.io/pkg/coda/man/mcmc.html">coda::mcmc</a></code> and <code><a href="https://rdrr.io/pkg/coda/man/mcmc.list.html">coda::mcmc.list</a></code> objects.</p>
@@ -202,16 +201,11 @@
 <span class="co">#&gt; Start = 1 </span>
 <span class="co">#&gt; End = 4 </span>
 <span class="co">#&gt; Thinning interval = 1 </span>
-<span class="co">#&gt;         x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3]</span>
-<span class="co">#&gt; [1,]    1      1      2      3      4      5      6      7      8</span>
-<span class="co">#&gt; [2,]   -2      2      3      4      5      6      7      8      9</span>
-<span class="co">#&gt; [3,]   10     22     23     24     25     26     27     28     29</span>
-<span class="co">#&gt; [4,] -100     -2     -3     -4     -5     -6     -7     -8     -9</span>
-<span class="co">#&gt;      y[3,3]</span>
-<span class="co">#&gt; [1,]      9</span>
-<span class="co">#&gt; [2,]     10</span>
-<span class="co">#&gt; [3,]     30</span>
-<span class="co">#&gt; [4,]    -10</span>
+<span class="co">#&gt;         x y[1,1] y[2,1] y[3,1] y[1,2] y[2,2] y[3,2] y[1,3] y[2,3] y[3,3]</span>
+<span class="co">#&gt; [1,]    1      1      2      3      4      5      6      7      8      9</span>
+<span class="co">#&gt; [2,]   -2      2      3      4      5      6      7      8      9     10</span>
+<span class="co">#&gt; [3,]   10     22     23     24     25     26     27     28     29     30</span>
+<span class="co">#&gt; [4,] -100     -2     -3     -4     -5     -6     -7     -8     -9    -10</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; attr(,"class")</span>
 <span class="co">#&gt; [1] "mcmc.list"</span>
