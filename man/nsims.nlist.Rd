@@ -17,6 +17,8 @@ An integer scalar of the number of simulations.
 \description{
 Gets the number of simulations (iterations * chains)
 of an MCMC object.
+
+The default methods returns the product of \code{\link[universals:nchains]{nchains()}} and \code{\link[universals:niters]{niters()}}.
 }
 \details{
 Always 1L.
