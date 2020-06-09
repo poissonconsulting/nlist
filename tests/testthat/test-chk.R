@@ -15,6 +15,9 @@ test_that("chk_nlist", {
     "`list[(]x = TRUE[)]` must inherit from S3 class 'nlist'[.]",
     class = "chk_error"
   )
+  x <- list(x = "x")
+  class(x) <- "nlist"
+  expect_false(vld_nlist(x))
 })
 
 test_that("chk_nlists", {
