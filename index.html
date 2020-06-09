@@ -13,9 +13,9 @@
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Lists of Numeric Atomic Objects">
 <meta property="og:description" content="Create and manipulate numeric list (nlist) objects.
-    An nlist is an S3 list of uniquely named numeric atomic (natomic)
-    objects.  An natomic object is an integer or double vector, matrix or
-    array.  An nlists object is a S3 class list of nlist objects with the
+    An nlist is an S3 list of uniquely named numeric objects.  
+    An numeric object is an integer or double vector, matrix or array.  
+    An nlists object is a S3 class list of nlist objects with the
     same names, dimensionalities and typeofs.  Numeric list objects are of
     interest because they are the raw data inputs for analytic engines
     such as JAGS, STAN and TMB.  Numeric lists objects, which are
@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9004</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9005</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@
 <!-- badges: start -->
 
 <p>nlist is an R package to create and manipulate numeric list (nlist) objects.</p>
-<p>An nlist is an S3 class list of uniquely named numeric atomic (natomic) objects. An natomic object is an integer or double vector, matrix or array. nlist objects are the raw data inputs for analytic engines such as JAGS, STAN and TMB.</p>
+<p>An nlist is an S3 class list of uniquely named numeric objects. An numeric object is an integer or double vector, matrix or array. nlist objects are the raw data inputs for analytic engines such as JAGS, STAN and TMB.</p>
 <p>An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs. nlists objects are useful for storing multiple realizations of simulated data sets. They can be converted to <code><a href="https://rdrr.io/pkg/coda/man/mcmc.html">coda::mcmc</a></code> and <code><a href="https://rdrr.io/pkg/coda/man/mcmc.list.html">coda::mcmc.list</a></code> objects.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -97,24 +97,24 @@
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
-<div id="natomic" class="section level3">
+<div id="numeric" class="section level3">
 <h3 class="hasAnchor">
-<a href="#natomic" class="anchor"></a><code>natomic</code>
+<a href="#numeric" class="anchor"></a><code>numeric</code>
 </h3>
-<p>An natomic object is an integer or double vector, matrix or array.</p>
+<p>An numeric object is an integer or double vector, matrix or array.</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">nlist</span>)
-<span class="fu"><a href="reference/is_natomic.html">is_natomic</a></span>(<span class="fl">TRUE</span>)
+<span class="fu"><a href="reference/is_numeric.html">is_numeric</a></span>(<span class="fl">TRUE</span>)
 <span class="co">#&gt; [1] FALSE</span>
-<span class="fu"><a href="reference/is_natomic.html">is_natomic</a></span>(<span class="fl">1L</span>)
+<span class="fu"><a href="reference/is_numeric.html">is_numeric</a></span>(<span class="fl">1L</span>)
 <span class="co">#&gt; [1] TRUE</span>
-<span class="fu"><a href="reference/is_natomic.html">is_natomic</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="fl">1</span>:<span class="fl">3</span>))
+<span class="fu"><a href="reference/is_numeric.html">is_numeric</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="fl">1</span>:<span class="fl">3</span>))
 <span class="co">#&gt; [1] TRUE</span></pre></div>
 </div>
 <div id="nlist-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#nlist-1" class="anchor"></a><code>nlist</code>
 </h3>
-<p>An nlist is an S3 class list of uniquely named numeric atomic (natomic) objects.</p>
+<p>An nlist is an S3 class list of uniquely named numeric objects.</p>
 <p>It is straightforward to create an new nlist object.</p>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">nlist</span>)
 
@@ -129,7 +129,7 @@
 <span class="co">#&gt; [2,]    2    5    8</span>
 <span class="co">#&gt; [3,]    3    6    9</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; an nlist object with 2 natomic elements</span></pre></div>
+<span class="co">#&gt; an nlist object with 2 numeric elements</span></pre></div>
 </div>
 <div id="nlists" class="section level3">
 <h3 class="hasAnchor">
@@ -154,7 +154,7 @@
 <span class="co">#&gt; [2,]  2.5  5.5  8.5</span>
 <span class="co">#&gt; [3,]  3.5  6.5  9.5</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; an nlists object of 4 nlist objects each with 2 natomic elements</span></pre></div>
+<span class="co">#&gt; an nlists object of 4 nlist objects each with 2 numeric elements</span></pre></div>
 </div>
 <div id="coercion" class="section level3">
 <h3 class="hasAnchor">
@@ -179,7 +179,7 @@
 <span class="co">#&gt; $fac</span>
 <span class="co">#&gt; [1] 2 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; an nlist object with 3 natomic elements</span></pre></div>
+<span class="co">#&gt; an nlist object with 3 numeric elements</span></pre></div>
 <p>And an <code>nlist</code> objects can be converted to an <code>mcmc</code> or <code>term_frame</code> objects (and converted back again)</p>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/coda/man/mcmc.html">as.mcmc</a></span>(<span class="no">nlist</span>)
 <span class="co">#&gt; Markov Chain Monte Carlo (MCMC) output:</span>
@@ -215,7 +215,7 @@
 <span class="co">#&gt; [2,] 6.25 7.75 9.25</span>
 <span class="co">#&gt; [3,] 6.75 8.25 9.75</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; an nlist object with 2 natomic elements</span></pre></div>
+<span class="co">#&gt; an nlist object with 2 numeric elements</span></pre></div>
 <p>while the <code><a href="https://rdrr.io/pkg/generics/man/tidy.html">tidy()</a></code> function treats the values as if they are MCMC samples and summarises the terms as a tidy tibble.</p>
 <div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="https://rdrr.io/pkg/generics/man/tidy.html">tidy</a></span>(<span class="no">nlists</span>)
 <span class="co">#&gt; # A tibble: 10 x 7</span>

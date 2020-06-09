@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Split Chains — split_chains.nlists • nlist</title>
+<title>Check nlist Object or nlists Object — chk_nlist • nlist</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,9 @@
 
 
 
-<meta property="og:title" content="Split Chains — split_chains.nlists" />
-<meta property="og:description" content="Splits each of an MCMC object's chains in half
-to double the number of chains
-and halve the number of iterations." />
+<meta property="og:title" content="Check nlist Object or nlists Object — chk_nlist" />
+<meta property="og:description" content="chk_nlist
+checks if an nlist-object()." />
 
 
 
@@ -113,48 +112,53 @@ and halve the number of iterations." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Split Chains</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/split-chains.R'><code>R/split-chains.R</code></a></small>
-    <div class="hidden name"><code>split_chains.nlists.Rd</code></div>
+    <h1>Check nlist Object or nlists Object</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/chk.R'><code>R/chk.R</code></a></small>
+    <div class="hidden name"><code>chk_nlist.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Splits each of an MCMC object's chains in half
-to double the number of chains
-and halve the number of iterations.</p>
+    <p><code>chk_nlist</code>
+checks if an <code><a href='nlist.html'>nlist-object()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='co'># S3 method for nlists</span>
-<span class='fu'><a href='https://rdrr.io/pkg/universals/man/split_chains.html'>split_chains</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>chk_nlist</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>chk_nlists</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>An object.</p></td>
+      <td><p>The object to check.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>Other arguments passed to methods.</p></td>
+      <th>x_name</th>
+      <td><p>A string of the name of object x or NULL.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The modified object.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <p><code>NULL</code>, invisibly. Called for the side effect of throwing an error
+if the condition is not met.</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
 
-    <div class='dont-index'><p>Other MCMC manipulations: 
-<code><a href='https://rdrr.io/pkg/universals/man/bind_chains.html'>bind_chains</a>()</code>,
-<code><a href='https://rdrr.io/pkg/universals/man/collapse_chains.html'>collapse_chains</a>()</code>,
-<code><a href='https://rdrr.io/pkg/universals/man/estimates.html'>estimates</a>()</code></p></div>
+    
+<ul>
+<li><p><code>chk_nlists</code>: Check nlists Object</p>
+<p><code>chk_nlists</code>
+checks if an <code><a href='nlists.html'>nlists-object()</a></code>.</p></li>
+</ul>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>split_chains.foobar</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>...</span>) {
-  <span class='fu'><a href='https://rdrr.io/r/base/notyet.html'>NotYetImplemented</a></span>()
-  <span class='co'># replace with code to split_chains for an object of class 'foobar'</span>
-}</div></pre>
+    <pre class="examples"><div class='input'>
+<span class='co'># chk_nlist</span>
+<span class='fu'>chk_nlist</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_nlist</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)))</div><div class='output co'>#&gt; Error : `list(x = 1)` must inherit from S3 class 'nlist'.</div><div class='input'>
+<span class='co'># chk_nlists</span>
+<span class='fu'>chk_nlists</span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
