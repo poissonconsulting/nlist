@@ -39,4 +39,11 @@ test_that("chk_nlists", {
     "^nlist elements of `x` must have matching dimensions[.]",
     class = "chk_error"
   )
+  x <- list(x = "x")
+  class(x) <- "nlist"
+  expect_error(chk_nlist(x), "All elements of `x` must be numeric.",
+               class = "chk_error")
+  x <- list("x")
+  class(x) <- "nlist"
+  expect_error(chk_nlist(x), "`x` must be named.", class = "chk_error")
 })
