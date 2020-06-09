@@ -1,10 +1,10 @@
 #' Flatten nlist Object
 #'
-#' Simplifies an nlist object to an named atomic vector
+#' Simplifies an nlist object to an named numeric vector
 #' where the names are the terms.
 #'
 #' @param x An nlist object.
-#' @return An named atomic numeric vector of the values in x.
+#' @return A named numeric vector of the values in x.
 #' @seealso [as_nlist.numeric()] and [relist_nlist()]
 #' @export
 #' @examples
@@ -23,7 +23,7 @@ unlist_nlist <- function(x) {
 #' @param x An nlist object.
 #' @param recursive Ignored.
 #' @param use.names A flag specifying whether to preserve names.
-#' @return An named atomic numeric vector of the values in x.
+#' @return A named numeric vector of the values in x.
 #' @seealso [unlist_nlist()]
 #' @method unlist nlist
 #' @export

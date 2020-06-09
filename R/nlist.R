@@ -7,7 +7,7 @@
 #'
 #' nlist objects are the raw data inputs for analytic engines
 #' such as JAGS, STAN and TMB.
-#' @param ... Uniquely named atomic numeric objects.
+#' @param ... Uniquely named numeric objects.
 #' @return An nlist object.
 #' @aliases nlist-object nlist_object
 #' @export

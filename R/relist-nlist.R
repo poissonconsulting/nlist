@@ -4,7 +4,7 @@
 #' Ensures absent terms are included and preserves integer class.
 #'
 #' @inheritParams params
-#' @return An atomic numeric vector of the values in x.
+#' @return A numeric vector of the values in x.
 #' @seealso [as_nlist.numeric()] and [unlist_nlist()]
 #' @export
 #' @examples

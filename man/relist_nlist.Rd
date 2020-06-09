@@ -12,7 +12,7 @@ relist_nlist(flesh, skeleton)
 \item{skeleton}{An nlist object.}
 }
 \value{
-An atomic numeric vector of the values in x.
+A numeric vector of the values in x.
 }
 \description{
 Relists an nlist object that has been unlisted to a named numeric vector.

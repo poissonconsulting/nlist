@@ -14,7 +14,7 @@
 \item{use.names}{A flag specifying whether to preserve names.}
 }
 \value{
-An named atomic numeric vector of the values in x.
+A named numeric vector of the values in x.
 }
 \description{
 Flatten nlist Object

@@ -9,7 +9,7 @@
 nlist(...)
 }
 \arguments{
-\item{...}{Uniquely named atomic numeric objects.}
+\item{...}{Uniquely named numeric objects.}
 }
 \value{
 An nlist object.

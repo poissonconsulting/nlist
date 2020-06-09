@@ -10,10 +10,10 @@ unlist_nlist(x)
 \item{x}{An nlist object.}
 }
 \value{
-An named atomic numeric vector of the values in x.
+A named numeric vector of the values in x.
 }
 \description{
-Simplifies an nlist object to an named atomic vector
+Simplifies an nlist object to an named numeric vector
 where the names are the terms.
 }
 \examples{
