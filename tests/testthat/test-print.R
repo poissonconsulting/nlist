@@ -2,17 +2,17 @@ test_that("print.nlist", {
   skip_on_covr()
   expect_identical(
     capture.output(print(nlist())),
-    "an nlist object with 0 natomic elements"
+    "an nlist object with 0 numeric elements"
   )
   expect_identical(
     capture.output(print(nlist(x = 1))),
-    c("$x", "[1] 1", "", "an nlist object with 1 natomic element")
+    c("$x", "[1] 1", "", "an nlist object with 1 numeric element")
   )
   expect_identical(
     capture.output(print(nlist(x = 1, y = matrix(1:4, 2)))),
     c(
       "$x", "[1] 1", "", "$y", "     [,1] [,2]", "[1,]    1    3",
-      "[2,]    2    4", "", "an nlist object with 2 natomic elements"
+      "[2,]    2    4", "", "an nlist object with 2 numeric elements"
     )
   )
 })
@@ -26,7 +26,7 @@ test_that("print.nlists", {
 
   expect_identical(
     capture.output(print(nlists(nlist()))),
-    "an nlists object of an nlist object with 0 natomic elements"
+    "an nlists object of an nlist object with 0 numeric elements"
   )
 
   nlist <- nlist(x = 1, y = matrix(1:4, 2))
@@ -36,7 +36,7 @@ test_that("print.nlists", {
     capture.output(print(nlists)),
     c(
       "$x", "[1] 1", "", "$y", "     [,1] [,2]", "[1,]    1    3",
-      "[2,]    2    4", "", "an nlists object of 2 nlist objects each with 2 natomic elements"
+      "[2,]    2    4", "", "an nlists object of 2 nlist objects each with 2 numeric elements"
     )
   )
 })
@@ -52,7 +52,7 @@ test_that("print.nlists multiple chains", {
     capture.output(print(nlists)),
     c(
       "$x", "[1] 1", "", "$y", "     [,1] [,2]", "[1,]    1    3",
-      "[2,]    2    4", "", "an nlists object with 2 chains of an nlist object with 2 natomic elements"
+      "[2,]    2    4", "", "an nlists object with 2 chains of an nlist object with 2 numeric elements"
     )
   )
 })

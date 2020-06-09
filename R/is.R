@@ -1,25 +1,21 @@
-#' Is natomic, nlist or nlists
+#' Is numeric, nlist or nlists
 #'
-#' Test whether x is a [natomic_object()],
+#' Test whether x is a [numeric_object()],
 #' [nlist_object()] or [nlists_object()].
 #'
 #' @inheritParams params
-#' @return A flag indicating whether x is a natomic object (is atomic and numeric) or inherits from S3 class nlist or nlists.
-#' @name is_natomic
-NULL
-
-#' @describeIn is_natomic Is natomic
+#' @return A flag indicating whether x is a numeric object or inherits from S3 class nlist or nlists.
 #' @export
 #'
 #' @examples
-#' # is_natomic
-#' is_natomic(list(x = 1))
-#' is_natomic(1)
-is_natomic <- function(x) {
-  is.atomic(x) && is.numeric(x)
+#' # is_numeric
+#' is_numeric(list(x = 1))
+#' is_numeric(1)
+is_numeric <- function(x) {
+  is.numeric(x)
 }
 
-#' @describeIn is_natomic Is nlist
+#' @describeIn is_numeric Is nlist
 #'
 #' @export
 #'
@@ -33,7 +29,7 @@ is_nlist <- function(x) {
   vld_s3_class(x, "nlist")
 }
 
-#' @describeIn is_natomic Is nlists
+#' @describeIn is_numeric Is nlists
 #'
 #' @export
 #'

@@ -2,12 +2,6 @@
 #'
 #' @inheritParams chk::chk_true
 #' @return A flag indicating whether the object was validated.
-#' @seealso [chk_natomic()]
-#' @name vld_natomic
-NULL
-
-#' @describeIn vld_natomic Validate nlist Object
-#'
 #' @export
 #'
 #' @examples
@@ -17,10 +11,10 @@ NULL
 #' try(vld_nlist(list(x = 1)))
 vld_nlist <- function(x) {
   vld_s3_class(x, "nlist") && vld_named(x) && vld_pars(names(x)) &&
-    vld_all(x, vld_natomic)
+    vld_all(x, vld_numeric)
 }
 
-#' @describeIn vld_natomic Validate nlists Object
+#' @describeIn vld_nlist Validate nlists Object
 #'
 #' @export
 #'

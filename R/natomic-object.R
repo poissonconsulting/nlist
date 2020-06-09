@@ -1,15 +1,15 @@
-#' natomic Object
+#' numeric Object
 #'
-#' An natomic object is an integer or double vector, matrix or array.
+#' A numeric object is an integer or double vector, matrix or array.
 #'
-#' @name natomic-object
-#' @aliases natomic_object
+#' @name numeric-object
+#' @aliases numeric_object
 #'
 #' @examples
 #' mat <- matrix(c(TRUE, FALSE, NA, TRUE), 2L)
 #' mat
-#' is_natomic(mat)
+#' is_numeric(mat)
 #' mat <- extras::numericize(mat)
 #' mat
-#' is_natomic(mat)
+#' is_numeric(mat)
 NULL

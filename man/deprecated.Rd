@@ -25,7 +25,7 @@ Deprecated Functions
 
 \lifecycle{soft-deprecated}
 
-Replace by \code{\link[=is_natomic]{is_natomic()}}
+Replace by \code{\link[=is.numeric]{is.numeric()}}
 
 \item \code{is.nlist}: Is nlist
 

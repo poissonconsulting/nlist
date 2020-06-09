@@ -1,8 +1,3 @@
-test_that("is_natomic", {
-  expect_false(is_natomic(TRUE))
-  expect_true(is_natomic(1))
-})
-
 test_that("is_nlist", {
   expect_false(is_nlist(1))
   expect_false(is_nlist(list(x = 1)))

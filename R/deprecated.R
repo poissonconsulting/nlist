@@ -9,14 +9,14 @@ NULL
 #'
 #' \lifecycle{soft-deprecated}
 #'
-#' Replace by [is_natomic()]
+#' Replace by [is.numeric()]
 #' @export
 is.natomic <- function(x) {
   deprecate_soft("0.1.1",
     what = "nlist::is.natomic()",
-    with = "nlist::is_natomic()"
+    with = "nlist::is_numeric()"
   )
-  is_natomic(x)
+  is_numeric(x)
 }
 
 #' @describeIn deprecated Is nlist

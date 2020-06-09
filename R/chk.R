@@ -1,19 +1,11 @@
-#' Check Numeric Atomic, nlist Object or nlists Object
+#' Check nlist Object or nlists Object
+#' 
+#' `chk_nlist`
+#' checks if an [nlist-object()].
 #'
 #' @inheritParams chk::chk_true
 #' @return `NULL`, invisibly. Called for the side effect of throwing an error
 #'   if the condition is not met.
-#' @seealso [vld_natomic()]
-#' @name chk_natomic
-NULL
-
-#' @describeIn chk_natomic Check nlist Object
-#'
-#' @description
-#'
-#' `chk_nlist`
-#' checks if an [nlist-object()].
-#'
 #' @export
 #'
 #' @examples
@@ -29,17 +21,14 @@ chk_nlist <- function(x, x_name = NULL) {
   chk_s3_class(x, "nlist", x_name = x_name)
   chk_named(x, x_name = x_name)
   chk_pars(names(x), x_name = backtick_chk(p0("names(", unbacktick_chk(x_name), ")")))
-  chk_all(x, chk_natomic, x_name = x_name)
+  chk_all(x, chk_atomic, x_name = x_name)
 }
 
-#' @describeIn chk_natomic Check nlists Object
+#' @describeIn chk_nlist Check nlists Object
 #'
-#' @description
 #' `chk_nlists`
 #' checks if an [nlists-object()].
-#'
 #' @export
-#'
 #' @examples
 #'
 #' # chk_nlists

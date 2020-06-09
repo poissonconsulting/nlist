@@ -2,12 +2,12 @@
 print.nlist <- function(x, ...) {
   n <- length(x)
   if (!n) {
-    cat("an nlist object with 0 natomic elements\n")
+    cat("an nlist object with 0 numeric elements\n")
     return(invisible(x))
   }
   print(unclass(x))
   str <- "an nlist object with"
-  str <- p(str, if (n == 1) "1 natomic element\n" else p(n, "natomic elements"))
+  str <- p(str, if (n == 1) "1 numeric element\n" else p(n, "numeric elements"))
   cat(str)
   invisible(x)
 }
@@ -26,7 +26,7 @@ print.nlists <- function(x, ...) {
   nchains <- nchains(x)
   str <- p(str, if (nchains > 1) p("with", nchains, "chains of") else "of")
   str <- p(str, if (n == 1) "an nlist object with" else p(n, "nlist objects each with"))
-  str <- p(str, if (nn == 1) "1 natomic element" else p(nn, "natomic elements"))
+  str <- p(str, if (nn == 1) "1 numeric element" else p(nn, "numeric elements"))
   cat(str)
   invisible(x)
 }

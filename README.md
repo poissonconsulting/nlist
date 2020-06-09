@@ -21,10 +21,10 @@ status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/
 nlist is an R package to create and manipulate numeric list (nlist)
 objects.
 
-An nlist is an S3 class list of uniquely named numeric atomic (natomic)
-objects. An natomic object is an integer or double vector, matrix or
-array. nlist objects are the raw data inputs for analytic engines such
-as JAGS, STAN and TMB.
+An nlist is an S3 class list of uniquely named numeric objects. An
+numeric object is an integer or double vector, matrix or array. nlist
+objects are the raw data inputs for analytic engines such as JAGS, STAN
+and TMB.
 
 An nlists object is a S3 class list of nlist objects with the same
 names, dimensionalities and typeofs. nlists objects are useful for
@@ -49,24 +49,23 @@ remotes::install_github("poissonconsulting/nlist")
 
 ## Demonstration
 
-### `natomic`
+### `numeric`
 
-An natomic object is an integer or double vector, matrix or array.
+An numeric object is an integer or double vector, matrix or array.
 
 ``` r
 library(nlist)
-is_natomic(TRUE)
+is_numeric(TRUE)
 #> [1] FALSE
-is_natomic(1L)
+is_numeric(1L)
 #> [1] TRUE
-is_natomic(matrix(1:3))
+is_numeric(matrix(1:3))
 #> [1] TRUE
 ```
 
 ### `nlist`
 
-An nlist is an S3 class list of uniquely named numeric atomic (natomic)
-objects.
+An nlist is an S3 class list of uniquely named numeric objects.
 
 It is straightforward to create an new nlist object.
 
@@ -84,7 +83,7 @@ nlist
 #> [2,]    2    5    8
 #> [3,]    3    6    9
 #> 
-#> an nlist object with 2 natomic elements
+#> an nlist object with 2 numeric elements
 ```
 
 ### `nlists`
@@ -112,7 +111,7 @@ print(nlists)
 #> [2,]  2.5  5.5  8.5
 #> [3,]  3.5  6.5  9.5
 #> 
-#> an nlists object of 4 nlist objects each with 2 natomic elements
+#> an nlists object of 4 nlist objects each with 2 numeric elements
 ```
 
 ### Coercion
@@ -138,7 +137,7 @@ as_nlist(data)
 #> $fac
 #> [1] 2 1
 #> 
-#> an nlist object with 3 natomic elements
+#> an nlist object with 3 numeric elements
 ```
 
 And an `nlist` objects can be converted to an `mcmc` or `term_frame`
@@ -182,7 +181,7 @@ estimates(nlists, fun = mean)
 #> [2,] 6.25 7.75 9.25
 #> [3,] 6.75 8.25 9.75
 #> 
-#> an nlist object with 2 natomic elements
+#> an nlist object with 2 numeric elements
 ```
 
 while the `tidy()` function treats the values as if they are MCMC

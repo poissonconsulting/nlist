@@ -9,7 +9,7 @@
 \arguments{
 \item{x}{An object.}
 
-\item{value}{A scalar of the value to replace missing values with.}
+\item{value}{A scalar of the value to replace values with.}
 
 \item{...}{Other arguments passed to methods.}
 }
@@ -19,6 +19,23 @@ The modified object.
 \description{
 Fills an object's missing values while preserving the object's class.
 }
+\section{Methods (by class)}{
+
+\itemize{
+\item \code{logical}: Fill Missing Values for logical Objects
+
+\item \code{integer}: Fill Missing Values for integer Objects
+
+\item \code{numeric}: Fill Missing Values for numeric Objects
+
+\item \code{character}: Fill Missing Values for character Objects
+}
+}
+
 \examples{
 fill_na(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)))
+}
+\seealso{
+Other fill: 
+\code{\link[extras]{fill_all}()}
 }

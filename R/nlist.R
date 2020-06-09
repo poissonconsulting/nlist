@@ -1,9 +1,9 @@
 #' Create nlist Object
 #'
-#' Creates a [nlist_object()] from one of more uniquely named [natomic_object()] arguments.
+#' Creates a [nlist_object()] from one of more uniquely named [numeric_object()] arguments.
 #'
 #' An nlist object is an S3 class list of uniquely named
-#' [natomic_object()] elements.
+#' [numeric_object()] elements.
 #'
 #' nlist objects are the raw data inputs for analytic engines
 #' such as JAGS, STAN and TMB.

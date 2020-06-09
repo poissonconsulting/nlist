@@ -15,11 +15,11 @@ nlist(...)
 An nlist object.
 }
 \description{
-Creates a \code{\link[=nlist_object]{nlist_object()}} from one of more uniquely named \code{\link[=natomic_object]{natomic_object()}} arguments.
+Creates a \code{\link[=nlist_object]{nlist_object()}} from one of more uniquely named \code{\link[=numeric_object]{numeric_object()}} arguments.
 }
 \details{
 An nlist object is an S3 class list of uniquely named
-\code{\link[=natomic_object]{natomic_object()}} elements.
+\code{\link[=numeric_object]{numeric_object()}} elements.
 
 nlist objects are the raw data inputs for analytic engines
 such as JAGS, STAN and TMB.
