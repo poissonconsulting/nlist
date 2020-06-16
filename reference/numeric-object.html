@@ -124,13 +124,13 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>mat</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>, <span class='fl'>NA</span>, <span class='fl'>TRUE</span>), <span class='fl'>2L</span>)
-<span class='no'>mat</span></div><div class='output co'>#&gt;       [,1] [,2]
+    <pre class="examples"><div class='input'><span class='kw'>mat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>, <span class='fl'>NA</span>, <span class='fl'>TRUE</span>), <span class='fl'>2L</span>)
+<span class='kw'>mat</span></div><div class='output co'>#&gt;       [,1] [,2]
 #&gt; [1,]  TRUE   NA
-#&gt; [2,] FALSE TRUE</div><div class='input'><span class='fu'><a href='is_numeric.html'>is_numeric</a></span>(<span class='no'>mat</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='no'>mat</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>extras</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/extras/man/numericise.html'>numericize</a></span>(<span class='no'>mat</span>)
-<span class='no'>mat</span></div><div class='output co'>#&gt;      [,1] [,2]
+#&gt; [2,] FALSE TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/nlist/man/is_numeric.html'>is_numeric</a></span>(<span class='kw'>mat</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='kw'>mat</span> <span class='op'>&lt;-</span> <span class='kw'>extras</span>::<span class='fu'><a href='https://rdrr.io/pkg/extras/man/numericise.html'>numericize</a></span>(<span class='kw'>mat</span>)
+<span class='kw'>mat</span></div><div class='output co'>#&gt;      [,1] [,2]
 #&gt; [1,]    1   NA
-#&gt; [2,]    0    1</div><div class='input'><span class='fu'><a href='is_numeric.html'>is_numeric</a></span>(<span class='no'>mat</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
+#&gt; [2,]    0    1</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/nlist/man/is_numeric.html'>is_numeric</a></span>(<span class='kw'>mat</span>)</div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

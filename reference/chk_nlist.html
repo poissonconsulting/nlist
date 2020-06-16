@@ -119,12 +119,12 @@ checks if an nlist-object()." />
 
     <div class="ref-description">
     <p><code>chk_nlist</code>
-checks if an <code><a href='nlist.html'>nlist-object()</a></code>.</p>
+checks if an <code><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist-object()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>chk_nlist</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'><a href='https://rdrr.io/pkg/nlist/man/chk_nlist.html'>chk_nlist</a></span>(<span class='kw'>x</span>, x_name = <span class='kw'>NULL</span>)
 
-<span class='fu'>chk_nlists</span>(<span class='no'>x</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/chk_nlist.html'>chk_nlists</a></span>(<span class='kw'>x</span>, x_name = <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -149,16 +149,16 @@ if the condition is not met.</p>
 <ul>
 <li><p><code>chk_nlists</code>: Check nlists Object</p>
 <p><code>chk_nlists</code>
-checks if an <code><a href='nlists.html'>nlists-object()</a></code>.</p></li>
+checks if an <code><a href='https://rdrr.io/pkg/nlist/man/nlists.html'>nlists-object()</a></code>.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># chk_nlist</span>
-<span class='fu'>chk_nlist</span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>))
-<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'>chk_nlist</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)))</div><div class='output co'>#&gt; Error : `list(x = 1)` must inherit from S3 class 'nlist'.</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/chk_nlist.html'>chk_nlist</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(x = <span class='fl'>1</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/try.html'>try</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/chk_nlist.html'>chk_nlist</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(x = <span class='fl'>1</span>)))</div><div class='output co'>#&gt; Error : `list(x = 1)` must inherit from S3 class 'nlist'.</div><div class='input'>
 <span class='co'># chk_nlists</span>
-<span class='fu'>chk_nlists</span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>)))</div></pre>
+<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/chk_nlist.html'>chk_nlists</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlists.html'>nlists</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(x = <span class='fl'>1</span>)))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

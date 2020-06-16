@@ -119,13 +119,13 @@ with nchains nlist_object()s." />
     </div>
 
     <div class="ref-description">
-    <p>Aggregates an <code><a href='nlists.html'>nlists_object()</a></code> into a <code><a href='nlist.html'>nlist_object()</a></code>
-or by_chain = TRUE an <code><a href='nlists.html'>nlists_object()</a></code>
-with <code>nchains</code> <code><a href='nlist.html'>nlist_object()</a></code>s.</p>
+    <p>Aggregates an <code><a href='https://rdrr.io/pkg/nlist/man/nlists.html'>nlists_object()</a></code> into a <code><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist_object()</a></code>
+or by_chain = TRUE an <code><a href='https://rdrr.io/pkg/nlist/man/nlists.html'>nlists_object()</a></code>
+with <code>nchains</code> <code><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist_object()</a></code>s.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for nlists</span>
-<span class='fu'><a href='https://rdrr.io/r/stats/aggregate.html'>aggregate</a></span>(<span class='no'>x</span>, <span class='kw'>fun</span> <span class='kw'>=</span> <span class='no'>mean</span>, <span class='no'>...</span>, <span class='kw'>by_chain</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/r/stats/aggregate.html'>aggregate</a></span>(<span class='kw'>x</span>, fun = <span class='kw'>mean</span>, <span class='kw'>...</span>, by_chain = <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,7 +153,7 @@ with <code>nchains</code> <code><a href='nlist.html'>nlist_object()</a></code>s.
     <p>An nlist object if <code>by_chain = FALSE</code> otherwise an nlists object.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/aggregate.html'>aggregate</a></span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(<span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>3</span>), <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>2</span>:<span class='fl'>4</span>)))</div><div class='output co'>#&gt; <span class='warning'>Warning: `aggregate.nlists()` is deprecated as of nlist 0.1.1.</span>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/aggregate.html'>aggregate</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlists.html'>nlists</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(x = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>), <span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(x = <span class='fl'>2</span><span class='op'>:</span><span class='fl'>4</span>)))</div><div class='output co'>#&gt; <span class='warning'>Warning: `aggregate.nlists()` is deprecated as of nlist 0.1.1.</span>
 #&gt; <span class='warning'>Please use `estimates.nlists()` instead.</span>
 #&gt; <span class='warning'><span style='color: #555555;'>This warning is displayed once every 8 hours.</span><span></span>
 #&gt; <span class='warning'></span><span style='color: #555555;'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span><span></span></div><div class='output co'>#&gt; $x

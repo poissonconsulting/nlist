@@ -149,7 +149,7 @@ MCMC objects resemble time series (ts) objects and have
     </div>
 
     <pre class="usage"><span class='co'># S3 method for nlists</span>
-<span class='fu'><a href='https://rdrr.io/pkg/coda/man/mcmc.html'>as.mcmc</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/pkg/coda/man/mcmc.html'>as.mcmc</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -177,9 +177,9 @@ MCMC objects resemble time series (ts) objects and have
     <p>Martyn Plummer</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/coda/man/mcmc.html'>as.mcmc</a></span>(<span class='fu'><a href='nlists.html'>nlists</a></span>(
-  <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span>:<span class='fl'>6</span>, <span class='fl'>2</span>)),
-  <span class='fu'><a href='nlist.html'>nlist</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>3</span>:<span class='fl'>8</span>, <span class='fl'>2</span>))
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/coda/man/mcmc.html'>as.mcmc</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlists.html'>nlists</a></span>(
+  <span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(x = <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span><span class='op'>:</span><span class='fl'>6</span>, <span class='fl'>2</span>)),
+  <span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(x = <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>3</span><span class='op'>:</span><span class='fl'>8</span>, <span class='fl'>2</span>))
 ))</div><div class='output co'>#&gt; Markov Chain Monte Carlo (MCMC) output:
 #&gt; Start = 1 
 #&gt; End = 2 
