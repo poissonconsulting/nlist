@@ -1,10 +1,16 @@
-## Test environments
+term 0.2.0
 
-release 3.6.2
+## Cran Repository Policy
 
-* OS X (local) - release
-* Windows (win-builder) - devel
+- [x] Reviewed CRP last edited 2020-05-21.
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 note
+- [x] Checked locally, R 4.0.1
+- [x] Checked on win-builder, R devel
+
+OK
+
+## CRAN failures
+
+- [x] Checked on 2020-06-17, no errors found.
