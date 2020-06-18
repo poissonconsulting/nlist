@@ -7,17 +7,11 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis build
-status](https://travis-ci.com/poissonconsulting/nlist.svg?branch=master)](https://travis-ci.com/poissonconsulting/nlist)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/nlist?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/nlist)
-[![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-<!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/nlist)](https://CRAN.R-project.org/package=nlist) -->
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist) -->
-<!-- ![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist) -->
+[![CRAN
+status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
+![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
 <!-- badges: end -->
 
 nlist is an R package to create and manipulate numeric list (nlist)
@@ -35,21 +29,18 @@ converted to `coda::mcmc` and `coda::mcmc.list` objects.
 
 ## Installation
 
+To install the latest release from [CRAN](https://cran.r-project.org)
+
+``` r
+install.packages("nlist")
+```
+
 To install the developmental version from
 [GitHub](https://github.com/poissonconsulting/nlist)
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("poissonconsulting/nlist")
-```
-
-To install the latest developmental release from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-``` r
-# install.packages("drat")
-drat::addRepo("poissonconsulting")
-install.packages("nlist")
 ```
 
 ## Demonstration
@@ -201,6 +192,9 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/nlist/pulls) are
 always welcome.
 
-Please note that this project is released with a [Contributor Code of
-Conduct](https://github.com/poissonconsulting/nlist/blob/master/CODE_OF_CONDUCT.md).
-By contributing, you agree to abide by its terms.
+## Code of Conduct
+
+Please note that the nlist project is released with a [Contributor Code
+of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
