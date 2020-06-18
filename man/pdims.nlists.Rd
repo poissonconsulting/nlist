@@ -25,5 +25,5 @@ term::pdims(nlists(
 ))
 }
 \seealso{
-\code{\link[term:pdims]{term::pdims()}}
+\code{\link[term:reexports]{term::pdims()}}
 }
