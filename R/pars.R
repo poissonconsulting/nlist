@@ -25,6 +25,23 @@ pars.nlist <- function(x, scalar = NA, terms = FALSE, ...) {
   pars(as.term(x), scalar = scalar, terms = terms)
 }
 
+.par_name_pattern <- "[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz][ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._]*"
+
+pars.term <- function(x, scalar = NA, terms = FALSE, ...) {
+  chk_lgl(scalar)
+  chk_flag(terms)
+  chk_unused(...)
+  
+  x <- as.character(x)
+  if (!is.na(scalar)) {
+    bol <- grepl("\\[", x)
+    x <- x[if (scalar) !bol else bol]
+  }
+  x <- sub(p0("^(", .par_name_pattern, ")(.*)"), "\\1", x)
+  if (!terms) x <- unique(x)
+  x
+}
+
 #' Parameter Names
 #'
 #' Gets the parameter names for an [nlists_object()].
