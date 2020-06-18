@@ -15,13 +15,13 @@ nchains <- function(x, ...) {
   UseMethod("nchains")
 }
 
-#' @describeIn nchains Number of chains of an [nlist::nlist_object()]
+#' @describeIn nchains Number of chains of an nlists_object.
 #'
 #' Always 1L.
 #' @export
 nchains.nlist <- function(x, ...) 1L
 
-#' @describeIn nchains Number of chains of an [nlist::nlists_object()]
+#' @describeIn nchains Number of chains of an nlists_object.
 #' @export
 nchains.nlists <- function(x, ...) {
   nchains <- attr(x, "nchains")

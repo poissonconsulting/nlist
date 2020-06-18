@@ -25,11 +25,11 @@ Gets the number of chains of an MCMC object.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{nlist}: Number of chains of an \code{\link[nlist:nlist_object]{nlist::nlist_object()}}
+\item \code{nlist}: Number of chains of an nlists_object.
 
 Always 1L.
 
-\item \code{nlists}: Number of chains of an \code{\link[nlist:nlists_object]{nlist::nlists_object()}}
+\item \code{nlists}: Number of chains of an nlists_object.
 }}
 
 \examples{
