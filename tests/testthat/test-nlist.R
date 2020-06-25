@@ -11,6 +11,8 @@ test_that("nlist", {
     nlist(x = 1, y = 2),
     as_nlist(list(x = 1, y = 2))
   )
-  expect_error(nlist(x = "x"), 
-               "no applicable method for 'numericise' applied to an object of class \"character\"")
+  expect_error(
+    nlist(x = "x"),
+    "no applicable method for 'numericise' applied to an object of class \"character\""
+  )
 })

@@ -1,5 +1,5 @@
 #' Check nlist Object or nlists Object
-#' 
+#'
 #' `chk_nlist`
 #' checks if an [nlist-object()].
 #'

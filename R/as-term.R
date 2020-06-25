@@ -21,7 +21,7 @@ as_term.nlist <- function(x, ...) {
 }
 
 #' Coerce to a Term Vector
-#' 
+#'
 #' @inheritParams params
 #' @export
 #' @examples
