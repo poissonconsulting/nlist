@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0.9005</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -114,26 +114,57 @@
       <small>Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="nlist-0109005" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0.9005">
-<a href="#nlist-0109005" class="anchor"></a>nlist 0.1.0.9005<small> Unreleased </small>
+    <div id="nlist-020" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.0">
+<a href="#nlist-020" class="anchor"></a>nlist 0.2.0<small> Unreleased </small>
+</h1>
+<div id="breaking-changes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#breaking-changes" class="anchor"></a>Breaking changes</h2>
+<ul>
+<li>Set Depends to R &gt;= 3.4</li>
+<li>Replaced <code>pars_scalar()</code> and <code>npars_scalar()</code> with <code><a href="https://rdrr.io/pkg/universals/man/pars.html">pars(scalar = TRUE)</a></code> and <code>npars(scalar = TRUE)</code>.</li>
+</ul>
+<p>Soft deprecated</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/pkg/universals/man/pars.html">pars(terms =)</a></code> for <code>pars_terms(as_term())</code>.</li>
+<li>
+<code><a href="https://rdrr.io/pkg/nlist/man/deprecated.html">is.natomic()</a></code> for <code><a href="https://rdrr.io/pkg/nlist/man/is_numeric.html">is_numeric()</a></code>.</li>
+<li>
+<code><a href="https://rdrr.io/pkg/nlist/man/deprecated.html">is.nlist()</a></code> and <code><a href="https://rdrr.io/pkg/nlist/man/deprecated.html">is.nlists()</a></code> for <code><a href="https://rdrr.io/pkg/nlist/man/is_numeric.html">is_nlist()</a></code> and <code><a href="https://rdrr.io/pkg/nlist/man/is_numeric.html">is_nlists()</a></code>.</li>
+<li>
+<code><a href="https://rdrr.io/pkg/nlist/man/as_nlist.html">as.nlist()</a></code> and <code><a href="https://rdrr.io/pkg/nlist/man/as_nlist.html">as.nlists()</a></code> for <code><a href="https://rdrr.io/pkg/nlist/man/as_nlist.html">as_nlist()</a></code> and <code><a href="https://rdrr.io/pkg/nlist/man/as_nlist.html">as.nlists()</a></code>.</li>
+<li>
+<code><a href="https://rdrr.io/pkg/term/man/as_term.html">as.term()</a></code> for <code><a href="https://rdrr.io/pkg/term/man/as_term.html">as_term()</a></code>.</li>
+</ul>
+</div>
+<div id="features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#features" class="anchor"></a>Features</h2>
+<p>Added</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/pkg/nlist/man/thin.default.html">thin.default()</a></code> to thin objects.</li>
+<li>
+<code><a href="https://rdrr.io/pkg/nlist/man/unlist_nlist.html">unlist_nlist()</a></code> (also <code><a href="https://rdrr.io/pkg/nlist/man/unlist.nlist.html">unlist.nlist()</a></code>) and <code><a href="https://rdrr.io/pkg/nlist/man/relist_nlist.html">relist_nlist()</a></code> to flatten and pop <code>nlist</code> objects.</li>
+<li>
+<code>as_data_term()</code> and <code>as_data_term()</code> for <code>nlist</code> and <code>nlists</code> objects.</li>
+<li>
+<code><a href="https://rdrr.io/pkg/extras/man/fill_all.html">fill_all()</a></code> and <code><a href="https://rdrr.io/pkg/extras/man/fill_na.html">fill_na()</a></code> for <code>nlist</code> and <code>nlists</code> objects.</li>
+<li>
+<code><a href="https://rdrr.io/pkg/universals/man/set_pars.html">set_pars()</a></code> for <code>nlist</code> and <code>nlists</code> objects.</li>
+<li>
+<code><a href="https://rdrr.io/pkg/nlist/man/tidy.nlists.html">tidy.nlists()</a></code> for <code>nlists</code> objects.</li>
+</ul>
+</div>
+</div>
+    <div id="nlist-011" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.1">
+<a href="#nlist-011" class="anchor"></a>nlist 0.1.1<small> 2020-06-18 </small>
 </h1>
 <ul>
-<li><p>Switch depends to R &gt;= 3.3</p></li>
-<li><p>Replaced natomic with just numeric (as all numeric objects are atomic!)</p></li>
-<li><p>Replaced pars_scalar() and npars_scalar() with pars(scalar = TRUE) and npars(scalar = TRUE).</p></li>
-<li><p>Added <code><a href="https://rdrr.io/pkg/nlist/man/unlist_nlist.html">unlist_nlist()</a></code> (also <code><a href="https://rdrr.io/pkg/nlist/man/unlist.nlist.html">unlist.nlist()</a></code>) and <code><a href="https://rdrr.io/pkg/nlist/man/relist_nlist.html">relist_nlist()</a></code> to flatten and pop nlist objects.</p></li>
-<li><p>Added <code>as_data_term.nlist()</code> and <code>as_data_term.nlists()</code></p></li>
-<li><p>Added <code><a href="https://rdrr.io/pkg/extras/man/fill_all.html">fill_all()</a></code> and <code><a href="https://rdrr.io/pkg/extras/man/fill_na.html">fill_na()</a></code>.</p></li>
-<li><p>Added <code><a href="https://rdrr.io/pkg/nlist/man/tidy.nlists.html">tidy.nlists()</a></code></p></li>
-<li><p>Added <code><a href="https://rdrr.io/pkg/universals/man/set_pars.html">set_pars()</a></code>.</p></li>
-<li><p>Added <code><a href="https://rdrr.io/pkg/coda/man/thin.html">thin()</a></code>.</p></li>
-<li><p>Soft deprecated <code><a href="https://rdrr.io/pkg/nlist/man/as_nlist.html">as.nlist()</a></code> and <code><a href="https://rdrr.io/pkg/nlist/man/as_nlist.html">as.nlists()</a></code> for <code><a href="https://rdrr.io/pkg/nlist/man/as_nlist.html">as_nlist()</a></code> and <code><a href="https://rdrr.io/pkg/nlist/man/as_nlist.html">as.nlists()</a></code>.</p></li>
-<li><p>Soft deprecated <code><a href="https://rdrr.io/pkg/nlist/man/deprecated.html">is.natomic()</a></code> for <code><a href="https://rdrr.io/pkg/nlist/man/is_numeric.html">is_numeric()</a></code>.</p></li>
-<li><p>Soft deprecated <code><a href="https://rdrr.io/pkg/universals/man/pars.html">pars(terms =)</a></code> for <code>pars_terms(as_term())</code>.</p></li>
-<li><p>Soft deprecated <code><a href="https://rdrr.io/pkg/nlist/man/deprecated.html">is.nlists()</a></code> for <code><a href="https://rdrr.io/pkg/nlist/man/is_numeric.html">is_nlists()</a></code>.</p></li>
-<li><p>Soft deprecated <code><a href="https://rdrr.io/pkg/nlist/man/deprecated.html">is.nlist()</a></code> for <code><a href="https://rdrr.io/pkg/nlist/man/is_numeric.html">is_nlist()</a></code>.</p></li>
-<li><p>Soft deprecated <code><a href="https://rdrr.io/pkg/nlist/man/deprecated.html">is.natomic()</a></code> for <code>is_natomic()</code>.</p></li>
+<li>Fix tests ready for term 0.2.0.</li>
 </ul>
 </div>
     <div id="nlist-010" class="section level1">
