@@ -1,6 +1,6 @@
 #' Is numeric, nlist or nlists
 #'
-#' Test whether x is a [numeric_object()],
+#' Test whether x is a numeric object,
 #' [nlist_object()] or [nlists_object()].
 #'
 #' @inheritParams params

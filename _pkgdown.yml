@@ -13,19 +13,24 @@ reference:
   - '`as.mcmc.list.nlists`'
   - '`as.mcmc.nlist`'
   - '`as.mcmc.nlists`'
-  - '`as.nlist`'
-  - '`as.nlists`'
-  - '`numericize`'
-  - '`numericise`'
+  - '`as_nlist`'
+  - '`as_nlists`'
+  - '`as_term.nlist`'
+  - '`as_term.nlists`'
+  - '`as_term_frame`'
+  - '`as_term_frame.nlist`'
+  - '`as_term_frame.nlists`'
 - title: Query
   desc: Query object's dimensions/parameters
   contents:
-  - '`nchains`'
-  - '`niters`'
+  - '`nchains.nlist`'
+  - '`nchains.nlists`'
+  - '`niters.nlist`'
+  - '`niters.nlists`'
   - '`npdims.nlist`'
   - '`npdims.nlists`'
-  - '`nsams`'
-  - '`nsims`'
+  - '`nsims.nlist`'
+  - '`nsims.nlists`'
   - '`nterms.nlist`'
   - '`nterms.nlists`'
   - '`pars.nlist`'
@@ -39,29 +44,36 @@ reference:
   - '`aggregate.nlists`'
   - '`collapse_chains.nlist`'
   - '`collapse_chains.nlists`'
+  - '`estimates.nlist`'
+  - '`estimates.nlists`'
+  - '`fill_all.nlist`'
+  - '`fill_all.nlists`'
   - '`fill_na.nlist`'
   - '`fill_na.nlists`'
   - '`relist_nlist`'
+  - '`set_pars.nlist`'
+  - '`set_pars.nlists`'
   - '`split_chains.nlists`'
   - '`subset.nlist`'
   - '`subset.nlists`'
+  - '`tidy.nlists`'
+  - '`thin.default`'
   - '`unlist_nlist`'
   - '`unlist.nlist`'
 - title: Identify
   desc: Identify objects
   contents:
   - '`is.natomic`'
+  - '`is_numeric`'
   - '`is.nlist`'
   - '`is.nlists`'
 - title: Check
   desc: Check objects
   contents:
-  - '`chk_natomic`'
   - '`chk_nlist`'
   - '`chk_nlists`'
 - title: Validate
   desc: Validate objects
   contents:
-  - '`vld_natomic`'
   - '`vld_nlist`'
   - '`vld_nlists`'

@@ -15,5 +15,6 @@
 #' @param pars A character vector of parameter names.
 #' @param fun A function that given a numeric vector returns a numeric scalar.
 #' @param nas A flag specifying whether to also fill missing values.
+#' @keywords internal
 #' @name params
 NULL

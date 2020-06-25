@@ -15,7 +15,8 @@
 A data.frame.
 }
 \description{
-Coerces an nlists object to a data.frame with a term, sample and value column.
+Coerces an nlists object to a data.frame with a term, sample
+and value column.
 }
 \examples{
 as_term_frame(nlists(
