@@ -14,7 +14,7 @@ unlist_nlist <- function(x) {
   y <- unlist(unclass(x))
   if (is.null(y)) y <- numeric(0)
   y <- as.numeric(y)
-  names(y) <- as.term(x)
+  names(y) <- as_term(x)
   y
 }
 

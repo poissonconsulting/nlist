@@ -9,7 +9,7 @@ as.mcmc.nlist <- function(x, ...) {
   if (!length(x)) {
     return(as.mcmc(numeric(0)))
   }
-  term <- as.character(as.term(x))
+  term <- as.character(as_term(x))
   x <- lapply(x, as.vector)
   x <- unlist(x)
   x <- matrix(x, ncol = 1)

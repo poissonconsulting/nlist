@@ -24,7 +24,7 @@ tidy.nlists <- function(x, ...) {
   }
 
   estimate <- unlist(estimates(x, median))
-  term <- as.term(names(estimate))
+  term <- as_term(names(estimate))
   estimate <- unname(estimate)
   sd <- unname(unlist(estimates(x, sd)))
   zscore <- unname(unlist(estimates(x, zscore)))

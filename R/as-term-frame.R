@@ -42,7 +42,7 @@ as_term_frame_nlist_impl <- function(x, sample = NULL) {
     )))
   }
   x <- unlist(x)
-  term <- as.term(names(x))
+  term <- as_term(names(x))
   x <- unname(x)
   if (!is.null(sample)) {
     return(as.data.frame(tibble::tibble(

@@ -13,7 +13,7 @@
 
 - Soft deprecated `as.nlist()` and `as.nlists()` for `as_nlist()` and `as.nlists()`.
 - Soft deprecated `is.natomic()` for `is_numeric()`.
-- Soft deprecated `pars(terms =)` for `pars_terms(as.term())`.
+- Soft deprecated `pars(terms =)` for `pars_terms(as_term())`.
 - Soft deprecated `is.nlists()` for `is_nlists()`.
 - Soft deprecated `is.nlist()` for `is_nlist()`.
 - Soft deprecated `is.natomic()` for `is_natomic()`.

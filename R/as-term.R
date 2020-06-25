@@ -1,27 +1,35 @@
 #' @export
+term::as_term
+
+#' @export
 term::as.term
 
-#' @inherit term::as.term
+#' Coerce to a Term Vector
+#'
+#' @inheritParams params
 #' @export
 #' @examples
-#' as.term(nlist(x = matrix(1:4, ncol = 2)))
-as.term.nlist <- function(x, ...) {
-  x <- mapply(as.term, x, names(x), SIMPLIFY = FALSE)
+#' as_term(nlist(x = matrix(1:4, ncol = 2)))
+as_term.nlist <- function(x, ...) {
+  chk_unused(...)
+  x <- mapply(as_term, x, names(x), SIMPLIFY = FALSE)
   x <- unname(unlist(x))
   if (is.null(x)) {
     return(term(x = 0))
   }
-  as.term(x)
+  as_term(x)
 }
 
-#' @inherit term::as.term
+#' Coerce to a Term Vector
+#' 
+#' @inheritParams params
 #' @export
 #' @examples
-#' as.term(nlists(nlist(x = matrix(1:4, ncol = 2))))
-as.term.nlists <- function(x, ...) {
+#' as_term(nlists(nlist(x = matrix(1:4, ncol = 2))))
+as_term.nlists <- function(x, ...) {
   chk_unused(...)
   if (!length(x)) {
     return(term(x = 0))
   }
-  as.term(x[[1]])
+  as_term(x[[1]])
 }

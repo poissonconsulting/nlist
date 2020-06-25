@@ -7,6 +7,7 @@
 \name{reexports}
 \alias{reexports}
 \alias{as.mcmc}
+\alias{as_term}
 \alias{as.term}
 \alias{collapse_chains}
 \alias{estimates}
@@ -36,7 +37,7 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{coda}{\code{\link[coda]{as.mcmc}}, \code{\link[coda]{thin}}}
+  \item{coda}{\code{\link[coda:mcmc]{as.mcmc}}, \code{\link[coda]{thin}}}
 
   \item{extras}{\code{\link[extras]{fill_all}}, \code{\link[extras]{fill_na}}, \code{\link[extras]{lower}}, \code{\link[extras]{pvalue}}, \code{\link[extras]{svalue}}, \code{\link[extras]{upper}}, \code{\link[extras]{zscore}}}
 
@@ -44,7 +45,7 @@ below to see their documentation.
 
   \item{stats}{\code{\link[stats]{median}}}
 
-  \item{term}{\code{\link[term]{as.term}}}
+  \item{term}{\code{\link[term]{as_term}}, \code{\link[term:as_term]{as.term}}}
 
   \item{universals}{\code{\link[universals]{collapse_chains}}, \code{\link[universals]{estimates}}, \code{\link[universals]{nchains}}, \code{\link[universals]{niters}}, \code{\link[universals]{npdims}}, \code{\link[universals]{nsims}}, \code{\link[universals]{nterms}}, \code{\link[universals]{pars}}, \code{\link[universals]{pdims}}, \code{\link[universals]{set_pars}}, \code{\link[universals]{split_chains}}}
 }}

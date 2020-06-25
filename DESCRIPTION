@@ -37,12 +37,8 @@ Suggests:
     rlang
 RdMacros: 
     lifecycle
-Remotes:
-    poissonconsulting/universals,
-    poissonconsulting/extras,
-    poissonconsulting/term
 Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.0.9000
