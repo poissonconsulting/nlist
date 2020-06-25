@@ -1,22 +1,32 @@
-# nlist 0.1.0.9005
+# nlist 0.2.0
 
-- Switch depends to R >= 3.3
-- Replaced natomic with just numeric (as all numeric objects are atomic!)
-- Replaced pars_scalar() and npars_scalar() with pars(scalar = TRUE) and npars(scalar = TRUE).
+## Breaking changes
 
-- Added `unlist_nlist()` (also `unlist.nlist()`) and `relist_nlist()` to flatten and pop nlist objects.
-- Added `as_data_term.nlist()` and `as_data_term.nlists()`
-- Added `fill_all()` and `fill_na()`.
-- Added `tidy.nlists()`
-- Added `set_pars()`.
-- Added `thin()`.
+- Set Depends to R >= 3.4
+- Replaced `pars_scalar()` and `npars_scalar()` with `pars(scalar = TRUE)` and `npars(scalar = TRUE)`.
 
-- Soft deprecated `as.nlist()` and `as.nlists()` for `as_nlist()` and `as.nlists()`.
-- Soft deprecated `is.natomic()` for `is_numeric()`.
-- Soft deprecated `pars(terms =)` for `pars_terms(as_term())`.
-- Soft deprecated `is.nlists()` for `is_nlists()`.
-- Soft deprecated `is.nlist()` for `is_nlist()`.
-- Soft deprecated `is.natomic()` for `is_natomic()`.
+Soft deprecated 
+
+  - `pars(terms =)` for `pars_terms(as_term())`.
+  - `is.natomic()` for `is_numeric()`.
+  - `is.nlist()` and `is.nlists()` for `is_nlist()` and `is_nlists()`.
+  - `as.nlist()` and `as.nlists()` for `as_nlist()` and `as.nlists()`.
+  - `as.term()` for `as_term()`.
+
+## Features
+
+Added 
+
+  - `thin.default()` to thin objects.
+  - `unlist_nlist()` (also `unlist.nlist()`) and `relist_nlist()` to flatten and pop `nlist` objects.
+  - `as_data_term()` and `as_data_term()` for `nlist` and `nlists` objects.
+  - `fill_all()` and `fill_na()` for `nlist` and `nlists` objects.
+  - `set_pars()` for `nlist` and `nlists` objects.
+  - `tidy.nlists()` for `nlists` objects.
+
+# nlist 0.1.1
+
+- Fix tests ready for term 0.2.0.
 
 # nlist 0.1.0
 
