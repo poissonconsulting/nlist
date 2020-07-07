@@ -20,10 +20,9 @@ to double the number of chains
 and halve the number of iterations.
 }
 \examples{
-split_chains.foobar <- function(x, ...) {
-  NotYetImplemented()
-  # replace with code to split_chains for an object of class 'foobar'
-}
+nlists <- nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7)))
+nchains(nlists)
+nchains(split_chains(nlists))
 }
 \seealso{
 Other MCMC manipulations: 

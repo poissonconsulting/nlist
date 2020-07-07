@@ -26,10 +26,10 @@ The assignment version \verb{pars<-()} forwards to \code{set_pars()}.
 object's parameters.
 }
 \examples{
-set_pars.foobar <- function(x, ...) {
-  NotYetImplemented()
-  # replace with code to set_pars for an object of class 'foobar'
-}
+nlists <- nlists(nlist(x = 2), nlist(x = 3))
+pars(nlists) <- "a"
+nlists
+set_pars(nlists, "zz")
 }
 \seealso{
 Other parameters: 
