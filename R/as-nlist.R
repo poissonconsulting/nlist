@@ -68,3 +68,9 @@ as_nlist.data.frame <- function(x, ...) as_nlist(as.list(x))
 
 #' @export
 as_nlist.nlist <- function(x, ...) x
+
+#' @describeIn as_nlist Coerce mcmc (with one  to nlist
+#' @export
+as_nlist.mcmc <- function(x, ...) {
+  as_nlist(as.list(x))
+}

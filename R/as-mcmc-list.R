@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' coda::as.mcmc.list(nlist(x = matrix(1:6, 2)))
-as.mcmc.list.nlist <- function(x, ...) coda::as.mcmc.list(as.mcmc(x))
+as.mcmc.list.nlist <- function(x, ...) coda::as.mcmc.list(as_mcmc(x))
 
 #' As mcmc Object
 #'
@@ -25,9 +25,9 @@ as.mcmc.list.nlist <- function(x, ...) coda::as.mcmc.list(as.mcmc(x))
 #' ))
 as.mcmc.list.nlists <- function(x, ...) {
   if (nchains(x) == 1L) {
-    return(coda::as.mcmc.list(as.mcmc(x)))
+    return(coda::as.mcmc.list(as_mcmc(x)))
   }
   x <- split_by_chains(x)
-  x <- lapply(x, FUN = coda::as.mcmc)
+  x <- lapply(x, FUN = as_mcmc)
   coda::as.mcmc.list(x)
 }

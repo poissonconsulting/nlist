@@ -6,6 +6,7 @@
 \alias{as_nlist.numeric}
 \alias{as_nlist.list}
 \alias{as_nlist.data.frame}
+\alias{as_nlist.mcmc}
 \alias{as.nlists}
 \title{Coerce to nlist}
 \usage{
@@ -18,6 +19,8 @@ as.nlist(x, ...)
 \method{as_nlist}{list}(x, ...)
 
 \method{as_nlist}{data.frame}(x, ...)
+
+\method{as_nlist}{mcmc}(x, ...)
 
 as.nlists(x, ...)
 }
@@ -39,6 +42,8 @@ Coerce an R object to an \code{\link[=nlist_object]{nlist_object()}}.
 \item \code{list}: Coerce list to nlist
 
 \item \code{data.frame}: Coerce data.frame to nlist
+
+\item \code{mcmc}: Coerce mcmc (with one  to nlist
 }}
 
 \examples{
