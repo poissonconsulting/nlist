@@ -4,7 +4,7 @@
 \alias{as_mcmc}
 \alias{as_mcmc.nlist}
 \alias{as_mcmc.nlists}
-\title{Coerce to nlist}
+\title{Coerce to mcmc Object}
 \usage{
 as_mcmc(x, ...)
 
@@ -18,21 +18,19 @@ as_mcmc(x, ...)
 \item{...}{Unused.}
 }
 \value{
-An nlist object.
+An mcmc object.
 }
 \description{
 Coerce an R object to an mcmc object.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{nlist}: nlist object to an mcmc object.
+\item \code{nlist}: Coerce an nlist object to an mcmc object.
 
-\item \code{nlists}: nlists object to an mcmc object.
+\item \code{nlists}: Coerce an nlists object to an mcmc object.
 }}
 
 \examples{
-as_nlist(list(x = 1:4))
-as_nlist(c(`a[2]` = 3, `a[1]` = 2))
 as_mcmc(nlist(x = matrix(1:6, 2)))
 as_mcmc(nlists(
   nlist(x = matrix(1:6, 2)),

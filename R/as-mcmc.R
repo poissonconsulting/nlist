@@ -1,18 +1,18 @@
-#' Coerce to nlist
+#' Coerce to mcmc Object
 #'
 #' Coerce an R object to an mcmc object.
 #'
 #' @inheritParams params
-#' @return An nlist object.
+#' @return An mcmc object.
 #' @export
-#' @examples
-#' as_nlist(list(x = 1:4))
-#' as_nlist(c(`a[2]` = 3, `a[1]` = 2))
 as_mcmc <- function(x, ...) {
   UseMethod("as_mcmc")
 }
 
-#' @describeIn as_mcmc nlist object to an mcmc object.
+#' @export
+as_mcmc.mcmc <- function(x, ...) x
+
+#' @describeIn as_mcmc Coerce an nlist object to an mcmc object.
 #' @export
 #' @examples
 #' as_mcmc(nlist(x = matrix(1:6, 2)))
@@ -30,7 +30,7 @@ as_mcmc.nlist <- function(x, ...) {
   coda::mcmc(x)
 }
 
-#' @describeIn as_mcmc nlists object to an mcmc object.
+#' @describeIn as_mcmc Coerce an nlists object to an mcmc object.
 #' @export
 #' @examples
 #' as_mcmc(nlists(

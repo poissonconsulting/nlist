@@ -1,33 +1,60 @@
-#' As mcmc.list Object
+#' Coerce to an mcmc.list Object
 #'
-#' Coerces an nlist object to a `coda::mcmc.list` object.
+#' Coerce an R object to an mcmc.list object.
+#'
 #' @inheritParams params
 #' @return An mcmc.list object.
-#' @seealso [nlist-object()] and [coda::mcmc()]
 #' @export
-#'
-#' @examples
-#' coda::as.mcmc.list(nlist(x = matrix(1:6, 2)))
-as.mcmc.list.nlist <- function(x, ...) coda::as.mcmc.list(as_mcmc(x))
+as_mcmc_list <- function(x, ...) {
+  UseMethod("as_mcmc_list")
+}
 
-#' As mcmc Object
-#'
-#' Coerces an nlists object to a `coda::mcmc` object.
-#' @inheritParams params
-#' @return An mcmc object.
-#' @seealso [nlists-object()] and [coda::mcmc()]
+#' @describeIn as_mcmc_list Coerce an mcmc object to an mcmc.list object.
 #' @export
+as_mcmc_list.mcmc <- function(x, ...) {
+  chk_unused(...)
+  coda::as.mcmc.list(as_mcmc(x))
+}
+
+#' @export
+as_mcmc_list.mcmc.list <- function(x, ...) x
+
+#' @describeIn as_mcmc_list Coerce an nlist object to an mcmc.list object.
+#' @export
+#' @examples
+#' as_mcmc_list(nlist(x = matrix(1:6, 2)))
+as_mcmc_list.nlist <- function(x, ...) {
+  chk_unused(...)
+  as_mcmc_list(as_mcmc(x))
+}
+
+#' @describeIn as_mcmc_list Coerce an nlists object to an mcmc.list object.
+#' @export
+#' @examples
 #'
 #' @examples
-#' coda::as.mcmc.list(nlists(
+#' as_mcmc_list(nlists(
 #'   nlist(x = matrix(1:6, 2)),
 #'   nlist(x = matrix(3:8, 2))
 #' ))
-as.mcmc.list.nlists <- function(x, ...) {
+as_mcmc_list.nlists <- function(x, ...) {
+  chk_unused(...)
   if (nchains(x) == 1L) {
-    return(coda::as.mcmc.list(as_mcmc(x)))
+    return(as_mcmc_list(as_mcmc(x)))
   }
   x <- split_by_chains(x)
   x <- lapply(x, FUN = as_mcmc)
   coda::as.mcmc.list(x)
+}
+
+#' @export
+as.mcmc.list.nlist <- function(x, ...) {
+  deprecate_soft("0.2.1", "as.mcmc.list()", "as_mcmc_list()", id = "as_mcmc_list")
+  as_mcmc_list(x, ...)
+}
+
+#' @export
+as.mcmc.list.nlists <- function(x, ...) {
+  deprecate_soft("0.2.1", "as.mcmc.list()", "as_mcmc_list()", id = "as_mcmc_list")
+  as_mcmc_list(x, ...)
 }
