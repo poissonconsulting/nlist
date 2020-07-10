@@ -35,6 +35,8 @@ Suggests:
     covr,
     testthat,
     rlang
+Remotes:
+    poissonconsulting/term
 RdMacros: 
     lifecycle
 Encoding: UTF-8
