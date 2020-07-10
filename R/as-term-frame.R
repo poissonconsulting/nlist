@@ -85,9 +85,5 @@ as_term_frame.nlists <- function(x, ...) {
     sample = 1:length(x),
     SIMPLIFY = FALSE
   )
-  x <- do.call("rbind", x)
-  # FIXME hack to deal with
-  # https://github.com/poissonconsulting/term/issues/40
-  x$term <- term::new_term(as.character(x$term))
-  x
+  do.call("rbind", x)
 }
