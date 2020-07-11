@@ -76,7 +76,7 @@ as_nlist.mcmc <- function(x, ...) {
   pars <- pars(x)
   x <- lapply(pars, function(p, x) subset(x, pars = p), x = x)
   names(x) <- pars
-  x <- lapply(x, function(x) as_numeric_dims(as.vector(x), pdims(x)[[1]]))
+  x <- lapply(x, function(x) set_dim(as.vector(x), pdims(x)[[1]]))
   as_nlist(x)
 }
 

@@ -37,12 +37,3 @@ set_class <- function(x, class) {
   class(x) <- class
   x
 }
-
-as_numeric_dims <- function(x, dims) {
-  n <- length(dims)
-  if(identical(n, 1L)) return(x)
-  if(identical(n, 2L)) return(matrix(x, nrow = dims[1], ncol = dims[2]))
-  array(x, dim = dims)
-}
-
-
