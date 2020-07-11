@@ -3,6 +3,14 @@ universals::pdims
 
 #' @inherit universals::pdims
 #' @export
+pdims.mcmc <- function(x, ...) pdims(as_term(x))
+
+#' @inherit universals::pdims
+#' @export
+pdims.mcmc.list <- function(x, ...) pdims(x[[1]])
+
+#' @inherit universals::pdims
+#' @export
 #'
 #' @examples
 #' pdims(nlist(x = 1:3))

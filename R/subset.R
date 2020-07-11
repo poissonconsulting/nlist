@@ -1,3 +1,95 @@
+#' Subset mcmc Object
+#'
+#' Subsets an mcmc object by its parameters and/or iterations.
+#'
+#' Future versions should allow it to be reordered by its parameters.
+#'
+#' @param x An mcmc object.
+#' @inheritParams params
+#' @return An mcmc object.
+#' @export
+#'
+#' @examples
+#' mcmc <- as_mcmc(nlist(beta = 1:2, theta = 1))
+#' subset(mcmc, pars = "beta")
+#' subset(mcmc, iters = c(1L,1L))
+subset.mcmc <- function(x, iters = NULL, pars = NULL,
+                        iterations = NULL, parameters = NULL, ...) {
+  if (!missing(iterations)) {
+    deprecate_soft("0.2.1", "subset(iterations = )", "subset(iters = )",
+                   id = "subset_iterations"
+    )
+    iters <- iterations
+  }
+  if (!missing(parameters)) {
+    deprecate_soft("0.2.1", "subset(parameters = )", "subset(pars = )",
+                   id = "subset_parameters"
+    )
+    pars <- parameters
+  }
+  if (!is.null(iters)) {
+    chk_whole_numeric(iters)
+    chk_range(iters, c(1L, niters(x)))
+  }
+  if (!is.null(pars)) {
+    chk_s3_class(pars, "character")
+    chk_not_any_na(pars)
+    chk_unique(pars)
+    chk_subset(pars, pars(x))
+  }
+  chk_unused(...)
+  
+  if (!is.null(pars)) x <- x[, pars_terms(as_term(x)) %in% pars, drop = FALSE]
+  if (!is.null(iters)) x <- x[iters, , drop = FALSE]
+  class(x) <- "mcmc"
+  x
+}
+
+#' Subset mcmc.list Object
+#'
+#' Subsets an mcmc.list object by its chains, parameters and/or iterations.
+#'
+#' Future versions should allow it to be reordered by its parameters.
+#'
+#' @param x An mcmc.list object.
+#' @inheritParams params
+#' @return An mcmc.list object.
+#' @export
+#'
+#' @examples
+#' mcmc.list <- as_mcmc_list(nlists(nlist(beta = 1:2, theta = 1), 
+#'                                  nlist(beta = 3:4, theta = -1)))
+#' subset(mcmc.list, pars = "beta")
+#' subset(mcmc.list, iters = c(1L,1L))
+subset.mcmc.list <- function(x, chains = NULL, iters = NULL, pars = NULL,
+                             iterations = NULL, parameters = NULL, ...) {
+  if (!missing(iterations)) {
+    deprecate_soft("0.2.1", "subset(iterations = )", "subset(iters = )",
+                   id = "subset_iterations"
+    )
+    iters <- iterations
+  }
+  if (!missing(parameters)) {
+    deprecate_soft("0.2.1", "subset(parameters = )", "subset(pars = )",
+                   id = "subset_parameters"
+    )
+    pars <- parameters
+  }
+  if (!is.null(chains)) {
+    chk_whole_numeric(chains)
+    chk_not_any_na(chains)
+    chk_range(chains, c(1L, nchains(x)))
+  }
+  chk_unused(...)
+  
+  if (!is.null(chains)) {
+    x <- x[chains]
+  }
+  x <- lapply(x, subset, iters = iters, pars = pars)
+  class(x) <- "mcmc.list"
+  x
+}
+
 #' Subset nlist Object
 #'
 #' Subsets an nlist object by its parameters.

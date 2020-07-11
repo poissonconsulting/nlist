@@ -1,8 +1,21 @@
+#' @importFrom term as_term
 #' @export
 term::as_term
 
+#' @importFrom term as.term
 #' @export
 term::as.term
+
+#' Coerce to a Term Vector
+#'
+#' @inheritParams params
+#' @export
+#' @examples
+#' as_term(as_mcmc(nlist(x = matrix(1:4, ncol = 2))))
+as_term.mcmc <- function(x, ...) {
+  chk_unused(...)
+  as_term(colnames(x))
+}
 
 #' Coerce to a Term Vector
 #'

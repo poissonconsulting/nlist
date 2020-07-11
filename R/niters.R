@@ -2,6 +2,14 @@
 universals::niters
 
 #' @inherit universals::niters
+#' @export
+niters.mcmc <- function(x, ...) nrow(x)
+
+#' @inherit universals::niters
+#' @export
+niters.mcmc.list <- function(x, ...) niters(x[[1]])
+
+#' @inherit universals::niters
 #' @details Always 1.
 #' @export
 #'

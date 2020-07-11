@@ -16,8 +16,8 @@ as_nlist <- function(x, ...) {
 #' @export
 as.nlist <- function(x, ...) {
   deprecate_soft("0.1.1",
-    what = "nlist::as.nlist()",
-    with = "nlist::as_nlist()"
+                 what = "nlist::as.nlist()",
+                 with = "nlist::as_nlist()"
   )
   UseMethod("as_nlist")
 }
@@ -30,7 +30,7 @@ as_nlist.numeric <- function(x, ...) {
   chk_not_any_na(names(x))
   chk_unique(names(x))
   chk_unused(...)
-
+  
   if (!length(x)) {
     return(nlist())
   }
@@ -52,7 +52,7 @@ as_nlist.numeric <- function(x, ...) {
 #' @export
 as_nlist.list <- function(x, ...) {
   chk_unused(...)
-
+  
   if (!length(x)) {
     return(nlist())
   }
@@ -69,8 +69,16 @@ as_nlist.data.frame <- function(x, ...) as_nlist(as.list(x))
 #' @export
 as_nlist.nlist <- function(x, ...) x
 
-#' @describeIn as_nlist Coerce mcmc (with one  to nlist
+#' @describeIn as_nlist Coerce mcmc (with one iteration) to nlist
 #' @export
 as_nlist.mcmc <- function(x, ...) {
-  as_nlist(as.list(x))
+  chk_unused(...)
+  if(!identical(nrow(x), 1L)) err("`x` must have one iteration.")
+  x <- complete_terms(x)
+  
+  pars <- pars(x)
+  x <- lapply(pars, function(p, x) subset(x, pars = p), x = x)
+  names(x) <- pars
+  x <- lapply(x, function(x) as_numeric_dims(as.vector(x), pdims(x)[[1]]))
+  as_nlist(x)
 }

@@ -43,7 +43,7 @@ Coerce an R object to an \code{\link[=nlist_object]{nlist_object()}}.
 
 \item \code{data.frame}: Coerce data.frame to nlist
 
-\item \code{mcmc}: Coerce mcmc (with one  to nlist
+\item \code{mcmc}: Coerce mcmc (with one iteration) to nlist
 }}
 
 \examples{

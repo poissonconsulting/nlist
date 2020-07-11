@@ -3,7 +3,22 @@ universals::set_pars
 
 #' @export
 universals::`pars<-`
-  
+
+#' @inherit universals::set_pars
+#' @export
+set_pars.mcmc <- function(x, value, ...) {
+  term <- set_pars(as_term(x), value, ...)
+  colnames(x) <- as.character(term)
+  x
+}
+
+#' @inherit universals::set_pars
+#' @export
+set_pars.mcmc.list <- function(x, value, ...) {
+  x <- lapply(x, set_pars, value = value, ...)
+  class(x) <- "mcmc.list"
+  x
+}
 #' Set Parameter Names
 #'
 #' @inherit universals::set_pars

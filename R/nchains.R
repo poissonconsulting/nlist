@@ -1,6 +1,14 @@
 #' @export
 universals::nchains
 
+#' @inherit universals::nchains
+#' @export
+nchains.mcmc <- function(x, ...) 1L
+
+#' @inherit universals::nchains
+#' @export
+nchains.mcmc.list <- function(x, ...) length(x)
+
 #' @details Always 1L.
 #'
 #' @inherit universals::nterms

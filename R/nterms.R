@@ -3,6 +3,14 @@ universals::nterms
 
 #' @inherit universals::nterms
 #' @export
+nterms.mcmc <- function(x, ...) ncol(x)
+
+#' @inherit universals::nterms
+#' @export
+nterms.mcmc.list <- function(x, ...) nterms(x[[1]])
+
+#' @inherit universals::nterms
+#' @export
 #'
 #' @examples
 #' nterms(nlist(x = 2))

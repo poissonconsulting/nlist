@@ -41,6 +41,14 @@ test_that("as_nlist.data.frame", {
   )
 })
 
+test_that("as_nlist.mcmc", {
+#  expect_identical(as_nlist(as_mcmc(nlist())), nlist())
+#  expect_identical(as_nlist(as_mcmc(nlist(x = numeric(0)))), nlist())
+  expect_identical(as_nlist(as_mcmc(nlist(x = 1))), nlist(x = 1))
+  expect_identical(as_nlist(as_mcmc(nlist(x = 1, y = 2))), nlist(x = 1, y = 2))
+  expect_identical(as_nlist(as_mcmc(nlist(x = matrix(1:12, nrow = 3)))), nlist(x = matrix(1:12, nrow = 3)))
+})
+
 test_that("as.nlist deprecated", {
   rlang::scoped_options(lifecycle_verbosity = "quiet")
   lifecycle::expect_deprecated(as.nlist(data.frame(x = 1)))

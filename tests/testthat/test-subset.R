@@ -1,3 +1,44 @@
+test_that("subset.mcmc", {
+  expect_equal(subset(as_mcmc(nlist(beta = 1:2, theta = 1))), 
+                      as_mcmc(nlist(beta = 1:2, theta = 1)))
+  expect_equal(subset(as_mcmc(nlist(beta = 1:2, theta = 1)), pars = "beta"), 
+               as_mcmc(nlist(beta = 1:2)))
+  
+  expect_equivalent(subset(as_mcmc(nlists(nlist(beta = 1:2), nlist(beta = 3:4))), iters = 1),
+                    as_mcmc(nlists(nlist(beta = 1:2))))
+
+  expect_equivalent(subset(as_mcmc(nlists(nlist(beta = 1:2), nlist(beta = 3:4))), iters = c(1,1)),
+                    as_mcmc(nlists(nlist(beta = 1:2), nlist(beta = 1:2))))
+  
+  skip("allow mcmc objects to be reodered by par")
+  expect_equal(subset(as_mcmc(nlist(beta = 1:2, theta = 1)), pars = c("theta", "beta")), 
+               as_mcmc(nlist(theta = 1:2, beta = 1))) 
+})
+
+test_that("subset.mcmc.list", {
+  
+  mcmc.list <- as_mcmc_list(nlists(nlist(beta = 1:2, theta = 1), 
+                                   nlist(beta = 3:4, theta = -1)))
+  expect_equal(subset(mcmc.list, pars = "beta"),
+                   as_mcmc_list(nlists(nlist(beta = 1:2), 
+                                       nlist(beta = 3:4))))
+  expect_equivalent(subset(mcmc.list, iters = c(1L,1L)),
+               as_mcmc_list(nlists(nlist(beta = 1:2, theta = 1), 
+                                   nlist(beta = 1:2, theta = 1))))
+  
+  expect_equal(subset(as_mcmc_list(nlist(beta = 1:2, theta = 1)), pars = "beta"), 
+                   as_mcmc_list(nlist(beta = 1:2)))
+  expect_equivalent(subset(as_mcmc_list(nlists(nlist(beta = 1:2), nlist(beta = 3:4))), iters = 1),
+                   as_mcmc_list(nlists(nlist(beta = 1:2))))
+  
+  nlists <- nlists(nlist(x = 1), nlist(x = 2))
+  nlists <- split_chains(nlists)
+  expect_equivalent(subset(as_mcmc_list(nlists), chains = 1:2),
+                    as_mcmc_list(nlists))
+  expect_equivalent(subset(as_mcmc_list(nlists), chains = 2),
+                    as_mcmc_list(subset(nlists, chains = 2)))
+})
+
 test_that("subset.nlist", {
   expect_identical(subset(nlist()), nlist())
   expect_identical(subset(nlist(x = 1)), nlist(x = 1))
