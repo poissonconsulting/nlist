@@ -41,8 +41,7 @@ subset.mcmc <- function(x, iters = NULL, pars = NULL,
   
   if (!is.null(pars)) x <- x[, pars_terms(as_term(x)) %in% pars, drop = FALSE]
   if (!is.null(iters)) x <- x[iters, , drop = FALSE]
-  class(x) <- "mcmc"
-  x
+  set_class(x, "mcmc")
 }
 
 #' Subset mcmc.list Object

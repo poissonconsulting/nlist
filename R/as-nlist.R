@@ -71,8 +71,11 @@ as_nlist.data.frame <- function(x, ...) as_nlist(as.list(x))
 as_nlist.mcmc <- function(x, ...) {
   chk_unused(...)
   if(!identical(nrow(x), 1L)) abort_chk("`x` must have one iteration.")
-  x <- complete_terms(x)
+  print("ttt")
+  print(x)
   
+  x <- complete_terms(x)
+
   pars <- pars(x)
   x <- lapply(pars, function(p, x) subset(x, pars = p), x = x)
   names(x) <- pars

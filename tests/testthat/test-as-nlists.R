@@ -1,3 +1,19 @@
+test_that("as_nlists.mcmc", {
+  expect_identical(
+    as_nlists(as_mcmc(nlist(x = 1))),
+    nlists(nlist(x = 1))
+  )
+
+  expect_identical(
+    as_nlists(as_mcmc(nlists(nlist(x = 1), nlist(x = 2)))),
+    nlists(nlist(x = 1), nlist(x = 2))
+  )
+  expect_identical(
+    as_nlists(as_mcmc(nlists(nlist(x = 1:2), nlist(x = 2:3)))),
+    nlists(nlist(x = 1:2), nlist(x = 2:3))
+  )
+})
+
 test_that("as_nlists.nlists", {
   expect_identical(as_nlists(nlists()), nlists())
 })

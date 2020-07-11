@@ -26,6 +26,10 @@ complete_terms.mcmc <- function(x, silent = FALSE, ...) {
   if (!silent && anyNA(colnames(x))) {
     wrn("terms with missing values have been dropped")
   }
+  print("here2")
+  print(x)
+  print(colnames(x))
+  print(
   x <- x[, !is.na(colnames(x)), drop = FALSE]
   
   colnames(x) <- as.character(as_term(colnames(x), repair = TRUE))

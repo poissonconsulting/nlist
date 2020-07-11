@@ -30,6 +30,17 @@ as_nlists.list <- function(x, ...) {
   x
 }
 
+#' @describeIn as_nlists Coerce mcmc to nlists
+#' @export
+as_nlists.mcmc <- function(x, ...) {
+  chk_unused(...)
+  x <- complete_terms(x)
+  x <- lapply(1:nrow(x), function(iter, x) subset(x, iter), x = x)
+  x <- lapply(x, as_nlist)
+  class(x) <- "nlists"
+  x
+}
+
 #' @describeIn as_nlists Coerce nlist to nlists
 #' @export
 as_nlists.nlist <- function(x, ...) {
