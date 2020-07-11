@@ -73,7 +73,7 @@ as_nlist.nlist <- function(x, ...) x
 #' @export
 as_nlist.mcmc <- function(x, ...) {
   chk_unused(...)
-  if(!identical(nrow(x), 1L)) err("`x` must have one iteration.")
+  if(!identical(nrow(x), 1L)) abort_chk("`x` must have one iteration.")
   x <- complete_terms(x)
   
   pars <- pars(x)
@@ -82,3 +82,18 @@ as_nlist.mcmc <- function(x, ...) {
   x <- lapply(x, function(x) as_numeric_dims(as.vector(x), pdims(x)[[1]]))
   as_nlist(x)
 }
+
+#' @describeIn as_nlist Coerce mcmc (with one iteration) to nlist
+#' @export
+as_nlist.mcmc.list <- function(x, ...) {
+  chk_unused(...)
+  if(!identical(nrow(x), 1L)) abort_chk("`x` must have one iteration.")
+  x <- complete_terms(x)
+  
+  pars <- pars(x)
+  x <- lapply(pars, function(p, x) subset(x, pars = p), x = x)
+  names(x) <- pars
+  x <- lapply(x, function(x) as_numeric_dims(as.vector(x), pdims(x)[[1]]))
+  as_nlist(x)
+}
+

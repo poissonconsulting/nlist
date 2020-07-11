@@ -10,7 +10,7 @@ c.nlist <- function(...) {
   }
   class(x) <- "nlist"
   if (anyDuplicated(names(x))) {
-    err("nlist objects must have distinctly named numeric elements in order to be concatenated.", tidy = FALSE)
+    abort_chk("nlist objects must have distinctly named numeric elements in order to be concatenated.", tidy = FALSE)
   }
   x
 }
@@ -18,7 +18,7 @@ c.nlist <- function(...) {
 .c_nlists <- function(x) {
   chk_all(x, chk_nlists, x_name = "...")
   if (!vld_all_identical(lapply(x, nchains))) {
-    err("All elements of ... must have the same number of chains.")
+    abort_chk("All elements of ... must have the same number of chains.")
   }
 
   if (!length(x)) {

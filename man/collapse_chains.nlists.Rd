@@ -23,6 +23,7 @@ collapse_chains(nlist(x = 2))
 \seealso{
 Other MCMC manipulations: 
 \code{\link[universals]{bind_chains}()},
+\code{\link[universals]{bind_iterations}()},
 \code{\link[universals]{estimates}()},
 \code{\link[universals]{split_chains}()}
 }

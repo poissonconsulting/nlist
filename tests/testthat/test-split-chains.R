@@ -8,7 +8,8 @@ test_that("split_chains nlists", {
 
 test_that("split_chains nlists error", {
   nlists <- nlists(nlist(x = matrix(1:6, 2)))
-  expect_error(split_chains(nlists), "^`x` must have at least two iterations[.]$")
+  expect_error(split_chains(nlists), "^`x` must have at least two iterations[.]$",
+               class = "chk_error")
 })
 
 test_that("split_chains nlists extra iters", {

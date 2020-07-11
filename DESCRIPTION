@@ -36,6 +36,7 @@ Suggests:
     testthat,
     rlang
 Remotes:
+    poissonconsulting/universals,
     poissonconsulting/term
 RdMacros: 
     lifecycle

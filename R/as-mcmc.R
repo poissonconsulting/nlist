@@ -12,6 +12,10 @@ as_mcmc <- function(x, ...) {
 #' @export
 as_mcmc.mcmc <- function(x, ...) x
 
+as_mcmc.mcmc.list <- function(x, ...) {
+  
+}
+
 #' @describeIn as_mcmc Coerce an nlist object to an mcmc object.
 #' @export
 #' @examples

@@ -11,6 +11,7 @@ test_that("c.nlist", {
   expect_error(
     c(nlist(x = 1), nlist(x = 1)),
     "^nlist objects must have distinctly named numeric elements in order to be concatenated[.]$"
+    , class = "chk_error"
   )
 })
 
@@ -43,7 +44,8 @@ test_that("c.nlists with different nchains", {
   attr(nlists2, "nchains") <- 2L
   expect_error(
     c(nlists, nlists2),
-    "^All elements of ... must have the same number of chains[.]"
+    "^All elements of ... must have the same number of chains[.]",
+    class = "chk_error"
   )
 })
 
