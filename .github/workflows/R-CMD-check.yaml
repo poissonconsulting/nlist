@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - master
+      - as_nlists.mcmcs
   pull_request:
     branches:
       - master

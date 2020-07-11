@@ -12,8 +12,13 @@ as_mcmc <- function(x, ...) {
 #' @export
 as_mcmc.mcmc <- function(x, ...) x
 
+#' @describeIn as_mcmc Coerce an mcmc.list object to an mcmc object.
+#' @export
+#' @examples
+#' as_mcmc(as_mcmc_list(nlists(nlist(x = 2), nlist(x = 3))))
 as_mcmc.mcmc.list <- function(x, ...) {
-  
+  x <- collapse_chains(x)
+  x[[1]]
 }
 
 #' @describeIn as_mcmc Coerce an nlist object to an mcmc object.
