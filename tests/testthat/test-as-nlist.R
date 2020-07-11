@@ -20,6 +20,26 @@ test_that("as_nlist.list", {
   expect_error(as_nlist(list(1)), "^`x` must be named[.]$", class = "chk_error")
 })
 
+test_that("as_nlist.mcmc", {
+  #  expect_identical(as_nlist(as_mcmc(nlist())), nlist())
+  #  expect_identical(as_nlist(as_mcmc(nlist(x = numeric(0)))), nlist())
+  expect_identical(as_nlist(as_mcmc(nlist(x = 1))), nlist(x = 1))
+  expect_identical(as_nlist(as_mcmc(nlist(x = 1, y = 2))), nlist(x = 1, y = 2))
+  expect_identical(as_nlist(as_mcmc(nlist(x = matrix(1:12, nrow = 3)))), nlist(x = matrix(1:12, nrow = 3)))
+})
+
+test_that("as_nlist.mcmc.list", {
+  #  expect_identical(as_nlist(as_mcmc(nlist())), nlist())
+  #  expect_identical(as_nlist(as_mcmc(nlist(x = numeric(0)))), nlist())
+  expect_identical(as_nlist(as_mcmc_list(nlist(x = 1))), nlist(x = 1))
+  expect_identical(as_nlist(as_mcmc_list(nlist(x = 1, y = 2))), nlist(x = 1, y = 2))
+  expect_identical(as_nlist(as_mcmc_list(nlist(x = matrix(1:12, nrow = 3)))), nlist(x = matrix(1:12, nrow = 3)))
+  expect_identical(as_nlist(as_mcmc_list(nlists(nlist(x = matrix(1:12, nrow = 3))))), 
+                   nlist(x = matrix(1:12, nrow = 3)))
+  expect_error(as_nlist(as_mcmc_list(nlists(nlist(x = 1), nlist(x = 2)))),
+               "`x` must have one iteration.", class = "chk_error")
+})
+
 test_that("as_nlist.nlist", {
   expect_identical(as_nlist(nlist()), nlist())
   expect_identical(as_nlist(as_nlist(list(x = 1))), as_nlist(list(x = 1)))
@@ -39,14 +59,6 @@ test_that("as_nlist.data.frame", {
       dte = c(11324, 11323), fac = 2:1
     ), class = "nlist")
   )
-})
-
-test_that("as_nlist.mcmc", {
-#  expect_identical(as_nlist(as_mcmc(nlist())), nlist())
-#  expect_identical(as_nlist(as_mcmc(nlist(x = numeric(0)))), nlist())
-  expect_identical(as_nlist(as_mcmc(nlist(x = 1))), nlist(x = 1))
-  expect_identical(as_nlist(as_mcmc(nlist(x = 1, y = 2))), nlist(x = 1, y = 2))
-  expect_identical(as_nlist(as_mcmc(nlist(x = matrix(1:12, nrow = 3)))), nlist(x = matrix(1:12, nrow = 3)))
 })
 
 test_that("as.nlist deprecated", {
