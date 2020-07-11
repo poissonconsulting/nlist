@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Collapse Chains — collapse_chains.nlist • nlist</title>
+<title>Complete Terms — complete_terms.mcmc • nlist</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Collapse Chains — collapse_chains.nlist" />
-<meta property="og:description" content="Collapses an MCMC object's chains into a single chain." />
+<meta property="og:title" content="Complete Terms — complete_terms.mcmc" />
+<meta property="og:description" content="Adds any absent elements to an mcmc object." />
 
 
 
@@ -111,50 +111,52 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Collapse Chains</h1>
-    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/collapse-chains.R'><code>R/collapse-chains.R</code></a></small>
-    <div class="hidden name"><code>collapse_chains.nlist.Rd</code></div>
+    <h1>Complete Terms</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/complete-terms.R'><code>R/complete-terms.R</code></a></small>
+    <div class="hidden name"><code>complete_terms.mcmc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Collapses an MCMC object's chains into a single chain.</p>
+    <p>Adds any absent elements to an mcmc object.</p>
     </div>
 
-    <pre class="usage"><span class='co'># S3 method for nlist</span>
-<span class='fu'><a href='https://rdrr.io/pkg/universals/man/collapse_chains.html'>collapse_chains</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='co'># S3 method for mcmc</span>
+<span class='fu'><a href='https://rdrr.io/pkg/term/man/complete_terms.html'>complete_terms</a></span>(<span class='kw'>x</span>, silent = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>An object.</p></td>
+      <td><p>An mcmc object.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>A flag specifying whether to suppress warning messages.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other arguments passed to methods.</p></td>
+      <td><p>Unused</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The modified object with one chain.</p>
+    <p>The repaired and complete mcmc object.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>As nlist objects can only have 1 chain the object is unchanged.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>Other MCMC manipulations: 
-<code><a href='https://rdrr.io/pkg/universals/man/bind_chains.html'>bind_chains</a>()</code>,
-<code><a href='https://rdrr.io/pkg/universals/man/bind_iterations.html'>bind_iterations</a>()</code>,
-<code><a href='https://rdrr.io/pkg/universals/man/estimates.html'>estimates</a>()</code>,
-<code><a href='https://rdrr.io/pkg/universals/man/split_chains.html'>split_chains</a>()</code></p></div>
+    <p>The terms are repaired before being completed.
+Missing or invalid or inconsistent terms are dropped with a warning.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/universals/man/collapse_chains.html'>collapse_chains</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(x = <span class='fl'>2</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] 2
-#&gt; 
-#&gt; an nlist object with 1 numeric element</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>mcmc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_mcmc.html'>as_mcmc</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(beta = <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span>, nrow = <span class='fl'>2</span>)))
+<span class='kw'>mcmc</span> <span class='op'>&lt;-</span> <span class='kw'>mcmc</span>[, <span class='op'>-</span><span class='fl'>4</span>, drop = <span class='fl'>FALSE</span>]
+<span class='fu'><a href='https://rdrr.io/pkg/term/man/complete_terms.html'>complete_terms</a></span>(<span class='kw'>mcmc</span>)</div><div class='output co'>#&gt; Markov Chain Monte Carlo (MCMC) output:
+#&gt; Start = 1 
+#&gt; End = 1 
+#&gt; Thinning interval = 1 
+#&gt;      beta[1,1] beta[2,1] beta[1,2] beta[2,2]
+#&gt; [1,]         1         2         3        NA</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

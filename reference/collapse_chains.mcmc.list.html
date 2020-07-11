@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Collapse Chains — collapse_chains.nlist • nlist</title>
+<title>Collapse Chains — collapse_chains.mcmc.list • nlist</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Collapse Chains — collapse_chains.nlist" />
+<meta property="og:title" content="Collapse Chains — collapse_chains.mcmc.list" />
 <meta property="og:description" content="Collapses an MCMC object's chains into a single chain." />
 
 
@@ -113,14 +113,14 @@
     <div class="page-header">
     <h1>Collapse Chains</h1>
     <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/nlist/blob/master/R/collapse-chains.R'><code>R/collapse-chains.R</code></a></small>
-    <div class="hidden name"><code>collapse_chains.nlist.Rd</code></div>
+    <div class="hidden name"><code>collapse_chains.mcmc.list.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>Collapses an MCMC object's chains into a single chain.</p>
     </div>
 
-    <pre class="usage"><span class='co'># S3 method for nlist</span>
+    <pre class="usage"><span class='co'># S3 method for mcmc.list</span>
 <span class='fu'><a href='https://rdrr.io/pkg/universals/man/collapse_chains.html'>collapse_chains</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -139,9 +139,6 @@
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>The modified object with one chain.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>As nlist objects can only have 1 chain the object is unchanged.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other MCMC manipulations: 
@@ -150,11 +147,6 @@
 <code><a href='https://rdrr.io/pkg/universals/man/estimates.html'>estimates</a>()</code>,
 <code><a href='https://rdrr.io/pkg/universals/man/split_chains.html'>split_chains</a>()</code></p></div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/universals/man/collapse_chains.html'>collapse_chains</a></span>(<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist</a></span>(x = <span class='fl'>2</span>))</div><div class='output co'>#&gt; $x
-#&gt; [1] 2
-#&gt; 
-#&gt; an nlist object with 1 numeric element</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
