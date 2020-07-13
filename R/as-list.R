@@ -1,7 +1,7 @@
 #' @export
-universals::as_list
+extras::as_list
 
-#' @inherit universals::as_list
+#' @inherit extras::as_list
 #' @export
 #' @examples
 #' as_list(nlists(nlist(x = 1)))

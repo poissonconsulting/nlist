@@ -37,6 +37,7 @@ Suggests:
     rlang
 Remotes:
     poissonconsulting/universals,
+    poissonconsulting/extras,
     poissonconsulting/term
 RdMacros: 
     lifecycle

@@ -44,7 +44,7 @@ below to see their documentation.
 \describe{
   \item{coda}{\code{\link[coda:mcmc]{as.mcmc}}, \code{\link[coda]{thin}}}
 
-  \item{extras}{\code{\link[extras]{fill_all}}, \code{\link[extras]{fill_na}}, \code{\link[extras]{lower}}, \code{\link[extras]{pvalue}}, \code{\link[extras]{svalue}}, \code{\link[extras]{upper}}, \code{\link[extras]{zscore}}}
+  \item{extras}{\code{\link[extras]{as_list}}, \code{\link[extras]{fill_all}}, \code{\link[extras]{fill_na}}, \code{\link[extras]{lower}}, \code{\link[extras]{pvalue}}, \code{\link[extras]{svalue}}, \code{\link[extras]{upper}}, \code{\link[extras]{zscore}}}
 
   \item{generics}{\code{\link[generics]{tidy}}}
 
@@ -52,6 +52,6 @@ below to see their documentation.
 
   \item{term}{\code{\link[term:as_term]{as.term}}, \code{\link[term]{as_term}}, \code{\link[term]{complete_terms}}}
 
-  \item{universals}{\code{\link[universals]{as_list}}, \code{\link[universals]{bind_iterations}}, \code{\link[universals]{collapse_chains}}, \code{\link[universals]{estimates}}, \code{\link[universals]{nchains}}, \code{\link[universals]{niters}}, \code{\link[universals]{npdims}}, \code{\link[universals]{nsims}}, \code{\link[universals]{nterms}}, \code{\link[universals]{pars}}, \code{\link[universals:set_pars]{pars<-}}, \code{\link[universals]{pdims}}, \code{\link[universals]{set_pars}}, \code{\link[universals]{split_chains}}}
+  \item{universals}{\code{\link[universals]{bind_iterations}}, \code{\link[universals]{collapse_chains}}, \code{\link[universals]{estimates}}, \code{\link[universals]{nchains}}, \code{\link[universals]{niters}}, \code{\link[universals]{npdims}}, \code{\link[universals]{nsims}}, \code{\link[universals]{nterms}}, \code{\link[universals]{pars}}, \code{\link[universals:set_pars]{pars<-}}, \code{\link[universals]{pdims}}, \code{\link[universals]{set_pars}}, \code{\link[universals]{split_chains}}}
 }}
 
