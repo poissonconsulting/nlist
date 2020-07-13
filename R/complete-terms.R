@@ -26,16 +26,15 @@ complete_terms.mcmc <- function(x, silent = FALSE, ...) {
   if (!silent && anyNA(colnames(x))) {
     wrn("terms with missing values have been dropped")
   }
-  x <- x[, !is.na(colnames(x)), drop = FALSE]
-  
+
+  x <- as.matrix(x)
+  x <- x[,!is.na(colnames(x)), drop = FALSE]
   colnames(x) <- as.character(as_term(colnames(x), repair = TRUE))
   if (anyNA(!silent && anyNA(colnames(x)))) wrn("invalid terms have been dropped")
   x <- x[, !is.na(colnames(x)), drop = FALSE]
-  
   if (!ncol(x)) {
-    return(x)
+    return(coda::as.mcmc(x))
   }
-  
   consistent <- consistent_term(as_term(colnames(x)))
   if (anyNA(!silent && any(!consistent))) {
     wrn("inconsistent terms have been dropped")
@@ -43,12 +42,10 @@ complete_terms.mcmc <- function(x, silent = FALSE, ...) {
   x <- x[, consistent, drop = FALSE]
   
   if (!ncol(x)) {
-    return(x)
+    return(coda::as.mcmc(x))
   }
-  
   pdims <- pdims(as_term(colnames(x)))
   absent <- setdiff(term(!!!pdims), as_term(colnames(x)))
-  
   if (length(absent)) {
     na <- if (is.integer(x[[1]])) NA_integer_ else NA_real_
     matrix <- matrix(na, ncol = length(absent), nrow = nrow(x))
@@ -56,7 +53,7 @@ complete_terms.mcmc <- function(x, silent = FALSE, ...) {
     mcpar <- attr(x, "mcpar")
     x <- cbind(x, matrix)
     attr(x, "mcpar") <- mcpar
-    class(x) <- "mcmc"
   }
-  x[, order(as_term(colnames(x))), drop = FALSE]
+  x <- x[, order(as_term(colnames(x))), drop = FALSE]
+  coda::as.mcmc(x)
 }
