@@ -8,12 +8,13 @@ pars.mcmc <- function(x, scalar = NULL, terms = FALSE, ...) {
   if (!is.null(scalar)) chk_flag(scalar)
   chk_flag(terms)
   chk_unused(...)
-  
-  if (terms) {
+
+  if (!missing(terms)) {
     deprecate_soft("0.2.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
   }
   x <- as_term(x)
-  pars(x, scalar = scalar, terms = terms)
+  if(terms) return(pars_terms(x, scalar = scalar))
+  pars(x, scalar = scalar)
 }
 
 #' @inherit universals::pars
@@ -68,10 +69,11 @@ pars.nlists <- function(x, scalar = NULL, terms = FALSE, ...) {
   }
   x <- x[[1]]
   if (terms) {
+    x <- as_term(x)
     if (!is.null(scalar)) {
-      return(pars_terms(as_term(x)))
+      x <- x[scalar_term(x) == scalar]
     }
-    return(pars_terms(as_term(x), scalar = scalar))
+    return(pars_terms(x))
   }
   pars(as_term(x), scalar = scalar)
 }

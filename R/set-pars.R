@@ -31,6 +31,8 @@ set_pars.mcmc.list <- function(x, value, ...) {
 #' set_pars(nlist, c("z", "c1"))
 set_pars.nlist <- function(x, value, ...) {
   chk_pars(value)
+  chk_not_any_na(value)
+  chk_unique(value)
   chk_unused(...)
 
   if (!identical(npars(x), length(value))) {

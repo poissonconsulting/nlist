@@ -1,6 +1,9 @@
 #' @export
 `[.nlist` <- function(x, i, ...) {
-  as_nlist(NextMethod())
+  x <- NextMethod()
+  x <- as_nlist(x)
+  chk_nlist(x)
+  x
 }
 
 #' @export

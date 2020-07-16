@@ -20,7 +20,10 @@ chk_nlist <- function(x, x_name = NULL) {
   if (is.null(x_name)) x_name <- deparse_backtick_chk(substitute(x))
   chk_s3_class(x, "nlist", x_name = x_name)
   chk_named(x, x_name = x_name)
-  chk_pars(names(x), x_name = backtick_chk(p0("names(", unbacktick_chk(x_name), ")")))
+  x_name_names <- backtick_chk(p0("names(", unbacktick_chk(x_name), ")"))
+  chk_pars(names(x), x_name = x_name_names)
+  chk_not_any_na(names(x), x_name = x_name_names) 
+  chk_unique(names(x), x_name = x_name_names) 
   chk_all(x, chk_numeric, x_name = x_name)
 }
 

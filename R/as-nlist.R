@@ -52,7 +52,6 @@ as_nlist.numeric <- function(x, ...) {
 #' @export
 as_nlist.list <- function(x, ...) {
   chk_unused(...)
-  
   if (!length(x)) {
     return(nlist())
   }

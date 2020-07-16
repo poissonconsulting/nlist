@@ -11,7 +11,7 @@
 #' try(vld_nlist(list(x = 1)))
 vld_nlist <- function(x) {
   vld_s3_class(x, "nlist") && vld_named(x) && vld_pars(names(x)) &&
-    vld_all(x, vld_numeric)
+    vld_not_any_na(names(x)) && vld_unique(names(x)) && vld_all(x, vld_numeric)
 }
 
 #' @describeIn vld_nlist Validate nlists Object
