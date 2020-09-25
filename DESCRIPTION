@@ -22,7 +22,7 @@ Depends:
 Imports:
     stats,
     chk,
-    term (>= 0.2.0.9001),
+    term,
     coda,
     abind,
     purrr,
@@ -35,10 +35,6 @@ Suggests:
     covr,
     testthat,
     rlang
-Remotes:
-    poissonconsulting/universals,
-    poissonconsulting/extras,
-    poissonconsulting/term
 RdMacros: 
     lifecycle
 Encoding: UTF-8
