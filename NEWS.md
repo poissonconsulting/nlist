@@ -1,3 +1,15 @@
+# nlist 0.3.0
+
+- Not export as_list.nlists
+- Move as_list() to extras.
+- Exported `as_list.default()` from universals for nlist objects and added `as_list.nlists()`.
+- Added `collapse_chains()` for mcmc and mcmc.list objects.
+- Transferred lots of functions for mcmc and mcmc.list objects from mcmcr.
+- Soft-deprecated `as.mcmc.list()` for `as_mcmc_list()`.
+- Soft-deprecated `as.mcmc()` for `as_mcmc()`.
+- Export pars<- function.
+
+
 # nlist 0.2.0.9000
 
 - Same as previous version.
