@@ -79,12 +79,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -117,29 +111,29 @@
     </div>
 
     <div class="ref-description">
-    <p>Coerce an R object to an <code><a href='https://rdrr.io/pkg/nlist/man/nlist.html'>nlist_object()</a></code>.</p>
+    <p>Coerce an R object to an <code><a href='nlist.html'>nlist_object()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as_nlist</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+    <pre class="usage"><span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as.nlist</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as.nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for numeric</span>
-<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as_nlist</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for list</span>
-<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as_nlist</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for data.frame</span>
-<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as_nlist</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for mcmc</span>
-<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as_nlist</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for mcmc.list</span>
-<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as_nlist</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+<span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as.nlists</a></span>(<span class='kw'>x</span>, <span class='kw'>...</span>)</pre>
+<span class='fu'>as.nlists</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -169,10 +163,12 @@
 </ul>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as_nlist</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(x = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span>))</div><div class='output co'>#&gt; $x
+    <pre class="examples"><div class='input'><span class='fu'>as_nlist</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $x
 #&gt; [1] 1 2 3 4
 #&gt; 
-#&gt; an nlist object with 1 numeric element</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/nlist/man/as_nlist.html'>as_nlist</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(`a[2]` = <span class='fl'>3</span>, `a[1]` = <span class='fl'>2</span>))</div><div class='output co'>#&gt; $a
+#&gt; an nlist object with 1 numeric element</div><div class='input'><span class='fu'>as_nlist</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>`a[2]` <span class='op'>=</span> <span class='fl'>3</span>, `a[1]` <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $a
 #&gt; [1] 2 3
 #&gt; 
 #&gt; an nlist object with 1 numeric element</div></pre>
@@ -191,7 +187,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
