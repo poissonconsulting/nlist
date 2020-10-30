@@ -4,12 +4,14 @@
 \alias{tidy.nlists}
 \title{Turn an object into a tidy tibble}
 \usage{
-\method{tidy}{nlists}(x, ...)
+\method{tidy}{nlists}(x, simplified = FALSE, ...)
 }
 \arguments{
-\item{x}{An object to be converted into a tidy \code{\link[tibble:tibble]{tibble::tibble()}}.}
+\item{x}{An object.}
 
-\item{...}{Additional arguments to tidying method.}
+\item{simplified}{A flag specifying whether to drop sd and zscore columns.}
+
+\item{...}{Unused.}
 }
 \value{
 A \code{\link[tibble:tibble]{tibble::tibble()}} with information about model components.

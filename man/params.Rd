@@ -34,6 +34,8 @@ for each term element.}
 \item{parameters}{A character vector (or NULL) of the parameters to subset by.}
 
 \item{iterations}{An integer vector (or NULL) of the iterations to subset by.}
+
+\item{simplified}{A flag specifying whether to drop sd and zscore columns.}
 }
 \description{
 Parameter Descriptions
