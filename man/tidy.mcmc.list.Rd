@@ -4,12 +4,12 @@
 \alias{tidy.mcmc.list}
 \title{Turn an object into a tidy tibble}
 \usage{
-\method{tidy}{mcmc.list}(x, simplified = FALSE, ...)
+\method{tidy}{mcmc.list}(x, simplify = FALSE, ...)
 }
 \arguments{
 \item{x}{An object.}
 
-\item{simplified}{A flag specifying whether to drop sd and zscore columns.}
+\item{simplify}{A flag specifying whether to drop sd and zscore columns.}
 
 \item{...}{Unused.}
 }

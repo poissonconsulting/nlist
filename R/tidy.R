@@ -4,18 +4,18 @@ generics::tidy
 #' @inheritParams params
 #' @inherit generics::tidy
 #' @export
-tidy.mcmc <- function(x, simplified = FALSE, ...) {
+tidy.mcmc <- function(x, simplify = FALSE, ...) {
   chk_unused(...)
-  tidy(as_nlists(x), simplified = simplified)
+  tidy(as_nlists(x), simplify = simplify)
 }
 
 #' @inheritParams params
 #' @inherit generics::tidy
 #'
 #' @export
-tidy.mcmc.list <- function(x, simplified = FALSE, ...) {
+tidy.mcmc.list <- function(x, simplify = FALSE, ...) {
   chk_unused(...)
-  tidy(as_nlists(x), simplified = simplified)
+  tidy(as_nlists(x), simplify = simplify)
 }
 
 #' @inheritParams params
@@ -27,12 +27,12 @@ tidy.mcmc.list <- function(x, simplified = FALSE, ...) {
 #'   nlist(x = 1, y = 4:6),
 #'   nlist(x = 3, y = 7:9)
 #' ))
-tidy.nlists <- function(x, simplified = FALSE, ...) {
-  chk_flag(simplified)
+tidy.nlists <- function(x, simplify = FALSE, ...) {
+  chk_flag(simplify)
   chk_unused(...)
   
-  if(!simplified) {
-    lifecycle::deprecate_soft("0.3.0", "tidy(simplified = 'must be TRUE')")
+  if(!simplify) {
+    lifecycle::deprecate_soft("0.3.0", "tidy(simplify = 'must be TRUE')")
   }
   if (!length(x) || !length(x[[1]])) {
     term <- term(x = 0)
@@ -43,7 +43,7 @@ tidy.nlists <- function(x, simplified = FALSE, ...) {
     upper <- numeric(0)
     svalue <- numeric(0)
     
-    if(simplified) {
+    if(simplify) {
       return(tibble::tibble(
         term = term, estimate = estimate,
         lower = lower, upper = upper, svalue = svalue
@@ -65,7 +65,7 @@ tidy.nlists <- function(x, simplified = FALSE, ...) {
     upper <- unname(unlist(estimates(x, upper)))
     svalue <- unname(unlist(estimates(x, svalue)))
   }
-  if(simplified) {
+  if(simplify) {
     return(  tibble::tibble(
       term = term, estimate = estimate,
       lower = lower,

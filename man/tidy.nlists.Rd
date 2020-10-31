@@ -4,12 +4,12 @@
 \alias{tidy.nlists}
 \title{Turn an object into a tidy tibble}
 \usage{
-\method{tidy}{nlists}(x, simplified = FALSE, ...)
+\method{tidy}{nlists}(x, simplify = FALSE, ...)
 }
 \arguments{
 \item{x}{An object.}
 
-\item{simplified}{A flag specifying whether to drop sd and zscore columns.}
+\item{simplify}{A flag specifying whether to drop sd and zscore columns.}
 
 \item{...}{Unused.}
 }

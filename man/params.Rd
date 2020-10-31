@@ -35,7 +35,7 @@ for each term element.}
 
 \item{iterations}{An integer vector (or NULL) of the iterations to subset by.}
 
-\item{simplified}{A flag specifying whether to drop sd and zscore columns.}
+\item{simplify}{A flag specifying whether to drop sd and zscore columns.}
 }
 \description{
 Parameter Descriptions
