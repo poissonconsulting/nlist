@@ -1,3 +1,8 @@
+# nlist 0.3.0.9002
+
+- Rename simplified argument or tidy() to simplify.
+
+
 # nlist 0.3.0.9001
 
 - Added simplified = FALSE argument to tidy() and soft deprecated for simplified = TRUE so that not return sd and zscore.
