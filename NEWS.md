@@ -1,3 +1,8 @@
+# nlist 0.3.0.9003
+
+- Added as_nlists.mcmc.list().
+
+
 # nlist 0.3.0.9002
 
 - Rename simplified argument or tidy() to simplify.
