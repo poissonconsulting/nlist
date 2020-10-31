@@ -4,6 +4,7 @@
 \alias{as_nlists}
 \alias{as_nlists.list}
 \alias{as_nlists.mcmc}
+\alias{as_nlists.mcmc.list}
 \alias{as_nlists.nlist}
 \title{Coerce to nlists}
 \usage{
@@ -12,6 +13,8 @@ as_nlists(x, ...)
 \method{as_nlists}{list}(x, ...)
 
 \method{as_nlists}{mcmc}(x, ...)
+
+\method{as_nlists}{mcmc.list}(x, ...)
 
 \method{as_nlists}{nlist}(x, ...)
 }
@@ -31,6 +34,8 @@ Coerce an R object to an \code{\link[=nlists_object]{nlists_object()}}.
 \item \code{list}: Coerce list to nlists
 
 \item \code{mcmc}: Coerce mcmc to nlists
+
+\item \code{mcmc.list}: Coerce mcmc.list to nlists
 
 \item \code{nlist}: Coerce nlist to nlists
 }}

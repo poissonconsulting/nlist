@@ -41,6 +41,17 @@ as_nlists.mcmc <- function(x, ...) {
   x
 }
 
+#' @describeIn as_nlists Coerce mcmc.list to nlists
+#' @export
+as_nlists.mcmc.list <- function(x, ...) {
+  nchains <- nchains(x)
+  x <- as_mcmc(x)
+  x <- as_nlists(x)
+  if(nchains != 1L)
+    attr(x, "nchains") <- nchains
+  x
+}
+
 #' @describeIn as_nlists Coerce nlist to nlists
 #' @export
 as_nlists.nlist <- function(x, ...) {

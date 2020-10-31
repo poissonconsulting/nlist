@@ -104,3 +104,12 @@ test_that("tidy.nlists", {
   )))
 })
 
+test_that("tidy.mcmc", {
+  nlists <- nlists(nlist(x = 1:3, y = matrix(1)))
+  expect_identical(tidy(as_mcmc(nlists), simplify = TRUE), tidy(nlists, simplify = TRUE))
+})
+
+test_that("tidy.mcmc.list", {
+  nlists <- nlists(nlist(x = 1:3, y = matrix(1)))
+  expect_identical(tidy(as_mcmc_list(nlists), simplify = TRUE), tidy(nlists, simplify = TRUE))
+})
