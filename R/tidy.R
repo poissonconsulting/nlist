@@ -32,7 +32,7 @@ tidy.nlists <- function(x, simplify = FALSE, ...) {
   chk_unused(...)
   
   if(!simplify) {
-    lifecycle::deprecate_soft("0.3.0", "tidy(simplify = 'must be TRUE')")
+    lifecycle::deprecate_soft("0.3.1", "tidy(simplify = 'must be TRUE')")
   }
   if (!length(x) || !length(x[[1]])) {
     term <- term(x = 0)
