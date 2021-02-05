@@ -12,11 +12,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Lists of Numeric Atomic Objects">
-<meta property="og:description" content="Create and manipulate numeric list (nlist) objects.
-    An nlist is an S3 list of uniquely named numeric objects.  
-    An numeric object is an integer or double vector, matrix or array.  
-    An nlists object is a S3 class list of nlist objects with the
-    same names, dimensionalities and typeofs.  Numeric list objects are of
+<meta property="og:description" content="Create and manipulate numeric list (nlist)
+    objects.  An nlist is an S3 list of uniquely named numeric objects.
+    An numeric object is an integer or double vector, matrix or array.  An
+    nlists object is a S3 class list of nlist objects with the same
+    names, dimensionalities and typeofs.  Numeric list objects are of
     interest because they are the raw data inputs for analytic engines
     such as JAGS, STAN and TMB.  Numeric lists objects, which are
     useful for storing multiple realizations of of simulated data sets,
@@ -55,7 +55,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/poissonconsulting/nlist/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -83,12 +83,12 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the latest release from <a href="https://cran.r-project.org">CRAN</a></p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"nlist"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"nlist"</span><span class="op">)</span></code></pre></div>
 <p>To install the developmental version from <a href="https://github.com/poissonconsulting/nlist">GitHub</a></p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/nlist"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/nlist"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
@@ -98,14 +98,14 @@
 <a href="#numeric" class="anchor"></a><code>numeric</code>
 </h3>
 <p>An numeric object is an integer or double vector, matrix or array.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/nlist">nlist</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/nlist">nlist</a></span><span class="op">)</span>
 <span class="fu"><a href="reference/is_numeric.html">is_numeric</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">#&gt; [1] FALSE</span>
 <span class="fu"><a href="reference/is_numeric.html">is_numeric</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span>
 <span class="fu"><a href="reference/is_numeric.html">is_numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [1] TRUE</span></pre></div>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 </div>
 <div id="nlist-1" class="section level3">
 <h3 class="hasAnchor">
@@ -113,8 +113,8 @@
 </h3>
 <p>An nlist is an S3 class list of uniquely named numeric objects.</p>
 <p>It is straightforward to create an new nlist object.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/nlist">nlist</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/nlist">nlist</a></span><span class="op">)</span>
 
 <span class="va">nlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="va">nlist</span>
@@ -127,7 +127,7 @@
 <span class="co">#&gt; [2,]    2    5    8</span>
 <span class="co">#&gt; [3,]    3    6    9</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; an nlist object with 2 numeric elements</span></pre></div>
+<span class="co">#&gt; an nlist object with 2 numeric elements</span></code></pre></div>
 </div>
 <div id="nlists" class="section level3">
 <h3 class="hasAnchor">
@@ -135,8 +135,8 @@
 </h3>
 <p>An nlists object is a S3 class list of nlist objects with the same names, dimensionalities and typeofs.</p>
 <p>The nchains attribute is used to keep track of the number of chains.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="va">nlists</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/nlists.html">nlists</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nlists</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/nlists.html">nlists</a></span><span class="op">(</span>
   <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
   <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">2</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
   <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">10</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">22</span><span class="op">:</span><span class="fl">30</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
@@ -153,7 +153,7 @@
 <span class="co">#&gt; [2,]  2.5  5.5  8.5</span>
 <span class="co">#&gt; [3,]  3.5  6.5  9.5</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; an nlists object of 4 nlist objects each with 2 numeric elements</span></pre></div>
+<span class="co">#&gt; an nlists object of 4 nlist objects each with 2 numeric elements</span></code></pre></div>
 </div>
 <div id="coercion" class="section level3">
 <h3 class="hasAnchor">
@@ -162,8 +162,8 @@
 <h4 class="hasAnchor">
 <a href="#nlist-2" class="anchor"></a>nlist</h4>
 <p>A data.frame can be coerced to an nlist object</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
   lgl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">NA</span><span class="op">)</span>,
   dte <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"2001-01-02"</span>, <span class="st">"2001-01-01"</span><span class="op">)</span><span class="op">)</span>,
   fac <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"b"</span>, <span class="st">"a"</span><span class="op">)</span><span class="op">)</span>
@@ -179,10 +179,10 @@
 <span class="co">#&gt; $fac</span>
 <span class="co">#&gt; [1] 2 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; an nlist object with 3 numeric elements</span></pre></div>
+<span class="co">#&gt; an nlist object with 3 numeric elements</span></code></pre></div>
 <p>And an <code>nlist</code> objects can be converted to an <code>mcmc</code> or <code>term_frame</code> objects (and converted back again)</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/coda/man/mcmc.html">as.mcmc</a></span><span class="op">(</span><span class="va">nlist</span><span class="op">)</span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/as_mcmc.html">as_mcmc</a></span><span class="op">(</span><span class="va">nlist</span><span class="op">)</span>
 <span class="co">#&gt; Markov Chain Monte Carlo (MCMC) output:</span>
 <span class="co">#&gt; Start = 1 </span>
 <span class="co">#&gt; End = 1 </span>
@@ -200,14 +200,14 @@
 <span class="co">#&gt; 7  y[3,2]     6</span>
 <span class="co">#&gt; 8  y[1,3]     7</span>
 <span class="co">#&gt; 9  y[2,3]     8</span>
-<span class="co">#&gt; 10 y[3,3]     9</span></pre></div>
+<span class="co">#&gt; 10 y[3,3]     9</span></code></pre></div>
 </div>
 <div id="nlists-1" class="section level4">
 <h4 class="hasAnchor">
 <a href="#nlists-1" class="anchor"></a>nlists</h4>
 <p>The <code><a href="https://poissonconsulting.github.io/universals/reference/estimates.html">estimates()</a></code> function can be used to aggregate an <code>nlists</code> object to an <code>nlist</code> object.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/estimates.html">estimates</a></span><span class="op">(</span><span class="va">nlists</span>, fun <span class="op">=</span> <span class="va">mean</span><span class="op">)</span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/estimates.html">estimates</a></span><span class="op">(</span><span class="va">nlists</span>, fun <span class="op">=</span> <span class="va">mean</span><span class="op">)</span>
 <span class="co">#&gt; $x</span>
 <span class="co">#&gt; [1] -22.75</span>
 <span class="co">#&gt; </span>
@@ -217,26 +217,26 @@
 <span class="co">#&gt; [2,] 6.25 7.75 9.25</span>
 <span class="co">#&gt; [3,] 6.75 8.25 9.75</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; an nlist object with 2 numeric elements</span></pre></div>
-<p>while the <code><a href="https://rdrr.io/pkg/generics/man/tidy.html">tidy()</a></code> function treats the values as if they are MCMC samples and summarises the terms as a tidy tibble.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/pkg/generics/man/tidy.html">tidy</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 10 x 7</span>
-<span class="co">#&gt;    term   estimate    sd zscore  lower upper svalue</span>
-<span class="co">#&gt;    &lt;term&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 x          -0.5  51.8 -0.440 -92.6   9.32  0    </span>
-<span class="co">#&gt;  2 y[1,1]      1.5  11.0  0.524  -1.77 20.5   0.737</span>
-<span class="co">#&gt;  3 y[2,1]      2.5  11.5  0.545  -2.62 21.5   0.737</span>
-<span class="co">#&gt;  4 y[3,1]      3.5  12.0  0.561  -3.47 22.5   0.737</span>
-<span class="co">#&gt;  5 y[1,2]      4.5  12.7  0.573  -4.32 23.5   0.737</span>
-<span class="co">#&gt;  6 y[2,2]      5.5  13.3  0.582  -5.17 24.5   0.737</span>
-<span class="co">#&gt;  7 y[3,2]      6.5  14.0  0.588  -6.02 25.5   0.737</span>
-<span class="co">#&gt;  8 y[1,3]      7.5  14.8  0.592  -6.87 26.5   0.737</span>
-<span class="co">#&gt;  9 y[2,3]      8.5  15.5  0.595  -7.72 27.5   0.737</span>
-<span class="co">#&gt; 10 y[3,3]      9.5  16.3  0.597  -8.57 28.5   0.737</span></pre></div>
+<span class="co">#&gt; an nlist object with 2 numeric elements</span></code></pre></div>
+<p>while the <code><a href="https://generics.r-lib.org/reference/tidy.html">tidy()</a></code> function treats the values as if they are MCMC samples and summarises the terms as a tidy tibble.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">nlists</span>, simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 10 x 5</span>
+<span class="co">#&gt;    term   estimate  lower upper svalue</span>
+<span class="co">#&gt;    &lt;term&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 x          -0.5 -92.6   9.32  0    </span>
+<span class="co">#&gt;  2 y[1,1]      1.5  -1.77 20.5   0.737</span>
+<span class="co">#&gt;  3 y[2,1]      2.5  -2.62 21.5   0.737</span>
+<span class="co">#&gt;  4 y[3,1]      3.5  -3.47 22.5   0.737</span>
+<span class="co">#&gt;  5 y[1,2]      4.5  -4.32 23.5   0.737</span>
+<span class="co">#&gt;  6 y[2,2]      5.5  -5.17 24.5   0.737</span>
+<span class="co">#&gt;  7 y[3,2]      6.5  -6.02 25.5   0.737</span>
+<span class="co">#&gt;  8 y[1,3]      7.5  -6.87 26.5   0.737</span>
+<span class="co">#&gt;  9 y[2,3]      8.5  -7.72 27.5   0.737</span>
+<span class="co">#&gt; 10 y[3,3]      9.5  -8.57 28.5   0.737</span></code></pre></div>
 <p>An nlists object can be converted to an mcmc.list object and a term_frame.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="fu">coda</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/coda/man/mcmc.list.html">as.mcmc.list</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/as_mcmc_list.html">as_mcmc_list</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span>
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; Markov Chain Monte Carlo (MCMC) output:</span>
 <span class="co">#&gt; Start = 1 </span>
@@ -291,10 +291,10 @@
 <span class="co">#&gt; 37 y[3,2]      4    -7</span>
 <span class="co">#&gt; 38 y[1,3]      4    -8</span>
 <span class="co">#&gt; 39 y[2,3]      4    -9</span>
-<span class="co">#&gt; 40 y[3,3]      4   -10</span></pre></div>
+<span class="co">#&gt; 40 y[3,3]      4   -10</span></code></pre></div>
 <p>An nlists object can have its chains split or collapsed.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="va">nlists</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/split_chains.html">split_chains</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nlists</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/split_chains.html">split_chains</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -350,7 +350,7 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
-<li><a href="https://github.com/poissonconsulting/nlist/actions"><img src="https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://github.com/poissonconsulting/nlist/actions"><img src="https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://codecov.io/gh/poissonconsulting/nlist?branch=master"><img src="https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
 <li><a href="https://cran.r-project.org/package=nlist"><img src="https://www.r-pkg.org/badges/version/nlist" alt="CRAN status"></a></li>
