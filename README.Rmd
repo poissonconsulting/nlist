@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![R build status](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
 [![Codecov test coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
@@ -105,7 +105,7 @@ as_nlist(data)
 
 And an `nlist` objects can be converted to an `mcmc` or `term_frame` objects (and converted back again)
 ```{r}
-as.mcmc(nlist)
+as_mcmc(nlist)
 as_term_frame(nlist)
 ```
 
@@ -119,13 +119,13 @@ estimates(nlists, fun = mean)
 while the `tidy()` function treats the values as if they are MCMC samples
 and summarises the terms as a tidy tibble.
 ```{r}
-tidy(nlists)
+tidy(nlists, simplify = TRUE)
 ```
 
 
 An nlists object can be converted to an mcmc.list object and a term_frame.
 ```{r}
-coda::as.mcmc.list(nlists)
+as_mcmc_list(nlists)
 as_term_frame(nlists)
 ```
 

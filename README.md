@@ -7,8 +7,7 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![R build
-status](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
 [![License:
@@ -144,7 +143,7 @@ And an `nlist` objects can be converted to an `mcmc` or `term_frame`
 objects (and converted back again)
 
 ``` r
-as.mcmc(nlist)
+as_mcmc(nlist)
 #> Markov Chain Monte Carlo (MCMC) output:
 #> Start = 1 
 #> End = 1 
@@ -188,27 +187,27 @@ while the `tidy()` function treats the values as if they are MCMC
 samples and summarises the terms as a tidy tibble.
 
 ``` r
-tidy(nlists)
-#> # A tibble: 10 x 7
-#>    term   estimate    sd zscore  lower upper svalue
-#>    <term>    <dbl> <dbl>  <dbl>  <dbl> <dbl>  <dbl>
-#>  1 x          -0.5  51.8 -0.440 -92.6   9.32  0    
-#>  2 y[1,1]      1.5  11.0  0.524  -1.77 20.5   0.737
-#>  3 y[2,1]      2.5  11.5  0.545  -2.62 21.5   0.737
-#>  4 y[3,1]      3.5  12.0  0.561  -3.47 22.5   0.737
-#>  5 y[1,2]      4.5  12.7  0.573  -4.32 23.5   0.737
-#>  6 y[2,2]      5.5  13.3  0.582  -5.17 24.5   0.737
-#>  7 y[3,2]      6.5  14.0  0.588  -6.02 25.5   0.737
-#>  8 y[1,3]      7.5  14.8  0.592  -6.87 26.5   0.737
-#>  9 y[2,3]      8.5  15.5  0.595  -7.72 27.5   0.737
-#> 10 y[3,3]      9.5  16.3  0.597  -8.57 28.5   0.737
+tidy(nlists, simplify = TRUE)
+#> # A tibble: 10 x 5
+#>    term   estimate  lower upper svalue
+#>    <term>    <dbl>  <dbl> <dbl>  <dbl>
+#>  1 x          -0.5 -92.6   9.32  0    
+#>  2 y[1,1]      1.5  -1.77 20.5   0.737
+#>  3 y[2,1]      2.5  -2.62 21.5   0.737
+#>  4 y[3,1]      3.5  -3.47 22.5   0.737
+#>  5 y[1,2]      4.5  -4.32 23.5   0.737
+#>  6 y[2,2]      5.5  -5.17 24.5   0.737
+#>  7 y[3,2]      6.5  -6.02 25.5   0.737
+#>  8 y[1,3]      7.5  -6.87 26.5   0.737
+#>  9 y[2,3]      8.5  -7.72 27.5   0.737
+#> 10 y[3,3]      9.5  -8.57 28.5   0.737
 ```
 
 An nlists object can be converted to an mcmc.list object and a
 term\_frame.
 
 ``` r
-coda::as.mcmc.list(nlists)
+as_mcmc_list(nlists)
 #> [[1]]
 #> Markov Chain Monte Carlo (MCMC) output:
 #> Start = 1 
