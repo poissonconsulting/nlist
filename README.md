@@ -54,11 +54,9 @@ An numeric object is an integer or double vector, matrix or array.
 
 ``` r
 library(nlist)
-is_numeric(TRUE)
-#> [1] FALSE
-is_numeric(1L)
+is.numeric(1L)
 #> [1] TRUE
-is_numeric(matrix(1:3))
+is.numeric(matrix(1:3))
 #> [1] TRUE
 ```
 

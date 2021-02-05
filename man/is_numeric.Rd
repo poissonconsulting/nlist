@@ -19,7 +19,7 @@ is_nlists(x)
 A flag indicating whether x is a numeric object or inherits from S3 class nlist or nlists.
 }
 \description{
-Test whether x is a numeric object,
+Ask whether x is a numeric object,
 \code{\link[=nlist_object]{nlist_object()}} or \code{\link[=nlists_object]{nlists_object()}}.
 }
 \section{Functions}{
