@@ -26,7 +26,7 @@ tidy.mcmc.list <- function(x, simplify = FALSE, ...) {
 #' tidy(nlists(
 #'   nlist(x = 1, y = 4:6),
 #'   nlist(x = 3, y = 7:9)
-#' ))
+#' ), simplify = TRUE)
 tidy.nlists <- function(x, simplify = FALSE, ...) {
   chk_flag(simplify)
   chk_unused(...)
