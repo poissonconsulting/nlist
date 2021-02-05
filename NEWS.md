@@ -1,27 +1,7 @@
 # nlist 0.3.1
 
-- Deprecated simplify = FALSE argument of tidy().
-
-
-# nlist 0.3.0.9003
-
-- Added as_nlists.mcmc.list().
-
-
-# nlist 0.3.0.9002
-
-- Rename simplified argument or tidy() to simplify.
-
-
-# nlist 0.3.0.9001
-
-- Added simplified = FALSE argument to tidy() and soft deprecated for simplified = TRUE so that not return sd and zscore.
-
-
-# nlist 0.3.0.9000
-
-- Same as previous version.
-
+- Added `as_nlists.mcmc.list()`.
+- Added `simplify = FALSE` argument to `tidy()` and soft deprecated for `simplify = TRUE` so that replace `sd`, `zscore` and `pvalue` columns with `svalue`.
 
 # nlist 0.3.0
 
