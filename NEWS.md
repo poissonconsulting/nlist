@@ -1,3 +1,8 @@
+# nlist 0.3.1
+
+- Deprecated simplify = FALSE argument of tidy().
+
+
 # nlist 0.3.0.9003
 
 - Added as_nlists.mcmc.list().
