@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/nlist/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/nlist?branch=master)
@@ -17,16 +17,16 @@ status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/
 ![CRAN downloads](http://cranlogs.r-pkg.org/badges/nlist)
 <!-- badges: end -->
 
-nlist is an R package to create and manipulate numeric list (nlist)
+`nlist` is an R package to create and manipulate numeric list (`nlist`)
 objects.
 
-An nlist is an S3 class list of uniquely named numeric objects. An
-numeric object is an integer or double vector, matrix or array. nlist
+An `nlist` is an S3 class list of uniquely named numeric objects. An
+numeric object is an integer or double vector, matrix or array. `nlist`
 objects are the raw data inputs for analytic engines such as JAGS, STAN
 and TMB.
 
-An nlists object is a S3 class list of nlist objects with the same
-names, dimensionalities and typeofs. nlists objects are useful for
+An `nlists` object is a S3 class list of `nlist` objects with the same
+names, dimensionalities and typeofs. `nlists` objects are useful for
 storing multiple realizations of simulated data sets. They can be
 converted to `coda::mcmc` and `coda::mcmc.list` objects.
 
@@ -62,9 +62,9 @@ is.numeric(matrix(1:3))
 
 ### `nlist`
 
-An nlist is an S3 class list of uniquely named numeric objects.
+An `nlist` is an S3 class list of uniquely named numeric objects.
 
-It is straightforward to create an new nlist object.
+It is straightforward to create an new `nlist` object.
 
 ``` r
 library(nlist)
@@ -85,7 +85,7 @@ nlist
 
 ### `nlists`
 
-An nlists object is a S3 class list of nlist objects with the same
+An `nlists` object is a S3 class list of `nlist` objects with the same
 names, dimensionalities and typeofs.
 
 The nchains attribute is used to keep track of the number of chains.
@@ -115,7 +115,7 @@ print(nlists)
 
 #### nlist
 
-A data.frame can be coerced to an nlist object
+A data.frame can be coerced to an `nlist` object
 
 ``` r
 data <- data.frame(
@@ -201,8 +201,8 @@ tidy(nlists, simplify = TRUE)
 #> 10 y[3,3]      9.5  -8.57 28.5   0.737
 ```
 
-An nlists object can be converted to an mcmc.list object and a
-term\_frame.
+An `nlists` object can be converted to an `mcmc.list` object and a
+`term_frame`.
 
 ``` r
 as_mcmc_list(nlists)
@@ -263,10 +263,20 @@ as_term_frame(nlists)
 #> 40 y[3,3]      4   -10
 ```
 
-An nlists object can have its chains split or collapsed.
+An `nlists` object can have its chains split or collapsed.
 
 ``` r
-nlists <- split_chains(nlists)
+split_chains(nlists)
+#> $x
+#> [1] -0.5
+#> 
+#> $y
+#>      [,1] [,2] [,3]
+#> [1,]  1.5  4.5  7.5
+#> [2,]  2.5  5.5  8.5
+#> [3,]  3.5  6.5  9.5
+#> 
+#> an nlists object with 2 chains of 2 nlist objects each with 2 numeric elements
 ```
 
 ## Contribution
