@@ -7,11 +7,11 @@
 \method{aggregate}{nlists}(x, fun = mean, ..., by_chain = FALSE)
 }
 \arguments{
-\item{x}{An nlist object.}
+\item{x}{An object.}
 
 \item{fun}{A function that given a numeric vector returns a numeric scalar.}
 
-\item{...}{Additional arguments passed to fun.}
+\item{...}{Unused.}
 
 \item{by_chain}{A flag specifying whether to aggregate by chains.}
 }
@@ -26,3 +26,8 @@ with \code{nchains} \code{\link[=nlist_object]{nlist_object()}}s.
 \examples{
 aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
 }
+\seealso{
+Other aggregate: 
+\code{\link{aggregate.nlist}()}
+}
+\concept{aggregate}

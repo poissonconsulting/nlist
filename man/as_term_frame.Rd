@@ -20,3 +20,12 @@ term vector called and a numeric column called
 value and in the case of an nlists object an integer
 vector called samples. It includes the original nlist or nlists object.
 }
+\seealso{
+Other coerce term: 
+\code{\link{as_term.mcmc}()},
+\code{\link{as_term.nlists}()},
+\code{\link{as_term.nlist}()},
+\code{\link{as_term_frame.nlists}()},
+\code{\link{as_term_frame.nlist}()}
+}
+\concept{coerce term}

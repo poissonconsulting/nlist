@@ -30,3 +30,6 @@ nlists(nlist())
 nlists(nlist(x = 1))
 nlists(nlist(x = 1), nlist(x = -3))
 }
+\seealso{
+\code{\link[=nlist]{nlist()}}
+}

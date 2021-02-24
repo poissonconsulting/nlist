@@ -10,6 +10,7 @@
 #' @param ... Uniquely named numeric objects.
 #' @return An nlist object.
 #' @aliases nlist-object nlist_object
+#' @seealso [nlists()]
 #' @export
 #'
 #' @examples

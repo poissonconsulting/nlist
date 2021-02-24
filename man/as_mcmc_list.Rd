@@ -43,3 +43,8 @@ as_mcmc_list(nlists(
   nlist(x = matrix(3:8, 2))
 ))
 }
+\seealso{
+Other mcmc: 
+\code{\link{as_mcmc}()}
+}
+\concept{mcmc}

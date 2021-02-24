@@ -9,10 +9,8 @@ reference:
 - title: Coerce
   desc: Coerce objects
   contents:
-  - '`as.mcmc.list.nlist`'
-  - '`as.mcmc.list.nlists`'
-  - '`as.mcmc.nlist`'
-  - '`as.mcmc.nlists`'
+  - '`as_mcmc`'
+  - '`as_mcmc_list`'
   - '`as_nlist`'
   - '`as_nlists`'
   - '`as_term.nlist`'

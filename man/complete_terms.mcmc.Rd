@@ -11,7 +11,7 @@
 
 \item{silent}{A flag specifying whether to suppress warning messages.}
 
-\item{...}{Unused}
+\item{...}{Unused.}
 }
 \value{
 The repaired and complete mcmc object.
