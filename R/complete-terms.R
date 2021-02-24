@@ -9,9 +9,8 @@ term::complete_terms
 #' The terms are repaired before being completed.
 #' Missing or invalid or inconsistent terms are dropped with a warning.
 #'
+#' @inheritParams params
 #' @param x An mcmc object.
-#' @param silent A flag specifying whether to suppress warning messages.
-#' @param ... Unused
 #' @return The repaired and complete mcmc object.
 #' @export
 #'

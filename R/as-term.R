@@ -9,6 +9,7 @@ term::as.term
 #' Coerce to a Term Vector
 #'
 #' @inheritParams params
+#' @family coerce term
 #' @export
 #' @examples
 #' as_term(as_mcmc(nlist(x = matrix(1:4, ncol = 2))))
@@ -20,6 +21,7 @@ as_term.mcmc <- function(x, ...) {
 #' Coerce to a Term Vector
 #'
 #' @inheritParams params
+#' @family coerce term
 #' @export
 #' @examples
 #' as_term(nlist(x = matrix(1:4, ncol = 2)))
@@ -36,6 +38,7 @@ as_term.nlist <- function(x, ...) {
 #' Coerce to a Term Vector
 #'
 #' @inheritParams params
+#' @family coerce term
 #' @export
 #' @examples
 #' as_term(nlists(nlist(x = matrix(1:4, ncol = 2))))

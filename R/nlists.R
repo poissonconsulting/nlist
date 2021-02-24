@@ -11,6 +11,7 @@
 #' @param ... nlist objects.
 #' @return An nlists object.
 #' @aliases nlists-object nlists_object
+#' @seealso [nlist()]
 #' @export
 #'
 #' @examples

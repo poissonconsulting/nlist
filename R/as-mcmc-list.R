@@ -4,6 +4,7 @@
 #'
 #' @inheritParams params
 #' @return An mcmc.list object.
+#' @family mcmc
 #' @export
 as_mcmc_list <- function(x, ...) {
   UseMethod("as_mcmc_list")

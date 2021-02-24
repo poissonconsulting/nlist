@@ -2,13 +2,13 @@
 #'
 #' Aggregates an [nlist_object()] into a named list of numeric scalars.
 #'
+#' @inheritParams params
 #' @param x An nlist object.
 #' @param ... Additional arguments passed to fun.
-#' @inheritParams params
 #'
 #' @return An named list of numeric scalars
+#' @family aggregate
 #' @export
-#'
 #' @examples
 #' aggregate(nlist(x = 1:9))
 #' aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), fun = function(x) x[1])
@@ -26,9 +26,9 @@ aggregate.nlist <- function(x, fun = mean, ...) {
 #' or by_chain = TRUE an [nlists_object()]
 #' with `nchains` [nlist_object()]s.
 #'
-#' @inheritParams aggregate.nlist
-#' @param by_chain A flag specifying whether to aggregate by chains.
+#' @inheritParams params
 #' @return An nlist object if `by_chain = FALSE` otherwise an nlists object.
+#' @family aggregate
 #' @export
 #'
 #' @examples

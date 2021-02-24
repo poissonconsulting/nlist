@@ -4,6 +4,7 @@
 #'
 #' @inheritParams params
 #' @return An nlist object.
+#' @family coerce
 #' @export
 #' @examples
 #' as_nlist(list(x = 1:4))
