@@ -30,13 +30,13 @@ complete_terms.mcmc <- function(x, silent = FALSE, ...) {
   x <- as.matrix(x)
   x <- x[,!is.na(colnames(x)), drop = FALSE]
   colnames(x) <- as.character(as_term(colnames(x), repair = TRUE))
-  if (anyNA(!silent && anyNA(colnames(x)))) wrn("invalid terms have been dropped")
+  if (!silent && anyNA(colnames(x))) wrn("invalid terms have been dropped")
   x <- x[, !is.na(colnames(x)), drop = FALSE]
   if (!ncol(x)) {
     return(coda::as.mcmc(x))
   }
   consistent <- consistent_term(as_term(colnames(x)))
-  if (anyNA(!silent && any(!consistent))) {
+  if (!silent && any(!consistent)) {
     wrn("inconsistent terms have been dropped")
   }
   x <- x[, consistent, drop = FALSE]

@@ -18,3 +18,9 @@ test_that("complete_terms 2 iterations", {
   mcmc2 <- mcmc2[, -4]
   expect_identical(complete_terms(mcmc2), mcmc)
 })
+
+test_that("complete_terms mcmc 1 digit", {
+  mcmc <- as_mcmc(nlists(nlist(x = 1), nlist(x = 2)))
+  colnames(mcmc) <- "1"
+  expect_warning(complete_terms(mcmc))
+})
