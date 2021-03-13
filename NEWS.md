@@ -1,11 +1,6 @@
 # nlist 0.3.1.9001
 
-- Fix complete_terms.mcmc() so now returns warning is silent = FALSE and invalid or inconsistent terms are dropped.
-
-
-# nlist 0.3.1.9000
-
-- Internal only.
+- Fixed `complete_terms.mcmc()` so now returns warning when `silent = FALSE` and invalid or inconsistent terms are dropped.
 
 # nlist 0.3.1
 
