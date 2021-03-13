@@ -18,6 +18,8 @@
 #' @param parameters A character vector (or NULL) of the parameters to subset by.
 #' @param iterations An integer vector (or NULL) of the iterations to subset by.
 #' @param simplify A flag specifying whether to drop sd and zscore columns.
+#' @param silent A flag specifying whether to suppress warning messages.
+#' @param by_chain A flag specifying whether to aggregate by chains.
 #' @keywords internal
 #' @name params
 NULL

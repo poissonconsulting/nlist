@@ -4,6 +4,8 @@
 #'
 #' @inheritParams params
 #' @return An mcmc object.
+#' @seealso [coda::as.mcmc()]
+#' @family mcmc
 #' @export
 as_mcmc <- function(x, ...) {
   UseMethod("as_mcmc")

@@ -43,3 +43,8 @@ Coerce an R object to an \code{\link[=nlists_object]{nlists_object()}}.
 \examples{
 as_nlists(list(nlist(x = c(1, 5)), nlist(x = c(2, 3)), nlist(x = c(3, 2))))
 }
+\seealso{
+Other coerce: 
+\code{\link{as_nlist}()}
+}
+\concept{coerce}

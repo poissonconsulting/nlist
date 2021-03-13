@@ -23,3 +23,8 @@ Aggregates an \code{\link[=nlist_object]{nlist_object()}} into a named list of n
 aggregate(nlist(x = 1:9))
 aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), fun = function(x) x[1])
 }
+\seealso{
+Other aggregate: 
+\code{\link{aggregate.nlists}()}
+}
+\concept{aggregate}

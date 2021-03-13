@@ -24,3 +24,12 @@ as_term_frame(nlists(
   nlist(x = 3, y = 1:3)
 ))
 }
+\seealso{
+Other coerce term: 
+\code{\link{as_term.mcmc}()},
+\code{\link{as_term.nlists}()},
+\code{\link{as_term.nlist}()},
+\code{\link{as_term_frame.nlist}()},
+\code{\link{as_term_frame}()}
+}
+\concept{coerce term}

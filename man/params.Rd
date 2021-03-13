@@ -36,6 +36,10 @@ for each term element.}
 \item{iterations}{An integer vector (or NULL) of the iterations to subset by.}
 
 \item{simplify}{A flag specifying whether to drop sd and zscore columns.}
+
+\item{silent}{A flag specifying whether to suppress warning messages.}
+
+\item{by_chain}{A flag specifying whether to aggregate by chains.}
 }
 \description{
 Parameter Descriptions

@@ -24,9 +24,8 @@ As mcmc objects can only have 1 chain the object is unchanged.
 collapse_chains(as_mcmc(nlist(x = 2)))
 }
 \seealso{
-Other MCMC manipulations: 
-\code{\link[universals]{bind_chains}()},
-\code{\link[universals]{bind_iterations}()},
-\code{\link[universals]{estimates}()},
-\code{\link[universals]{split_chains}()}
+Other collapse: 
+\code{\link{collapse_chains.nlists}()},
+\code{\link{collapse_chains.nlist}()}
 }
+\concept{collapse}

@@ -7,6 +7,7 @@
 #'
 #' @inheritParams params
 #' @return An term_frame object.
+#' @family coerce term
 #' @export
 as_term_frame <- function(x, ...) {
   UseMethod("as_term_frame")
@@ -21,6 +22,7 @@ as_term_frame <- function(x, ...) {
 #' @param x An nlist object.
 #' @inheritParams params
 #' @return A data.frame.
+#' @family coerce term
 #' @examples
 #' as_term_frame(nlist(x = 1, y = 4:6))
 as_term_frame.nlist <- function(x, ...) {
@@ -67,6 +69,7 @@ as_term_frame_nlist_impl <- function(x, sample = NULL) {
 #' @param x An nlists object.
 #' @inheritParams params
 #' @return A data.frame.
+#' @family coerce term
 #' @examples
 #' as_term_frame(nlists(
 #'   nlist(x = 1, y = 4:6),

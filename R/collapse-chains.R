@@ -4,6 +4,7 @@ universals::collapse_chains
 #' @inherit universals::collapse_chains
 #' @details
 #' As mcmc objects can only have 1 chain the object is unchanged.
+#' @family collapse
 #' @export
 #'
 #' @examples
@@ -19,6 +20,7 @@ collapse_chains.mcmc.list <- function(x, ...) {
 #' @inherit universals::collapse_chains
 #' @details
 #' As nlist objects can only have 1 chain the object is unchanged.
+#' @family collapse
 #' @export
 #'
 #' @examples
@@ -28,6 +30,7 @@ collapse_chains.nlist <- function(x, ...) {
 }
 
 #' @inherit universals::collapse_chains
+#' @family collapse
 #' @export
 #'
 #' @examples
