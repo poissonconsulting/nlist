@@ -70,6 +70,8 @@ reference:
   - '`split_chains.nlists`'
   - '`subset.nlist`'
   - '`subset.nlists`'
+  - '`subset.mcmc`'
+  - '`subset.mcmc.list`'
   - '`set_pars.mcmc`'
   - '`set_pars.mcmc.list`'
   - '`tidy.nlists`'
