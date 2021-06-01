@@ -27,6 +27,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -39,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9001</span>
       </span>
     </div>
 
@@ -73,48 +75,48 @@
   <div class="contents col-md-9">
 <div id="nlist" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#nlist" class="anchor"></a>nlist</h1></div>
+<a href="#nlist" class="anchor" aria-hidden="true"></a>nlist</h1></div>
 <!-- badges: start -->
 
 <p><code>nlist</code> is an R package to create and manipulate numeric list (<code>nlist</code>) objects.</p>
 <p>An <code>nlist</code> is an S3 class list of uniquely named numeric objects. An numeric object is an integer or double vector, matrix or array. <code>nlist</code> objects are the raw data inputs for analytic engines such as JAGS, STAN and TMB.</p>
-<p>An <code>nlists</code> object is a S3 class list of <code>nlist</code> objects with the same names, dimensionalities and typeofs. <code>nlists</code> objects are useful for storing multiple realizations of simulated data sets. They can be converted to <code><a href="https://rdrr.io/pkg/coda/man/mcmc.html">coda::mcmc</a></code> and <code><a href="https://rdrr.io/pkg/coda/man/mcmc.list.html">coda::mcmc.list</a></code> objects.</p>
+<p>An <code>nlists</code> object is a S3 class list of <code>nlist</code> objects with the same names, dimensionalities and typeofs. <code>nlists</code> objects are useful for storing multiple realizations of simulated data sets. They can be converted to <code><a href="https://rdrr.io/pkg/coda/man/mcmc.html" class="external-link">coda::mcmc</a></code> and <code><a href="https://rdrr.io/pkg/coda/man/mcmc.list.html" class="external-link">coda::mcmc.list</a></code> objects.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>To install the latest release from <a href="https://cran.r-project.org">CRAN</a></p>
+<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
+<p>To install the latest release from <a href="https://cran.r-project.org" class="external-link">CRAN</a></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"nlist"</span><span class="op">)</span></code></pre></div>
-<p>To install the developmental version from <a href="https://github.com/poissonconsulting/nlist">GitHub</a></p>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"nlist"</span><span class="op">)</span></code></pre></div>
+<p>To install the developmental version from <a href="https://github.com/poissonconsulting/nlist" class="external-link">GitHub</a></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/nlist"</span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/nlist"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
-<a href="#demonstration" class="anchor"></a>Demonstration</h2>
+<a href="#demonstration" class="anchor" aria-hidden="true"></a>Demonstration</h2>
 <div id="numeric" class="section level3">
 <h3 class="hasAnchor">
-<a href="#numeric" class="anchor"></a><code>numeric</code>
+<a href="#numeric" class="anchor" aria-hidden="true"></a><code>numeric</code>
 </h3>
 <p>An numeric object is an integer or double vector, matrix or array.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/nlist">nlist</a></span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/nlist" class="external-link">nlist</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span>
-<span class="fu"><a href="https://rdrr.io/r/base/numeric.html">is.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
 </div>
 <div id="nlist-1" class="section level3">
 <h3 class="hasAnchor">
-<a href="#nlist-1" class="anchor"></a><code>nlist</code>
+<a href="#nlist-1" class="anchor" aria-hidden="true"></a><code>nlist</code>
 </h3>
 <p>An <code>nlist</code> is an S3 class list of uniquely named numeric objects.</p>
 <p>It is straightforward to create an new <code>nlist</code> object.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/nlist">nlist</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/nlist" class="external-link">nlist</a></span><span class="op">)</span>
 
-<span class="va">nlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
+<span class="va">nlist</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="va">nlist</span>
 <span class="co">#&gt; $x</span>
 <span class="co">#&gt; [1] 1</span>
@@ -129,19 +131,19 @@
 </div>
 <div id="nlists" class="section level3">
 <h3 class="hasAnchor">
-<a href="#nlists" class="anchor"></a><code>nlists</code>
+<a href="#nlists" class="anchor" aria-hidden="true"></a><code>nlists</code>
 </h3>
 <p>An <code>nlists</code> object is a S3 class list of <code>nlist</code> objects with the same names, dimensionalities and typeofs.</p>
 <p>The nchains attribute is used to keep track of the number of chains.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nlists</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/nlists.html">nlists</a></span><span class="op">(</span>
-  <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
-  <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">2</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
-  <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">10</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">22</span><span class="op">:</span><span class="fl">30</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
-  <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">100</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span><span class="op">:</span><span class="op">-</span><span class="fl">10</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
+  <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
+  <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">2</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">10</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
+  <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">10</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">22</span><span class="op">:</span><span class="fl">30</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>,
+  <span class="fu"><a href="reference/nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="op">-</span><span class="fl">100</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span><span class="op">:</span><span class="op">-</span><span class="fl">10</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span>
 <span class="co">#&gt; $x</span>
 <span class="co">#&gt; [1] -0.5</span>
 <span class="co">#&gt; </span>
@@ -155,16 +157,16 @@
 </div>
 <div id="coercion" class="section level3">
 <h3 class="hasAnchor">
-<a href="#coercion" class="anchor"></a>Coercion</h3>
+<a href="#coercion" class="anchor" aria-hidden="true"></a>Coercion</h3>
 <div id="nlist-2" class="section level4">
 <h4 class="hasAnchor">
-<a href="#nlist-2" class="anchor"></a>nlist</h4>
+<a href="#nlist-2" class="anchor" aria-hidden="true"></a>nlist</h4>
 <p>A data.frame can be coerced to an <code>nlist</code> object</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
-  lgl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">NA</span><span class="op">)</span>,
-  dte <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"2001-01-02"</span>, <span class="st">"2001-01-01"</span><span class="op">)</span><span class="op">)</span>,
-  fac <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"b"</span>, <span class="st">"a"</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>
+  lgl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">NA</span><span class="op">)</span>,
+  dte <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2001-01-02"</span>, <span class="st">"2001-01-01"</span><span class="op">)</span><span class="op">)</span>,
+  fac <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"b"</span>, <span class="st">"a"</span><span class="op">)</span><span class="op">)</span>
 <span class="op">)</span>
 
 <span class="fu"><a href="reference/as_nlist.html">as_nlist</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>
@@ -202,10 +204,10 @@
 </div>
 <div id="nlists-1" class="section level4">
 <h4 class="hasAnchor">
-<a href="#nlists-1" class="anchor"></a>nlists</h4>
-<p>The <code><a href="https://poissonconsulting.github.io/universals/reference/estimates.html">estimates()</a></code> function can be used to aggregate an <code>nlists</code> object to an <code>nlist</code> object.</p>
+<a href="#nlists-1" class="anchor" aria-hidden="true"></a>nlists</h4>
+<p>The <code><a href="https://poissonconsulting.github.io/universals/reference/estimates.html" class="external-link">estimates()</a></code> function can be used to aggregate an <code>nlists</code> object to an <code>nlist</code> object.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/estimates.html">estimates</a></span><span class="op">(</span><span class="va">nlists</span>, fun <span class="op">=</span> <span class="va">mean</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/estimates.html" class="external-link">estimates</a></span><span class="op">(</span><span class="va">nlists</span>, fun <span class="op">=</span> <span class="va">mean</span><span class="op">)</span>
 <span class="co">#&gt; $x</span>
 <span class="co">#&gt; [1] -22.75</span>
 <span class="co">#&gt; </span>
@@ -216,9 +218,9 @@
 <span class="co">#&gt; [3,] 6.75 8.25 9.75</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; an nlist object with 2 numeric elements</span></code></pre></div>
-<p>while the <code><a href="https://generics.r-lib.org/reference/tidy.html">tidy()</a></code> function treats the values as if they are MCMC samples and summarises the terms as a tidy tibble.</p>
+<p>while the <code><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy()</a></code> function treats the values as if they are MCMC samples and summarises the terms as a tidy tibble.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">nlists</span>, simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="va">nlists</span>, simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 10 x 5</span>
 <span class="co">#&gt;    term   estimate  lower upper svalue</span>
 <span class="co">#&gt;    &lt;term&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
@@ -292,7 +294,7 @@
 <span class="co">#&gt; 40 y[3,3]      4   -10</span></code></pre></div>
 <p>An <code>nlists</code> object can have its chains split or collapsed.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/split_chains.html">split_chains</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/split_chains.html" class="external-link">split_chains</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span>
 <span class="co">#&gt; $x</span>
 <span class="co">#&gt; [1] -0.5</span>
 <span class="co">#&gt; </span>
@@ -308,21 +310,21 @@
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
-<a href="#contribution" class="anchor"></a>Contribution</h2>
-<p>Please report any <a href="https://github.com/poissonconsulting/nlist/issues">issues</a>.</p>
-<p><a href="https://github.com/poissonconsulting/nlist/pulls">Pull requests</a> are always welcome.</p>
+<a href="#contribution" class="anchor" aria-hidden="true"></a>Contribution</h2>
+<p>Please report any <a href="https://github.com/poissonconsulting/nlist/issues" class="external-link">issues</a>.</p>
+<p><a href="https://github.com/poissonconsulting/nlist/pulls" class="external-link">Pull requests</a> are always welcome.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the nlist project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<a href="#code-of-conduct" class="anchor" aria-hidden="true"></a>Code of Conduct</h2>
+<p>Please note that the nlist project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=nlist">https://​cloud.r-project.org/​package=nlist</a>
 </li>
@@ -332,48 +334,54 @@
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
 <li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Joe Thorley <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7683-4592" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Poisson Consulting <br><small class="roles"> Copyright holder, funder </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://github.com/poissonconsulting/nlist/actions"><img src="https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://codecov.io/gh/poissonconsulting/nlist?branch=master"><img src="https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
-<li><a href="https://cran.r-project.org/package=nlist"><img src="https://www.r-pkg.org/badges/version/nlist" alt="CRAN status"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://github.com/poissonconsulting/nlist/actions" class="external-link"><img src="https://github.com/poissonconsulting/nlist/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://codecov.io/gh/poissonconsulting/nlist?branch=master" class="external-link"><img src="https://codecov.io/gh/poissonconsulting/nlist/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
+<li><a href="https://cran.r-project.org/package=nlist" class="external-link"><img src="https://www.r-pkg.org/badges/version/nlist" alt="CRAN status"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Joe Thorley, Poisson Consulting.</p>
+  <p></p>
+<p>Developed by Joe Thorley, Poisson Consulting.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -381,6 +389,8 @@
 
   
 
+
+  
 
   </body>
 </html>

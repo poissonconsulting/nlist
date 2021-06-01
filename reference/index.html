@@ -57,9 +57,16 @@
 
 
 
+
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -73,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9001</span>
       </span>
     </div>
 
@@ -120,8 +127,8 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-create" class="hasAnchor"><a href="#section-create" class="anchor"></a>Create</h2>
-          <p class="section-desc"><p>Create objects</p></p>
+          <h2 id="section-create-or-coerce" class="hasAnchor"><a href="#section-create-or-coerce" class="anchor"></a>Create or Coerce</h2>
+          <p class="section-desc"><p>Create or coerce objects</p></p>
         </th>
       </tr>
       
@@ -130,43 +137,6 @@
       
       
       <tr>
-        
-        <td>
-          <p><code><a href="nlist.html">nlist()</a></code> </p>
-        </td>
-        <td><p>Create nlist Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nlists.html">nlists()</a></code> </p>
-        </td>
-        <td><p>Create nlists Object</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-coerce" class="hasAnchor"><a href="#section-coerce" class="anchor"></a>Coerce</h2>
-          <p class="section-desc"><p>Coerce objects</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="aggregate.nlist.html">aggregate(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Aggregate nlist</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="aggregate.nlists.html">aggregate(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Aggregate nlists</p></td>
-      </tr><tr>
         
         <td>
           <p><code><a href="as_mcmc.html">as_mcmc()</a></code> </p>
@@ -193,12 +163,6 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="as_term.mcmc.html">as_term(<i>&lt;mcmc&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Coerce to a Term Vector</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="as_term.nlist.html">as_term(<i>&lt;nlist&gt;</i>)</a></code> </p>
         </td>
         <td><p>Coerce to a Term Vector</p></td>
@@ -206,6 +170,12 @@
         
         <td>
           <p><code><a href="as_term.nlists.html">as_term(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Coerce to a Term Vector</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_term.mcmc.html">as_term(<i>&lt;mcmc&gt;</i>)</a></code> </p>
         </td>
         <td><p>Coerce to a Term Vector</p></td>
       </tr><tr>
@@ -241,21 +211,203 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="chk_nlist.html">chk_nlist()</a></code> <code><a href="chk_nlist.html">chk_nlists()</a></code> </p>
+          <p><code><a href="nlist.html">nlist()</a></code> </p>
         </td>
-        <td><p>Check nlist Object or nlists Object</p></td>
+        <td><p>Create nlist Object</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="collapse_chains.mcmc.html">collapse_chains(<i>&lt;mcmc&gt;</i>)</a></code> </p>
+          <p><code><a href="nlists.html">nlists()</a></code> </p>
         </td>
-        <td><p>Collapse Chains</p></td>
+        <td><p>Create nlists Object</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-query" class="hasAnchor"><a href="#section-query" class="anchor"></a>Query</h2>
+          <p class="section-desc"><p>Query object’s dimensions/parameters</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="nchains.nlist.html">nchains(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Terms</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="collapse_chains.mcmc.list.html">collapse_chains(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
+          <p><code><a href="nchains.nlists.html">nchains(<i>&lt;nlists&gt;</i>)</a></code> </p>
         </td>
-        <td><p>Collapse Chains</p></td>
+        <td><p>Number of Terms</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="nchains.mcmc.html">nchains(<i>&lt;mcmc&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Chains</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="nchains.mcmc.list.html">nchains(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Chains</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="niters.nlist.html">niters(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Iterations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="niters.nlists.html">niters(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Iterations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="niters.mcmc.html">niters(<i>&lt;mcmc&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Iterations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="niters.mcmc.list.html">niters(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Iterations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="npdims.nlist.html">npdims(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Parameter Dimensions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="npdims.nlists.html">npdims(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Parameter Dimensions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="npdims.mcmc.list.html">npdims(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Parameter Dimensions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="nsims.nlist.html">nsims(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Simulations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="nsims.nlists.html">nsims(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Simulations</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="nterms.nlist.html">nterms(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Terms</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="nterms.nlists.html">nterms(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Terms</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="nterms.mcmc.html">nterms(<i>&lt;mcmc&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Terms</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="nterms.mcmc.list.html">nterms(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Number of Terms</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pars.nlist.html">pars(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Parameter Names</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pars.nlists.html">pars(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Parameter Names</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pars.mcmc.html">pars(<i>&lt;mcmc&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Parameter Names</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pars.mcmc.list.html">pars(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Parameter Names</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pdims.nlist.html">pdims(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Parameter Dimensions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pdims.nlists.html">pdims(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Parameter Dimensions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pdims.mcmc.html">pdims(<i>&lt;mcmc&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Parameter Dimensions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="pdims.mcmc.list.html">pdims(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Parameter Dimensions</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-manipulate" class="hasAnchor"><a href="#section-manipulate" class="anchor"></a>Manipulate</h2>
+          <p class="section-desc"><p>Manipulate objects</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="aggregate.nlist.html">aggregate(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Aggregate nlist</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="aggregate.nlists.html">aggregate(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Aggregate nlists</p></td>
       </tr><tr>
         
         <td>
@@ -266,6 +418,18 @@
         
         <td>
           <p><code><a href="collapse_chains.nlists.html">collapse_chains(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Collapse Chains</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="collapse_chains.mcmc.html">collapse_chains(<i>&lt;mcmc&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Collapse Chains</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="collapse_chains.mcmc.list.html">collapse_chains(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
         </td>
         <td><p>Collapse Chains</p></td>
       </tr><tr>
@@ -313,177 +477,21 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="is_numeric.html">is_numeric()</a></code> <code><a href="is_numeric.html">is_nlist()</a></code> <code><a href="is_numeric.html">is_nlists()</a></code> </p>
-        </td>
-        <td><p>Is numeric, nlist or nlists</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nchains.mcmc.html">nchains(<i>&lt;mcmc&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Chains</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nchains.mcmc.list.html">nchains(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Chains</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nchains.nlist.html">nchains(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nchains.nlists.html">nchains(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="niters.mcmc.html">niters(<i>&lt;mcmc&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Iterations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="niters.mcmc.list.html">niters(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Iterations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="niters.nlist.html">niters(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Iterations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="niters.nlists.html">niters(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Iterations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nlist.html">nlist()</a></code> </p>
-        </td>
-        <td><p>Create nlist Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nlists.html">nlists()</a></code> </p>
-        </td>
-        <td><p>Create nlists Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="npdims.mcmc.list.html">npdims(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="npdims.nlist.html">npdims(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="npdims.nlists.html">npdims(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nsims.nlist.html">nsims(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Simulations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nsims.nlists.html">nsims(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Simulations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nterms.mcmc.html">nterms(<i>&lt;mcmc&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nterms.mcmc.list.html">nterms(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nterms.nlist.html">nterms(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nterms.nlists.html">nterms(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pars.mcmc.html">pars(<i>&lt;mcmc&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pars.mcmc.list.html">pars(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pars.nlist.html">pars(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pars.nlists.html">pars(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pdims.mcmc.html">pdims(<i>&lt;mcmc&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pdims.mcmc.list.html">pdims(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pdims.nlist.html">pdims(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pdims.nlists.html">pdims(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="relist_nlist.html">relist_nlist()</a></code> </p>
         </td>
         <td><p>Relists an unlist nlist Object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="set_pars.nlist.html">set_pars(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Set Parameter Names</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="set_pars.nlists.html">set_pars(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Set Parameter Names</p></td>
       </tr><tr>
         
         <td>
@@ -499,21 +507,21 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="set_pars.nlist.html">set_pars(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Set Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="set_pars.nlists.html">set_pars(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Set Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="split_chains.nlists.html">split_chains(<i>&lt;nlists&gt;</i>)</a></code> </p>
         </td>
         <td><p>Split Chains</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="subset.nlist.html">subset(<i>&lt;nlist&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Subset nlist Object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="subset.nlists.html">subset(<i>&lt;nlists&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Subset nlists Object</p></td>
       </tr><tr>
         
         <td>
@@ -529,21 +537,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="subset.nlist.html">subset(<i>&lt;nlist&gt;</i>)</a></code> </p>
+          <p><code><a href="tidy.nlists.html">tidy(<i>&lt;nlists&gt;</i>)</a></code> </p>
         </td>
-        <td><p>Subset nlist Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="subset.nlists.html">subset(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Subset nlists Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="thin.default.html">thin(<i>&lt;default&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Thin MCMC Object</p></td>
+        <td><p>Turn an object into a tidy tibble</p></td>
       </tr><tr>
         
         <td>
@@ -554,242 +550,6 @@
         
         <td>
           <p><code><a href="tidy.mcmc.list.html">tidy(<i>&lt;mcmc.list&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Turn an object into a tidy tibble</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tidy.nlists.html">tidy(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Turn an object into a tidy tibble</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="unlist.nlist.html">unlist(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Flatten nlist Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="unlist_nlist.html">unlist_nlist()</a></code> </p>
-        </td>
-        <td><p>Flatten nlist Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="vld_nlist.html">vld_nlist()</a></code> <code><a href="vld_nlist.html">vld_nlists()</a></code> </p>
-        </td>
-        <td><p>Validate nlist Object or nlists Object</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-query" class="hasAnchor"><a href="#section-query" class="anchor"></a>Query</h2>
-          <p class="section-desc"><p>Query object’s dimensions/parameters</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="nchains.nlist.html">nchains(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nchains.nlists.html">nchains(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="niters.nlist.html">niters(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Iterations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="niters.nlists.html">niters(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Iterations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="npdims.nlist.html">npdims(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="npdims.nlists.html">npdims(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nsims.nlist.html">nsims(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Simulations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nsims.nlists.html">nsims(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Simulations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nterms.nlist.html">nterms(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nterms.nlists.html">nterms(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Number of Terms</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pars.nlist.html">pars(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pars.nlists.html">pars(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pdims.nlist.html">pdims(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Dimensions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pdims.nlists.html">pdims(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Parameter Dimensions</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-manipulate" class="hasAnchor"><a href="#section-manipulate" class="anchor"></a>Manipulate</h2>
-          <p class="section-desc"><p>Manipulate objects</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="aggregate.nlist.html">aggregate(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Aggregate nlist</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="aggregate.nlists.html">aggregate(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Aggregate nlists</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="collapse_chains.nlist.html">collapse_chains(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Collapse Chains</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="collapse_chains.nlists.html">collapse_chains(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Collapse Chains</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimates.nlist.html">estimates(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Estimates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="estimates.nlists.html">estimates(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Estimates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fill_all.nlist.html">fill_all(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Fill All Values</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fill_all.nlists.html">fill_all(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Fill All Values</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fill_na.nlist.html">fill_na(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Fill Missing Values</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fill_na.nlists.html">fill_na(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Fill Missing Values</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="relist_nlist.html">relist_nlist()</a></code> </p>
-        </td>
-        <td><p>Relists an unlist nlist Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="set_pars.nlist.html">set_pars(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Set Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="set_pars.nlists.html">set_pars(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Set Parameter Names</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="split_chains.nlists.html">split_chains(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Split Chains</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="subset.nlist.html">subset(<i>&lt;nlist&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Subset nlist Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="subset.nlists.html">subset(<i>&lt;nlists&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Subset nlists Object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tidy.nlists.html">tidy(<i>&lt;nlists&gt;</i>)</a></code> </p>
         </td>
         <td><p>Turn an object into a tidy tibble</p></td>
       </tr><tr>
@@ -888,11 +648,11 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Joe Thorley, Poisson Consulting.</p>
+  <p><p>Developed by Joe Thorley, Poisson Consulting.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -900,6 +660,8 @@
 
   
 
+
+  
 
   </body>
 </html>

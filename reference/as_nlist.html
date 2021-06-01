@@ -58,9 +58,16 @@
 
 
 
+
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -74,7 +81,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9001</span>
       </span>
     </div>
 
@@ -116,7 +123,7 @@
     <p>Coerce an R object to an <code><a href='nlist.html'>nlist_object()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='fu'>as.nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
@@ -135,7 +142,7 @@
 <span class='co'># S3 method for mcmc.list</span>
 <span class='fu'>as_nlist</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>as.nlists</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+<span class='fu'>as.nlists</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,17 +170,23 @@
 <li><p><code>mcmc</code>: Coerce mcmc (with one iteration) to nlist</p></li>
 <li><p><code>mcmc.list</code>: Coerce mcmc.list (with one iteration) to nlist</p></li>
 </ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other coerce: 
+<code><a href='as_nlists.html'>as_nlists</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>as_nlist</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $x
-#&gt; [1] 1 2 3 4
-#&gt; 
-#&gt; an nlist object with 1 numeric element</div><div class='input'><span class='fu'>as_nlist</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>`a[2]` <span class='op'>=</span> <span class='fl'>3</span>, `a[1]` <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $a
-#&gt; [1] 2 3
-#&gt; 
-#&gt; an nlist object with 1 numeric element</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='fu'>as_nlist</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $x</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] 1 2 3 4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> an nlist object with 1 numeric element</span>
+<span class='r-in'><span class='fu'>as_nlist</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>`a[2]` <span class='op'>=</span> <span class='fl'>3</span>, `a[1]` <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $a</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] 2 3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> an nlist object with 1 numeric element</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -185,11 +198,11 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Joe Thorley, Poisson Consulting.</p>
+  <p><p>Developed by Joe Thorley, Poisson Consulting.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -197,6 +210,8 @@
 
   
 
+
+  
 
   </body>
 </html>
