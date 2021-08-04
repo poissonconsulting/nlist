@@ -1,13 +1,8 @@
 destination: docs
 
 reference:
-- title: Create
-  desc: Create objects
-  contents:
-  - '`nlist`'
-  - '`nlists`'  
-- title: Coerce
-  desc: Coerce objects
+- title: Create or Coerce
+  desc: Create or coerce objects
   contents:
   - '`as_mcmc`'
   - '`as_mcmc_list`'
@@ -19,23 +14,38 @@ reference:
   - '`as_term_frame`'
   - '`as_term_frame.nlist`'
   - '`as_term_frame.nlists`'
+  - '`bind_iterations.mcmc`'
+  - '`bind_iterations.mcmc.list`'
+  - '`nlist`'
+  - '`nlists`'  
 - title: Query
   desc: Query object's dimensions/parameters
   contents:
   - '`nchains.nlist`'
   - '`nchains.nlists`'
+  - '`nchains.mcmc`'
+  - '`nchains.mcmc.list`'
   - '`niters.nlist`'
   - '`niters.nlists`'
+  - '`niters.mcmc`'
+  - '`niters.mcmc.list`'
   - '`npdims.nlist`'
   - '`npdims.nlists`'
+  - '`npdims.mcmc.list`'
   - '`nsims.nlist`'
   - '`nsims.nlists`'
   - '`nterms.nlist`'
   - '`nterms.nlists`'
+  - '`nterms.mcmc`'
+  - '`nterms.mcmc.list`'
   - '`pars.nlist`'
   - '`pars.nlists`'
+  - '`pars.mcmc`'
+  - '`pars.mcmc.list`'
   - '`pdims.nlist`'
   - '`pdims.nlists`'
+  - '`pdims.mcmc`'
+  - '`pdims.mcmc.list`'
 - title: Manipulate
   desc: Manipulate objects
   contents:
@@ -43,6 +53,9 @@ reference:
   - '`aggregate.nlists`'
   - '`collapse_chains.nlist`'
   - '`collapse_chains.nlists`'
+  - '`collapse_chains.mcmc`'
+  - '`collapse_chains.mcmc.list`'
+  - '`complete_terms.mcmc`'
   - '`estimates.nlist`'
   - '`estimates.nlists`'
   - '`fill_all.nlist`'
@@ -52,10 +65,18 @@ reference:
   - '`relist_nlist`'
   - '`set_pars.nlist`'
   - '`set_pars.nlists`'
+  - '`set_pars.mcmc`'
+  - '`set_pars.mcmc.list`'
   - '`split_chains.nlists`'
   - '`subset.nlist`'
   - '`subset.nlists`'
+  - '`subset.mcmc`'
+  - '`subset.mcmc.list`'
+  - '`set_pars.mcmc`'
+  - '`set_pars.mcmc.list`'
   - '`tidy.nlists`'
+  - '`tidy.mcmc`'
+  - '`tidy.mcmc.list`'
   - '`thin.default`'
   - '`unlist_nlist`'
   - '`unlist.nlist`'
