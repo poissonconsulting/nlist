@@ -1,6 +1,6 @@
 .onLoad <- function(...) {
-  register_s3_method("stats", "aggregate", "nlist")
-  register_s3_method("stats", "aggregate", "nlists")
+  register_s3_method("coda", "as.mcmc.list", "nlist")
+  register_s3_method("coda", "as.mcmc.list", "nlists")
   invisible()
 }
 
