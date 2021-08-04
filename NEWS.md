@@ -2,11 +2,6 @@
 
 # nlist 0.3.2
 
-- Same as previous version.
-
-
-# nlist 0.3.1.9001
-
 - Fixed `complete_terms.mcmc()` so now returns warning when `silent = FALSE` and invalid or inconsistent terms are dropped.
 
 # nlist 0.3.1
