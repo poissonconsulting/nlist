@@ -1,3 +1,6 @@
+#' @export
+stats::aggregate
+
 #' Aggregate nlist
 #'
 #' Aggregates an [nlist_object()] into a named list of numeric scalars.
