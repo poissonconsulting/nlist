@@ -1,13 +1,14 @@
 CMD
 Codecov
-ie
 Lifecycle
 TMB
+ie
 mcmc
 natomic
 nchains
 sd
 summarises
+testthat
 tibble
 typeofs
 unlist

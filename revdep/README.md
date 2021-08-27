@@ -10,13 +10,14 @@
 |collate  |en_CA.UTF-8                  |
 |ctype    |en_CA.UTF-8                  |
 |tz       |America/Vancouver            |
-|date     |2021-08-03                   |
+|date     |2021-08-27                   |
 
 # Dependencies
 
-|package |old   |new   |Δ  |
-|:-------|:-----|:-----|:--|
-|nlist   |0.3.1 |0.3.2 |*  |
+|package |old   |new        |Δ  |
+|:-------|:-----|:----------|:--|
+|nlist   |0.3.2 |0.3.3      |*  |
+|cli     |NA    |3.0.1.9000 |*  |
 
 # Revdeps
 
