@@ -32,7 +32,11 @@ bind_iterations.mcmc <- function(x, x2, ...) {
 #' @examples
 #' bind_iterations(as_mcmc_list(nlist(x = 1)), as_mcmc_list(nlist(x = 3)))
 bind_iterations.mcmc.list <- function(x, x2, ...) {
-  chkor(chk_s3_class(x2, "mcmc.list"), chk_s3_class(x2, "mcmc"))
+  if(!(vld_s3_class(x2, "mcmc.list") || vld_s3_class(x2, "mcmc"))) {
+    if (!vld_all_identical(lapply(x, lapply, dims))) {
+      abort_chk("`x2` must inherit from S3 class 'mcmc.list' or 'mcmc'.")
+    }    
+  }
   
   x <- sort(x)
   x2 <- sort(x2)
