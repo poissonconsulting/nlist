@@ -1,5 +1,5 @@
 test_that("as_nlist.numeric", {
-  expect_is(as_nlist(c(x = 1)), "nlist")
+  expect_s3_class(as_nlist(c(x = 1)), "nlist")
   expect_error(as_nlist(1), "^`x` must be named[.]$", class = "chk_error")
   expect_error(as_nlist(c(x = 1, x = 2)), "^`names[(]x[)]` must be unique[.]$", class = "chk_error")
   expect_error(as_nlist(c(`x[1]` = 1, `x[1,2]` = 2)), "^All elements of term vector `names[(]x[)]` must be consistent[.]$", class = "chk_error")
@@ -16,7 +16,7 @@ test_that("as_nlist.numeric incomplete", {
 })
 
 test_that("as_nlist.list", {
-  expect_is(as_nlist(list(x = 1)), "nlist")
+  expect_s3_class(as_nlist(list(x = 1)), "nlist")
   expect_error(as_nlist(list(1)), "^`x` must be named[.]$", class = "chk_error")
 })
 
