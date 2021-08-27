@@ -1,5 +1,11 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# nlist 0.3.3
+
+- Speed up `bind_iterations.mcmc.list()` by replacing chkor() with custom test and message.
+- Switch to testthat edition 3.
+
+
 # nlist 0.3.2.9000
 
 - Same as previous version.
