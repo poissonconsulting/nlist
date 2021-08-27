@@ -2,14 +2,9 @@
 
 # nlist 0.3.3
 
-- Speed up `bind_iterations.mcmc.list()` by replacing chkor() with custom test and message.
+- Speed up `bind_iterations.mcmc.list()` by replacing `chk::chkor()` with custom test and message.
+- Fix `pars.mcmc.list()` so that no longer gives deprecation warning for `terms = FALSE` argument if not provided by user.
 - Switch to testthat edition 3.
-
-
-# nlist 0.3.2.9000
-
-- Same as previous version.
-
 
 # nlist 0.3.2
 
