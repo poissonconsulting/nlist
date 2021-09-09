@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# nlist
+# nlist <img src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
 
@@ -186,7 +186,7 @@ samples and summarises the terms as a tidy tibble.
 
 ``` r
 tidy(nlists, simplify = TRUE)
-#> # A tibble: 10 x 5
+#> # A tibble: 10 × 5
 #>    term   estimate  lower upper svalue
 #>    <term>    <dbl>  <dbl> <dbl>  <dbl>
 #>  1 x          -0.5 -92.6   9.32  0    
