@@ -48,7 +48,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">nlist</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.3.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3.3.9000</span>
       </span>
     </div>
 
@@ -63,7 +63,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/poissonconsulting/nlist/">
+  <a href="https://github.com/poissonconsulting/nlist/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -80,18 +80,17 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="nlist-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#nlist-" class="anchor" aria-hidden="true"></a>nlist <img src="reference/figures/logo.png" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="nlist-">nlist <img src="reference/figures/logo.png" align="right"><a class="anchor" aria-label="anchor" href="#nlist-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <p><code>nlist</code> is an R package to create and manipulate numeric list (<code>nlist</code>) objects.</p>
 <p>An <code>nlist</code> is an S3 class list of uniquely named numeric objects. An numeric object is an integer or double vector, matrix or array. <code>nlist</code> objects are the raw data inputs for analytic engines such as JAGS, STAN and TMB.</p>
 <p>An <code>nlists</code> object is a S3 class list of <code>nlist</code> objects with the same names, dimensionalities and typeofs. <code>nlists</code> objects are useful for storing multiple realizations of simulated data sets. They can be converted to <code><a href="https://rdrr.io/pkg/coda/man/mcmc.html" class="external-link">coda::mcmc</a></code> and <code><a href="https://rdrr.io/pkg/coda/man/mcmc.list.html" class="external-link">coda::mcmc.list</a></code> objects.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>To install the latest release from <a href="https://cran.r-project.org" class="external-link">CRAN</a></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"nlist"</span><span class="op">)</span></code></pre></div>
@@ -100,12 +99,12 @@
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/nlist"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="demonstration" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demonstration" class="anchor" aria-hidden="true"></a>Demonstration</h2>
-<div id="numeric" class="section level3">
-<h3 class="hasAnchor">
-<a href="#numeric" class="anchor" aria-hidden="true"></a><code>numeric</code>
+<div class="section level2">
+<h2 id="demonstration">Demonstration<a class="anchor" aria-label="anchor" href="#demonstration"></a>
+</h2>
+<div class="section level3">
+<h3 id="numeric">
+<code>numeric</code><a class="anchor" aria-label="anchor" href="#numeric"></a>
 </h3>
 <p>An numeric object is an integer or double vector, matrix or array.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -115,9 +114,9 @@
 <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
 </div>
-<div id="nlist" class="section level3">
-<h3 class="hasAnchor">
-<a href="#nlist" class="anchor" aria-hidden="true"></a><code>nlist</code>
+<div class="section level3">
+<h3 id="nlist">
+<code>nlist</code><a class="anchor" aria-label="anchor" href="#nlist"></a>
 </h3>
 <p>An <code>nlist</code> is an S3 class list of uniquely named numeric objects.</p>
 <p>It is straightforward to create an new <code>nlist</code> object.</p>
@@ -137,9 +136,9 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; an nlist object with 2 numeric elements</span></code></pre></div>
 </div>
-<div id="nlists" class="section level3">
-<h3 class="hasAnchor">
-<a href="#nlists" class="anchor" aria-hidden="true"></a><code>nlists</code>
+<div class="section level3">
+<h3 id="nlists">
+<code>nlists</code><a class="anchor" aria-label="anchor" href="#nlists"></a>
 </h3>
 <p>An <code>nlists</code> object is a S3 class list of <code>nlist</code> objects with the same names, dimensionalities and typeofs.</p>
 <p>The nchains attribute is used to keep track of the number of chains.</p>
@@ -163,12 +162,12 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; an nlists object of 4 nlist objects each with 2 numeric elements</span></code></pre></div>
 </div>
-<div id="coercion" class="section level3">
-<h3 class="hasAnchor">
-<a href="#coercion" class="anchor" aria-hidden="true"></a>Coercion</h3>
-<div id="nlist-1" class="section level4">
-<h4 class="hasAnchor">
-<a href="#nlist-1" class="anchor" aria-hidden="true"></a>nlist</h4>
+<div class="section level3">
+<h3 id="coercion">Coercion<a class="anchor" aria-label="anchor" href="#coercion"></a>
+</h3>
+<div class="section level4">
+<h4 id="nlist-1">nlist<a class="anchor" aria-label="anchor" href="#nlist-1"></a>
+</h4>
 <p>A data.frame can be coerced to an <code>nlist</code> object</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>
@@ -210,9 +209,9 @@
 <span class="co">#&gt; 9  y[2,3]     8</span>
 <span class="co">#&gt; 10 y[3,3]     9</span></code></pre></div>
 </div>
-<div id="nlists-1" class="section level4">
-<h4 class="hasAnchor">
-<a href="#nlists-1" class="anchor" aria-hidden="true"></a>nlists</h4>
+<div class="section level4">
+<h4 id="nlists-1">nlists<a class="anchor" aria-label="anchor" href="#nlists-1"></a>
+</h4>
 <p>The <code><a href="https://poissonconsulting.github.io/universals/reference/estimates.html" class="external-link">estimates()</a></code> function can be used to aggregate an <code>nlists</code> object to an <code>nlist</code> object.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/estimates.html" class="external-link">estimates</a></span><span class="op">(</span><span class="va">nlists</span>, fun <span class="op">=</span> <span class="va">mean</span><span class="op">)</span>
@@ -316,15 +315,15 @@
 </div>
 </div>
 </div>
-<div id="contribution" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contribution" class="anchor" aria-hidden="true"></a>Contribution</h2>
+<div class="section level2">
+<h2 id="contribution">Contribution<a class="anchor" aria-label="anchor" href="#contribution"></a>
+</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/nlist/issues" class="external-link">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/nlist/pulls" class="external-link">Pull requests</a> are always welcome.</p>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor" aria-hidden="true"></a>Code of Conduct</h2>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
 <p>Please note that the nlist project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
@@ -334,12 +333,9 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=nlist">https://​cloud.r-project.org/​package=nlist</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/poissonconsulting/nlist/">https://​github.com/​poissonconsulting/​nlist/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/poissonconsulting/nlist/issues">https://​github.com/​poissonconsulting/​nlist/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=nlist" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/poissonconsulting/nlist/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/poissonconsulting/nlist/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -347,7 +343,7 @@
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 
@@ -362,7 +358,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Joe Thorley <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7683-4592" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Joe Thorley <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-7683-4592" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Poisson Consulting <br><small class="roles"> Copyright holder, funder </small>  </li>
 </ul>
 </div>
@@ -389,7 +385,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
 </div>
 
       </footer>
