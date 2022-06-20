@@ -20,7 +20,7 @@ Authors@R:
              role = "ctb",
              comment = c(ORCID = "0000-0001-7388-1222")),
        person(given = "Poisson Consulting",
-             role = c("cph", "fnd")),
+             role = c("cph", "fnd")))
 Description: Create and manipulate numeric list ('nlist') objects.  An
     'nlist' is an S3 list of uniquely named numeric objects.  An numeric
     object is an integer or double vector, matrix or array.  An 'nlists'
