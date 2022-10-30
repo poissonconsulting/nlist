@@ -20,9 +20,9 @@ Validate nlist Object or nlists Object
 }
 \section{Functions}{
 \itemize{
-\item \code{vld_nlists}: Validate nlists Object
-}}
+\item \code{vld_nlists()}: Validate nlists Object
 
+}}
 \examples{
 
 # vld_nlist

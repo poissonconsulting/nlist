@@ -21,23 +21,23 @@ Deprecated Functions
 }
 \section{Functions}{
 \itemize{
-\item \code{is.natomic}: Is natomic
+\item \code{is.natomic()}: Is natomic
 
 \lifecycle{soft-deprecated}
 
 Replace by \code{\link[=is.numeric]{is.numeric()}}
 
-\item \code{is.nlist}: Is nlist
+\item \code{is.nlist()}: Is nlist
 
 \lifecycle{soft-deprecated}
 
 Replace by \code{\link[=is_nlist]{is_nlist()}}
 
-\item \code{is.nlists}: Is nlists
+\item \code{is.nlists()}: Is nlists
 
 \lifecycle{soft-deprecated}
 
 Replace by \code{\link[=is_nlists]{is_nlists()}}
-}}
 
+}}
 \keyword{internal}

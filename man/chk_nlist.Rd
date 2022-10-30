@@ -24,12 +24,12 @@ checks if an \code{\link[=nlist-object]{nlist-object()}}.
 }
 \section{Functions}{
 \itemize{
-\item \code{chk_nlists}: Check nlists Object
+\item \code{chk_nlists()}: Check nlists Object
 
 \code{chk_nlists}
 checks if an \code{\link[=nlists-object]{nlists-object()}}.
-}}
 
+}}
 \examples{
 
 # chk_nlist

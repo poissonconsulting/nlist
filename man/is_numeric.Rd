@@ -24,11 +24,11 @@ Ask whether x is a numeric object,
 }
 \section{Functions}{
 \itemize{
-\item \code{is_nlist}: Is nlist
+\item \code{is_nlist()}: Is nlist
 
-\item \code{is_nlists}: Is nlists
+\item \code{is_nlists()}: Is nlists
+
 }}
-
 \examples{
 # is_numeric
 is_numeric(list(x = 1))

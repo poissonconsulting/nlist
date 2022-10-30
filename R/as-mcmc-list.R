@@ -31,7 +31,6 @@ as_mcmc_list.nlist <- function(x, ...) {
 
 #' @describeIn as_mcmc_list Coerce an nlists object to an mcmc.list object.
 #' @export
-#' @examples
 #'
 #' @examples
 #' as_mcmc_list(nlists(

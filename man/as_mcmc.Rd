@@ -28,13 +28,13 @@ Coerce an R object to an mcmc object.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{mcmc.list}: Coerce an mcmc.list object to an mcmc object.
+\item \code{as_mcmc(mcmc.list)}: Coerce an mcmc.list object to an mcmc object.
 
-\item \code{nlist}: Coerce an nlist object to an mcmc object.
+\item \code{as_mcmc(nlist)}: Coerce an nlist object to an mcmc object.
 
-\item \code{nlists}: Coerce an nlists object to an mcmc object.
+\item \code{as_mcmc(nlists)}: Coerce an nlists object to an mcmc object.
+
 }}
-
 \examples{
 as_mcmc(as_mcmc_list(nlists(nlist(x = 2), nlist(x = 3))))
 as_mcmc(nlist(x = matrix(1:6, 2)))
