@@ -1,6 +1,7 @@
 pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
-articles: {}
-last_built: 2022-10-30T18:05Z
+articles:
+  nlist-objects-and-coercions: nlist-objects-and-coercions.html
+last_built: 2022-10-30T21:44Z
 
