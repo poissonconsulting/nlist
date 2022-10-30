@@ -62,7 +62,7 @@ test_that("as_nlist.data.frame", {
 })
 
 test_that("as.nlist deprecated", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   lifecycle::expect_deprecated(as.nlist(data.frame(x = 1)))
   expect_identical(
     as.nlist(data.frame(x = 1)),

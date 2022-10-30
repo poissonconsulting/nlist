@@ -1,5 +1,5 @@
 test_that("tidy.nlists", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   
   lifecycle::expect_deprecated(tidy(nlists()))
   

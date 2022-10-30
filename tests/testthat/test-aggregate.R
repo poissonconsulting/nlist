@@ -1,5 +1,5 @@
 test_that("aggregate.nlist", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(aggregate(nlist()), structure(list(), .Names = character(0)))
   expect_identical(aggregate(nlist(x = 1)), list(x = 1))
   expect_identical(aggregate(nlist(x = 1:2)), list(x = 1.5))
@@ -15,7 +15,7 @@ test_that("aggregate.nlist", {
 })
 
 test_that("aggregate.nlists", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(
     aggregate(nlists()),
     structure(list(), .Names = character(0), class = "nlist")
@@ -38,7 +38,7 @@ test_that("aggregate.nlists", {
 })
 
 test_that("aggregate.nlists", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_error(
     aggregate(nlists(
       nlist(x = matrix(1:9, 3)),
@@ -50,7 +50,7 @@ test_that("aggregate.nlists", {
 })
 
 test_that("aggregate.nlists by_chain = TRUE", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(
     aggregate(nlists(), by_chain = TRUE),
     structure(list(), class = "nlists")

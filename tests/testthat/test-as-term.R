@@ -1,5 +1,5 @@
 test_that("as.term.nlist", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(
     as.term(nlist()),
     term()
@@ -23,7 +23,7 @@ test_that("as.term.nlist", {
 })
 
 test_that("as.term.nlists", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(
     as.term(nlists()),
     term(x = 0)

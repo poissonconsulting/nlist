@@ -1,5 +1,5 @@
 test_that("is.natomic deprecated", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   lifecycle::expect_deprecated(is.natomic(data.frame()))
 
   expect_true(is.natomic(1))
@@ -7,7 +7,7 @@ test_that("is.natomic deprecated", {
 
 
 test_that("is.nlist deprecated", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   lifecycle::expect_deprecated(is.nlist(1))
 
   expect_false(is.nlist(1))
@@ -15,7 +15,7 @@ test_that("is.nlist deprecated", {
 })
 
 test_that("is.nlists deprecated", {
-  rlang::scoped_options(lifecycle_verbosity = "quiet")
+  rlang::local_options(lifecycle_verbosity = "quiet")
   lifecycle::expect_deprecated(is.nlists(1))
 
   expect_false(is.nlists(1))
