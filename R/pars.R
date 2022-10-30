@@ -10,7 +10,7 @@ pars.mcmc <- function(x, scalar = NULL, terms = FALSE, ...) {
   chk_unused(...)
 
   if (!missing(terms)) {
-    deprecate_soft("0.2.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_warn("0.2.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
   }
   x <- as_term(x)
   if(terms) return(pars_terms(x, scalar = scalar))
@@ -26,7 +26,7 @@ pars.mcmc.list <- function(x, scalar = NULL, terms = FALSE, ...) {
   chk_unused(...)
   
   if (!missing(terms)) {
-    deprecate_soft("0.2.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_warn("0.2.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
   }
   x <- x[[1]]
   x <- as_term(x)
@@ -46,7 +46,7 @@ pars.nlist <- function(x, scalar = NULL, terms = FALSE, ...) {
   chk_unused(...)
 
   if (!missing(terms)) {
-    deprecate_soft("0.1.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_warn("0.1.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
   }
 
   if (is.null(scalar) && !terms) {
@@ -72,7 +72,7 @@ pars.nlists <- function(x, scalar = NULL, terms = FALSE, ...) {
   chk_unused(...)
 
   if (!missing(terms)) {
-    deprecate_soft("0.1.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_warn("0.1.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
   }
   if (!length(x)) {
     return(character(0))

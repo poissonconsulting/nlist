@@ -16,7 +16,7 @@ as_nlist <- function(x, ...) {
 #' @rdname as_nlist
 #' @export
 as.nlist <- function(x, ...) {
-  deprecate_soft("0.1.1",
+  deprecate_warn("0.1.1",
                  what = "nlist::as.nlist()",
                  with = "nlist::as_nlist()"
   )

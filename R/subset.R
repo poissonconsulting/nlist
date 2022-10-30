@@ -16,13 +16,13 @@
 subset.mcmc <- function(x, iters = NULL, pars = NULL,
                         iterations = NULL, parameters = NULL, ...) {
   if (!missing(iterations)) {
-    deprecate_soft("0.2.1", "subset(iterations = )", "subset(iters = )",
+    deprecate_warn("0.2.1", "subset(iterations = )", "subset(iters = )",
                    id = "subset_iterations"
     )
     iters <- iterations
   }
   if (!missing(parameters)) {
-    deprecate_soft("0.2.1", "subset(parameters = )", "subset(pars = )",
+    deprecate_warn("0.2.1", "subset(parameters = )", "subset(pars = )",
                    id = "subset_parameters"
     )
     pars <- parameters
@@ -63,13 +63,13 @@ subset.mcmc <- function(x, iters = NULL, pars = NULL,
 subset.mcmc.list <- function(x, chains = NULL, iters = NULL, pars = NULL,
                              iterations = NULL, parameters = NULL, ...) {
   if (!missing(iterations)) {
-    deprecate_soft("0.2.1", "subset(iterations = )", "subset(iters = )",
+    deprecate_warn("0.2.1", "subset(iterations = )", "subset(iters = )",
                    id = "subset_iterations"
     )
     iters <- iterations
   }
   if (!missing(parameters)) {
-    deprecate_soft("0.2.1", "subset(parameters = )", "subset(pars = )",
+    deprecate_warn("0.2.1", "subset(parameters = )", "subset(pars = )",
                    id = "subset_parameters"
     )
     pars <- parameters

@@ -12,7 +12,7 @@ NULL
 #' Replace by [is.numeric()]
 #' @export
 is.natomic <- function(x) {
-  deprecate_soft("0.1.1",
+  deprecate_warn("0.1.1",
     what = "nlist::is.natomic()",
     with = "nlist::is_numeric()"
   )
@@ -26,7 +26,7 @@ is.natomic <- function(x) {
 #' Replace by [is_nlist()]
 #' @export
 is.nlist <- function(x) {
-  deprecate_soft("0.1.1",
+  deprecate_warn("0.1.1",
     what = "nlist::is.nlist()",
     with = "nlist::is_nlist()"
   )
@@ -40,7 +40,7 @@ is.nlist <- function(x) {
 #' Replace by [is_nlists()]
 #' @export
 is.nlists <- function(x) {
-  deprecate_soft("0.1.1",
+  deprecate_warn("0.1.1",
     what = "nlist::is.nlists()",
     with = "nlist::is_nlists()"
   )
