@@ -53,8 +53,8 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S3 method for nlists</span>
-<span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">x</span>, chains <span class="op">=</span> <span class="cn">NULL</span>, iters <span class="op">=</span> <span class="cn">NULL</span>, pars <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S3 method for nlists</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">x</span>, chains <span class="op">=</span> <span class="cn">NULL</span>, iters <span class="op">=</span> <span class="cn">NULL</span>, pars <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -93,12 +93,12 @@ chains and iterations.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">nlists</span> <span class="op">&lt;-</span> <span class="fu"><a href="nlists.html">nlists</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fl">3</span>, x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">2</span>, y <span class="op">=</span> <span class="fl">4</span>, x <span class="op">=</span> <span class="fl">4</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">3</span>, y <span class="op">=</span> <span class="fl">6</span>, x <span class="op">=</span> <span class="fl">5</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">nlists</span> <span class="op">&lt;-</span> <span class="fu"><a href="nlists.html">nlists</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fl">3</span>, x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">2</span>, y <span class="op">=</span> <span class="fl">4</span>, x <span class="op">=</span> <span class="fl">4</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">3</span>, y <span class="op">=</span> <span class="fl">6</span>, x <span class="op">=</span> <span class="fl">5</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -109,12 +109,12 @@ chains and iterations.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 4 3 3 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> an nlists object of 3 nlist objects each with 3 numeric elements</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span>, pars <span class="op">=</span> <span class="st">"a"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span>, pars <span class="op">=</span> <span class="st">"a"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> an nlists object of 3 nlist objects each with 1 numeric element</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span>, pars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"a"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span>, pars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"a"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $x</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 4 3 3 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -122,7 +122,7 @@ chains and iterations.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> an nlists object of 3 nlist objects each with 2 numeric elements</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span>, iters <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span>, iters <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -133,7 +133,7 @@ chains and iterations.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 3 4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> an nlists object of an nlist object with 3 numeric elements</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span>, iters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">2L</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">nlists</span>, iters <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">2L</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -158,7 +158,7 @@ chains and iterations.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
