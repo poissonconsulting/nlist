@@ -49,7 +49,9 @@ Imports:
     universals
 Suggests: 
     covr,
+    knitr,
     rlang,
+    rmarkdown,
     testthat
 RdMacros: 
     lifecycle
@@ -58,3 +60,4 @@ Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
+VignetteBuilder: knitr

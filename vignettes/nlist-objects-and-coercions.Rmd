@@ -1,0 +1,62 @@
+---
+title: "nlist Objects and Coercions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{nlist Objects and Coercions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(nlist)
+```
+
+
+## nlist
+
+The central object is the `nlist` object which is an S3 class list of uniquely named numeric objects (which can be integer or double vectors, matrices or arrays).
+
+```{r}
+nlist <- nlist(x = 1:2,
+               y = c(3L, 4L),
+               z = 5.1)
+print(nlist)
+```
+
+## nlists
+
+`nlist` objects with the same names, dimensionalities and typeofs can be combined to create an `nlists` object.
+
+```{r}
+nlists <- nlists(
+  nlist,
+  nlist,
+  nlist(x = 2:3,
+        y = c(5L,6L),
+        z = 8)
+)
+print(nlists)
+```
+
+## mcmc 
+
+`mcmc` objects which resemble time series (ts) objects are defined by the `coda` package for storing MCMC values.
+
+```{r}
+as_mcmc(nlist)
+as_mcmc(nlists)
+```
+
+`mcmc` objects can be coerced back to `nlist` and `nlists` objects.
+
+```{r}
+as_nlist(as_mcmc(nlist))
+as_nlists(as_mcmc(nlists))
+```
