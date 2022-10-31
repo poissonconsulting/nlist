@@ -21,37 +21,44 @@ library(nlist)
 
 ## nlist
 
-The central object is the `nlist` object which is an S3 class list of uniquely named numeric objects (which can be integer or double vectors, matrices or arrays).
+The central object is the `nlist` object which is a list of uniquely named numeric objects (which can be integer or double vectors, matrices or arrays) of class nlist.
+`nlist` objects are the raw data inputs for analytic engines such as JAGS, STAN and TMB.
 
 ```{r}
 nlist <- nlist(x = 1:2,
-               y = c(3L, 4L),
+               y = matrix(c(4:1), nrow = 2),
                z = 5.1)
 print(nlist)
+str(nlist)
 ```
 
 ## nlists
 
 `nlist` objects with the same names, dimensionalities and typeofs can be combined to create an `nlists` object.
+An `nlists` object is a list of `nlist` objects of S3 class `nlists`.
+`nlists` objects are useful for storing multiple realizations of simulated data sets (as in the `sims` package) or iterations of MCMC samples of parameter terms output by Bayesian analytic engines such as JAGS and STAN>
 
 ```{r}
 nlists <- nlists(
   nlist,
   nlist,
   nlist(x = 2:3,
-        y = c(5L,6L),
+        y = matrix(c(5:8), nrow = 2),
         z = 8)
 )
 print(nlists)
+str(nlists)
 ```
 
 ## mcmc 
 
-`mcmc` objects which resemble time series (ts) objects are defined by the `coda` package for storing MCMC values.
+`nlists` (and `nlist`) objects can be converted to `mcmc` objects which are matrices with the parameter terms as the columns and the iterations are the rows.
+`mcmc` objects are defined by the `coda` package.
 
 ```{r}
 as_mcmc(nlist)
 as_mcmc(nlists)
+str(as_mcmc(nlists))
 ```
 
 `mcmc` objects can be coerced back to `nlist` and `nlists` objects.
@@ -60,3 +67,46 @@ as_mcmc(nlists)
 as_nlist(as_mcmc(nlist))
 as_nlists(as_mcmc(nlists))
 ```
+
+## list
+
+Unlisting an `nlist` object produces a named vector with the parameter terms as names.
+
+```{r}
+unlist(nlist)
+```
+
+A vector can be coerced back to an nlist object if an nlist object is available to act as a skeleton.
+
+```{r}
+list <- unlist(nlist)
+list[1] <- 100
+list["z"] <- -999 
+relist_nlist(list, nlist)
+```
+
+## data frame
+
+A `data.frame` of numeric vectors can be coerced to an `nlist` object.
+
+```{r}
+as_nlist(data.frame(x = 1:2, y = c(3,5)))
+```
+
+## term frame
+
+And `nlist` and `nlists` object can be converted to a `term_frame`.
+A `term_frame` is a data.frame with the parameter terms as one column and the values as another.
+In the case of an `nlists` object a sample column is also created specifies the iteration number.
+
+```{r}
+as_term_frame(nlist)
+as_term_frame(nlists)
+```
+
+A `term_frame` object is data.frame.
+
+```{r}
+str(as_term_frame(nlists))
+```
+
