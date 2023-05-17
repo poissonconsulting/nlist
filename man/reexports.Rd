@@ -50,7 +50,7 @@ below to see their documentation.
 
   \item{stats}{\code{\link[stats]{aggregate}}, \code{\link[stats]{median}}}
 
-  \item{term}{\code{\link[term]{as_term}}, \code{\link[term:as_term]{as.term}}, \code{\link[term]{complete_terms}}}
+  \item{term}{\code{\link[term:as_term]{as.term}}, \code{\link[term]{as_term}}, \code{\link[term]{complete_terms}}}
 
   \item{universals}{\code{\link[universals]{bind_iterations}}, \code{\link[universals]{collapse_chains}}, \code{\link[universals]{estimates}}, \code{\link[universals]{nchains}}, \code{\link[universals]{niters}}, \code{\link[universals]{npdims}}, \code{\link[universals]{nsims}}, \code{\link[universals]{nterms}}, \code{\link[universals]{pars}}, \code{\link[universals:set_pars]{pars<-}}, \code{\link[universals]{pdims}}, \code{\link[universals]{set_pars}}, \code{\link[universals]{split_chains}}}
 }}
