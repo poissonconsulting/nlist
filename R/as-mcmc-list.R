@@ -50,13 +50,11 @@ as_mcmc_list.nlists <- function(x, ...) {
 #' @method as.mcmc.list nlist
 #' @export
 as.mcmc.list.nlist <- function(x, ...) {
-  deprecate_warn("0.2.1", "as.mcmc.list()", "as_mcmc_list()", id = "as_mcmc_list")
   as_mcmc_list(x, ...)
 }
 
 #' @method as.mcmc.list nlists
 #' @export
 as.mcmc.list.nlists <- function(x, ...) {
-  deprecate_warn("0.2.1", "as.mcmc.list()", "as_mcmc_list()", id = "as_mcmc_list")
   as_mcmc_list(x, ...)
 }

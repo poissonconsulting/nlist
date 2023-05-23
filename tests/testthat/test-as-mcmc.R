@@ -112,9 +112,6 @@ test_that("as_mcmc.nlists", {
 })
 
 test_that("as.mcmc.nlist", {
-  lifecycle::expect_deprecated(as.mcmc(nlist()))
-  rlang::local_options(lifecycle_verbosity = "quiet")
-  
   expect_identical(
     as.mcmc(nlist()),
     structure(numeric(0), mcpar = c(1, 0, 1), class = "mcmc")
@@ -163,8 +160,6 @@ test_that("as.mcmc.nlist", {
 })
 
 test_that("as.mcmc.nlists", {
-  lifecycle::expect_deprecated(as.mcmc(nlists()))
-  rlang::local_options(lifecycle_verbosity = "quiet")
   expect_identical(
     as.mcmc(nlists()),
     structure(numeric(0), mcpar = c(1, 0, 1), class = "mcmc")

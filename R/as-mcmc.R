@@ -64,14 +64,12 @@ coda::as.mcmc
 
 #' @export
 as.mcmc.nlist <- function(x, ...) {
-  deprecate_warn("0.2.1", "as.mcmc()", "as_mcmc()", id = "as_mcmc")
   chk_unused(...)
   as_mcmc(x)
 }
 
 #' @export
 as.mcmc.nlists <- function(x, ...) {
-  deprecate_warn("0.2.1", "as.mcmc()", "as_mcmc()", id = "as_mcmc")
   chk_unused(...)
   as_mcmc(x)
 }
