@@ -43,6 +43,7 @@ Imports:
     generics,
     lifecycle,
     purrr,
+    rlang,
     stats,
     term,
     tibble,
@@ -51,7 +52,6 @@ Suggests:
     covr,
     knitr,
     mcmcr,
-    rlang,
     rmarkdown,
     testthat
 RdMacros: 
