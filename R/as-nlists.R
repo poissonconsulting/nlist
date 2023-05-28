@@ -35,11 +35,8 @@ as_nlists.list <- function(x, ...) {
 #' @export
 as_nlists.mcmc <- function(x, ...) {
   chk_unused(...)
-  x <- complete_terms(x)
-  x <- lapply(1:nrow(x), function(iter, x) subset(x, iter), x = x)
-  x <- lapply(x, as_nlist)
-  class(x) <- "nlists"
-  x
+  rlang::check_installed("mcmcr", "to convert mcmc objects to nlist.")
+  mcmcr::as_nlists(mcmcr::as.mcmcr(x))
 }
 
 #' @describeIn as_nlists Coerce mcmc.list to nlists
