@@ -35,9 +35,7 @@ as_nlists.list <- function(x, ...) {
 #' @export
 as_nlists.mcmc <- function(x, ...) {
   chk_unused(...)
-  if(!requireNamespace("mcmcr", quietly = TRUE)) {
-    err("Package 'mcmcr' must be installed.")
-  }
+  rlang::check_installed("mcmcr", "to convert mcmc objects to nlist.")
   mcmcr::as_nlists(mcmcr::as.mcmcr(x))
 }
 
