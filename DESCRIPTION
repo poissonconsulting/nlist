@@ -34,7 +34,7 @@ License: MIT + file LICENSE
 URL: https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
 Depends: 
-    R (>= 3.5)
+    R (>= 4.3)
 Imports:
     abind,
     chk,
