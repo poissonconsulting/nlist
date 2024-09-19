@@ -19,10 +19,10 @@ as_term(as_mcmc(nlist(x = matrix(1:4, ncol = 2))))
 }
 \seealso{
 Other coerce term: 
-\code{\link{as_term.nlists}()},
 \code{\link{as_term.nlist}()},
-\code{\link{as_term_frame.nlists}()},
+\code{\link{as_term.nlists}()},
+\code{\link{as_term_frame}()},
 \code{\link{as_term_frame.nlist}()},
-\code{\link{as_term_frame}()}
+\code{\link{as_term_frame.nlists}()}
 }
 \concept{coerce term}

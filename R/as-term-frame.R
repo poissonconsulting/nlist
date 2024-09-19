@@ -85,7 +85,7 @@ as_term_frame.nlists <- function(x, ...) {
     )))
   }
   x <- mapply(as_term_frame_nlist_impl, x,
-    sample = 1:length(x),
+    sample = seq_along(x),
     SIMPLIFY = FALSE
   )
   do.call("rbind", x)

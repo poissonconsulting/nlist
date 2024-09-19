@@ -23,9 +23,9 @@ vector called samples. It includes the original nlist or nlists object.
 \seealso{
 Other coerce term: 
 \code{\link{as_term.mcmc}()},
-\code{\link{as_term.nlists}()},
 \code{\link{as_term.nlist}()},
-\code{\link{as_term_frame.nlists}()},
-\code{\link{as_term_frame.nlist}()}
+\code{\link{as_term.nlists}()},
+\code{\link{as_term_frame.nlist}()},
+\code{\link{as_term_frame.nlists}()}
 }
 \concept{coerce term}
