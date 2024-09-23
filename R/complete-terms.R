@@ -1,5 +1,5 @@
 #' @importFrom term complete_terms
-#' @export 
+#' @export
 term::complete_terms
 
 #' Complete Terms
@@ -21,13 +21,13 @@ term::complete_terms
 complete_terms.mcmc <- function(x, silent = FALSE, ...) {
   chk_flag(silent)
   chk_unused(...)
-  
+
   if (!silent && anyNA(colnames(x))) {
     wrn("terms with missing values have been dropped")
   }
 
   x <- as.matrix(x)
-  x <- x[,!is.na(colnames(x)), drop = FALSE]
+  x <- x[, !is.na(colnames(x)), drop = FALSE]
   colnames(x) <- as.character(as_term(colnames(x), repair = TRUE))
   if (!silent && anyNA(colnames(x))) wrn("invalid terms have been dropped")
   x <- x[, !is.na(colnames(x)), drop = FALSE]
@@ -39,7 +39,7 @@ complete_terms.mcmc <- function(x, silent = FALSE, ...) {
     wrn("inconsistent terms have been dropped")
   }
   x <- x[, consistent, drop = FALSE]
-  
+
   if (!ncol(x)) {
     return(coda::as.mcmc(x))
   }

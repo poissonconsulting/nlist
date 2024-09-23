@@ -1,4 +1,3 @@
-
 #' @export
 numericise.list <- function(x, ...) lapply(x, numericise)
 

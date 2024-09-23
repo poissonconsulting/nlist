@@ -30,8 +30,8 @@ tidy.mcmc.list <- function(x, simplify = FALSE, ...) {
 tidy.nlists <- function(x, simplify = FALSE, ...) {
   chk_flag(simplify)
   chk_unused(...)
-  
-  if(!simplify) {
+
+  if (!simplify) {
     lifecycle::deprecate_warn("0.3.1", "tidy(simplify = 'must be TRUE')")
   }
   if (!length(x) || !length(x[[1]])) {
@@ -42,19 +42,18 @@ tidy.nlists <- function(x, simplify = FALSE, ...) {
     lower <- numeric(0)
     upper <- numeric(0)
     svalue <- numeric(0)
-    
-    if(simplify) {
+
+    if (simplify) {
       return(tibble::tibble(
         term = term, estimate = estimate,
         lower = lower, upper = upper, svalue = svalue
       ))
-    } 
+    }
     return(tibble::tibble(
       term = term, estimate = estimate,
-      sd = sd, zscore = zscore, 
+      sd = sd, zscore = zscore,
       lower = lower, upper = upper, svalue = svalue
     ))
-    
   } else {
     estimate <- unlist(estimates(x, median))
     term <- as_term(names(estimate))
@@ -65,14 +64,14 @@ tidy.nlists <- function(x, simplify = FALSE, ...) {
     upper <- unname(unlist(estimates(x, upper)))
     svalue <- unname(unlist(estimates(x, svalue)))
   }
-  if(simplify) {
-    return(  tibble::tibble(
+  if (simplify) {
+    return(tibble::tibble(
       term = term, estimate = estimate,
       lower = lower,
       upper = upper, svalue = svalue
     ))
   }
-  
+
   tibble::tibble(
     term = term, estimate = estimate,
     sd = sd, zscore = zscore, lower = lower,

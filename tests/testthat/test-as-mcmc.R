@@ -1,6 +1,8 @@
 test_that("as_mcmc.mcmc.list", {
-  expect_identical(as_mcmc(as_mcmc_list(nlists(nlist(x = 2), nlist(x = 3)))),
-                   as_mcmc(nlists(nlist(x = 2), nlist(x = 3))))
+  expect_identical(
+    as_mcmc(as_mcmc_list(nlists(nlist(x = 2), nlist(x = 3)))),
+    as_mcmc(nlists(nlist(x = 2), nlist(x = 3)))
+  )
 })
 
 test_that("as_mcmc.nlist", {
@@ -147,7 +149,7 @@ test_that("as.mcmc.nlist", {
       "y"
     )), mcpar = c(1, 1, 1), class = "mcmc")
   )
-  
+
   expect_identical(
     as.mcmc(nlist::nlist(x = 1, y = matrix(1:4, 2))),
     structure(c(1, 1, 2, 3, 4), .Dim = c(1L, 5L), .Dimnames = list(
@@ -178,7 +180,7 @@ test_that("as.mcmc.nlists", {
       NULL
     ), mcpar = c(1, 2, 1), class = "mcmc")
   )
-  
+
   expect_identical(
     as.mcmc(nlists(nlist(x = 1))),
     structure(1, .Dim = c(1L, 1L), .Dimnames = list(NULL, "x"), mcpar = c(
@@ -203,7 +205,7 @@ test_that("as.mcmc.nlists", {
       1, 1
     ), class = "mcmc")
   )
-  
+
   expect_identical(
     as.mcmc(nlists(
       nlist(x = matrix(1:6, 2)),

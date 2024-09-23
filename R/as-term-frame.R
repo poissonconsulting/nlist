@@ -15,7 +15,7 @@ as_term_frame <- function(x, ...) {
 
 #' Coerce nlist Object to Data Frame
 #'
-#' Coerces an nlist object to a data.frame with an term column 
+#' Coerces an nlist object to a data.frame with an term column
 #' and a value column.
 #'
 #' @export
@@ -62,7 +62,7 @@ as_term_frame_nlist_impl <- function(x, sample = NULL) {
 
 #' Coerce nlists Object to Data Frame
 #'
-#' Coerces an nlists object to a data.frame with a term, sample 
+#' Coerces an nlists object to a data.frame with a term, sample
 #' and value column.
 #'
 #' @export

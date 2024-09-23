@@ -37,7 +37,7 @@ test_that("as_nlists.mcmc.list 2 chains", {
     nlist(x = 3, y = matrix(4:1, 2))
   )
   nlists <- split_chains(nlists)
-  
+
   expect_equal(as_nlists(as_mcmc_list(nlists)), nlists)
   expect_equal(nchains(as_nlists(as_mcmc_list(nlists))), 2L)
 })

@@ -25,7 +25,7 @@ set_pars.mcmc.list <- function(x, value, ...) {
 #'
 #' @export
 #' @examples
-#' nlist <-  nlist(x = 1, y = 3:4)
+#' nlist <- nlist(x = 1, y = 3:4)
 #' pars(nlist) <- c("a", "b")
 #' nlist
 #' set_pars(nlist, c("z", "c1"))
@@ -52,7 +52,7 @@ set_pars.nlist <- function(x, value, ...) {
 #' @inherit universals::set_pars
 #'
 #' @export
-#' @examples 
+#' @examples
 #' nlists <- nlists(nlist(x = 2), nlist(x = 3))
 #' pars(nlists) <- "a"
 #' nlists

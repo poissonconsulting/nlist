@@ -34,10 +34,14 @@ test_that("as_nlist.mcmc.list", {
   expect_identical(as_nlist(as_mcmc_list(nlist(x = 1))), nlist(x = 1))
   expect_identical(as_nlist(as_mcmc_list(nlist(x = 1, y = 2))), nlist(x = 1, y = 2))
   expect_identical(as_nlist(as_mcmc_list(nlist(x = matrix(1:12, nrow = 3)))), nlist(x = matrix(1:12, nrow = 3)))
-  expect_identical(as_nlist(as_mcmc_list(nlists(nlist(x = matrix(1:12, nrow = 3))))), 
-                   nlist(x = matrix(1:12, nrow = 3)))
+  expect_identical(
+    as_nlist(as_mcmc_list(nlists(nlist(x = matrix(1:12, nrow = 3))))),
+    nlist(x = matrix(1:12, nrow = 3))
+  )
   expect_error(as_nlist(as_mcmc_list(nlists(nlist(x = 1), nlist(x = 2)))),
-               "`x` must have one iteration.", class = "chk_error")
+    "`x` must have one iteration.",
+    class = "chk_error"
+  )
 })
 
 test_that("as_nlist.nlist", {

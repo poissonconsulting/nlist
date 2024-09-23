@@ -3,7 +3,7 @@ universals::split_chains
 
 #' @inherit universals::split_chains
 #' @export
-#' @examples 
+#' @examples
 #' nlists <- nlists(nlist(x = c(2, 9)), nlist(x = c(1, 7)))
 #' nchains(nlists)
 #' nchains(split_chains(nlists))
