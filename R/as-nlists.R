@@ -45,8 +45,9 @@ as_nlists.mcmc.list <- function(x, ...) {
   nchains <- nchains(x)
   x <- as_mcmc(x)
   x <- as_nlists(x)
-  if(nchains != 1L)
+  if (nchains != 1L) {
     attr(x, "nchains") <- nchains
+  }
   x
 }
 

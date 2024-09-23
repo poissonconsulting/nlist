@@ -21,8 +21,8 @@ as_term(nlists(nlist(x = matrix(1:4, ncol = 2))))
 Other coerce term: 
 \code{\link{as_term.mcmc}()},
 \code{\link{as_term.nlist}()},
-\code{\link{as_term_frame.nlists}()},
+\code{\link{as_term_frame}()},
 \code{\link{as_term_frame.nlist}()},
-\code{\link{as_term_frame}()}
+\code{\link{as_term_frame.nlists}()}
 }
 \concept{coerce term}

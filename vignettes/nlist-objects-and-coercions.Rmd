@@ -25,9 +25,11 @@ The central object is the `nlist` object which is a list of uniquely named numer
 `nlist` objects are the raw data inputs for analytic engines such as JAGS, STAN and TMB.
 
 ```{r}
-nlist <- nlist(x = 1:2,
-               y = matrix(c(4:1), nrow = 2),
-               z = 5.1)
+nlist <- nlist(
+  x = 1:2,
+  y = matrix(c(4:1), nrow = 2),
+  z = 5.1
+)
 print(nlist)
 str(nlist)
 ```
@@ -42,9 +44,11 @@ An `nlists` object is a list of `nlist` objects of S3 class `nlists`.
 nlists <- nlists(
   nlist,
   nlist,
-  nlist(x = 2:3,
-        y = matrix(c(5:8), nrow = 2),
-        z = 8)
+  nlist(
+    x = 2:3,
+    y = matrix(c(5:8), nrow = 2),
+    z = 8
+  )
 )
 print(nlists)
 str(nlists)
@@ -81,7 +85,7 @@ A vector can be coerced back to an nlist object if an nlist object is available 
 ```{r}
 list <- unlist(nlist)
 list[1] <- 100
-list["z"] <- -999 
+list["z"] <- -999
 relist_nlist(list, nlist)
 ```
 
@@ -90,7 +94,7 @@ relist_nlist(list, nlist)
 A `data.frame` of numeric vectors can be coerced to an `nlist` object.
 
 ```{r}
-as_nlist(data.frame(x = 1:2, y = c(3,5)))
+as_nlist(data.frame(x = 1:2, y = c(3, 5)))
 ```
 
 ## term frame

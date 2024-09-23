@@ -1,8 +1,8 @@
 test_that("tidy.nlists", {
   rlang::local_options(lifecycle_verbosity = "quiet")
-  
+
   lifecycle::expect_deprecated(tidy(nlists()))
-  
+
   expect_identical(tidy(nlists()), structure(list(
     term = structure(character(0), class = c(
       "term",
@@ -83,25 +83,31 @@ test_that("tidy.nlists", {
   )
   expect_identical(
     tidy(nlists(nlist(x = 2:4)), simplify = TRUE),
-    tibble::tibble(term = term(x = 3), estimate = c(2, 3, 4)
-                   , lower = c(
-      2,
-      3, 4
-    ), upper = c(2, 3, 4), svalue = c(1, 1, 1))
+    tibble::tibble(
+      term = term(x = 3), estimate = c(2, 3, 4),
+      lower = c(
+        2,
+        3, 4
+      ), upper = c(2, 3, 4), svalue = c(1, 1, 1)
+    )
   )
   expect_identical(
     tidy(nlists(nlist(y = 1, s = 1:2)), simplify = TRUE),
-    tibble::tibble(term = term("y", s = 2), estimate = c(1, 1, 2), 
-                   lower = c(
-      1,
-      1, 2
-    ), upper = c(1, 1, 2), svalue = c(1, 1, 1))
+    tibble::tibble(
+      term = term("y", s = 2), estimate = c(1, 1, 2),
+      lower = c(
+        1,
+        1, 2
+      ), upper = c(1, 1, 2), svalue = c(1, 1, 1)
+    )
   )
-  expect_equal(tidy(nlists(nlist(x = 1, y = 1:2), nlist(x = 1, y = 3:4)), simplify = TRUE), tibble::tibble(term = term("x" = 1, y = 2), estimate = c(1, 2, 3), 
-                                                                                                             lower = c(1, 1.05, 2.05), upper = c(1, 2.95, 3.95), svalue = c(
-    1.58496250072116,
-    1.58496250072116, 1.58496250072116
-  )))
+  expect_equal(tidy(nlists(nlist(x = 1, y = 1:2), nlist(x = 1, y = 3:4)), simplify = TRUE), tibble::tibble(
+    term = term("x" = 1, y = 2), estimate = c(1, 2, 3),
+    lower = c(1, 1.05, 2.05), upper = c(1, 2.95, 3.95), svalue = c(
+      1.58496250072116,
+      1.58496250072116, 1.58496250072116
+    )
+  ))
 })
 
 test_that("tidy.mcmc", {

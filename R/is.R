@@ -5,7 +5,7 @@
 #'
 #' @inheritParams params
 #' @return A flag indicating whether x is a numeric object or inherits from S3 class nlist or nlists.
-#' 
+#'
 #' @export
 #'
 #' @examples
@@ -17,7 +17,7 @@ is_numeric <- function(x) {
 }
 
 #' @describeIn is_numeric Is nlist
-#' 
+#'
 #' @export
 #'
 #' @examples

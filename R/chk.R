@@ -22,8 +22,8 @@ chk_nlist <- function(x, x_name = NULL) {
   chk_named(x, x_name = x_name)
   x_name_names <- backtick_chk(p0("names(", unbacktick_chk(x_name), ")"))
   chk_pars(names(x), x_name = x_name_names)
-  chk_not_any_na(names(x), x_name = x_name_names) 
-  chk_unique(names(x), x_name = x_name_names) 
+  chk_not_any_na(names(x), x_name = x_name_names)
+  chk_unique(names(x), x_name = x_name_names)
   chk_all(x, chk_numeric, x_name = x_name)
 }
 

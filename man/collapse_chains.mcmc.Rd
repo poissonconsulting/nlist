@@ -25,7 +25,7 @@ collapse_chains(as_mcmc(nlist(x = 2)))
 }
 \seealso{
 Other collapse: 
-\code{\link{collapse_chains.nlists}()},
-\code{\link{collapse_chains.nlist}()}
+\code{\link{collapse_chains.nlist}()},
+\code{\link{collapse_chains.nlists}()}
 }
 \concept{collapse}

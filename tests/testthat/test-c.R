@@ -10,8 +10,8 @@ test_that("c.nlist", {
   expect_identical(c(nlist(), nlist(x = 1)), nlist(x = 1))
   expect_error(
     c(nlist(x = 1), nlist(x = 1)),
-    "^nlist objects must have distinctly named numeric elements in order to be concatenated[.]$"
-    , class = "chk_error"
+    "^nlist objects must have distinctly named numeric elements in order to be concatenated[.]$",
+    class = "chk_error"
   )
 })
 
@@ -29,12 +29,13 @@ test_that("c.nlists", {
     "^All elements of ... must inherit from S3 class 'nlists'[.]",
     class = "chk_error"
   )
-  expect_error(c(
-    nlists(nlist(x = 1)),
-    nlists(nlist(y = 1))
-  ),
-  "^nlist elements of [.][.][.] must have matching names[.]$",
-  class = "chk_error"
+  expect_error(
+    c(
+      nlists(nlist(x = 1)),
+      nlists(nlist(y = 1))
+    ),
+    "^nlist elements of [.][.][.] must have matching names[.]$",
+    class = "chk_error"
   )
 })
 

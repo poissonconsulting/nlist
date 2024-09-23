@@ -12,18 +12,18 @@
 #' @examples
 #' mcmc <- as_mcmc(nlist(beta = 1:2, theta = 1))
 #' subset(mcmc, pars = "beta")
-#' subset(mcmc, iters = c(1L,1L))
+#' subset(mcmc, iters = c(1L, 1L))
 subset.mcmc <- function(x, iters = NULL, pars = NULL,
                         iterations = NULL, parameters = NULL, ...) {
   if (!missing(iterations)) {
     deprecate_warn("0.2.1", "subset(iterations = )", "subset(iters = )",
-                   id = "subset_iterations"
+      id = "subset_iterations"
     )
     iters <- iterations
   }
   if (!missing(parameters)) {
     deprecate_warn("0.2.1", "subset(parameters = )", "subset(pars = )",
-                   id = "subset_parameters"
+      id = "subset_parameters"
     )
     pars <- parameters
   }
@@ -38,7 +38,7 @@ subset.mcmc <- function(x, iters = NULL, pars = NULL,
     chk_subset(pars, pars(x))
   }
   chk_unused(...)
-  
+
   if (!is.null(pars)) x <- x[, pars_terms(as_term(x)) %in% pars, drop = FALSE]
   if (!is.null(iters)) x <- x[iters, , drop = FALSE]
   set_class(x, "mcmc")
@@ -56,21 +56,23 @@ subset.mcmc <- function(x, iters = NULL, pars = NULL,
 #' @export
 #'
 #' @examples
-#' mcmc.list <- as_mcmc_list(nlists(nlist(beta = 1:2, theta = 1), 
-#'                                  nlist(beta = 3:4, theta = -1)))
+#' mcmc.list <- as_mcmc_list(nlists(
+#'   nlist(beta = 1:2, theta = 1),
+#'   nlist(beta = 3:4, theta = -1)
+#' ))
 #' subset(mcmc.list, pars = "beta")
-#' subset(mcmc.list, iters = c(1L,1L))
+#' subset(mcmc.list, iters = c(1L, 1L))
 subset.mcmc.list <- function(x, chains = NULL, iters = NULL, pars = NULL,
                              iterations = NULL, parameters = NULL, ...) {
   if (!missing(iterations)) {
     deprecate_warn("0.2.1", "subset(iterations = )", "subset(iters = )",
-                   id = "subset_iterations"
+      id = "subset_iterations"
     )
     iters <- iterations
   }
   if (!missing(parameters)) {
     deprecate_warn("0.2.1", "subset(parameters = )", "subset(pars = )",
-                   id = "subset_parameters"
+      id = "subset_parameters"
     )
     pars <- parameters
   }
@@ -80,7 +82,7 @@ subset.mcmc.list <- function(x, chains = NULL, iters = NULL, pars = NULL,
     chk_range(chains, c(1L, nchains(x)))
   }
   chk_unused(...)
-  
+
   if (!is.null(chains)) {
     x <- x[chains]
   }
