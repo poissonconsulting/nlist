@@ -1,4 +1,11 @@
-destination: docs
+url: https://poissonconsulting.github.io/nlist/
+template:
+  bootstrap: 5
+  package: poissontemplate
+  
+
+development:
+  mode: auto
 
 reference:
 - title: Create or Coerce
@@ -17,7 +24,7 @@ reference:
   - '`bind_iterations.mcmc`'
   - '`bind_iterations.mcmc.list`'
   - '`nlist`'
-  - '`nlists`'  
+  - '`nlists`'
 - title: Query
   desc: Query object's dimensions/parameters
   contents:
