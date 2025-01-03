@@ -26,7 +26,7 @@ The assignment version \verb{pars<-()} forwards to \code{set_pars()}.
 object's parameters.
 }
 \examples{
-nlist <-  nlist(x = 1, y = 3:4)
+nlist <- nlist(x = 1, y = 3:4)
 pars(nlist) <- c("a", "b")
 nlist
 set_pars(nlist, c("z", "c1"))

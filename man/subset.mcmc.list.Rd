@@ -39,8 +39,10 @@ Subsets an mcmc.list object by its chains, parameters and/or iterations.
 Future versions should allow it to be reordered by its parameters.
 }
 \examples{
-mcmc.list <- as_mcmc_list(nlists(nlist(beta = 1:2, theta = 1), 
-                                 nlist(beta = 3:4, theta = -1)))
+mcmc.list <- as_mcmc_list(nlists(
+  nlist(beta = 1:2, theta = 1),
+  nlist(beta = 3:4, theta = -1)
+))
 subset(mcmc.list, pars = "beta")
-subset(mcmc.list, iters = c(1L,1L))
+subset(mcmc.list, iters = c(1L, 1L))
 }

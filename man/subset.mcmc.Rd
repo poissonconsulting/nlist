@@ -31,5 +31,5 @@ Future versions should allow it to be reordered by its parameters.
 \examples{
 mcmc <- as_mcmc(nlist(beta = 1:2, theta = 1))
 subset(mcmc, pars = "beta")
-subset(mcmc, iters = c(1L,1L))
+subset(mcmc, iters = c(1L, 1L))
 }
