@@ -11,7 +11,7 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/nlist/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/nlist)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit/)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/nlist)](https://cran.r-project.org/package=nlist)
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/nlist)
@@ -280,17 +280,17 @@ The website for the release version is at
 ### Development
 
 To install the development version from
-[r-universe](https://poissonconsulting.r-universe.dev/nlist).
-
-``` r
-install.packages("nlist", repos = c("https://poissonconsulting.r-universe.dev", "https://cloud.r-project.org"))
-```
-
-or from [GitHub](https://github.com/poissonconsulting/nlist)
+[GitHub](https://github.com/poissonconsulting/nlist)
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("poissonconsulting/nlist")
+```
+
+or from [r-universe](https://poissonconsulting.r-universe.dev/nlist).
+
+``` r
+install.packages("nlist", repos = c("https://poissonconsulting.r-universe.dev", "https://cloud.r-project.org"))
 ```
 
 ## Contribution
