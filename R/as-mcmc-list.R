@@ -47,6 +47,9 @@ as_mcmc_list.nlists <- function(x, ...) {
   coda::as.mcmc.list(x)
 }
 
+#' @export
+coda::as.mcmc.list
+
 #' @method as.mcmc.list nlist
 #' @export
 as.mcmc.list.nlist <- function(x, ...) {
