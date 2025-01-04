@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# nlist <img src="man/figures/logo.png" align="right" />
+# nlist <img src="man/figures/logo.png" align="right" alt="nlist logo"/>
 
 <!-- badges: start -->
 
