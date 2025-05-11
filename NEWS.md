@@ -1,4 +1,35 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# nlist 0.3.3.9001
+
+- Merge branch 'main' of github.com:poissonconsulting/nlist.
+
+- Export coda::as.mcmc.list.
+
+- Merge pull request #45 from poissonconsulting/upkeep.
+
+- Added mcmcr as suggested dependency to removal speed bottleneck in `as_nlists.mcmc()` (#31, #44).
+
+- No longer deprecate `as.mcmc` and `as.mcmc.list` (#43).
+
+- Warn-deprecated all soft-deprecated functions.
+
+- R \>= 3.5.
+
+- Merge pull request #39 from poissonconsulting/description-contr.
+
+  add contributors
+
+- Merge pull request #37 from poissonconsulting/rcmd-check.
+
+  update workflow
+
+- Merge pull request #36 from poissonconsulting/changes_to_actions.
+
+  Made changes to Actions using UsePois
+
+- Merge branch 'master' of github.com:poissonconsulting/nlist.
+
 
 # nlist 0.3.3.9000
 
