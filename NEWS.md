@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# nlist 0.4.0
+
+- Merge branch 'main' into cran-0.3.3.9900.
+
+
 # nlist 0.3.3.9900
 
 - Merge branch 'main' of github.com:poissonconsulting/nlist.
