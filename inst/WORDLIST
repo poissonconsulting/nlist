@@ -1,9 +1,13 @@
 CMD
 Codecov
+Coercions
 Lifecycle
+ORCID
 TMB
+funder
 ie
 mcmc
+mcmcr
 natomic
 nchains
 sd
@@ -13,4 +17,3 @@ tibble
 typeofs
 unlist
 zscore
-Coercions
