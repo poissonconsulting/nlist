@@ -1,6 +1,6 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
-# nlist 0.3.3.9001
+# nlist 0.3.3.9900
 
 - Merge branch 'main' of github.com:poissonconsulting/nlist.
 
@@ -30,10 +30,8 @@
 
 - Merge branch 'master' of github.com:poissonconsulting/nlist.
 
-
-# nlist 0.3.3.9000
-
 - Same as previous version.
+
 
 # nlist 0.3.3
 
