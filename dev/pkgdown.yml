@@ -3,7 +3,7 @@ pkgdown: 2.1.2
 pkgdown_sha: ~
 articles:
   nlist-objects-and-coercions: nlist-objects-and-coercions.html
-last_built: 2025-05-11T20:04Z
+last_built: 2025-05-11T21:26Z
 urls:
   reference: https://poissonconsulting.github.io/nlist/reference
   article: https://poissonconsulting.github.io/nlist/articles
