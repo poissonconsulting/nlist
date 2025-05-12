@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# nlist 0.4.0.9000
+
+- Switching to development version.
+
+
 # nlist 0.4.0
 
 - Exported `coda::as.mcmc.list`.
