@@ -26,12 +26,12 @@ Source:
 [`DESCRIPTION`](https://github.com/poissonconsulting/nlist/blob/main/DESCRIPTION)
 
 Thorley J (2026). *nlist: Lists of Numeric Atomic Objects*. R package
-version 0.4.0.9000, <https://github.com/poissonconsulting/nlist>.
+version 0.4.0.9001, <https://github.com/poissonconsulting/nlist>.
 
     @Manual{,
       title = {nlist: Lists of Numeric Atomic Objects},
       author = {Joe Thorley},
       year = {2026},
-      note = {R package version 0.4.0.9000},
+      note = {R package version 0.4.0.9001},
       url = {https://github.com/poissonconsulting/nlist},
     }
