@@ -1,5 +1,9 @@
 # Changelog
 
+## nlist 0.4.0.9002
+
+- Same as previous version.
+
 ## nlist 0.4.0.9001
 
 - Add fledge-bump workflow
