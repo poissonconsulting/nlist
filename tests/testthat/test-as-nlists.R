@@ -1,4 +1,6 @@
 test_that("as_nlists.mcmc", {
+  skip_if_not_installed("mcmcr")
+
   expect_identical(
     as_nlists(as_mcmc(nlist(x = 1))),
     nlists(nlist(x = 1))
@@ -15,6 +17,8 @@ test_that("as_nlists.mcmc", {
 })
 
 test_that("as_nlists.mcmc", {
+  skip_if_not_installed("mcmcr")
+
   nlists <- nlists(
     nlist(x = 1, y = matrix(1:4, 2)),
     nlist(x = 3, y = matrix(4:1, 2))
@@ -23,6 +27,8 @@ test_that("as_nlists.mcmc", {
 })
 
 test_that("as_nlists.mcmc.list 1 chain", {
+  skip_if_not_installed("mcmcr")
+
   nlists <- nlists(
     nlist(x = 1, y = matrix(1:4, 2)),
     nlist(x = 3, y = matrix(4:1, 2))
@@ -32,6 +38,8 @@ test_that("as_nlists.mcmc.list 1 chain", {
 })
 
 test_that("as_nlists.mcmc.list 2 chains", {
+  skip_if_not_installed("mcmcr")
+
   nlists <- nlists(
     nlist(x = 1, y = matrix(1:4, 2)),
     nlist(x = 3, y = matrix(4:1, 2))

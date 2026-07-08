@@ -111,6 +111,8 @@ test_that("tidy.nlists", {
 })
 
 test_that("tidy.mcmc", {
+  skip_if_not_installed("mcmcr")
+
   nlists <- nlists(nlist(x = 1:3, y = matrix(1)))
   expect_identical(
     tidy(as_mcmc(nlists), simplify = TRUE, directional_information = FALSE),
@@ -119,6 +121,8 @@ test_that("tidy.mcmc", {
 })
 
 test_that("tidy.mcmc.list", {
+  skip_if_not_installed("mcmcr")
+
   nlists <- nlists(nlist(x = 1:3, y = matrix(1)))
   expect_identical(
     tidy(as_mcmc_list(nlists), simplify = TRUE, directional_information = FALSE),
@@ -152,6 +156,8 @@ test_that("tidy directional_information = TRUE with simplify = FALSE", {
 })
 
 test_that("tidy directional_information = TRUE via mcmc and mcmc.list", {
+  skip_if_not_installed("mcmcr")
+
   nlists <- nlists(nlist(x = 1:3, y = matrix(1)))
   expect_identical(
     tidy(as_mcmc(nlists), simplify = TRUE, directional_information = TRUE),
