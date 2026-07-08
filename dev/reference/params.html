@@ -108,6 +108,14 @@ for each term element.</p></dd>
 <dd><p>A flag specifying whether to drop sd and zscore columns.</p></dd>
 
 
+<dt id="arg-directional-information">directional_information<a class="anchor" aria-label="anchor" href="#arg-directional-information"></a></dt>
+<dd><p>A flag specifying whether the svalue column
+should be calculated using <code><a href="https://poissonconsulting.github.io/extras/reference/directional-information.html" class="external-link">extras::directional_information()</a></code> instead of
+<code><a href="https://poissonconsulting.github.io/extras/reference/svalue.html" class="external-link">extras::svalue()</a></code>.
+The default value will change from <code>FALSE</code> to <code>TRUE</code> in a future release;
+set the argument explicitly to avoid the deprecation warning.</p></dd>
+
+
 <dt id="arg-silent">silent<a class="anchor" aria-label="anchor" href="#arg-silent"></a></dt>
 <dd><p>A flag specifying whether to suppress warning messages.</p></dd>
 
@@ -125,7 +133,7 @@ for each term element.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>
