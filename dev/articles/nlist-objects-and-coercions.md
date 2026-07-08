@@ -142,10 +142,14 @@ as_nlist(as_mcmc(nlist))
 #> [1] 5.1
 #> 
 #> an nlist object with 3 numeric elements
+```
+
+Coercing an `mcmc` object with multiple iterations back to an `nlists`
+object requires the `mcmcr` package.
+
+``` r
+
 as_nlists(as_mcmc(nlists))
-#> Registered S3 method overwritten by 'mcmcr':
-#>   method         from 
-#>   as.mcmc.nlists nlist
 #> $x
 #> [1] 1 2
 #> 
