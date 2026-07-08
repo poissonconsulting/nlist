@@ -27,7 +27,7 @@ with \code{nchains} \code{\link[=nlist_object]{nlist_object()}}s.
 aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
 }
 \seealso{
-Other aggregate: 
-\code{\link{aggregate.nlist}()}
+Other aggregate:
+\code{\link[=aggregate.nlist]{aggregate.nlist()}}
 }
 \concept{aggregate}

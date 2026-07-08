@@ -45,6 +45,6 @@ fill_all(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)))
 fill_all(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)), nas = FALSE)
 }
 \seealso{
-Other fill: 
-\code{\link[extras]{fill_na}()}
+Other fill:
+\code{\link[extras:fill_na]{fill_na()}}
 }

@@ -25,11 +25,11 @@ as_term_frame(nlists(
 ))
 }
 \seealso{
-Other coerce term: 
-\code{\link{as_term.mcmc}()},
-\code{\link{as_term.nlist}()},
-\code{\link{as_term.nlists}()},
-\code{\link{as_term_frame}()},
-\code{\link{as_term_frame.nlist}()}
+Other coerce term:
+\code{\link[=as_term.mcmc]{as_term.mcmc()}},
+\code{\link[=as_term.nlist]{as_term.nlist()}},
+\code{\link[=as_term.nlists]{as_term.nlists()}},
+\code{\link[=as_term_frame]{as_term_frame()}},
+\code{\link[=as_term_frame.nlist]{as_term_frame.nlist()}}
 }
 \concept{coerce term}

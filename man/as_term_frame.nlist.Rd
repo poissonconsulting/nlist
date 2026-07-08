@@ -22,11 +22,11 @@ and a value column.
 as_term_frame(nlist(x = 1, y = 4:6))
 }
 \seealso{
-Other coerce term: 
-\code{\link{as_term.mcmc}()},
-\code{\link{as_term.nlist}()},
-\code{\link{as_term.nlists}()},
-\code{\link{as_term_frame}()},
-\code{\link{as_term_frame.nlists}()}
+Other coerce term:
+\code{\link[=as_term.mcmc]{as_term.mcmc()}},
+\code{\link[=as_term.nlist]{as_term.nlist()}},
+\code{\link[=as_term.nlists]{as_term.nlists()}},
+\code{\link[=as_term_frame]{as_term_frame()}},
+\code{\link[=as_term_frame.nlists]{as_term_frame.nlists()}}
 }
 \concept{coerce term}

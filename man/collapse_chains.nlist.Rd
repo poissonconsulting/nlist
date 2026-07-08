@@ -24,8 +24,8 @@ As nlist objects can only have 1 chain the object is unchanged.
 collapse_chains(nlist(x = 2))
 }
 \seealso{
-Other collapse: 
-\code{\link{collapse_chains.mcmc}()},
-\code{\link{collapse_chains.nlists}()}
+Other collapse:
+\code{\link[=collapse_chains.mcmc]{collapse_chains.mcmc()}},
+\code{\link[=collapse_chains.nlists]{collapse_chains.nlists()}}
 }
 \concept{collapse}

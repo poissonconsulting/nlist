@@ -18,11 +18,11 @@ Coerce to a Term Vector
 as_term(nlist(x = matrix(1:4, ncol = 2)))
 }
 \seealso{
-Other coerce term: 
-\code{\link{as_term.mcmc}()},
-\code{\link{as_term.nlists}()},
-\code{\link{as_term_frame}()},
-\code{\link{as_term_frame.nlist}()},
-\code{\link{as_term_frame.nlists}()}
+Other coerce term:
+\code{\link[=as_term.mcmc]{as_term.mcmc()}},
+\code{\link[=as_term.nlists]{as_term.nlists()}},
+\code{\link[=as_term_frame]{as_term_frame()}},
+\code{\link[=as_term_frame.nlist]{as_term_frame.nlist()}},
+\code{\link[=as_term_frame.nlists]{as_term_frame.nlists()}}
 }
 \concept{coerce term}

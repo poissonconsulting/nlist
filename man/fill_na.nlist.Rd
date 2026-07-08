@@ -43,6 +43,6 @@ fill_na(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)))
 fill_na(nlists(nlist(x = c(2, NA)), nlist(x = c(NA_real_, NA))))
 }
 \seealso{
-Other fill: 
-\code{\link[extras]{fill_all}()}
+Other fill:
+\code{\link[extras:fill_all]{fill_all()}}
 }
