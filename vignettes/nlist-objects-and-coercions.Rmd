@@ -69,6 +69,11 @@ str(as_mcmc(nlists))
 
 ```{r}
 as_nlist(as_mcmc(nlist))
+```
+
+Coercing an `mcmc` object with multiple iterations back to an `nlists` object requires the `mcmcr` package.
+
+```{r, eval = requireNamespace("mcmcr", quietly = TRUE)}
 as_nlists(as_mcmc(nlists))
 ```
 
