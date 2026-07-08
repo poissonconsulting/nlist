@@ -4,12 +4,18 @@
 \alias{tidy.nlists}
 \title{Turn an object into a tidy tibble}
 \usage{
-\method{tidy}{nlists}(x, simplify = FALSE, ...)
+\method{tidy}{nlists}(x, simplify = FALSE, directional_information = FALSE, ...)
 }
 \arguments{
 \item{x}{An object.}
 
 \item{simplify}{A flag specifying whether to drop sd and zscore columns.}
+
+\item{directional_information}{A flag specifying whether the svalue column
+should be calculated using \code{\link[extras:directional_information]{extras::directional_information()}} instead of
+\code{\link[extras:svalue]{extras::svalue()}}.
+The default value will change from \code{FALSE} to \code{TRUE} in a future release;
+set the argument explicitly to avoid the deprecation warning.}
 
 \item{...}{Unused.}
 }
@@ -30,5 +36,9 @@ Turn an object into a tidy tibble
 tidy(nlists(
   nlist(x = 1, y = 4:6),
   nlist(x = 3, y = 7:9)
-), simplify = TRUE)
+), simplify = TRUE, directional_information = FALSE)
+tidy(nlists(
+  nlist(x = 1, y = 4:6),
+  nlist(x = 3, y = 7:9)
+), simplify = TRUE, directional_information = TRUE)
 }

@@ -42,6 +42,6 @@ not standard data.frames.
 fill_na(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2)))
 }
 \seealso{
-Other fill: 
-\code{\link[extras]{fill_all}()}
+Other fill:
+\code{\link[extras:fill_all]{fill_all()}}
 }

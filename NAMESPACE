@@ -150,33 +150,43 @@ import(lifecycle)
 import(term)
 import(universals)
 importFrom(abind,abind)
-importFrom(coda,as.mcmc)
-importFrom(coda,as.mcmc.list)
-importFrom(coda,thin)
-importFrom(extras,fill_all)
-importFrom(extras,fill_na)
-importFrom(extras,lower)
-importFrom(extras,pvalue)
-importFrom(extras,svalue)
-importFrom(extras,upper)
-importFrom(extras,zscore)
+importFrom(coda,
+  as.mcmc,
+  as.mcmc.list,
+  thin
+)
+importFrom(extras,
+  fill_all,
+  fill_na,
+  lower,
+  pvalue,
+  svalue,
+  upper,
+  zscore
+)
 importFrom(generics,tidy)
 importFrom(purrr,transpose)
-importFrom(stats,aggregate)
-importFrom(stats,median)
-importFrom(term,as.term)
-importFrom(term,as_term)
-importFrom(term,complete_terms)
-importFrom(universals,"pars<-")
-importFrom(universals,bind_iterations)
-importFrom(universals,collapse_chains)
-importFrom(universals,estimates)
-importFrom(universals,nchains)
-importFrom(universals,niters)
-importFrom(universals,npdims)
-importFrom(universals,nsims)
-importFrom(universals,nterms)
-importFrom(universals,pars)
-importFrom(universals,pdims)
-importFrom(universals,set_pars)
-importFrom(universals,split_chains)
+importFrom(stats,
+  aggregate,
+  median
+)
+importFrom(term,
+  as.term,
+  as_term,
+  complete_terms
+)
+importFrom(universals,
+  "pars<-",
+  bind_iterations,
+  collapse_chains,
+  estimates,
+  nchains,
+  niters,
+  npdims,
+  nsims,
+  nterms,
+  pars,
+  pdims,
+  set_pars,
+  split_chains
+)

@@ -21,11 +21,11 @@ value and in the case of an nlists object an integer
 vector called samples. It includes the original nlist or nlists object.
 }
 \seealso{
-Other coerce term: 
-\code{\link{as_term.mcmc}()},
-\code{\link{as_term.nlist}()},
-\code{\link{as_term.nlists}()},
-\code{\link{as_term_frame.nlist}()},
-\code{\link{as_term_frame.nlists}()}
+Other coerce term:
+\code{\link[=as_term.mcmc]{as_term.mcmc()}},
+\code{\link[=as_term.nlist]{as_term.nlist()}},
+\code{\link[=as_term.nlists]{as_term.nlists()}},
+\code{\link[=as_term_frame.nlist]{as_term_frame.nlist()}},
+\code{\link[=as_term_frame.nlists]{as_term_frame.nlists()}}
 }
 \concept{coerce term}

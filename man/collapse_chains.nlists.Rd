@@ -21,8 +21,8 @@ Collapses an MCMC object's chains into a single chain.
 collapse_chains(nlist(x = 2))
 }
 \seealso{
-Other collapse: 
-\code{\link{collapse_chains.mcmc}()},
-\code{\link{collapse_chains.nlist}()}
+Other collapse:
+\code{\link[=collapse_chains.mcmc]{collapse_chains.mcmc()}},
+\code{\link[=collapse_chains.nlist]{collapse_chains.nlist()}}
 }
 \concept{collapse}

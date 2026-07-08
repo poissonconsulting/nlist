@@ -18,6 +18,11 @@
 #' @param parameters A character vector (or NULL) of the parameters to subset by.
 #' @param iterations An integer vector (or NULL) of the iterations to subset by.
 #' @param simplify A flag specifying whether to drop sd and zscore columns.
+#' @param directional_information A flag specifying whether the svalue column
+#' should be calculated using [extras::directional_information()] instead of
+#' [extras::svalue()].
+#' The default value will change from `FALSE` to `TRUE` in a future release;
+#' set the argument explicitly to avoid the deprecation warning.
 #' @param silent A flag specifying whether to suppress warning messages.
 #' @param by_chain A flag specifying whether to aggregate by chains.
 #' @keywords internal

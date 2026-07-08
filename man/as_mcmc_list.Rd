@@ -43,7 +43,7 @@ as_mcmc_list(nlists(
 ))
 }
 \seealso{
-Other mcmc: 
-\code{\link{as_mcmc}()}
+Other mcmc:
+\code{\link[=as_mcmc]{as_mcmc()}}
 }
 \concept{mcmc}

@@ -45,6 +45,6 @@ fill_all(nlists(nlist(x = c(2, NA)), nlist(x = c(NA_real_, NA))))
 fill_all(nlists(nlist(x = c(2, NA)), nlist(x = c(NA_real_, NA))), nas = FALSE)
 }
 \seealso{
-Other fill: 
-\code{\link[extras]{fill_na}()}
+Other fill:
+\code{\link[extras:fill_na]{fill_na()}}
 }

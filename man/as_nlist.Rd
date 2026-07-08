@@ -56,7 +56,7 @@ as_nlist(list(x = 1:4))
 as_nlist(c(`a[2]` = 3, `a[1]` = 2))
 }
 \seealso{
-Other coerce: 
-\code{\link{as_nlists}()}
+Other coerce:
+\code{\link[=as_nlists]{as_nlists()}}
 }
 \concept{coerce}

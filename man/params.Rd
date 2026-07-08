@@ -37,6 +37,12 @@ for each term element.}
 
 \item{simplify}{A flag specifying whether to drop sd and zscore columns.}
 
+\item{directional_information}{A flag specifying whether the svalue column
+should be calculated using \code{\link[extras:directional_information]{extras::directional_information()}} instead of
+\code{\link[extras:svalue]{extras::svalue()}}.
+The default value will change from \code{FALSE} to \code{TRUE} in a future release;
+set the argument explicitly to avoid the deprecation warning.}
+
 \item{silent}{A flag specifying whether to suppress warning messages.}
 
 \item{by_chain}{A flag specifying whether to aggregate by chains.}

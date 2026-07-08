@@ -44,9 +44,9 @@ as_mcmc(nlists(
 ))
 }
 \seealso{
-\code{\link[coda:mcmc]{coda::as.mcmc()}}
+\code{\link[coda:as.mcmc]{coda::as.mcmc()}}
 
-Other mcmc: 
-\code{\link{as_mcmc_list}()}
+Other mcmc:
+\code{\link[=as_mcmc_list]{as_mcmc_list()}}
 }
 \concept{mcmc}
