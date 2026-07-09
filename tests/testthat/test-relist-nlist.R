@@ -1,8 +1,11 @@
 test_that("relist_nlist", {
-  expect_identical(relist_nlist(
-    structure(numeric(0), .Names = character(0)),
+  expect_identical(
+    relist_nlist(
+      structure(numeric(0), .Names = character(0)),
+      nlist()
+    ),
     nlist()
-  ), nlist())
+  )
   expect_identical(
     relist_nlist(c(a = 5), nlist(a = NA_real_)),
     nlist(a = 5)

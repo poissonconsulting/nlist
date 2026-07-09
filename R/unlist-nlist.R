@@ -12,7 +12,9 @@
 unlist_nlist <- function(x) {
   chk_s3_class(x, "nlist")
   y <- unlist(unclass(x))
-  if (is.null(y)) y <- numeric(0)
+  if (is.null(y)) {
+    y <- numeric(0)
+  }
   y <- as.numeric(y)
   names(y) <- as_term(x)
   y
@@ -32,7 +34,9 @@ unlist_nlist <- function(x) {
 unlist.nlist <- function(x, recursive = TRUE, use.names = TRUE) {
   chk_flag(use.names)
   x <- unlist_nlist(x)
-  if (!use.names) x <- unname(x)
+  if (!use.names) {
+    x <- unname(x)
+  }
   x
 }
 

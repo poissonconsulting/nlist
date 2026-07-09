@@ -13,16 +13,28 @@
 #' mcmc <- as_mcmc(nlist(beta = 1:2, theta = 1))
 #' subset(mcmc, pars = "beta")
 #' subset(mcmc, iters = c(1L, 1L))
-subset.mcmc <- function(x, iters = NULL, pars = NULL,
-                        iterations = NULL, parameters = NULL, ...) {
+subset.mcmc <- function(
+  x,
+  iters = NULL,
+  pars = NULL,
+  iterations = NULL,
+  parameters = NULL,
+  ...
+) {
   if (!missing(iterations)) {
-    deprecate_warn("0.2.1", "subset(iterations = )", "subset(iters = )",
+    deprecate_warn(
+      "0.2.1",
+      "subset(iterations = )",
+      "subset(iters = )",
       id = "subset_iterations"
     )
     iters <- iterations
   }
   if (!missing(parameters)) {
-    deprecate_warn("0.2.1", "subset(parameters = )", "subset(pars = )",
+    deprecate_warn(
+      "0.2.1",
+      "subset(parameters = )",
+      "subset(pars = )",
       id = "subset_parameters"
     )
     pars <- parameters
@@ -39,8 +51,12 @@ subset.mcmc <- function(x, iters = NULL, pars = NULL,
   }
   chk_unused(...)
 
-  if (!is.null(pars)) x <- x[, pars_terms(as_term(x)) %in% pars, drop = FALSE]
-  if (!is.null(iters)) x <- x[iters, , drop = FALSE]
+  if (!is.null(pars)) {
+    x <- x[, pars_terms(as_term(x)) %in% pars, drop = FALSE]
+  }
+  if (!is.null(iters)) {
+    x <- x[iters, , drop = FALSE]
+  }
   set_class(x, "mcmc")
 }
 
@@ -62,16 +78,29 @@ subset.mcmc <- function(x, iters = NULL, pars = NULL,
 #' ))
 #' subset(mcmc.list, pars = "beta")
 #' subset(mcmc.list, iters = c(1L, 1L))
-subset.mcmc.list <- function(x, chains = NULL, iters = NULL, pars = NULL,
-                             iterations = NULL, parameters = NULL, ...) {
+subset.mcmc.list <- function(
+  x,
+  chains = NULL,
+  iters = NULL,
+  pars = NULL,
+  iterations = NULL,
+  parameters = NULL,
+  ...
+) {
   if (!missing(iterations)) {
-    deprecate_warn("0.2.1", "subset(iterations = )", "subset(iters = )",
+    deprecate_warn(
+      "0.2.1",
+      "subset(iterations = )",
+      "subset(iters = )",
       id = "subset_iterations"
     )
     iters <- iterations
   }
   if (!missing(parameters)) {
-    deprecate_warn("0.2.1", "subset(parameters = )", "subset(pars = )",
+    deprecate_warn(
+      "0.2.1",
+      "subset(parameters = )",
+      "subset(pars = )",
       id = "subset_parameters"
     )
     pars <- parameters
@@ -141,18 +170,32 @@ subset.nlist <- function(x, pars = NULL, ...) {
 #' subset(nlists, iters = 1L)
 #' subset(nlists, iters = c(2L, 2L))
 subset.nlists <- function(x, chains = NULL, iters = NULL, pars = NULL, ...) {
-  if (!is.null(chains)) chk_subset(chains, 1:nchains(x))
-  if (!is.null(iters)) chk_subset(chains, 1:niters(x))
-  if (!is.null(pars)) chk_subset(pars, pars(x))
+  if (!is.null(chains)) {
+    chk_subset(chains, 1:nchains(x))
+  }
+  if (!is.null(iters)) {
+    chk_subset(chains, 1:niters(x))
+  }
+  if (!is.null(pars)) {
+    chk_subset(pars, pars(x))
+  }
   chk_unused(...)
 
-  if (!is.null(pars)) x <- lapply_nlists(x, subset, pars = pars)
+  if (!is.null(pars)) {
+    x <- lapply_nlists(x, subset, pars = pars)
+  }
   x <- split_by_chains(x)
-  if (!is.null(chains)) x <- x[chains]
+  if (!is.null(chains)) {
+    x <- x[chains]
+  }
   nchains <- length(x)
-  if (!is.null(iters)) x <- lapply(x, function(x, iter) x[iter], iter = iters)
+  if (!is.null(iters)) {
+    x <- lapply(x, function(x, iter) x[iter], iter = iters)
+  }
   x <- .c_nlists(x)
-  if (nchains > 1L) attr(x, "nchains") <- nchains
+  if (nchains > 1L) {
+    attr(x, "nchains") <- nchains
+  }
   names(x) <- NULL
   x
 }

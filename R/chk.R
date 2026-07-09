@@ -17,7 +17,9 @@ chk_nlist <- function(x, x_name = NULL) {
   if (vld_nlist(x)) {
     return(invisible())
   }
-  if (is.null(x_name)) x_name <- deparse_backtick_chk(substitute(x))
+  if (is.null(x_name)) {
+    x_name <- deparse_backtick_chk(substitute(x))
+  }
   chk_s3_class(x, "nlist", x_name = x_name)
   chk_named(x, x_name = x_name)
   x_name_names <- backtick_chk(p0("names(", unbacktick_chk(x_name), ")"))
@@ -40,14 +42,31 @@ chk_nlists <- function(x, x_name = NULL) {
   if (vld_nlists(x)) {
     return(invisible())
   }
-  if (is.null(x_name)) x_name <- deparse_backtick_chk(substitute(x))
+  if (is.null(x_name)) {
+    x_name <- deparse_backtick_chk(substitute(x))
+  }
   chk_s3_class(x, "nlists", x_name = x_name)
   chk_all(x, chk_nlist, x_name = x_name)
   if (!vld_all_identical(lapply(x, names))) {
-    abort_chk("nlist elements of ", x_name, " must have matching names.", tidy = FALSE)
+    abort_chk(
+      "nlist elements of ",
+      x_name,
+      " must have matching names.",
+      tidy = FALSE
+    )
   }
   if (!vld_all_identical(lapply(x, lapply, dims))) {
-    abort_chk("nlist elements of ", x_name, " must have matching dimensions.", tidy = FALSE)
+    abort_chk(
+      "nlist elements of ",
+      x_name,
+      " must have matching dimensions.",
+      tidy = FALSE
+    )
   }
-  abort_chk("nlist elements of ", x_name, " must have matching types.", tidy = FALSE)
+  abort_chk(
+    "nlist elements of ",
+    x_name,
+    " must have matching types.",
+    tidy = FALSE
+  )
 }
