@@ -1,5 +1,10 @@
 # Changelog
 
+## nlist 0.4.0.9004
+
+- Guard mcmcr-dependent vignette chunk for hard-deps-only checks
+- Skip mcmcr-dependent tests when mcmcr is not installed
+
 ## nlist 0.4.0.9003
 
 - Same as previous version.
