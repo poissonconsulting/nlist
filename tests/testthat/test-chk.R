@@ -1,18 +1,18 @@
 test_that("chk_nlist", {
   expect_error(chk_nlist(NULL),
-    "^`NULL` must inherit from S3 class 'nlist'[.]$",
+    "^`NULL` must inherit from S3 class 'nlist'",
     class = "chk_error"
   )
   expect_false(vld_nlist(list()))
   expect_false(vld_nlist(list(x = 1, x = 2)))
-  expect_error(chk_nlist(list(x = 1, x = 2)), "^`list[(]x = 1, x = 2[)]` must inherit from S3 class 'nlist'[.]$", class = "chk_error")
+  expect_error(chk_nlist(list(x = 1, x = 2)), "^`list[(]x = 1, x = 2[)]` must inherit from S3 class 'nlist'", class = "chk_error")
   expect_true(vld_nlist(nlist(x = 1, y = 2)))
   expect_true(vld_nlist(nlist(x = 1)[-1]))
   expect_true(vld_nlist(nlist()))
   expect_true(vld_nlist(nlist(x = 1)))
   expect_false(vld_nlist(list(x = TRUE)))
   expect_error(chk_nlist(list(x = TRUE)),
-    "`list[(]x = TRUE[)]` must inherit from S3 class 'nlist'[.]",
+    "`list[(]x = TRUE[)]` must inherit from S3 class 'nlist'",
     class = "chk_error"
   )
   x <- list(x = "x")
@@ -21,9 +21,9 @@ test_that("chk_nlist", {
 })
 
 test_that("chk_nlists", {
-  expect_error(chk_nlists(list()), "^`list[(][)]` must inherit from S3 class 'nlists'[.]$", class = "chk_error")
+  expect_error(chk_nlists(list()), "^`list[(][)]` must inherit from S3 class 'nlists'", class = "chk_error")
   expect_true(vld_nlists(nlists()))
-  expect_error(chk_nlists(list(nlist(x = 1))), "^`[^`]+` must inherit from S3 class 'nlists'[.]$", class = "chk_error")
+  expect_error(chk_nlists(list(nlist(x = 1))), "^`[^`]+` must inherit from S3 class 'nlists'", class = "chk_error")
   expect_true(vld_nlists(nlists(nlist())))
   expect_true(vld_nlists(nlists(nlist(x = 1), nlist(x = 2))))
   expect_true(vld_nlists(nlists(nlist(x = 1), nlist(x = 2))))

@@ -2,7 +2,7 @@ test_that("c.nlist", {
   expect_identical(c(nlist()), nlist())
   expect_identical(c(nlist(x = 1)), nlist(x = 1))
   expect_error(c(nlist(x = 1), list(x = 1)),
-    "^All elements of ... must inherit from S3 class 'nlist'[.]$",
+    "^All elements of ... must inherit from S3 class 'nlist'",
     class = "chk_error"
   )
   expect_identical(c(nlist(x = 1), nlist(y = 2)), nlist(x = 1, y = 2))
@@ -26,7 +26,7 @@ test_that("c.nlists", {
     nlists(nlist(x = 1), nlist(x = 1))
   )
   expect_error(c(nlists(), list()),
-    "^All elements of ... must inherit from S3 class 'nlists'[.]",
+    "^All elements of ... must inherit from S3 class 'nlists'",
     class = "chk_error"
   )
   expect_error(
