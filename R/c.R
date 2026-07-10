@@ -10,7 +10,10 @@ c.nlist <- function(...) {
   }
   class(x) <- "nlist"
   if (anyDuplicated(names(x))) {
-    abort_chk("nlist objects must have distinctly named numeric elements in order to be concatenated.", tidy = FALSE)
+    abort_chk(
+      "nlist objects must have distinctly named numeric elements in order to be concatenated.",
+      tidy = FALSE
+    )
   }
   x
 }
@@ -35,7 +38,9 @@ c.nlist <- function(...) {
   x <- do.call("c", x)
   class(x) <- "nlists"
   chk_nlists(x, x_name = "...")
-  if (nchains > 1L) attr(x, "nchains") <- nchains
+  if (nchains > 1L) {
+    attr(x, "nchains") <- nchains
+  }
   return(x)
 }
 

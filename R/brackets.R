@@ -13,7 +13,11 @@
     x <- as_nlists(x)
     return(x)
   }
-  if (!missing(i)) x <- subset(x, chains = i)
-  if (!missing(j)) x <- subset(x, iters = j)
+  if (!missing(i)) {
+    x <- subset(x, chains = i)
+  }
+  if (!missing(j)) {
+    x <- subset(x, iters = j)
+  }
   as_nlists(x)
 }

@@ -28,7 +28,8 @@ relist_nlist <- function(flesh, skeleton) {
 
   not_in_skeleton <- names(flesh)[!names(flesh) %in% names(skeleton)]
   if (length(not_in_skeleton)) {
-    abort_chk("The following `flesh` term%s %r not in `skeleton`: ",
+    abort_chk(
+      "The following `flesh` term%s %r not in `skeleton`: ",
       cc(not_in_skeleton, conj = " and "),
       n = length(not_in_skeleton)
     )

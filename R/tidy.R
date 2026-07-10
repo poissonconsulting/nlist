@@ -1,7 +1,10 @@
 #' @export
 generics::tidy
 
-warn_default_directional_information <- function(env = parent.frame(), user_env = parent.frame(2)) {
+warn_default_directional_information <- function(
+  env = parent.frame(),
+  user_env = parent.frame(2)
+) {
   lifecycle::deprecate_soft(
     "0.5.0",
     "tidy(directional_information = 'should be explicitly set')",
@@ -17,12 +20,18 @@ warn_default_directional_information <- function(env = parent.frame(), user_env 
 #' @inheritParams params
 #' @inherit generics::tidy
 #' @export
-tidy.mcmc <- function(x, simplify = FALSE, directional_information = FALSE, ...) {
+tidy.mcmc <- function(
+  x,
+  simplify = FALSE,
+  directional_information = FALSE,
+  ...
+) {
   chk_unused(...)
   if (missing(directional_information)) {
     warn_default_directional_information()
   }
-  tidy(as_nlists(x),
+  tidy(
+    as_nlists(x),
     simplify = simplify,
     directional_information = directional_information
   )
@@ -32,12 +41,18 @@ tidy.mcmc <- function(x, simplify = FALSE, directional_information = FALSE, ...)
 #' @inherit generics::tidy
 #'
 #' @export
-tidy.mcmc.list <- function(x, simplify = FALSE, directional_information = FALSE, ...) {
+tidy.mcmc.list <- function(
+  x,
+  simplify = FALSE,
+  directional_information = FALSE,
+  ...
+) {
   chk_unused(...)
   if (missing(directional_information)) {
     warn_default_directional_information()
   }
-  tidy(as_nlists(x),
+  tidy(
+    as_nlists(x),
     simplify = simplify,
     directional_information = directional_information
   )
@@ -56,7 +71,12 @@ tidy.mcmc.list <- function(x, simplify = FALSE, directional_information = FALSE,
 #'   nlist(x = 1, y = 4:6),
 #'   nlist(x = 3, y = 7:9)
 #' ), simplify = TRUE, directional_information = TRUE)
-tidy.nlists <- function(x, simplify = FALSE, directional_information = FALSE, ...) {
+tidy.nlists <- function(
+  x,
+  simplify = FALSE,
+  directional_information = FALSE,
+  ...
+) {
   chk_flag(simplify)
   chk_flag(directional_information)
   chk_unused(...)
@@ -78,14 +98,21 @@ tidy.nlists <- function(x, simplify = FALSE, directional_information = FALSE, ..
 
     if (simplify) {
       return(tibble::tibble(
-        term = term, estimate = estimate,
-        lower = lower, upper = upper, svalue = svalue
+        term = term,
+        estimate = estimate,
+        lower = lower,
+        upper = upper,
+        svalue = svalue
       ))
     }
     return(tibble::tibble(
-      term = term, estimate = estimate,
-      sd = sd, zscore = zscore,
-      lower = lower, upper = upper, svalue = svalue
+      term = term,
+      estimate = estimate,
+      sd = sd,
+      zscore = zscore,
+      lower = lower,
+      upper = upper,
+      svalue = svalue
     ))
   } else {
     estimate <- unlist(estimates(x, median))
@@ -95,20 +122,30 @@ tidy.nlists <- function(x, simplify = FALSE, directional_information = FALSE, ..
     zscore <- unname(unlist(estimates(x, zscore)))
     lower <- unname(unlist(estimates(x, lower)))
     upper <- unname(unlist(estimates(x, upper)))
-    svalue_fun <- if (directional_information) extras::directional_information else svalue
+    svalue_fun <- if (directional_information) {
+      extras::directional_information
+    } else {
+      svalue
+    }
     svalue <- unname(unlist(estimates(x, svalue_fun)))
   }
   if (simplify) {
     return(tibble::tibble(
-      term = term, estimate = estimate,
+      term = term,
+      estimate = estimate,
       lower = lower,
-      upper = upper, svalue = svalue
+      upper = upper,
+      svalue = svalue
     ))
   }
 
   tibble::tibble(
-    term = term, estimate = estimate,
-    sd = sd, zscore = zscore, lower = lower,
-    upper = upper, svalue = svalue
+    term = term,
+    estimate = estimate,
+    sd = sd,
+    zscore = zscore,
+    lower = lower,
+    upper = upper,
+    svalue = svalue
   )
 }

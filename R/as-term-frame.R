@@ -84,7 +84,9 @@ as_term_frame.nlists <- function(x, ...) {
       value = numeric(0)
     )))
   }
-  x <- mapply(as_term_frame_nlist_impl, x,
+  x <- mapply(
+    as_term_frame_nlist_impl,
+    x,
     sample = seq_along(x),
     SIMPLIFY = FALSE
   )

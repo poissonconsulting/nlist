@@ -16,7 +16,8 @@ as_nlist <- function(x, ...) {
 #' @rdname as_nlist
 #' @export
 as.nlist <- function(x, ...) {
-  deprecate_warn("0.1.1",
+  deprecate_warn(
+    "0.1.1",
     what = "nlist::as.nlist()",
     with = "nlist::as_nlist()"
   )
@@ -70,7 +71,9 @@ as_nlist.data.frame <- function(x, ...) as_nlist(as.list(x))
 #' @export
 as_nlist.mcmc <- function(x, ...) {
   chk_unused(...)
-  if (!identical(nrow(x), 1L)) abort_chk("`x` must have one iteration.")
+  if (!identical(nrow(x), 1L)) {
+    abort_chk("`x` must have one iteration.")
+  }
 
   x <- complete_terms(x)
 

@@ -11,8 +11,15 @@ test_that("print.nlist", {
   expect_identical(
     capture.output(print(nlist(x = 1, y = matrix(1:4, 2)))),
     c(
-      "$x", "[1] 1", "", "$y", "     [,1] [,2]", "[1,]    1    3",
-      "[2,]    2    4", "", "an nlist object with 2 numeric elements"
+      "$x",
+      "[1] 1",
+      "",
+      "$y",
+      "     [,1] [,2]",
+      "[1,]    1    3",
+      "[2,]    2    4",
+      "",
+      "an nlist object with 2 numeric elements"
     )
   )
 })
@@ -35,8 +42,15 @@ test_that("print.nlists", {
   expect_identical(
     capture.output(print(nlists)),
     c(
-      "$x", "[1] 1", "", "$y", "     [,1] [,2]", "[1,]    1    3",
-      "[2,]    2    4", "", "an nlists object of 2 nlist objects each with 2 numeric elements"
+      "$x",
+      "[1] 1",
+      "",
+      "$y",
+      "     [,1] [,2]",
+      "[1,]    1    3",
+      "[2,]    2    4",
+      "",
+      "an nlists object of 2 nlist objects each with 2 numeric elements"
     )
   )
 })
@@ -51,8 +65,15 @@ test_that("print.nlists multiple chains", {
   expect_identical(
     capture.output(print(nlists)),
     c(
-      "$x", "[1] 1", "", "$y", "     [,1] [,2]", "[1,]    1    3",
-      "[2,]    2    4", "", "an nlists object with 2 chains of an nlist object with 2 numeric elements"
+      "$x",
+      "[1] 1",
+      "",
+      "$y",
+      "     [,1] [,2]",
+      "[1,]    1    3",
+      "[2,]    2    4",
+      "",
+      "an nlists object with 2 chains of an nlist object with 2 numeric elements"
     )
   )
 })

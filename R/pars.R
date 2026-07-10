@@ -5,12 +5,19 @@ universals::pars
 #' @inheritParams params
 #' @export
 pars.mcmc <- function(x, scalar = NULL, terms = FALSE, ...) {
-  if (!is.null(scalar)) chk_flag(scalar)
+  if (!is.null(scalar)) {
+    chk_flag(scalar)
+  }
   chk_flag(terms)
   chk_unused(...)
 
   if (!missing(terms)) {
-    deprecate_warn("0.2.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_warn(
+      "0.2.1",
+      "nlist::pars(terms =)",
+      details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.",
+      id = "pars_terms"
+    )
   }
   x <- as_term(x)
   if (terms) {
@@ -23,12 +30,19 @@ pars.mcmc <- function(x, scalar = NULL, terms = FALSE, ...) {
 #' @inheritParams params
 #' @export
 pars.mcmc.list <- function(x, scalar = NULL, terms = FALSE, ...) {
-  if (!is.null(scalar)) chk_flag(scalar)
+  if (!is.null(scalar)) {
+    chk_flag(scalar)
+  }
   chk_flag(terms)
   chk_unused(...)
 
   if (!missing(terms)) {
-    deprecate_warn("0.2.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_warn(
+      "0.2.1",
+      "nlist::pars(terms =)",
+      details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.",
+      id = "pars_terms"
+    )
   }
   x <- x[[1]]
   x <- as_term(x)
@@ -45,12 +59,19 @@ pars.mcmc.list <- function(x, scalar = NULL, terms = FALSE, ...) {
 #' @examples
 #' pars(nlist(zz = 1, y = 3:6))
 pars.nlist <- function(x, scalar = NULL, terms = FALSE, ...) {
-  if (!is.null(scalar)) chk_flag(scalar)
+  if (!is.null(scalar)) {
+    chk_flag(scalar)
+  }
   chk_flag(terms)
   chk_unused(...)
 
   if (!missing(terms)) {
-    deprecate_warn("0.1.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_warn(
+      "0.1.1",
+      "nlist::pars(terms =)",
+      details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.",
+      id = "pars_terms"
+    )
   }
 
   if (is.null(scalar) && !terms) {
@@ -72,11 +93,18 @@ pars.nlist <- function(x, scalar = NULL, terms = FALSE, ...) {
 #' @examples
 #' pars(nlists(nlist(zz = 1, y = 3:6), nlist(zz = 4, y = 13:16)))
 pars.nlists <- function(x, scalar = NULL, terms = FALSE, ...) {
-  if (!is.null(scalar)) chk_flag(scalar)
+  if (!is.null(scalar)) {
+    chk_flag(scalar)
+  }
   chk_unused(...)
 
   if (!missing(terms)) {
-    deprecate_warn("0.1.1", "nlist::pars(terms =)", details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.", id = "pars_terms")
+    deprecate_warn(
+      "0.1.1",
+      "nlist::pars(terms =)",
+      details = "If `terms = TRUE` use `terms::pars_terms(as_term(x)) otherwise replace `pars(x, terms = FALSE)` with `pars(x)`.",
+      id = "pars_terms"
+    )
   }
   if (!length(x)) {
     return(character(0))

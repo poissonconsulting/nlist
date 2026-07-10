@@ -20,12 +20,17 @@ print.nlists <- function(x, ...) {
     return(invisible(x))
   }
   nn <- length(x[[1]])
-  if (nn) print(unclass(estimates(x)))
+  if (nn) {
+    print(unclass(estimates(x)))
+  }
 
   str <- "an nlists object"
   nchains <- nchains(x)
   str <- p(str, if (nchains > 1) p("with", nchains, "chains of") else "of")
-  str <- p(str, if (n == 1) "an nlist object with" else p(n, "nlist objects each with"))
+  str <- p(
+    str,
+    if (n == 1) "an nlist object with" else p(n, "nlist objects each with")
+  )
   str <- p(str, if (nn == 1) "1 numeric element" else p(nn, "numeric elements"))
   cat(str)
   invisible(x)
