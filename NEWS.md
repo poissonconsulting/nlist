@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# nlist 0.4.0.9006
+
+- Same as previous version.
+
+
 # nlist 0.4.0.9005
 
 - Same as previous version.
