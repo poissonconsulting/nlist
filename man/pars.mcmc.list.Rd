@@ -24,6 +24,9 @@ A character vector of the names of the parameters.
 \description{
 Gets the parameter names.
 }
+\examples{
+pars(as_mcmc_list(nlist(zz = 1, y = 3:6)))
+}
 \seealso{
 Other parameters: 
 \code{\link[universals]{npars}()},
