@@ -467,10 +467,6 @@ Manipulate objects
 
 Identify objects
 
-- [`is.natomic()`](https://poissonconsulting.github.io/nlist/dev/reference/deprecated.md)
-  [`is.nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/deprecated.md)
-  [`is.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/deprecated.md)
-  : Deprecated Functions
 - [`is_numeric()`](https://poissonconsulting.github.io/nlist/dev/reference/is_numeric.md)
   [`is_nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/is_numeric.md)
   [`is_nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/is_numeric.md)
