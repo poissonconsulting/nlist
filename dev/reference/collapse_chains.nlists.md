@@ -27,6 +27,7 @@ The modified object with one chain.
 
 Other collapse:
 [`collapse_chains.mcmc()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.mcmc.md),
+[`collapse_chains.mcmc.list()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.mcmc.list.md),
 [`collapse_chains.nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.nlist.md)
 
 ## Examples

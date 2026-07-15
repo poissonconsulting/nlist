@@ -40,3 +40,19 @@ object's parameters.
 Other parameters:
 [`npars()`](https://poissonconsulting.github.io/universals/reference/npars.html),
 [`pars()`](https://poissonconsulting.github.io/universals/reference/pars.html)
+
+## Examples
+
+``` r
+set_pars(as_mcmc_list(nlist(x = 1, y = 3:4)), c("a", "b"))
+#> [[1]]
+#> Markov Chain Monte Carlo (MCMC) output:
+#> Start = 1 
+#> End = 1 
+#> Thinning interval = 1 
+#>      a b[1] b[2]
+#> [1,] 1    3    4
+#> 
+#> attr(,"class")
+#> [1] "mcmc.list"
+```

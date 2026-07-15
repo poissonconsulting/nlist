@@ -38,3 +38,10 @@ A character vector of the names of the parameters.
 Other parameters:
 [`npars()`](https://poissonconsulting.github.io/universals/reference/npars.html),
 [`set_pars()`](https://poissonconsulting.github.io/universals/reference/set_pars.html)
+
+## Examples
+
+``` r
+pars(as_mcmc_list(nlist(zz = 1, y = 3:6)))
+#> [1] "zz" "y" 
+```

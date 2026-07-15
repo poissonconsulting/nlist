@@ -30,6 +30,7 @@ As mcmc objects can only have 1 chain the object is unchanged.
 ## See also
 
 Other collapse:
+[`collapse_chains.mcmc.list()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.mcmc.list.md),
 [`collapse_chains.nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.nlist.md),
 [`collapse_chains.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.nlists.md)
 

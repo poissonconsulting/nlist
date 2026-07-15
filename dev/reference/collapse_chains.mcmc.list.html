@@ -64,13 +64,29 @@
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other MCMC manipulations:
-<code><a href="https://poissonconsulting.github.io/universals/reference/bind_chains.html" class="external-link">bind_chains()</a></code>,
-<code><a href="https://poissonconsulting.github.io/universals/reference/bind_iterations.html" class="external-link">bind_iterations()</a></code>,
-<code><a href="https://poissonconsulting.github.io/universals/reference/estimates.html" class="external-link">estimates()</a></code>,
-<code><a href="https://poissonconsulting.github.io/universals/reference/split_chains.html" class="external-link">split_chains()</a></code></p></div>
+    <div class="dont-index"><p>Other collapse:
+<code><a href="collapse_chains.mcmc.html">collapse_chains.mcmc()</a></code>,
+<code><a href="collapse_chains.nlist.html">collapse_chains.nlist()</a></code>,
+<code><a href="collapse_chains.nlists.html">collapse_chains.nlists()</a></code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">mcmc_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="as_mcmc_list.html">as_mcmc_list</a></span><span class="op">(</span><span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/split_chains.html" class="external-link">split_chains</a></span><span class="op">(</span><span class="fu"><a href="nlists.html">nlists</a></span><span class="op">(</span><span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, <span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://poissonconsulting.github.io/universals/reference/collapse_chains.html" class="external-link">collapse_chains</a></span><span class="op">(</span><span class="va">mcmc_list</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Markov Chain Monte Carlo (MCMC) output:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Start = 1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> End = 2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Thinning interval = 1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      x</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1,] 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2,] 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "mcmc.list"</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

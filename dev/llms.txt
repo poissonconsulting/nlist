@@ -440,6 +440,10 @@ Manipulate objects
   : Set Parameters
 - [`set_pars(`*`<mcmc.list>`*`)`](https://poissonconsulting.github.io/nlist/dev/reference/set_pars.mcmc.list.md)
   : Set Parameters
+- [`sort(`*`<mcmc>`*`)`](https://poissonconsulting.github.io/nlist/dev/reference/sort.mcmc.md)
+  : Sort mcmc Object
+- [`sort(`*`<mcmc.list>`*`)`](https://poissonconsulting.github.io/nlist/dev/reference/sort.mcmc.list.md)
+  : Sort mcmc.list Object
 - [`split_chains(`*`<nlists>`*`)`](https://poissonconsulting.github.io/nlist/dev/reference/split_chains.nlists.md)
   : Split Chains
 - [`subset(`*`<nlist>`*`)`](https://poissonconsulting.github.io/nlist/dev/reference/subset.nlist.md)

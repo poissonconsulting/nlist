@@ -14,6 +14,8 @@ and coda::mcmc.list objects.
 
 Useful links:
 
+- <https://poissonconsulting.github.io/nlist/>
+
 - <https://github.com/poissonconsulting/nlist>
 
 - Report bugs at <https://github.com/poissonconsulting/nlist/issues>

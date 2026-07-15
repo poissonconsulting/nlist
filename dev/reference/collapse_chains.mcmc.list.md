@@ -25,8 +25,25 @@ The modified object with one chain.
 
 ## See also
 
-Other MCMC manipulations:
-[`bind_chains()`](https://poissonconsulting.github.io/universals/reference/bind_chains.html),
-[`bind_iterations()`](https://poissonconsulting.github.io/universals/reference/bind_iterations.html),
-[`estimates()`](https://poissonconsulting.github.io/universals/reference/estimates.html),
-[`split_chains()`](https://poissonconsulting.github.io/universals/reference/split_chains.html)
+Other collapse:
+[`collapse_chains.mcmc()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.mcmc.md),
+[`collapse_chains.nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.nlist.md),
+[`collapse_chains.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/collapse_chains.nlists.md)
+
+## Examples
+
+``` r
+mcmc_list <- as_mcmc_list(split_chains(nlists(nlist(x = 1), nlist(x = 2))))
+collapse_chains(mcmc_list)
+#> [[1]]
+#> Markov Chain Monte Carlo (MCMC) output:
+#> Start = 1 
+#> End = 2 
+#> Thinning interval = 1 
+#>      x
+#> [1,] 1
+#> [2,] 2
+#> 
+#> attr(,"class")
+#> [1] "mcmc.list"
+```
