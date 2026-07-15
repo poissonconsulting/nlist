@@ -22,7 +22,7 @@ warn_default_directional_information <- function(
 #' @export
 tidy.mcmc <- function(
   x,
-  simplify = FALSE,
+  simplify = TRUE,
   directional_information = FALSE,
   ...
 ) {
@@ -43,7 +43,7 @@ tidy.mcmc <- function(
 #' @export
 tidy.mcmc.list <- function(
   x,
-  simplify = FALSE,
+  simplify = TRUE,
   directional_information = FALSE,
   ...
 ) {
@@ -73,7 +73,7 @@ tidy.mcmc.list <- function(
 #' ), simplify = TRUE, directional_information = TRUE)
 tidy.nlists <- function(
   x,
-  simplify = FALSE,
+  simplify = TRUE,
   directional_information = FALSE,
   ...
 ) {
