@@ -6,7 +6,7 @@ Turn an object into a tidy tibble
 
 ``` r
 # S3 method for class 'mcmc'
-tidy(x, simplify = FALSE, directional_information = FALSE, ...)
+tidy(x, simplify = TRUE, directional_information = FALSE, ...)
 ```
 
 ## Arguments
@@ -17,7 +17,8 @@ tidy(x, simplify = FALSE, directional_information = FALSE, ...)
 
 - simplify:
 
-  A flag specifying whether to drop sd and zscore columns.
+  A flag specifying whether to drop the sd and zscore columns.
+  `simplify = FALSE` is deprecated.
 
 - directional_information:
 
