@@ -1,5 +1,4 @@
 test_that("print.nlist", {
-  skip_on_covr()
   expect_identical(
     capture.output(print(nlist())),
     "an nlist object with 0 numeric elements"
@@ -25,7 +24,6 @@ test_that("print.nlist", {
 })
 
 test_that("print.nlists", {
-  skip_on_covr()
   expect_identical(
     capture.output(print(nlists())),
     "an nlists object with 0 nlist objects"
@@ -56,8 +54,6 @@ test_that("print.nlists", {
 })
 
 test_that("print.nlists multiple chains", {
-  skip_on_covr()
-
   nlist <- nlist(x = 1, y = matrix(1:4, 2))
   nlists <- nlists(nlist, nlist)
   attr(nlists, "nchains") <- 2L
