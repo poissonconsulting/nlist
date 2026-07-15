@@ -160,6 +160,11 @@ test_that("subset.nlists pars and iters", {
     "^`pars` must match 'x' or 'y', not 'z'[.]$",
     class = "chk_error"
   )
+  expect_error(
+    subset(nlists(nlist(x = 1), nlist(x = 2)), iters = 3L),
+    "`iters` must match",
+    class = "chk_error"
+  )
 })
 
 
