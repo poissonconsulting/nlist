@@ -15,12 +15,11 @@ as_nlists <- function(x, ...) {
 #' @rdname as_nlist
 #' @export
 as.nlists <- function(x, ...) {
-  deprecate_warn(
+  deprecate_stop(
     "0.1.1",
     what = "nlist::as.nlists()",
     with = "nlist::as_nlists()"
   )
-  UseMethod("as_nlists")
 }
 
 #' @describeIn as_nlists Coerce list to nlists

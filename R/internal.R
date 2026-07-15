@@ -1,11 +1,3 @@
-aggregate_atomic_numeric <- function(x, FUN, ...) {
-  x <- FUN(x, ...)
-  if (!identical(length(x), 1L)) {
-    abort_chk("`fun` must return a scalar.")
-  }
-  x
-}
-
 aggregate_atomic_numerics <- function(x, fun, ...) {
   dims <- dims(x[[1]])
   ndims <- length(dims)

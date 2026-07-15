@@ -5,12 +5,7 @@ test_that("pars.nlist", {
 
   expect_identical(pars(nlist(x = 1, a = 1:10), scalar = TRUE), "x")
   expect_identical(pars(nlist(x = 1, a = 1:10), scalar = TRUE), "x")
-  lifecycle::expect_deprecated(pars(nlist(x = 1, a = 1:10), terms = TRUE))
-  rlang::local_options(lifecycle_verbosity = "quiet")
-  expect_identical(
-    pars(nlist(x = 1, a = 1:10), terms = TRUE),
-    c("x", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a")
-  )
+  lifecycle::expect_defunct(pars(nlist(x = 1, a = 1:10), terms = TRUE))
 })
 
 test_that("pars.nlists", {
@@ -48,14 +43,8 @@ test_that("pars.nlists scalar", {
 })
 
 test_that("pars.nlists term", {
-  rlang::local_options(lifecycle_verbosity = "quiet")
-  lifecycle::expect_deprecated(pars(
+  lifecycle::expect_defunct(pars(
     nlists(nlist(x = 1, a = 1:2)),
     terms = TRUE
   ))
-
-  expect_identical(
-    pars(nlists(nlist(x = 1, a = 1:2)), terms = TRUE),
-    c("x", "a", "a")
-  )
 })

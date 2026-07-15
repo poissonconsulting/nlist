@@ -7,45 +7,42 @@ NULL
 
 #' @describeIn deprecated Is natomic
 #'
-#' \lifecycle{soft-deprecated}
+#' \lifecycle{defunct}
 #'
-#' Replace by [is.numeric()]
+#' Replace by [is_numeric()]
 #' @export
 is.natomic <- function(x) {
-  deprecate_warn(
+  deprecate_stop(
     "0.1.1",
     what = "nlist::is.natomic()",
     with = "nlist::is_numeric()"
   )
-  is_numeric(x)
 }
 
 #' @describeIn deprecated Is nlist
 #'
-#' \lifecycle{soft-deprecated}
+#' \lifecycle{defunct}
 #'
 #' Replace by [is_nlist()]
 #' @export
 is.nlist <- function(x) {
-  deprecate_warn(
+  deprecate_stop(
     "0.1.1",
     what = "nlist::is.nlist()",
     with = "nlist::is_nlist()"
   )
-  is_nlist(x)
 }
 
 #' @describeIn deprecated Is nlists
 #'
-#' \lifecycle{soft-deprecated}
+#' \lifecycle{defunct}
 #'
 #' Replace by [is_nlists()]
 #' @export
 is.nlists <- function(x) {
-  deprecate_warn(
+  deprecate_stop(
     "0.1.1",
     what = "nlist::is.nlists()",
     with = "nlist::is_nlists()"
   )
-  is_nlists(x)
 }

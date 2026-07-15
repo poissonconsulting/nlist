@@ -77,6 +77,15 @@ test_that("subset.mcmc.list", {
   )
 })
 
+test_that("subset iterations and parameters arguments are defunct", {
+  mcmc <- as_mcmc(nlist(beta = 1:2))
+  lifecycle::expect_defunct(subset(mcmc, iterations = 1L))
+  lifecycle::expect_defunct(subset(mcmc, parameters = "beta"))
+  mcmc_list <- as_mcmc_list(nlist(beta = 1:2))
+  lifecycle::expect_defunct(subset(mcmc_list, iterations = 1L))
+  lifecycle::expect_defunct(subset(mcmc_list, parameters = "beta"))
+})
+
 test_that("subset.nlist", {
   expect_identical(subset(nlist()), nlist())
   expect_identical(subset(nlist(x = 1)), nlist(x = 1))
