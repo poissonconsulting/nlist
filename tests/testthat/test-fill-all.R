@@ -1,4 +1,4 @@
-test_that("", {
+test_that("fill_all.nlist", {
   expect_identical(
     fill_all(nlist(x = c(2, NA), y = matrix(c(1:3, NA), nrow = 2))),
     structure(

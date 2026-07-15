@@ -35,7 +35,6 @@ collapse_chains.nlist <- function(x, ...) {
 #'
 #' @examples
 #' collapse_chains(nlist(x = 2))
-#' @export
 collapse_chains.nlists <- function(x, ...) {
   attr(x, "nchains") <- NULL
   x

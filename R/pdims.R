@@ -32,7 +32,6 @@ pdims.nlist <- function(x, ...) {
 #'   nlist(y = 5, zz = matrix(1:4, 2))
 #' ))
 #' @export
-#' @export
 pdims.nlists <- function(x, ...) {
   if (!length(x)) {
     return(list())
