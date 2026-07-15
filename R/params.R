@@ -17,7 +17,8 @@
 #' @param nas A flag specifying whether to also fill missing values.
 #' @param parameters A character vector (or NULL) of the parameters to subset by.
 #' @param iterations An integer vector (or NULL) of the iterations to subset by.
-#' @param simplify A flag specifying whether to drop sd and zscore columns.
+#' @param simplify A flag specifying whether to drop the sd and zscore
+#'   columns. `simplify = FALSE` is deprecated.
 #' @param directional_information A flag specifying whether the svalue column
 #' should be calculated using [extras::directional_information()] instead of
 #' [extras::svalue()].

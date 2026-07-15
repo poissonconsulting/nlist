@@ -4,12 +4,13 @@
 \alias{tidy.nlists}
 \title{Turn an object into a tidy tibble}
 \usage{
-\method{tidy}{nlists}(x, simplify = FALSE, directional_information = FALSE, ...)
+\method{tidy}{nlists}(x, simplify = TRUE, directional_information = FALSE, ...)
 }
 \arguments{
 \item{x}{An object.}
 
-\item{simplify}{A flag specifying whether to drop sd and zscore columns.}
+\item{simplify}{A flag specifying whether to drop the sd and zscore
+columns. \code{simplify = FALSE} is deprecated.}
 
 \item{directional_information}{A flag specifying whether the svalue column
 should be calculated using \code{\link[extras:directional_information]{extras::directional_information()}} instead of

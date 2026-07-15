@@ -35,7 +35,8 @@ for each term element.}
 
 \item{iterations}{An integer vector (or NULL) of the iterations to subset by.}
 
-\item{simplify}{A flag specifying whether to drop sd and zscore columns.}
+\item{simplify}{A flag specifying whether to drop the sd and zscore
+columns. \code{simplify = FALSE} is deprecated.}
 
 \item{directional_information}{A flag specifying whether the svalue column
 should be calculated using \code{\link[extras:directional_information]{extras::directional_information()}} instead of

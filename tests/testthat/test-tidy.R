@@ -1,10 +1,12 @@
 test_that("tidy.nlists", {
   rlang::local_options(lifecycle_verbosity = "quiet")
 
-  lifecycle::expect_deprecated(tidy(nlists(), directional_information = FALSE))
+  lifecycle::expect_deprecated(
+    tidy(nlists(), simplify = FALSE, directional_information = FALSE)
+  )
 
   expect_identical(
-    tidy(nlists()),
+    tidy(nlists(), simplify = FALSE),
     structure(
       list(
         term = structure(
@@ -30,7 +32,7 @@ test_that("tidy.nlists", {
     )
   )
   expect_equal(
-    tidy(nlists(nlist())),
+    tidy(nlists(nlist()), simplify = FALSE),
     tibble::tibble(
       term = term(x = 0),
       estimate = numeric(0),
@@ -42,7 +44,7 @@ test_that("tidy.nlists", {
     )
   )
   expect_identical(
-    tidy(nlists(nlist(x = 2))),
+    tidy(nlists(nlist(x = 2)), simplify = FALSE),
     tibble::tibble(
       term = term("x"),
       estimate = 2,
@@ -54,7 +56,7 @@ test_that("tidy.nlists", {
     )
   )
   expect_identical(
-    tidy(nlists(nlist(x = 2:4))),
+    tidy(nlists(nlist(x = 2:4)), simplify = FALSE),
     tibble::tibble(
       term = term(x = 3),
       estimate = c(2, 3, 4),
@@ -74,7 +76,7 @@ test_that("tidy.nlists", {
     )
   )
   expect_identical(
-    tidy(nlists(nlist(y = 1, s = 1:2))),
+    tidy(nlists(nlist(y = 1, s = 1:2)), simplify = FALSE),
     tibble::tibble(
       term = term("y", s = 2),
       estimate = c(1, 1, 2),
@@ -94,7 +96,10 @@ test_that("tidy.nlists", {
     )
   )
   expect_equal(
-    tidy(nlists(nlist(x = 1, y = 1:2), nlist(x = 1, y = 3:4))),
+    tidy(
+      nlists(nlist(x = 1, y = 1:2), nlist(x = 1, y = 3:4)),
+      simplify = FALSE
+    ),
     tibble::tibble(
       term = term("x" = 1, y = 2),
       estimate = c(1, 2, 3),
@@ -112,6 +117,18 @@ test_that("tidy.nlists", {
         1.58496250072116
       )
     )
+  )
+})
+
+test_that("tidy.nlists default is simplify = TRUE", {
+  rlang::local_options(lifecycle_verbosity = "quiet")
+  expect_identical(
+    tidy(nlists(nlist(x = 2))),
+    tidy(nlists(nlist(x = 2)), simplify = TRUE, directional_information = FALSE)
+  )
+  expect_identical(
+    colnames(tidy(nlists(nlist(x = 2)))),
+    c("term", "estimate", "lower", "upper", "svalue")
   )
 })
 
