@@ -23,6 +23,22 @@ test_that("nlist", {
   )
 })
 
+test_that("mcmc", {
+  mcmc <- as_mcmc(nlist(y = 1, a = 2:3))
+  renamed <- set_pars(mcmc, c("b", "z"))
+  expect_s3_class(renamed, "mcmc")
+  expect_identical(colnames(renamed), c("b", "z[1]", "z[2]"))
+  expect_identical(pars(renamed), c("b", "z"))
+})
+
+test_that("mcmc.list", {
+  mcmc_list <- as_mcmc_list(nlist(y = 1, a = 2:3))
+  renamed <- set_pars(mcmc_list, c("b", "z"))
+  expect_s3_class(renamed, "mcmc.list")
+  expect_identical(colnames(renamed[[1]]), c("b", "z[1]", "z[2]"))
+  expect_identical(pars(renamed), c("b", "z"))
+})
+
 test_that("nlists", {
   x <- nlists()
   expect_identical(set_pars(x, character(0)), x)

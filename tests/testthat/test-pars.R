@@ -42,6 +42,22 @@ test_that("pars.nlists scalar", {
   )
 })
 
+test_that("pars.mcmc", {
+  mcmc <- as_mcmc(nlist(y = 1, a = 2:3))
+  expect_identical(pars(mcmc), c("y", "a"))
+  expect_identical(pars(mcmc, scalar = TRUE), "y")
+  expect_identical(pars(mcmc, scalar = FALSE), "a")
+  lifecycle::expect_defunct(pars(mcmc, terms = TRUE))
+})
+
+test_that("pars.mcmc.list", {
+  mcmc_list <- as_mcmc_list(nlist(y = 1, a = 2:3))
+  expect_identical(pars(mcmc_list), c("y", "a"))
+  expect_identical(pars(mcmc_list, scalar = TRUE), "y")
+  expect_identical(pars(mcmc_list, scalar = FALSE), "a")
+  lifecycle::expect_defunct(pars(mcmc_list, terms = TRUE))
+})
+
 test_that("pars.nlists term", {
   lifecycle::expect_defunct(pars(
     nlists(nlist(x = 1, a = 1:2)),
