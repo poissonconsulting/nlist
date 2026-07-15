@@ -6,6 +6,9 @@ universals::`pars<-`
 
 #' @inherit universals::set_pars
 #' @export
+#'
+#' @examples
+#' set_pars(as_mcmc(nlist(x = 1, y = 3:4)), c("a", "b"))
 set_pars.mcmc <- function(x, value, ...) {
   term <- set_pars(as_term(x), value, ...)
   colnames(x) <- as.character(term)
@@ -14,6 +17,9 @@ set_pars.mcmc <- function(x, value, ...) {
 
 #' @inherit universals::set_pars
 #' @export
+#'
+#' @examples
+#' set_pars(as_mcmc_list(nlist(x = 1, y = 3:4)), c("a", "b"))
 set_pars.mcmc.list <- function(x, value, ...) {
   x <- lapply(x, set_pars, value = value, ...)
   class(x) <- "mcmc.list"

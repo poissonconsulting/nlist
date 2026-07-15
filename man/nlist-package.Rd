@@ -12,6 +12,7 @@ Create and manipulate numeric list ('nlist') objects. An 'nlist' is an S3 list o
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://poissonconsulting.github.io/nlist/}
   \item \url{https://github.com/poissonconsulting/nlist}
   \item Report bugs at \url{https://github.com/poissonconsulting/nlist/issues}
 }

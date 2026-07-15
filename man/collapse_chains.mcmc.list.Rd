@@ -17,10 +17,14 @@ The modified object with one chain.
 \description{
 Collapses an MCMC object's chains into a single chain.
 }
-\seealso{
-Other MCMC manipulations: 
-\code{\link[universals]{bind_chains}()},
-\code{\link[universals]{bind_iterations}()},
-\code{\link[universals]{estimates}()},
-\code{\link[universals]{split_chains}()}
+\examples{
+mcmc_list <- as_mcmc_list(split_chains(nlists(nlist(x = 1), nlist(x = 2))))
+collapse_chains(mcmc_list)
 }
+\seealso{
+Other collapse:
+\code{\link[=collapse_chains.mcmc]{collapse_chains.mcmc()}},
+\code{\link[=collapse_chains.nlist]{collapse_chains.nlist()}},
+\code{\link[=collapse_chains.nlists]{collapse_chains.nlists()}}
+}
+\concept{collapse}

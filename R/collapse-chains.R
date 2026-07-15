@@ -12,7 +12,12 @@ universals::collapse_chains
 collapse_chains.mcmc <- function(x, ...) x
 
 #' @inherit universals::collapse_chains
+#' @family collapse
 #' @export
+#'
+#' @examples
+#' mcmc_list <- as_mcmc_list(split_chains(nlists(nlist(x = 1), nlist(x = 2))))
+#' collapse_chains(mcmc_list)
 collapse_chains.mcmc.list <- function(x, ...) {
   as.mcmc.list(Reduce(bind_iterations, x))
 }

@@ -4,6 +4,9 @@ universals::pars
 #' @inherit universals::pars
 #' @inheritParams params
 #' @export
+#'
+#' @examples
+#' pars(as_mcmc(nlist(zz = 1, y = 3:6)))
 pars.mcmc <- function(x, scalar = NULL, terms = FALSE, ...) {
   if (!missing(terms)) {
     deprecate_stop(
@@ -23,6 +26,9 @@ pars.mcmc <- function(x, scalar = NULL, terms = FALSE, ...) {
 #' @inherit universals::pars
 #' @inheritParams params
 #' @export
+#'
+#' @examples
+#' pars(as_mcmc_list(nlist(zz = 1, y = 3:6)))
 pars.mcmc.list <- function(x, scalar = NULL, terms = FALSE, ...) {
   if (!missing(terms)) {
     deprecate_stop(

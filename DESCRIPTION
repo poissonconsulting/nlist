@@ -22,7 +22,8 @@ Description: Create and manipulate numeric list ('nlist') objects.  An
     storing multiple realizations of of simulated data sets, can be
     converted to coda::mcmc and coda::mcmc.list objects.
 License: MIT + file LICENSE
-URL: https://github.com/poissonconsulting/nlist
+URL: https://poissonconsulting.github.io/nlist/,
+    https://github.com/poissonconsulting/nlist
 BugReports: https://github.com/poissonconsulting/nlist/issues
 Depends: 
     R (>= 4.0)
@@ -52,8 +53,8 @@ RdMacros:
 Remotes:
     poissonconsulting/extras
 Config/Needs/website: poissonconsulting/poissontemplate
+Config/roxygen2/version: 8.0.0.9000
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
-Config/roxygen2/version: 8.0.0.9000

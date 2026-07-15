@@ -25,6 +25,9 @@ The assignment version \verb{pars<-()} forwards to \code{set_pars()}.
 \code{value} must be a unique character vector of the same length as the
 object's parameters.
 }
+\examples{
+set_pars(as_mcmc(nlist(x = 1, y = 3:4)), c("a", "b"))
+}
 \seealso{
 Other parameters: 
 \code{\link[universals]{npars}()},

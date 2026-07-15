@@ -73,6 +73,8 @@ reference:
   - '`set_pars.nlists`'
   - '`set_pars.mcmc`'
   - '`set_pars.mcmc.list`'
+  - '`sort.mcmc`'
+  - '`sort.mcmc.list`'
   - '`split_chains.nlists`'
   - '`subset.nlist`'
   - '`subset.nlists`'
