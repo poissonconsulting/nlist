@@ -17,11 +17,10 @@
 An named list of numeric scalars
 }
 \description{
-Aggregates an \code{\link[=nlist_object]{nlist_object()}} into a named list of numeric scalars.
+\lifecycle{defunct}
 }
-\examples{
-aggregate(nlist(x = 1:9))
-aggregate(nlist(y = 3:5, zz = matrix(1:9, 3)), fun = function(x) x[1])
+\details{
+Replace by \code{\link[=estimates.nlist]{estimates.nlist()}}.
 }
 \seealso{
 Other aggregate:

@@ -19,12 +19,10 @@
 An nlist object if \code{by_chain = FALSE} otherwise an nlists object.
 }
 \description{
-Aggregates an \code{\link[=nlists_object]{nlists_object()}} into a \code{\link[=nlist_object]{nlist_object()}}
-or by_chain = TRUE an \code{\link[=nlists_object]{nlists_object()}}
-with \code{nchains} \code{\link[=nlist_object]{nlist_object()}}s.
+\lifecycle{defunct}
 }
-\examples{
-aggregate(nlists(nlist(x = 1:3), nlist(x = 2:4)))
+\details{
+Replace by \code{\link[=estimates.nlists]{estimates.nlists()}}.
 }
 \seealso{
 Other aggregate:

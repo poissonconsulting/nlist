@@ -22,22 +22,10 @@ subset.mcmc <- function(
   ...
 ) {
   if (!missing(iterations)) {
-    deprecate_warn(
-      "0.2.1",
-      "subset(iterations = )",
-      "subset(iters = )",
-      id = "subset_iterations"
-    )
-    iters <- iterations
+    deprecate_stop("0.2.1", "subset(iterations = )", "subset(iters = )")
   }
   if (!missing(parameters)) {
-    deprecate_warn(
-      "0.2.1",
-      "subset(parameters = )",
-      "subset(pars = )",
-      id = "subset_parameters"
-    )
-    pars <- parameters
+    deprecate_stop("0.2.1", "subset(parameters = )", "subset(pars = )")
   }
   if (!is.null(iters)) {
     chk_whole_numeric(iters)
@@ -88,22 +76,10 @@ subset.mcmc.list <- function(
   ...
 ) {
   if (!missing(iterations)) {
-    deprecate_warn(
-      "0.2.1",
-      "subset(iterations = )",
-      "subset(iters = )",
-      id = "subset_iterations"
-    )
-    iters <- iterations
+    deprecate_stop("0.2.1", "subset(iterations = )", "subset(iters = )")
   }
   if (!missing(parameters)) {
-    deprecate_warn(
-      "0.2.1",
-      "subset(parameters = )",
-      "subset(pars = )",
-      id = "subset_parameters"
-    )
-    pars <- parameters
+    deprecate_stop("0.2.1", "subset(parameters = )", "subset(pars = )")
   }
   if (!is.null(chains)) {
     chk_whole_numeric(chains)

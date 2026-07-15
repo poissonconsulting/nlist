@@ -89,10 +89,7 @@ reference:
 - title: Identify
   desc: Identify objects
   contents:
-  - '`is.natomic`'
   - '`is_numeric`'
-  - '`is.nlist`'
-  - '`is.nlists`'
 - title: Check
   desc: Check objects
   contents:

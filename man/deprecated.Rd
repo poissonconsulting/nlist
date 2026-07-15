@@ -23,19 +23,19 @@ Deprecated Functions
 \itemize{
 \item \code{is.natomic()}: Is natomic
 
-\lifecycle{soft-deprecated}
+\lifecycle{defunct}
 
-Replace by \code{\link[=is.numeric]{is.numeric()}}
+Replace by \code{\link[=is_numeric]{is_numeric()}}
 
 \item \code{is.nlist()}: Is nlist
 
-\lifecycle{soft-deprecated}
+\lifecycle{defunct}
 
 Replace by \code{\link[=is_nlist]{is_nlist()}}
 
 \item \code{is.nlists()}: Is nlists
 
-\lifecycle{soft-deprecated}
+\lifecycle{defunct}
 
 Replace by \code{\link[=is_nlists]{is_nlists()}}
 
