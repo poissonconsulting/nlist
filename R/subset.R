@@ -150,7 +150,7 @@ subset.nlists <- function(x, chains = NULL, iters = NULL, pars = NULL, ...) {
     chk_subset(chains, 1:nchains(x))
   }
   if (!is.null(iters)) {
-    chk_subset(chains, 1:niters(x))
+    chk_subset(iters, 1:niters(x))
   }
   if (!is.null(pars)) {
     chk_subset(pars, pars(x))
