@@ -6,10 +6,11 @@ nlist 0.5.0
 
 ## Test environments
 
-- local macOS, R 4.6, `R CMD check --as-cran`: 0 errors | 0 warnings | 0 notes
-- GitHub Actions: macOS, Windows, Ubuntu (release, devel, oldrel-1)
+- local macOS, R 4.6.1, `R CMD check --as-cran`: OK
+- GitHub Actions: macOS, Windows and Ubuntu (release, devel, oldrel-1): OK
+- R-hub: linux, macOS and Windows (R-devel): OK
 
-<!-- TODO: run win-builder (devel and release) and rhub, then list them here. -->
+<!-- TODO: add the win-builder (devel and release) results once the emails arrive. -->
 
 ## R CMD check results
 
