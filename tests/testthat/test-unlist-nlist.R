@@ -1,7 +1,7 @@
 test_that("unlist_nlist", {
   expect_identical(
     unlist_nlist(nlist()),
-    structure(numeric(0), .Names = character(0))
+    structure(numeric(0), names = character(0))
   )
   expect_identical(
     unlist_nlist(nlist(z = NA)),

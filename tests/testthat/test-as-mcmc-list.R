@@ -11,8 +11,8 @@ test_that("as_mcmc_list.nlist", {
     structure(
       list(structure(
         1,
-        .Dim = c(1L, 1L),
-        .Dimnames = list(
+        dim = c(1L, 1L),
+        dimnames = list(
           NULL,
           "x"
         ),
@@ -27,8 +27,8 @@ test_that("as_mcmc_list.nlist", {
     structure(
       list(structure(
         1:6,
-        .Dim = c(1L, 6L),
-        .Dimnames = list(
+        dim = c(1L, 6L),
+        dimnames = list(
           NULL,
           c(
             "x[1,1]",
@@ -50,8 +50,8 @@ test_that("as_mcmc_list.nlist", {
     structure(
       list(structure(
         c(1, 2, 3),
-        .Dim = c(1L, 3L),
-        .Dimnames = list(
+        dim = c(1L, 3L),
+        dimnames = list(
           NULL,
           c("x[1]", "x[2]", "y")
         ),
@@ -66,8 +66,8 @@ test_that("as_mcmc_list.nlist", {
     structure(
       list(structure(
         c(NA, 1),
-        .Dim = 1:2,
-        .Dimnames = list(
+        dim = 1:2,
+        dimnames = list(
           NULL,
           c("x", "y")
         ),
@@ -83,8 +83,8 @@ test_that("as_mcmc_list.nlist", {
     structure(
       list(structure(
         c(1, 1, 2, 3, 4),
-        .Dim = c(1L, 5L),
-        .Dimnames = list(
+        dim = c(1L, 5L),
+        dimnames = list(
           NULL,
           c("x", "y[1,1]", "y[2,1]", "y[1,2]", "y[2,2]")
         ),
@@ -113,8 +113,8 @@ test_that("as_mcmc_list.nlists", {
     structure(
       list(structure(
         numeric(0),
-        .Dim = 1:0,
-        .Dimnames = list(
+        dim = 1:0,
+        dimnames = list(
           NULL,
           NULL
         ),
@@ -129,8 +129,8 @@ test_that("as_mcmc_list.nlists", {
     structure(
       list(structure(
         numeric(0),
-        .Dim = c(2L, 0L),
-        .Dimnames = list(
+        dim = c(2L, 0L),
+        dimnames = list(
           NULL,
           NULL
         ),
@@ -146,8 +146,8 @@ test_that("as_mcmc_list.nlists", {
     structure(
       list(structure(
         1,
-        .Dim = c(1L, 1L),
-        .Dimnames = list(
+        dim = c(1L, 1L),
+        dimnames = list(
           NULL,
           "x"
         ),
@@ -162,8 +162,8 @@ test_that("as_mcmc_list.nlists", {
     structure(
       list(structure(
         c(1, 3),
-        .Dim = 2:1,
-        .Dimnames = list(
+        dim = 2:1,
+        dimnames = list(
           NULL,
           "x"
         ),
@@ -178,8 +178,8 @@ test_that("as_mcmc_list.nlists", {
     structure(
       list(structure(
         1:6,
-        .Dim = c(1L, 6L),
-        .Dimnames = list(
+        dim = c(1L, 6L),
+        dimnames = list(
           NULL,
           c(
             "x[1,1]",
@@ -218,8 +218,8 @@ test_that("as_mcmc_list.nlists", {
           6L,
           8L
         ),
-        .Dim = c(2L, 6L),
-        .Dimnames = list(
+        dim = c(2L, 6L),
+        dimnames = list(
           NULL,
           c(
             "x[1,1]",
@@ -249,8 +249,8 @@ test_that("as_mcmc_list.nlists", {
       list(
         `1` = structure(
           1:6,
-          .Dim = c(1L, 6L),
-          .Dimnames = list(
+          dim = c(1L, 6L),
+          dimnames = list(
             NULL,
             c(
               "x[1,1]",
@@ -266,11 +266,11 @@ test_that("as_mcmc_list.nlists", {
         ),
         `2` = structure(
           3:8,
-          .Dim = c(
+          dim = c(
             1L,
             6L
           ),
-          .Dimnames = list(
+          dimnames = list(
             NULL,
             c(
               "x[1,1]",
@@ -303,8 +303,8 @@ test_that("as.mcmc.list.nlist", {
     structure(
       list(structure(
         1,
-        .Dim = c(1L, 1L),
-        .Dimnames = list(
+        dim = c(1L, 1L),
+        dimnames = list(
           NULL,
           "x"
         ),
@@ -319,8 +319,8 @@ test_that("as.mcmc.list.nlist", {
     structure(
       list(structure(
         1:6,
-        .Dim = c(1L, 6L),
-        .Dimnames = list(
+        dim = c(1L, 6L),
+        dimnames = list(
           NULL,
           c(
             "x[1,1]",
@@ -342,8 +342,8 @@ test_that("as.mcmc.list.nlist", {
     structure(
       list(structure(
         c(1, 2, 3),
-        .Dim = c(1L, 3L),
-        .Dimnames = list(
+        dim = c(1L, 3L),
+        dimnames = list(
           NULL,
           c("x[1]", "x[2]", "y")
         ),
@@ -358,8 +358,8 @@ test_that("as.mcmc.list.nlist", {
     structure(
       list(structure(
         c(NA, 1),
-        .Dim = 1:2,
-        .Dimnames = list(
+        dim = 1:2,
+        dimnames = list(
           NULL,
           c("x", "y")
         ),
@@ -375,8 +375,8 @@ test_that("as.mcmc.list.nlist", {
     structure(
       list(structure(
         c(1, 1, 2, 3, 4),
-        .Dim = c(1L, 5L),
-        .Dimnames = list(
+        dim = c(1L, 5L),
+        dimnames = list(
           NULL,
           c("x", "y[1,1]", "y[2,1]", "y[1,2]", "y[2,2]")
         ),
@@ -405,8 +405,8 @@ test_that("as.mcmc.list.nlists", {
     structure(
       list(structure(
         numeric(0),
-        .Dim = 1:0,
-        .Dimnames = list(
+        dim = 1:0,
+        dimnames = list(
           NULL,
           NULL
         ),
@@ -421,8 +421,8 @@ test_that("as.mcmc.list.nlists", {
     structure(
       list(structure(
         numeric(0),
-        .Dim = c(2L, 0L),
-        .Dimnames = list(
+        dim = c(2L, 0L),
+        dimnames = list(
           NULL,
           NULL
         ),
@@ -438,8 +438,8 @@ test_that("as.mcmc.list.nlists", {
     structure(
       list(structure(
         1,
-        .Dim = c(1L, 1L),
-        .Dimnames = list(
+        dim = c(1L, 1L),
+        dimnames = list(
           NULL,
           "x"
         ),
@@ -454,8 +454,8 @@ test_that("as.mcmc.list.nlists", {
     structure(
       list(structure(
         c(1, 3),
-        .Dim = 2:1,
-        .Dimnames = list(
+        dim = 2:1,
+        dimnames = list(
           NULL,
           "x"
         ),
@@ -470,8 +470,8 @@ test_that("as.mcmc.list.nlists", {
     structure(
       list(structure(
         1:6,
-        .Dim = c(1L, 6L),
-        .Dimnames = list(
+        dim = c(1L, 6L),
+        dimnames = list(
           NULL,
           c(
             "x[1,1]",
@@ -510,8 +510,8 @@ test_that("as.mcmc.list.nlists", {
           6L,
           8L
         ),
-        .Dim = c(2L, 6L),
-        .Dimnames = list(
+        dim = c(2L, 6L),
+        dimnames = list(
           NULL,
           c(
             "x[1,1]",
@@ -541,8 +541,8 @@ test_that("as.mcmc.list.nlists", {
       list(
         `1` = structure(
           1:6,
-          .Dim = c(1L, 6L),
-          .Dimnames = list(
+          dim = c(1L, 6L),
+          dimnames = list(
             NULL,
             c(
               "x[1,1]",
@@ -558,11 +558,11 @@ test_that("as.mcmc.list.nlists", {
         ),
         `2` = structure(
           3:8,
-          .Dim = c(
+          dim = c(
             1L,
             6L
           ),
-          .Dimnames = list(
+          dimnames = list(
             NULL,
             c(
               "x[1,1]",

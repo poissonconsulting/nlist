@@ -31,6 +31,7 @@
 ## Minor improvements
 
 - `extras` (>= 0.10.0) is now required.
+- Replaced the deprecated `structure()` special names `.Names`, `.Dim` and `.Dimnames` with `names`, `dim` and `dimnames`, which R-devel now notes.
 
 
 # nlist 0.4.0

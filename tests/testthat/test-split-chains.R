@@ -25,8 +25,8 @@ test_that("split_chains nlists extra iters", {
     split_chains(nlists),
     structure(
       list(
-        structure(list(x = structure(1:6, .Dim = 2:3)), class = "nlist"),
-        structure(list(x = structure(3:8, .Dim = 2:3)), class = "nlist")
+        structure(list(x = structure(1:6, dim = 2:3)), class = "nlist"),
+        structure(list(x = structure(3:8, dim = 2:3)), class = "nlist")
       ),
       class = "nlists",
       nchains = 2L

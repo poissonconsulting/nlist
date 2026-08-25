@@ -6,7 +6,7 @@ test_that("fill_all.nlist", {
         x = c(0, 0),
         y = structure(
           c(0L, 0L, 0L, 0L),
-          .Dim = c(
+          dim = c(
             2L,
             2L
           )
@@ -25,7 +25,7 @@ test_that("fill_all.nlist", {
         x = c(0, NA),
         y = structure(
           c(0L, 0L, 0L, NA),
-          .Dim = c(
+          dim = c(
             2L,
             2L
           )
