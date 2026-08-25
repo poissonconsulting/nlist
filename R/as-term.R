@@ -9,6 +9,7 @@ term::as.term
 #' Coerce to a Term Vector
 #'
 #' @inheritParams params
+#' @return A term vector of the terms in `x`.
 #' @family coerce term
 #' @export
 #' @examples
@@ -21,6 +22,7 @@ as_term.mcmc <- function(x, ...) {
 #' Coerce to a Term Vector
 #'
 #' @inheritParams params
+#' @return A term vector of the terms in `x`.
 #' @family coerce term
 #' @export
 #' @examples
@@ -38,6 +40,7 @@ as_term.nlist <- function(x, ...) {
 #' Coerce to a Term Vector
 #'
 #' @inheritParams params
+#' @return A term vector of the terms in `x`.
 #' @family coerce term
 #' @export
 #' @examples
