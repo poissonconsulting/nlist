@@ -7,7 +7,7 @@ nlist 0.5.0
 ## Test environments
 
 - local macOS, R 4.6, `R CMD check --as-cran`: 0 errors | 0 warnings | 0 notes
-- GitHub Actions: macOS, Windows, Ubuntu (release, devel, oldrel)
+- GitHub Actions: macOS, Windows, Ubuntu (release, devel, oldrel-1)
 
 <!-- TODO: run win-builder (devel and release) and rhub, then list them here. -->
 
@@ -18,9 +18,11 @@ nlist 0.5.0
 ## Reverse dependencies
 
 This release changes the default of `simplify` in `tidy()` from `FALSE` to `TRUE` and makes previously warn-deprecated functions and arguments defunct.
-The reverse dependencies are mcmcderive, mcmcr, sims and universals.
 
-<!-- TODO: replace before submitting with the actual revdepcheck::revdep_check() summary. -->
+We checked 4 reverse dependencies (mcmcderive, mcmcr, sims and universals), comparing R CMD check results across CRAN and dev versions of this package.
+
+ * We saw 0 new problems
+ * We failed to check 0 packages
 
 ## CRAN Notes
 
