@@ -2,7 +2,6 @@
 <url><loc>https://poissonconsulting.github.io/nlist/404.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/CODE_OF_CONDUCT.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/CONTRIBUTING.html</loc></url>
-<url><loc>https://poissonconsulting.github.io/nlist/ISSUE_TEMPLATE.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/LICENSE-text.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/LICENSE.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/SUPPORT.html</loc></url>
@@ -75,6 +74,8 @@
 <url><loc>https://poissonconsulting.github.io/nlist/reference/set_pars.mcmc.list.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/reference/set_pars.nlist.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/reference/set_pars.nlists.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/nlist/reference/sort.mcmc.html</loc></url>
+<url><loc>https://poissonconsulting.github.io/nlist/reference/sort.mcmc.list.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/reference/split_chains.nlists.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/reference/subset.mcmc.html</loc></url>
 <url><loc>https://poissonconsulting.github.io/nlist/reference/subset.mcmc.list.html</loc></url>
