@@ -11,8 +11,6 @@ nlist 0.5.0
 - R-hub: linux, macOS and Windows (R-devel): OK
 - win-builder, R-devel (2026-08-24 r90445): OK
 
-<!-- TODO: add the win-builder R-release result for the resubmitted tarball. -->
-
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
