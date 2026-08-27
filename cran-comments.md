@@ -9,8 +9,9 @@ nlist 0.5.0
 - local macOS, R 4.6.1, `R CMD check --as-cran`: OK
 - GitHub Actions: macOS, Windows and Ubuntu (release, devel, oldrel-1): OK
 - R-hub: linux, macOS and Windows (R-devel): OK
+- win-builder, R-release (4.6.1): OK
 
-<!-- TODO: add the win-builder (devel and release) results once the emails arrive. -->
+<!-- TODO: add the win-builder R-devel result once the email arrives. -->
 
 ## R CMD check results
 
