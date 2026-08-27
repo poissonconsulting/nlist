@@ -58,7 +58,7 @@ test_that("as_nlists.nlist", {
   expect_identical(
     as_nlists(nlist()),
     structure(
-      list(structure(list(), .Names = character(0), class = "nlist")),
+      list(structure(list(), names = character(0), class = "nlist")),
       class = "nlists"
     )
   )

@@ -7,7 +7,7 @@ test_that("nlists", {
   expect_identical(
     nlists(nlist()),
     structure(
-      list(structure(list(), .Names = character(0), class = "nlist")),
+      list(structure(list(), names = character(0), class = "nlist")),
       class = "nlists"
     )
   )

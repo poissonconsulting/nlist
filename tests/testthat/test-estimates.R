@@ -1,7 +1,7 @@
 test_that("estimates.nlist", {
   expect_identical(
     estimates(nlist()),
-    structure(list(), .Names = character(0), class = "nlist")
+    structure(list(), names = character(0), class = "nlist")
   )
   expect_identical(estimates(nlist(x = 1)), nlist(x = 1))
   expect_identical(estimates(nlist(x = 1:2)), nlist(x = 1:2))
@@ -31,11 +31,11 @@ test_that("estimates.nlist", {
 test_that("estimates.nlists", {
   expect_identical(
     estimates(nlists()),
-    structure(list(), .Names = character(0), class = "nlist")
+    structure(list(), names = character(0), class = "nlist")
   )
   expect_identical(
     estimates(nlists(nlist())),
-    structure(list(), .Names = character(0), class = "nlist")
+    structure(list(), names = character(0), class = "nlist")
   )
   expect_identical(
     estimates(nlists(nlist(x = 1), nlist(x = 2))),
@@ -60,7 +60,7 @@ test_that("estimates.nlists", {
             8.5,
             9.5
           ),
-          .Dim = c(3L, 3L)
+          dim = c(3L, 3L)
         )
       ),
       class = "nlist"

@@ -11,6 +11,9 @@
 
 \item{...}{Unused.}
 }
+\value{
+A term vector of the terms in \code{x}.
+}
 \description{
 Coerce to a Term Vector
 }

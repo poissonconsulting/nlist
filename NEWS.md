@@ -1,47 +1,37 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-# nlist 0.4.0.9007
+# nlist 0.5.0
 
-- Same as previous version.
+## Breaking changes
 
+- `tidy()` now defaults to `simplify = TRUE` for the `nlists`, `mcmc` and `mcmc.list` methods (#61).
 
-# nlist 0.4.0.9006
+- Functions and arguments that were previously warn-deprecated are now defunct and error (#56):
 
-- Same as previous version.
+  - `is.natomic()`, `is.nlist()` and `is.nlists()`, replaced by `is_numeric()`, `is_nlist()` and `is_nlists()`.
+  - `as.nlist()` and `as.nlists()`, replaced by `as_nlist()` and `as_nlists()`.
+  - `aggregate.nlist()` and `aggregate.nlists()`, replaced by `estimates.nlist()` and `estimates.nlists()`.
+  - The `terms` argument of `pars()`, replaced by `terms::pars_terms(as_term(x))`.
+  - The `iterations` and `parameters` arguments of `subset()`, replaced by `iters` and `pars`.
 
+## New features
 
-# nlist 0.4.0.9005
+- `tidy()` gains a `directional_information` argument specifying whether the `svalue` column is calculated with `extras::directional_information()` instead of `extras::svalue()` (#51).
+- The default value of `directional_information` is currently `FALSE` but will change to `TRUE` in a future release; leaving it unset is soft-deprecated.
 
-- Same as previous version.
+## Bug fixes
 
+- `subset.nlists()` now range-checks the `iters` argument (#55).
 
-# nlist 0.4.0.9004
+## Documentation
 
-* Guard mcmcr-dependent vignette chunk for hard-deps-only checks
-* Skip mcmcr-dependent tests when mcmcr is not installed
+- Documented the `sort()` methods and added missing examples for the `mcmc` and `mcmc.list` methods (#60).
+- Added return values to the documentation for the `as_term()` methods.
 
+## Minor improvements
 
-# nlist 0.4.0.9003
-
-- Same as previous version.
-
-
-# nlist 0.4.0.9002
-
-- Same as previous version.
-
-
-# nlist 0.4.0.9001
-
-* Add fledge-bump workflow
-* Add fledge-tag-on-merge workflow
-
-
-<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
-
-# nlist 0.4.0.9000
-
-- Switching to development version.
+- `extras` (>= 0.10.0) is now required.
+- Replaced the deprecated `structure()` special names `.Names`, `.Dim` and `.Dimnames` with `names`, `dim` and `dimnames`, which R-devel now notes.
 
 
 # nlist 0.4.0

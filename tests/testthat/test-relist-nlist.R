@@ -1,7 +1,7 @@
 test_that("relist_nlist", {
   expect_identical(
     relist_nlist(
-      structure(numeric(0), .Names = character(0)),
+      structure(numeric(0), names = character(0)),
       nlist()
     ),
     nlist()
