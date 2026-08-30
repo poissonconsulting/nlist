@@ -65,7 +65,7 @@ Parameter Descriptions
 - simplify:
 
   A flag specifying whether to drop the sd and zscore columns.
-  `simplify = FALSE` is deprecated.
+  `simplify = FALSE` is defunct.
 
 - directional_information:
 
