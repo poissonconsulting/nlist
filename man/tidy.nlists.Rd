@@ -10,7 +10,7 @@
 \item{x}{An object.}
 
 \item{simplify}{A flag specifying whether to drop the sd and zscore
-columns. \code{simplify = FALSE} is deprecated.}
+columns. \code{simplify = FALSE} is defunct.}
 
 \item{directional_information}{A flag specifying whether the svalue column
 should be calculated using \code{\link[extras:directional_information]{extras::directional_information()}} instead of

@@ -85,65 +85,32 @@ tidy.nlists <- function(
     warn_default_directional_information()
   }
   if (!simplify) {
-    lifecycle::deprecate_warn("0.3.1", "tidy(simplify = 'must be TRUE')")
+    lifecycle::deprecate_stop("0.3.1", "tidy(simplify = 'must be TRUE')")
   }
   if (!length(x) || !length(x[[1]])) {
-    term <- term(x = 0)
-    estimate <- numeric(0)
-    sd <- numeric(0)
-    zscore <- numeric(0)
-    lower <- numeric(0)
-    upper <- numeric(0)
-    svalue <- numeric(0)
-
-    if (simplify) {
-      return(tibble::tibble(
-        term = term,
-        estimate = estimate,
-        lower = lower,
-        upper = upper,
-        svalue = svalue
-      ))
-    }
     return(tibble::tibble(
-      term = term,
-      estimate = estimate,
-      sd = sd,
-      zscore = zscore,
-      lower = lower,
-      upper = upper,
-      svalue = svalue
+      term = term(x = 0),
+      estimate = numeric(0),
+      lower = numeric(0),
+      upper = numeric(0),
+      svalue = numeric(0)
     ))
+  }
+  estimate <- unlist(estimates(x, median))
+  term <- as_term(names(estimate))
+  estimate <- unname(estimate)
+  lower <- unname(unlist(estimates(x, lower)))
+  upper <- unname(unlist(estimates(x, upper)))
+  svalue_fun <- if (directional_information) {
+    extras::directional_information
   } else {
-    estimate <- unlist(estimates(x, median))
-    term <- as_term(names(estimate))
-    estimate <- unname(estimate)
-    sd <- unname(unlist(estimates(x, sd)))
-    zscore <- unname(unlist(estimates(x, zscore)))
-    lower <- unname(unlist(estimates(x, lower)))
-    upper <- unname(unlist(estimates(x, upper)))
-    svalue_fun <- if (directional_information) {
-      extras::directional_information
-    } else {
-      svalue
-    }
-    svalue <- unname(unlist(estimates(x, svalue_fun)))
+    svalue
   }
-  if (simplify) {
-    return(tibble::tibble(
-      term = term,
-      estimate = estimate,
-      lower = lower,
-      upper = upper,
-      svalue = svalue
-    ))
-  }
+  svalue <- unname(unlist(estimates(x, svalue_fun)))
 
   tibble::tibble(
     term = term,
     estimate = estimate,
-    sd = sd,
-    zscore = zscore,
     lower = lower,
     upper = upper,
     svalue = svalue
