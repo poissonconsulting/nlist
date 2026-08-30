@@ -18,7 +18,7 @@
 #' @param parameters A character vector (or NULL) of the parameters to subset by.
 #' @param iterations An integer vector (or NULL) of the iterations to subset by.
 #' @param simplify A flag specifying whether to drop the sd and zscore
-#'   columns. `simplify = FALSE` is deprecated.
+#'   columns. `simplify = FALSE` is defunct.
 #' @param directional_information A flag specifying whether the svalue column
 #' should be calculated using [extras::directional_information()] instead of
 #' [extras::svalue()].
