@@ -2,6 +2,8 @@
 
 ## nlist 0.5.0
 
+CRAN release: 2026-08-27
+
 ### Breaking changes
 
 - [`tidy()`](https://generics.r-lib.org/reference/tidy.html) now

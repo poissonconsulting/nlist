@@ -23,7 +23,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/poissonconsulting/nlist/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/poissonconsulting/nlist/blob/v0.5.0/DESCRIPTION)
 
 Thorley J (2026). *nlist: Lists of Numeric Atomic Objects*. R package
 version 0.5.0, <https://poissonconsulting.github.io/nlist/>.
