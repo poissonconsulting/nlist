@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">nlist</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.4.0.9007</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.5.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S3 method for class 'mcmc'</span></span>
-<span><span class="fu"><a href="https://poissonconsulting.github.io/term/reference/complete_terms.html" class="external-link">complete_terms</a></span><span class="op">(</span><span class="va">x</span>, silent <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/term/man/complete_terms.html" class="external-link">complete_terms</a></span><span class="op">(</span><span class="va">x</span>, silent <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -76,7 +76,7 @@ Missing or invalid or inconsistent terms are dropped with a warning.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">mcmc</span> <span class="op">&lt;-</span> <span class="fu"><a href="as_mcmc.html">as_mcmc</a></span><span class="op">(</span><span class="fu"><a href="nlist.html">nlist</a></span><span class="op">(</span>beta <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, nrow <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">mcmc</span> <span class="op">&lt;-</span> <span class="va">mcmc</span><span class="op">[</span>, <span class="op">-</span><span class="fl">4</span>, drop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">]</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://poissonconsulting.github.io/term/reference/complete_terms.html" class="external-link">complete_terms</a></span><span class="op">(</span><span class="va">mcmc</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/term/man/complete_terms.html" class="external-link">complete_terms</a></span><span class="op">(</span><span class="va">mcmc</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Markov Chain Monte Carlo (MCMC) output:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Start = 1 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> End = 1 </span>

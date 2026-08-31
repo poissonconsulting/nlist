@@ -30,9 +30,9 @@ to see their documentation.
 
 - term:
 
-  [`as_term()`](https://poissonconsulting.github.io/term/reference/as_term.html),
-  [`as.term()`](https://poissonconsulting.github.io/term/reference/as_term.html),
-  [`complete_terms()`](https://poissonconsulting.github.io/term/reference/complete_terms.html)
+  [`as_term()`](https://rdrr.io/pkg/term/man/as_term.html),
+  [`as.term()`](https://rdrr.io/pkg/term/man/as_term.html),
+  [`complete_terms()`](https://rdrr.io/pkg/term/man/complete_terms.html)
 
 - universals:
 

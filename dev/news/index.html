@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">nlist</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.4.0.9007</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.5.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,39 +36,49 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0.9007" id="nlist-0409007">nlist 0.4.0.9007<a class="anchor" aria-label="anchor" href="#nlist-0409007"></a></h2>
-<ul><li>Same as previous version.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0.9006" id="nlist-0409006">nlist 0.4.0.9006<a class="anchor" aria-label="anchor" href="#nlist-0409006"></a></h2>
-<ul><li>Same as previous version.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0.9005" id="nlist-0409005">nlist 0.4.0.9005<a class="anchor" aria-label="anchor" href="#nlist-0409005"></a></h2>
-<ul><li>Same as previous version.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0.9004" id="nlist-0409004">nlist 0.4.0.9004<a class="anchor" aria-label="anchor" href="#nlist-0409004"></a></h2>
-<ul><li>Guard mcmcr-dependent vignette chunk for hard-deps-only checks</li>
-<li>Skip mcmcr-dependent tests when mcmcr is not installed</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0.9003" id="nlist-0409003">nlist 0.4.0.9003<a class="anchor" aria-label="anchor" href="#nlist-0409003"></a></h2>
-<ul><li>Same as previous version.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0.9002" id="nlist-0409002">nlist 0.4.0.9002<a class="anchor" aria-label="anchor" href="#nlist-0409002"></a></h2>
-<ul><li>Same as previous version.</li>
-</ul></div>
-    <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0.9001" id="nlist-0409001">nlist 0.4.0.9001<a class="anchor" aria-label="anchor" href="#nlist-0409001"></a></h2>
-<ul><li>Add fledge-bump workflow</li>
-<li>Add fledge-tag-on-merge workflow</li>
-</ul><!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file --></div>
-    <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.4.0.9000" id="nlist-0409000">nlist 0.4.0.9000<a class="anchor" aria-label="anchor" href="#nlist-0409000"></a></h2>
+<h2 class="pkg-version" data-toc-text="0.5.0.9000" id="nlist-0509000">nlist 0.5.0.9000<a class="anchor" aria-label="anchor" href="#nlist-0509000"></a></h2>
 <ul><li>Switching to development version.</li>
 </ul></div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.5.0" id="nlist-050">nlist 0.5.0<a class="anchor" aria-label="anchor" href="#nlist-050"></a></h2><p class="text-muted">CRAN release: 2026-08-27</p>
+<div class="section level3">
+<h3 id="breaking-changes-0-5-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-0-5-0"></a></h3>
+<ul><li><p><code><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy()</a></code> now defaults to <code>simplify = TRUE</code> for the <code>nlists</code>, <code>mcmc</code> and <code>mcmc.list</code> methods (<a href="https://github.com/poissonconsulting/nlist/issues/61" class="external-link">#61</a>).</p></li>
+<li>
+<p>Functions and arguments that were previously warn-deprecated are now defunct and error (<a href="https://github.com/poissonconsulting/nlist/issues/56" class="external-link">#56</a>):</p>
+<ul><li>
+<code><a href="../reference/deprecated.html">is.natomic()</a></code>, <code><a href="../reference/deprecated.html">is.nlist()</a></code> and <code><a href="../reference/deprecated.html">is.nlists()</a></code>, replaced by <code><a href="../reference/is_numeric.html">is_numeric()</a></code>, <code><a href="../reference/is_numeric.html">is_nlist()</a></code> and <code><a href="../reference/is_numeric.html">is_nlists()</a></code>.</li>
+<li>
+<code><a href="../reference/as_nlist.html">as.nlist()</a></code> and <code><a href="../reference/as_nlist.html">as.nlists()</a></code>, replaced by <code><a href="../reference/as_nlist.html">as_nlist()</a></code> and <code><a href="../reference/as_nlists.html">as_nlists()</a></code>.</li>
+<li>
+<code><a href="../reference/aggregate.nlist.html">aggregate.nlist()</a></code> and <code><a href="../reference/aggregate.nlists.html">aggregate.nlists()</a></code>, replaced by <code><a href="../reference/estimates.nlist.html">estimates.nlist()</a></code> and <code><a href="../reference/estimates.nlists.html">estimates.nlists()</a></code>.</li>
+<li>The <code>terms</code> argument of <code><a href="https://poissonconsulting.github.io/universals/reference/pars.html" class="external-link">pars()</a></code>, replaced by <code>terms::pars_terms(as_term(x))</code>.</li>
+<li>The <code>iterations</code> and <code>parameters</code> arguments of <code><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset()</a></code>, replaced by <code>iters</code> and <code>pars</code>.</li>
+</ul></li>
+</ul></div>
+<div class="section level3">
+<h3 id="new-features-0-5-0">New features<a class="anchor" aria-label="anchor" href="#new-features-0-5-0"></a></h3>
+<ul><li>
+<code><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy()</a></code> gains a <code>directional_information</code> argument specifying whether the <code>svalue</code> column is calculated with <code><a href="https://poissonconsulting.github.io/extras/reference/directional-information.html" class="external-link">extras::directional_information()</a></code> instead of <code><a href="https://poissonconsulting.github.io/extras/reference/svalue.html" class="external-link">extras::svalue()</a></code> (<a href="https://github.com/poissonconsulting/nlist/issues/51" class="external-link">#51</a>).</li>
+<li>The default value of <code>directional_information</code> is currently <code>FALSE</code> but will change to <code>TRUE</code> in a future release; leaving it unset is soft-deprecated.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-0-5-0">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-0-5-0"></a></h3>
+<ul><li>
+<code><a href="../reference/subset.nlists.html">subset.nlists()</a></code> now range-checks the <code>iters</code> argument (<a href="https://github.com/poissonconsulting/nlist/issues/55" class="external-link">#55</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="documentation-0-5-0">Documentation<a class="anchor" aria-label="anchor" href="#documentation-0-5-0"></a></h3>
+<ul><li>Documented the <code><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort()</a></code> methods and added missing examples for the <code>mcmc</code> and <code>mcmc.list</code> methods (<a href="https://github.com/poissonconsulting/nlist/issues/60" class="external-link">#60</a>).</li>
+<li>Added return values to the documentation for the <code><a href="https://rdrr.io/pkg/term/man/as_term.html" class="external-link">as_term()</a></code> methods.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="minor-improvements-0-5-0">Minor improvements<a class="anchor" aria-label="anchor" href="#minor-improvements-0-5-0"></a></h3>
+<ul><li>
+<code>extras</code> (&gt;= 0.10.0) is now required.</li>
+<li>Replaced the deprecated <code><a href="https://rdrr.io/r/base/structure.html" class="external-link">structure()</a></code> special names <code>.Names</code>, <code>.Dim</code> and <code>.Dimnames</code> with <code>names</code>, <code>dim</code> and <code>dimnames</code>, which R-devel now notes.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.4.0" id="nlist-040">nlist 0.4.0<a class="anchor" aria-label="anchor" href="#nlist-040"></a></h2><p class="text-muted">CRAN release: 2025-05-11</p>
 <ul><li>Exported <code><a href="https://rdrr.io/pkg/coda/man/mcmc.list.html" class="external-link">coda::as.mcmc.list</a></code>.</li>
@@ -111,7 +121,7 @@
 <li>
 <code><a href="../reference/as_nlist.html">as.nlist()</a></code> and <code><a href="../reference/as_nlist.html">as.nlists()</a></code> for <code><a href="../reference/as_nlist.html">as_nlist()</a></code> and <code><a href="../reference/as_nlist.html">as.nlists()</a></code>.</li>
 <li>
-<code><a href="https://poissonconsulting.github.io/term/reference/as_term.html" class="external-link">as.term()</a></code> for <code><a href="https://poissonconsulting.github.io/term/reference/as_term.html" class="external-link">as_term()</a></code>.</li>
+<code><a href="https://rdrr.io/pkg/term/man/as_term.html" class="external-link">as.term()</a></code> for <code><a href="https://rdrr.io/pkg/term/man/as_term.html" class="external-link">as_term()</a></code>.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="features-0-2-0">Features<a class="anchor" aria-label="anchor" href="#features-0-2-0"></a></h3>

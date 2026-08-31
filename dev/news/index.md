@@ -1,38 +1,88 @@
 # Changelog
 
-## nlist 0.4.0.9007
-
-- Same as previous version.
-
-## nlist 0.4.0.9006
-
-- Same as previous version.
-
-## nlist 0.4.0.9005
-
-- Same as previous version.
-
-## nlist 0.4.0.9004
-
-- Guard mcmcr-dependent vignette chunk for hard-deps-only checks
-- Skip mcmcr-dependent tests when mcmcr is not installed
-
-## nlist 0.4.0.9003
-
-- Same as previous version.
-
-## nlist 0.4.0.9002
-
-- Same as previous version.
-
-## nlist 0.4.0.9001
-
-- Add fledge-bump workflow
-- Add fledge-tag-on-merge workflow
-
-## nlist 0.4.0.9000
+## nlist 0.5.0.9000
 
 - Switching to development version.
+
+## nlist 0.5.0
+
+CRAN release: 2026-08-27
+
+### Breaking changes
+
+- [`tidy()`](https://generics.r-lib.org/reference/tidy.html) now
+  defaults to `simplify = TRUE` for the `nlists`, `mcmc` and `mcmc.list`
+  methods
+  ([\#61](https://github.com/poissonconsulting/nlist/issues/61)).
+
+- Functions and arguments that were previously warn-deprecated are now
+  defunct and error
+  ([\#56](https://github.com/poissonconsulting/nlist/issues/56)):
+
+  - [`is.natomic()`](https://poissonconsulting.github.io/nlist/dev/reference/deprecated.md),
+    [`is.nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/deprecated.md)
+    and
+    [`is.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/deprecated.md),
+    replaced by
+    [`is_numeric()`](https://poissonconsulting.github.io/nlist/dev/reference/is_numeric.md),
+    [`is_nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/is_numeric.md)
+    and
+    [`is_nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/is_numeric.md).
+  - [`as.nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/as_nlist.md)
+    and
+    [`as.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/as_nlist.md),
+    replaced by
+    [`as_nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/as_nlist.md)
+    and
+    [`as_nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/as_nlists.md).
+  - [`aggregate.nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/aggregate.nlist.md)
+    and
+    [`aggregate.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/aggregate.nlists.md),
+    replaced by
+    [`estimates.nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/estimates.nlist.md)
+    and
+    [`estimates.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/estimates.nlists.md).
+  - The `terms` argument of
+    [`pars()`](https://poissonconsulting.github.io/universals/reference/pars.html),
+    replaced by `terms::pars_terms(as_term(x))`.
+  - The `iterations` and `parameters` arguments of
+    [`subset()`](https://rdrr.io/r/base/subset.html), replaced by
+    `iters` and `pars`.
+
+### New features
+
+- [`tidy()`](https://generics.r-lib.org/reference/tidy.html) gains a
+  `directional_information` argument specifying whether the `svalue`
+  column is calculated with
+  [`extras::directional_information()`](https://poissonconsulting.github.io/extras/reference/directional-information.html)
+  instead of
+  [`extras::svalue()`](https://poissonconsulting.github.io/extras/reference/svalue.html)
+  ([\#51](https://github.com/poissonconsulting/nlist/issues/51)).
+- The default value of `directional_information` is currently `FALSE`
+  but will change to `TRUE` in a future release; leaving it unset is
+  soft-deprecated.
+
+### Bug fixes
+
+- [`subset.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/subset.nlists.md)
+  now range-checks the `iters` argument
+  ([\#55](https://github.com/poissonconsulting/nlist/issues/55)).
+
+### Documentation
+
+- Documented the [`sort()`](https://rdrr.io/r/base/sort.html) methods
+  and added missing examples for the `mcmc` and `mcmc.list` methods
+  ([\#60](https://github.com/poissonconsulting/nlist/issues/60)).
+- Added return values to the documentation for the
+  [`as_term()`](https://rdrr.io/pkg/term/man/as_term.html) methods.
+
+### Minor improvements
+
+- `extras` (\>= 0.10.0) is now required.
+- Replaced the deprecated
+  [`structure()`](https://rdrr.io/r/base/structure.html) special names
+  `.Names`, `.Dim` and `.Dimnames` with `names`, `dim` and `dimnames`,
+  which R-devel now notes.
 
 ## nlist 0.4.0
 
@@ -125,9 +175,8 @@ Soft deprecated
   [`as_nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/as_nlist.md)
   and
   [`as.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/as_nlist.md).
-- [`as.term()`](https://poissonconsulting.github.io/term/reference/as_term.html)
-  for
-  [`as_term()`](https://poissonconsulting.github.io/term/reference/as_term.html).
+- [`as.term()`](https://rdrr.io/pkg/term/man/as_term.html) for
+  [`as_term()`](https://rdrr.io/pkg/term/man/as_term.html).
 
 ### Features
 

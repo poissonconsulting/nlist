@@ -19,6 +19,10 @@ as_term(x, ...)
 
   Unused.
 
+## Value
+
+A term vector of the terms in `x`.
+
 ## See also
 
 Other coerce term:
