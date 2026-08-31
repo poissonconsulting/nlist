@@ -1,4 +1,9 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# nlist 0.5.0.9000
+
+- Switching to development version.
+
 
 # nlist 0.5.0
 
