@@ -41,7 +41,7 @@ the condition is not met.
 chk_nlist(nlist(x = 1))
 try(chk_nlist(list(x = 1)))
 #> Error in chk_nlist(list(x = 1)) : 
-#>   `list(x = 1)` must inherit from S3 class 'nlist'.
+#>   `list(x = 1)` must inherit from S3 class 'nlist', not S3 class 'list'.
 
 # chk_nlists
 chk_nlists(nlists(nlist(x = 1)))

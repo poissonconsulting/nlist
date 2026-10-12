@@ -74,7 +74,8 @@ CRAN release: 2026-08-27
   and added missing examples for the `mcmc` and `mcmc.list` methods
   ([\#60](https://github.com/poissonconsulting/nlist/issues/60)).
 - Added return values to the documentation for the
-  [`as_term()`](https://rdrr.io/pkg/term/man/as_term.html) methods.
+  [`as_term()`](https://poissonconsulting.github.io/term/reference/as_term.html)
+  methods.
 
 ### Minor improvements
 
@@ -175,8 +176,9 @@ Soft deprecated
   [`as_nlist()`](https://poissonconsulting.github.io/nlist/dev/reference/as_nlist.md)
   and
   [`as.nlists()`](https://poissonconsulting.github.io/nlist/dev/reference/as_nlist.md).
-- [`as.term()`](https://rdrr.io/pkg/term/man/as_term.html) for
-  [`as_term()`](https://rdrr.io/pkg/term/man/as_term.html).
+- [`as.term()`](https://poissonconsulting.github.io/term/reference/as_term.html)
+  for
+  [`as_term()`](https://poissonconsulting.github.io/term/reference/as_term.html).
 
 ### Features
 
